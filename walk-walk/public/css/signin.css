@@ -1,0 +1,183 @@
+*{
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0;
+    font-family: "roboto-cons-bold";
+    font-size: 1.2rem;
+    color: white;
+
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    /* background-color: #19A7CE; */
+    background-color: #0064D2;
+    display: flex;
+    z-index: 10;
+    opacity: 1;
+   
+
+}
+/* /jalan-jalan/assets/logo/jalan-jalan.svg */
+/* https://drive.google.com/uc?export=view&id=%5Bimage_id%5D */
+.container_picture_logo{
+    /* background-image: url("https://drive.google.com/uc?export=view&id=1jPbHmzgPwXno9lg2lngldOWChWTrjcww"); */
+    /* background-color: black; */
+    /* background-position: right; */
+    
+    height: 100%;
+    width: 45%;
+    display: flex;
+    
+    
+}
+.picture{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    margin-top: 0;
+    margin-left: 0;
+}
+.logo{
+    position: absolute;
+    margin: 2%;
+}
+.form_logo{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    opacity: 0.5;
+    transform: rotate(45deg);
+    left: 30%;
+    top: 50%;
+    z-index: 1;
+}
+.form_sign{
+    /* background-image: url("https://drive.google.com/uc?export=view&id=12jmEVX5IqeXAXHD-0Ql8x6ZMVpptS-uS"); */
+    background-repeat: no-repeat;
+    background-position: left;
+
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 5%; */
+}
+.form_sign input{
+    z-index: 2;
+    width: 80%;
+    height: 10%;
+    margin-top: 2%;
+    padding: 1.5%;
+    font-size: 1.1rem;
+    background : transparent;
+    border : 4px solid #ffff;
+    border-radius: 10px;
+    color: white;
+    
+}
+.form_sign input:focus{
+    outline: none;
+}
+input:focus{
+
+    color: white;
+    border : 4px solid #ffff;
+    
+  
+    
+}
+input:active{
+    /* background-color: white; */
+    color: white;
+    border : 4px solid #ffff;
+
+}
+::placeholder{
+    color: white;
+    opacity: 0.7;
+}
+#register{
+    /* background: #0064D2;
+    border : 4px solid #0064D2; */
+     background: white;
+    border : 4px solid white;
+    color: #0064D2;
+    
+}
+.create_account{
+    font-size: 2.1rem;
+    color: white;
+    margin-right: 45%;
+}
+.log_in_button{
+    font-size: 0.8rem;
+    position: absolute;
+    color: white;
+    bottom: 0;
+    top: 95%;
+    left: 60%;
+
+}
+.log_in_button_click{
+
+      font-size: 0.8rem;
+    position: absolute;
+    color: white;
+    bottom: 0;
+    top: 95%;
+    left: 69%;
+    text-decoration: none;
+}
+.log_in_button_click:hover{
+    /* color: #0064D2; */
+    text-decoration: underline;
+}
+
+.error_message {
+    border-color: red;
+}
+.inactive{
+    opacity: 0;
+    transition: all ease-in-out 1s;
+}
+.active{
+    opacity: 1;
+    transition: all ease-in-out 1s;
+
+}
+.signin_success{
+    background-color: #0064D2;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0%;
+}
+
+.signin_success p{
+    color: #68E49B;
+}
+
+.awesome{
+    font-size: 3rem;
+}
+.click_anywhere{
+    font-size: smaller;
+    color: white;
+    
+    opacity: 0.5;
+}

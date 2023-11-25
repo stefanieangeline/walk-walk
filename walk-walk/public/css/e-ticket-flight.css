@@ -1,0 +1,162 @@
+:root {
+    --white: #ffffff;
+    --blue-base: #19A7CE;
+    --strong-blue: #0064D2;
+    --light-grey: #F6F7F7;
+    --shade-blue: #146C94;
+    --light-blue : #AFD3E2;
+    --grey : #D7DCE6;
+    
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: roboto-cons-medium;
+}
+
+.e-ticket {
+  display: flex;
+  flex-direction: column;
+  max-width: 80vw;
+  height: auto;
+  border-radius: 10px;
+  background-color: var(--strong-blue)
+}
+
+.header-ticket {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-ticket-title {
+  margin-left: 20px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.header-ticket-title h3 {
+  color: white;
+  font-size: 30px;
+  font-family: roboto-cons-light;
+}
+
+.header-logo {
+  margin-right: 20px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.ticket-detail{
+    background-color: var(--white);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-bottom: 20px;
+}
+
+.ticket-detail-header {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.ticket-detail-header-left {
+  display: flex;
+}
+
+.date-and-dest {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.dest {
+  display: flex;
+  gap: 10px;
+}
+
+.date p{
+    color: var(--shade-blue);
+    font-weight: bold;
+    font-size: 25px;
+}
+.hours p{
+    color: var(--shade-blue);
+    font-size: 17px;
+}
+
+#city{
+    color: var(--shade-blue);
+    font-weight: bold;
+}
+
+#airport{
+    color: var(--blue-base);
+}
+
+
+.ticket-detail-header-right{
+      margin-right: 20px;
+}
+
+#id-title{
+    color: var(--shade-blue);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#id{
+    color: var(--blue-base);
+    font-size: 17px;
+}
+
+.line{
+    border: 1px solid var(--shade-blue);
+}
+
+.ticket-detail-info{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#passenger-detail-header{
+    color: var(--shade-blue);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+}
+
+.styled-table thead tr {
+  text-align: left;
+  color: var(--shade-blue);
+  font-size: 20px;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table td{
+    font-size: 20px;
+    color: var(--blue-base);
+}
+
+.ticket-footer{
+    margin-left: 20px;
+}
+
+.ticket-footer p{
+  color: var(--shade-blue);
+}

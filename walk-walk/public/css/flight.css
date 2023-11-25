@@ -1,0 +1,436 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--blue-base);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.bg-flight{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.box-choice{
+    background-color: var(--strong-blue);
+    display: flex;
+    flex-direction: column;
+    width: 83vw;
+    align-self: center;
+    height: 120px;
+    border-radius: 25px;
+    padding-left: 4%;
+    padding-right: 3%;
+    position: absolute;
+    top: 100px;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    padding-top: 8px;
+    margin-bottom: 3px;
+}
+
+.flight-selected{
+    display: flex;
+    align-items: center;
+    /* margin-left: 4%; */
+}
+
+.people-selected{
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+}
+
+.seat-option{
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+}
+
+.img{
+    margin-right: 5%;
+}
+
+.people-opt{
+    background-color: transparent;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    border: 2px solid var(--strong-blue);
+    cursor: pointer;
+    background-color: var(--grey);
+    color: var(--strong-blue);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.flight-opt{
+    /* background-color: transparent;
+    border: none;
+    color: white; */
+    border-radius: 20px;
+    border: 2px solid var(--strong-blue);
+    cursor: pointer;
+    background-color: var(--grey);
+    color: var(--strong-blue);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.seat-opt{
+    background-color: transparent;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    border: 2px solid var(--strong-blue);
+    cursor: pointer;
+    background-color: var(--grey);
+    color: var(--strong-blue);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.bottom{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.leaving_from{
+    width: 225px;
+    height: 58px;
+    border-radius: 22px;
+    border-style: solid;
+    /* margin-left: 4%; */
+    margin-right: 2%;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.leaving{
+    font-family: roboto-cons-bold;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    width: 70%;
+    color: white;
+}
+.leaving::placeholder{
+    color: white;
+}
+.going_to{
+    width: 225px;
+    height: 58px;
+    border-radius: 22px;
+    border-style: solid;
+    margin-left: 2%;
+    margin-right: 3%;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.date{
+    width: 390px;
+    height: 58px;
+    border-radius: 22px;
+    border-style: solid;
+    border-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.search_button{
+    margin-left: 2%;
+    align-items: center;
+}
+
+.search_button img{
+    width: 80% ;
+    height: 80%;
+}
+
+.vertical{
+    border-left: 1px solid white;
+    height: 40px;
+}
+.input_date{
+    width: 195px;
+    padding: 12px 10px;
+    color: white;
+    border: none;
+    font-family: roboto-cons-light;
+    font-size: 20px;
+    /* color: var(--grey-dark); */
+    background-color: var(--strong-blue9);
+}
+.input_date:focus{
+    outline: none;
+}
+
+.input_date::-webkit-calendar-picker-indicator{
+    filter: invert(1);
+}
+
+.text_date{
+    color: white;
+}
+
+.content_flight{
+    width: 100vw;
+    height: fit-content;
+    background-color: #F6F7F7;
+    border-radius: 45px 45px 0px 0px;
+    margin-top: 55px;
+    padding-top: 90px;
+    padding-left: 109px;
+    padding-right: 109px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 2%;
+}
+
+.left-box{
+    width: 30%;
+    height: 500px;
+    background-color: white;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+}
+
+.titlee{
+    font-family: roboto-cons-bold;
+    color: #146C94;
+}
+
+.opt-flight{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: roboto-cons-regular;
+    color: #146C94;
+}
+
+.opt-flight input{
+    accent-color: var(--shade-blue);
+    width: 20px;
+    margin-right: 10px;
+}
+
+.opt-price{
+    display: flex;
+    flex-direction: row;
+    margin-top: 4%;
+    font-family: roboto-cons-regular;
+    color: #146C94;
+}
+
+.opt-price input{
+    accent-color: var(--shade-blue);
+    width: 20px;
+    margin-right: 10px;
+}
+
+.gambar{
+    width: 100px;
+    height: 40px;
+}
+
+.button{
+    margin-right: 6%;
+}
+
+.sortByFlight{
+    display : flex;
+    flex-direction: column;
+}
+
+.line{
+     border: 0.8px solid var(--grey);
+     margin-bottom: 4%;
+}
+
+.right-box{
+    width: 70%;
+    /* height: 500px; */
+    /* background-color: gray; */
+    
+    /* border-style: solid; */
+    height: fit-content;
+    /* padding: 1%; */
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    
+
+}
+.right-box *{
+    border-radius: 15px;
+    font-family: roboto-cons-regular;
+    color: #146C94;
+}
+
+.price_sort_container{
+    width: 100%;
+    height: 10vh;
+    background-color: white;
+    /* padding: 2%; */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+}
+.price_sort_container *{
+    font-family: roboto-cons-regular;
+    color: #146C94;
+    border-radius: 15px;
+}
+.rec_price{
+    width: 33%;
+    height: 100%;
+    /* background-color: green; */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5%;
+    
+
+}
+.low_price{
+    width: 33%;
+    height: 100%;
+    /* background-color: yellow; */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5%;
+
+}
+/* 146C94 */
+.sorting_price{
+    width: 33%;
+    height: 100%;
+    /* background-color: blue; */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5%;
+    gap: 5%;
+
+
+}
+.divider_price{
+    height: 100%;
+    width: 0.1%;
+    background-color: #146C94;
+}
+.price_number{
+    font-family: roboto-cons-bold;
+}
+.flight_detail{
+    width: 100%;
+    height: 13vh;
+    display: flex;
+    margin-top: 1%;
+    background-color: white;
+}
+.airline_logo{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: violet; */
+
+}
+.flight_schedule{
+    height: 100%;
+    width: 31%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.flight_price{
+    height: 100%;
+    width: 21%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+.submit_flight{
+    height: 100%;
+    width: 23%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: yellow; */
+    /* padding: 5%; */
+}
+.flight_button{
+    height: 50%;
+    width: 80%;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    font-family: roboto-cons-bold;
+    background-color: #146C94;
+}
+.airline_logo img{
+    width: 70%;
+    height: fit-content;
+
+}
+.airport_schedule{
+    width: 20%;
+    height: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.divider_schedule{
+    height: 100%;
+    width: 60%;
+    background-image: url("/jalan-jalan/assets/icon/src-dest.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}

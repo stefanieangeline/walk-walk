@@ -1,0 +1,292 @@
+:root {
+    --white: #ffffff;
+    --blue-base: #19A7CE;
+    --strong-blue: #0064D2;
+    --light-grey: #F6F7F7;
+    --shade-blue: #146C94;
+    --light-blue : #AFD3E2;
+    --grey : #D7DCE6;
+    --grey-dark: #63666c;
+    --other-blue: #0090FF;
+    --near-black: #1d1e1f;
+    --another-blue: #0A4D78;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: roboto-cons-medium;
+}
+
+a{
+    text-decoration: none;
+}
+
+.history-page{
+    display: flex;
+}
+
+.logo{
+    background-color: var(--shade-blue);
+    width: 20vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.side-bar-left{
+    height: 100vh; /* Full-height: remove this if you want "auto" height */ /* Set the width of the sidebar */
+    width: 20vw;
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: var(--shade-blue);
+    overflow-x: hidden; 
+    overflow-y: hidden; 
+    padding-top: 20px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    height: 100vh;
+}
+
+.fa-solid{
+    font-size: 20px;
+    text-align: center;
+    margin-right: 20px;
+    color: var(--shade-blue);
+}
+
+.myaccount p, .myorder p, .history p{
+    font-size: 20px;
+    color: var(--shade-blue);
+}
+
+
+.myaccount, .myorder, .history{
+    display: flex;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 65px;
+    margin-right: 20px;
+    width: 20vw;
+}
+
+.myaccount:hover, .myorder:hover, .history:hover{
+    cursor: pointer;
+}
+
+
+.active, .active p{
+    background-color: var(--shade-blue);
+    color: white;
+}
+
+.active i{
+    color: white;
+}
+
+.fa-user{
+    margin-left: 2px;
+    font-size: 20px;
+    background-color: transparent;
+    color: var(--shade-blue);
+}
+
+.fa-receipt{
+    margin-left: 3px;
+    font-size: 20px;
+}
+
+.push-right{
+    padding-left: 3px;
+}
+
+.push-right-1{
+    padding-left: 4px;
+}
+
+/* sisi sebelah kanan */
+.main{
+    width: 80vw;
+    background-color:var(--blue-base);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+}
+
+.main-header{
+    width: 50vw;
+    text-align: left;
+    margin-top: 50px;
+}
+
+.main-header p{
+    font-size: 40px;
+    color: var(--white);
+}
+
+.all-history{
+    display: flex;
+    flex-direction: column;
+}
+
+/* bagian kartu*/
+.card{
+    width: 50vw;
+    height: fit-content;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+}
+
+.card-header, .card-footer{
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-header p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--shade-blue);
+    font-size: 25px;
+    font-weight: normal;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.shadow-line{
+    border: 1px solid var(--blue-base);
+    border-bottom: 0.011px solid var(--light-blue);
+    opacity: 0.5;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.card-body{
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+}
+
+.icon i{
+    color: var(--shade-blue);
+    font-size: 30px;
+}
+
+.info p{
+    color:var(--shade-blue) ;
+    font-size: 25px;
+}
+
+.card-footer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.card-footer p{
+    margin-left: 50px;
+    color: var(--blue-base);
+    font-size: 25px;
+}
+
+.card-footer i{
+    color: var(--blue-base);
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+.card-footer a{
+    margin-right: 50px;
+    color: var(--blue-base);
+    font-size: 25px;
+}
+
+.card-footer a:hover{
+    border-bottom: 2px solid var(--blue-base);
+}
+
+@media (max-width: 1000px) {
+    .content i{
+        display: none;
+    }
+}
+
+@media (max-width: 900px){
+    .logo-img{
+        width: 80%;
+    }
+}
+
+@media (max-width: 800px){
+    .myaccount, .myorder, .history{
+        padding-left: 10px;
+    }
+
+    .card-footer p, .card-header p, .card-footer a{
+        font-size: 20px;
+    }
+
+    .main-header p{
+        font-size: 30px;
+    }
+
+    .info p, .icon i{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 650px){
+    .card-footer p, .card-header p, .card-footer a{
+        font-size: 15px;
+    }
+
+    .myaccount p, .myorder p, .history p{
+        font-size: 15px;
+    }
+
+    .main-header p{
+        font-size: 25px;
+    }
+
+    .info p, .icon i{
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width:550px){
+    .card-header, .card-footer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-footer a{
+        margin-left: 50px;
+    }
+}
+
+@media (max-width: 450px){
+    .card-header p, .card-body, .card-footer p, .card-footer a{
+        margin-left: 20px;
+    }
+
+    .content i{
+        display: block;
+    }
+
+    .content p{
+        display: none;
+    }
+}

@@ -1,0 +1,302 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: roboto-cons-medium;
+}
+
+a{
+    text-decoration: none;
+}
+
+.my-account-page{
+    display: flex;
+}
+
+.logo{
+    background-color: var(--shade-blue);
+    width: 20vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.side-bar-left{
+    height: 100vh;
+    width: 20vw;
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: var(--shade-blue);
+    overflow-x: hidden; 
+    overflow-y: hidden; 
+    padding-top: 20px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    height: 100vh;
+}
+
+.fa-solid{
+    font-size: 20px;
+    text-align: center;
+    margin-right: 20px;
+    color: var(--shade-blue);
+}
+
+.myaccount p, .myorder p, .history p{
+    font-size: 20px;
+    color: var(--shade-blue);
+}
+
+
+.home, .myaccount, .myorder, .history{
+    display: flex;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 65px;
+    margin-right: 20px;
+    width: 20vw;
+}
+
+.myaccount:hover, .myorder:hover, .history:hover{
+    cursor: pointer;
+}
+
+
+.active, .active p{
+    background-color: var(--shade-blue);
+    color: var(--white);
+}
+
+.fa-user{
+    margin-left: 2px;
+    font-size: 20px;
+}
+
+.fa-receipt{
+    margin-left: 3px;
+    font-size: 20px;
+}
+
+.push-right{
+    padding-left: 3px;
+}
+
+.push-right-1{
+    padding-left: 4px;
+}
+
+/* sisi sebelah kanan */
+.main{
+    width: 80vw;
+    background-color:var(--blue-base);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* bagian kartu*/
+.card{
+    width: 50vw;
+    height: fit-content;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-header{
+    text-align: left;
+}
+
+.card-header h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--shade-blue);
+    font-size: 30px;
+    font-weight: normal;
+    margin-left: 50px;
+}
+
+.shadow-line{
+    border-bottom: 0.011px solid var(--grey);
+    opacity: 0.5;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+/*bagian bawah card*/
+.card-body{
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+.profile-header{
+    display: flex;
+    gap: 40px;
+}
+
+.profile-header-image{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.profile-header-detail{
+    align-self: center;
+}
+
+.profile-header-detail p{
+    color: var(--shade-blue);
+    font-size: 20px;
+}
+
+/* user id on profile */
+
+.id{
+    opacity: 0.5;
+}
+
+.profile-header-image i{
+    color: var(--blue-base);
+    font-size: 80px;
+}
+
+.container{
+    display: grid;
+    grid-template-rows: 100px 100px 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+    column-gap: 70px;
+}
+
+.container p{
+    color: var(--shade-blue);
+}
+
+.input{
+    position: relative;
+}
+
+.input input{
+    width: 100%;
+    border: 2px solid var(--white);
+    border-radius: 10px;
+    outline: none;
+    padding: 15px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    transition: 0.3s;
+    background-color: var(--shade-blue);
+    color: var(--white);
+}
+
+.input input{
+    padding-left: 50px
+}
+
+.input i{
+    position: absolute;
+    left: 0;
+    top: 15px;
+    padding: 10px 8px 10px 15px;
+    color: var(--white);
+    transition: 0.3s;
+}
+
+@media (max-width: 1000px) {
+    .container{
+        grid-template-columns: 1fr;
+    }
+
+    .card{
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .content i{
+        display: none;
+    }
+
+    .card{
+        padding-bottom: 50px;
+    }
+}
+
+@media (max-width: 900px){
+    .logo-img{
+        width: 80%;
+    }
+}
+
+@media (max-width: 800px){
+    .myaccount, .myorder, .history{
+        padding-left: 10px;
+    }
+
+    .card-footer p, .card-header p, .card-footer a{
+        font-size: 20px;
+    }
+
+    .main-header p{
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 650px){
+    .card-footer p, .card-header p, .card-footer a{
+        font-size: 15px;
+    }
+
+    .myaccount p, .myorder p, .history p{
+        font-size: 15px;
+    }
+
+    .card-header h3{
+        font-size: 25px;
+    }
+
+}
+
+@media (max-width:550px){
+    .card-header, .card-footer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile-header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 450px){
+    .card-header p, .card-body, .card-header h3{
+        margin-left: 20px;
+    }
+
+    .content i{
+        display: block;
+    }
+
+    .content p{
+        display: none;
+    }
+}
+
+@media (max-width: 400px){
+    .input i{
+        display: none;
+    }
+
+    .input input{
+        padding-left: 20px;
+    }
+}

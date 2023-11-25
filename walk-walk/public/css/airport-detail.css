@@ -1,0 +1,184 @@
+:root {
+  --white: #ffffff;
+  --blue-base: #19a7ce;
+  --strong-blue: #0064d2;
+  --light-grey: #f6f7f7;
+  --shade-blue: #146c94;
+  --light-blue: #afd3e2;
+  --grey: #d7dce6;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: roboto-cons-medium;
+}
+
+*:focus {
+  outline: none;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  background-color: var(--blue-base);
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  width: 100%;
+  height: auto;
+  background-color: var(--blue-base);
+  padding: 10px;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar-left i {
+  font-size: 40px;
+  color: var(--white);
+}
+
+.navbar-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.navbar-left i:hover,
+.nav-link:hover {
+  color: var(--light-blue);
+}
+
+.navbar-middle p {
+  font-size: 40px;
+  color: var(--white);
+}
+
+.content {
+  background-color: var(--light-grey);
+  border-top-right-radius: 45px;
+  border-top-left-radius: 45px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+  padding-top: 20px;
+}
+
+.head-content {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: center;
+}
+
+.sort-airport,
+.sort-category {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+select {
+  width: 100%;
+  border-radius: 20px;
+  border: 2px solid var(--strong-blue);
+  padding: 1rem 1em 1rem 1rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: var(--grey);
+  color: var(--strong-blue);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+/* option:checked:hover {
+  background-color: var(--white);
+} */
+
+.all-tenant {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 50px;
+  margin-right: 50px;
+  gap: 50px;
+  justify-content: center;
+}
+
+.tenant {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.line {
+  opacity: 0.5;
+}
+
+.tenant-detail {
+  margin-top: 10px;
+}
+
+.tenant-name {
+  color: var(--shade-blue);
+}
+
+.tenant-category {
+  color: var(--shade-blue);
+  opacity: 0.5;
+}
+
+@media (max-width: 900px){
+  .head-content{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .all-tenant{
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 600px){
+  .icon-airport img, .icon-category img{
+    width: 70%;
+  }
+
+  .navbar-middle p{
+    font-size: 30px;
+  }
+}

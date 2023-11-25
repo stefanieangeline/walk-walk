@@ -1,0 +1,49 @@
+    :root {
+    --white: #ffffff;
+    --blue-base: #19A7CE;
+    --strong-blue: #0064D2;
+    --light-grey: #F6F7F7;
+    --shade-blue: #146C94;
+    --light-blue : #AFD3E2;
+    --grey : #D7DCE6;
+    --grey-dark: #63666c;
+    --other-blue: #0090FF;
+    --near-black: #1d1e1f;
+    --another-blue: #0A4D78;
+    --blue-cloudy : #358E9D;
+    
+}
+
+@font-face {
+    font-family: roboto-medium;
+    src: url(/jalan-jalan/assets/font/Roboto/Roboto-Medium.ttf);
+}
+
+@font-face {
+    font-family: roboto-bold;
+    src: url(/jalan-jalan/assets/font/Roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: roboto-light;
+    src: url(/jalan-jalan/assets/font/Roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: roboto-cons-medium;
+    src: url(/jalan-jalan/assets/font/Roboto_Condensed/static/RobotoCondensed-Medium.ttf);
+}
+
+@font-face {
+    font-family: roboto-cons-bold;
+    src: url(/jalan-jalan/assets/font/Roboto_Condensed/static/RobotoCondensed-Bold.ttf);
+}
+
+@font-face {
+    font-family: roboto-cons-light;
+    src: url(/jalan-jalan/assets/font/Roboto_Condensed/static/RobotoCondensed-Light.ttf);
+}
+@font-face {
+    font-family: roboto-cons-regular;
+    src: url(/jalan-jalan/assets/font/Roboto_Condensed/static/RobotoCondensed-Regular.ttf);
+}
