@@ -12,7 +12,8 @@
     width: 100vw;
     height: 100px;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
+    transition: 0.3s ease-in-out;
 }
 
 .nav-link hr {
@@ -86,6 +87,15 @@
     width: 40%;
     border: 1.5px solid var(--white);
     color: var(--white);
+}
+
+.scrolled {
+    background-color: var(--strong-blue);
+    box-shadow: 0px 0px 5px rgba(30, 30, 30, 0.5);
+}
+
+.scrolled .search-bar {
+    box-shadow: none;
 }
 
 #nav-search:focus{

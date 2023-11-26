@@ -267,10 +267,12 @@ body {
 
 .header-upper-box{
     width: 100%;
-    height: 13vh;
+    height: fit-content;
+    /* height: 13vh; */
     /* background-color: pink; */
     /* margin-left: 13px;
     margin-top: 8px; */
+    margin-bottom: 10px;
     border-radius: 22px;
     display: flex;
     flex-direction: row;
@@ -354,7 +356,7 @@ body {
 }
 
 .select-room-box{
-    
+
 }
 
 .select-room-txt{
@@ -480,7 +482,7 @@ body {
     font-family: roboto-cons-light;
     color:var(--blue-cloudy);
     font-size: 12px;
-}  
+}
 
 .star-rate-box{
     /* height: 5vh; */
@@ -523,7 +525,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     padding: 40px;
-} 
+}
 
 .header-room{
     font-family: roboto-cons-bold;
@@ -628,15 +630,15 @@ body {
 .add-on{
     width: 18vw;
     height: 67vh;
-    margin-top: 7px;    
+    margin-top: 7px;
     /* background-color: lightcoral; */
 }
 
 .person{
     width: 10vw;
     height: 67vh;
-    margin-top: 7px;  
-} 
+    margin-top: 7px;
+}
 
 .pic-room-detail{
     width: 19vw;
