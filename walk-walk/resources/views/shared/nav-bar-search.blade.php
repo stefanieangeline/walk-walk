@@ -12,7 +12,7 @@
 <body>
     <div class="nav-bar" id="nav-bar">
         <div class="left-side">
-            <a href="/jalan-jalan" class="nav-link">
+            <a href="{{route("home")}}" class="nav-link">
                 <img src="assets/logo/jalan-jalan.svg" class="logo">
             </a>
         </div>
@@ -23,8 +23,8 @@
             <img src="/assets/icon/search.svg" class="search-icon">
         </div>
         <div class="right-side">
-            <a href="" class="nav-link">Help</a>
-            <a href="" class="nav-link">
+            <a href="{{route("help")}}" class="nav-link">Help</a>
+            <a href="{{route("account")}}" class="nav-link">
                 <img src="assets/icon/user.svg">
             </a>
         </div>
