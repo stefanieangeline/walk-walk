@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\FlightController;
+use App\Http\Controllers\HelpController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\LoginController;
@@ -27,3 +29,7 @@ Route::get('/hotels', [HotelController::class, 'index'])->name('hotels');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
 Route::get('/sign-in', [SigninController::class, 'index'])->name('sign-in');
+
+Route::get('/account', [AccountController::class,'index'])->name('account');
+
+Route::get('/help', [HelpController::class,'index'])->name('help');
