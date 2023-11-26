@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigation bar</title>
-    <link rel="stylesheet" href="css/nav-bar.css">
-    <link rel="stylesheet" href="css/font-and-color.css">
+    <link rel="stylesheet" href="/css/nav-bar.css">
+    <link rel="stylesheet" href="/css/font-and-color.css">
     <script src="js/nav-bar.js" defer=""></script>
 </head>
 <body>

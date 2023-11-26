@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\FlightController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HotelController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SigninController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class,'index'])->name('home');
+
+Route::get('/flights', [FlightController::class, 'index'])->name('flights');
+
+Route::get('/hotels', [HotelController::class, 'index'])->name('hotels');
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+
+Route::get('/sign-in', [SigninController::class, 'index'])->name('sign-in');

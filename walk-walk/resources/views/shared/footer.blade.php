@@ -10,10 +10,10 @@
 </head>
 <body>
     <footer class="bg-footer">
-        
+
         <div class="footer">
             <div class="logoFooter">
-                <img src="/jalan-jalan/assets/logo/jalan-jalan.svg" alt="">
+                <img src="/assets/logo/jalan-jalan.svg" alt="">
                 <li><a>Contact us on :</a></li>
                 <li><a>Email: jalan-jalan@gmail.com</a></li>
             </div>
@@ -25,7 +25,7 @@
                     <li><a>About Us</a></li>
                     <li><a>Privacy Policy</a></li>
                 </ul>
-            
+
                 <ul class="footer-Destinations">
                     <li><h2  class="title">Destinations</h2></li>
                     <li><a>Countries</a></li>
@@ -46,7 +46,7 @@
         </div>
 
         <hr class="line">
-        <p class="text-footer">Copyright © 2023 Jalan-Jalan and its related entities. All Rights Reserved. © 2023 Jalan-Jalan’s licensor entities. 
+        <p class="text-footer">Copyright © 2023 Jalan-Jalan and its related entities. All Rights Reserved. © 2023 Jalan-Jalan’s licensor entities.
         All Rights Reserved.</p>
     </footer>
 </body>

@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/jalan-jalan/css/hotels.css">
-    <script src="js/hotel.js" defer=""></script>
+    <link rel="stylesheet" href="/css/hotels.css">
+    <script src="/js/hotel.js" defer=""></script>
     <title>Hotels</title>
 </head>
 <body>
-    <?php include "nav-bar.php" ?>
+    @include("shared.nav-bar")
     <div class="background">
         <div class="box-choice">
             <div class="dest-box box-width">

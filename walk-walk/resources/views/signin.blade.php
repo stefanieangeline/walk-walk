@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/signin.css">
-    <link rel="stylesheet" href="css/nav-bar.css">
+    <link rel="stylesheet" href="/css/signin.css">
+    <link rel="stylesheet" href="/css/nav-bar.css">
     <title>Sign In</title>
 </head>
 <body>
@@ -24,10 +24,10 @@
         <input type="submit" value="Register" id="register" onclick="register_account()">
         <!-- <p class="error_message_password">Password length must be 8 or more</p>
         <p class="error_message_email">Email not valid</p> -->
-        <p class="log_in_button">Have an account? </p><a href="login.php" class="log_in_button_click">Click here to sign in</a>
+        <p class="log_in_button">Have an account? </p><a href="{{route('login')}}" class="log_in_button_click">Click here to sign in</a>
 
        </div>
-       
+
 
     </div>
     <div class="signin_success" id="signin_success" onclick="pindah_page()">
@@ -35,10 +35,7 @@
         <p class="awesome">Awesome</p>
         <p>Your Account has been successfully created </p>
         <p class="click_anywhere">Click anywhere to continue</p>
-        
-
-
     </div>
-    <script src="/jalan-jalan/js/signin.js"></script>
+    <script src="/js/signin.js"></script>
 </body>
 </html>

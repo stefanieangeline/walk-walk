@@ -6,7 +6,7 @@
     <title>Navigation bar</title>
     <link rel="stylesheet" href="css/nav-bar.css">
     <link rel="stylesheet" href="css/font-and-color.css">
-    <script src="js/nav-bar.js" defer=""></script>
+    <script src="/js/nav-bar.js" defer=""></script>
 </head>
 <body>
     <div class="nav-bar">
@@ -19,11 +19,11 @@
             <form action="">
                 <input type="text" id="nav-search" name="search" class="search-bar" placeholder="Search destination...">
             </form>
-            <img src="/jalan-jalan/assets/icon/search.svg" class="search-icon">
+            <img src="/assets/icon/search.svg" class="search-icon">
         </div>
         <div class="right-side">
-            <a href="/jalan-jalan/help.php" class="nav-link">Help</a>
-            <a href="/jalan-jalan" class="nav-link">
+            <a href="" class="nav-link">Help</a>
+            <a href="" class="nav-link">
                 <img src="assets/icon/user.svg">
             </a>
         </div>

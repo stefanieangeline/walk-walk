@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/jalan-jalan/css/home.css">
-    <link rel="shortcut icon" href="/jalan-jalan/assets/logo/logo-icon.svg" type="image/svg">
-    <script src="js/home.js" defer=""></script>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="shortcut icon" href="/assets/logo/logo-icon.svg" type="image/svg">
+    <script src="/js/home.js" defer=""></script>
     <title>Jalan-jalan | Home</title>
 </head>
 <body>
-    <?php include "nav-bar-search.php"?>=
+    @include("shared.nav-bar-search")
     <div class="opening">
         <img class="background-image" src="https://drive.google.com/uc?export=view&id=1jt8Rg0c4b5hp7X3-2Ib6osexfsijso2g">
         <div class="main-container">
@@ -118,6 +118,6 @@
             </div>
         </div>
     </div>
-    <?php include "footer.php"?>
+    @include("shared.footer")
 </body>
 </html>

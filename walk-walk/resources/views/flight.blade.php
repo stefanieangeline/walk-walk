@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flight</title>
-    <link rel="stylesheet" href="/jalan-jalan/css/flight.css">
-    <link rel="stylesheet" href="/jalan-jalan/css/home.css">
+    <link rel="stylesheet" href="/css/flight.css">
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-    <?php include "nav-bar.php" ?>
+    @include("shared.nav-bar")
     <div class="bg-flight">
         <div class="box-choice">
             <div class="top">
@@ -41,7 +41,7 @@
                 <div class="leaving_from">
                     <img src="assets/icon/flight_take offf.svg">
                     <input type="text" placeholder="Leaving from" class="leaving">
-                </div> 
+                </div>
 
                 <div class="to">
                     <img src="assets/icon/panah_kanan_bulet.svg">
@@ -50,7 +50,7 @@
                 <div class="going_to">
                     <img src="assets/icon/flight_landingg.svg">
                     <input type="text" placeholder="Going to" class="leaving">
-                </div> 
+                </div>
 
                 <div class="date">
                     <!-- <p class="text_date">March 2, 2023</p> -->
@@ -62,7 +62,7 @@
                 <div class="search_button">
                     <img src="assets/icon/searchbutton.svg">
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
 
@@ -71,7 +71,7 @@
             <h2 class="titlee">Airline</h2>
             <div class="sortByFlight">
                 <div class="opt-flight">
-                    <input type="checkbox" class="button"> <img src="assets/icon/sporeAirlane.svg" class="gambar"> 
+                    <input type="checkbox" class="button"> <img src="assets/icon/sporeAirlane.svg" class="gambar">
                 </div>
                 <div class="opt-flight">
                     <input type="checkbox" class="button"> <img src="assets/icon/garuda.svg" class="gambar">
@@ -80,7 +80,7 @@
                     <input type="checkbox" class="button"><img src="assets/icon/jejuair.svg" class="gambar">
                 </div>
                 <div class="opt-flight">
-                    <input type="checkbox" class="button"><img src="assets/icon/jetstar.svg" class="gambar"> 
+                    <input type="checkbox" class="button"><img src="assets/icon/jetstar.svg" class="gambar">
                 </div>
                 <div class="opt-flight">
                     <input type="checkbox" class="button"><img src="assets/icon/lionair.svg" class="gambar">
@@ -115,7 +115,7 @@
                     <p>Lowest Price</p>
                     <p class="price_number">Rp.1.450.0000,00</p>
                 </div>
-                
+
                 <div class="divider_price"></div>
 
                 <div class="sorting_price">
@@ -127,7 +127,7 @@
                 </div>
             </div>
 
-            
+
             <div class="flight_detail">
                 <div class="airline_logo">
                     <img src="assets/icon/jetstar.svg" alt="">
@@ -151,7 +151,7 @@
                 <div class="submit_flight">
                     <input type="submit" class="flight_button" value="Select">
                 </div>
-                
+
 
             </div>
             <div class="flight_detail">
@@ -177,7 +177,7 @@
                 <div class="submit_flight">
                     <input type="submit" class="flight_button" value="Select">
                 </div>
-                
+
 
             </div>
             <div class="flight_detail">
@@ -203,7 +203,7 @@
                 <div class="submit_flight">
                     <input type="submit" class="flight_button" value="Select">
                 </div>
-                
+
 
             </div>
             <div class="flight_detail">
@@ -229,7 +229,7 @@
                 <div class="submit_flight">
                     <input type="submit" class="flight_button" value="Select">
                 </div>
-                
+
 
             </div>
             <div class="flight_detail">
@@ -255,7 +255,7 @@
                 <div class="submit_flight">
                     <input type="submit" class="flight_button" value="Select">
                 </div>
-                
+
 
             </div>
             <div class="flight_detail">
@@ -281,7 +281,7 @@
                 <div class="submit_flight">
                     <input type="submit" class="flight_button" value="Select">
                 </div>
-                
+
 
             </div>
             <div class="flight_detail">
@@ -307,7 +307,7 @@
                 <div class="submit_flight">
                     <input type="submit" class="flight_button" value="Select">
                 </div>
-                
+
 
             </div>
             <div class="flight_detail">
@@ -333,24 +333,9 @@
                 <div class="submit_flight">
                     <input type="submit" class="flight_button" value="Select">
                 </div>
-                
-
             </div>
-
-
-
-
-
-
-
-
-
         </div>
     </div>
-    <?php include "footer.php" ?>
-
-    
-
-
+    @include("shared.footer")
 </body>
 </html>

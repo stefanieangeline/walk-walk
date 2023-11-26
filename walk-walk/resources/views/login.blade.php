@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/jalan-jalan/css/login.css">
-    <link rel="stylesheet" href="/jalan-jalan/css/nav-bar.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/nav-bar.css">
     <title>Sign In</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
         <input type="email" placeholder="Email">
         <input type="password" placeholder="Password">
         <input type="submit" value="Log In" id="register">
-        <p class="log_in_button">Don't have an account? </p><a href="signin.php" class="log_in_button_click">Click here to sign Up</a>
+        <p class="log_in_button">Don't have an account? </p><a href="{{route('sign-in')}}" class="log_in_button_click">Click here to sign Up</a>
 
        </div>
 
