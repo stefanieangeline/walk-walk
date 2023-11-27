@@ -5,6 +5,7 @@ use App\Http\Controllers\FlightController;
 use App\Http\Controllers\HelpController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HotelController;
+use App\Http\Controllers\HotelPaymentController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SigninController;
 use Illuminate\Support\Facades\Route;
@@ -35,3 +36,5 @@ Route::get('/sign-in', [SigninController::class, 'index'])->name('sign-in');
 Route::get('/account', [AccountController::class,'index'])->name('account');
 
 Route::get('/help', [HelpController::class,'index'])->name('help');
+
+Route::get('/hotel-payment', [HotelPaymentController::class, 'index'])->name('hotel-payment');
