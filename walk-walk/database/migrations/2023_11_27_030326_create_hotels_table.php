@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('FacilityHotel');
             $table->string('StatusHotel');
             $table->integer('StarHotel');
+            // $table->primary('IDHotel')
 
         });
     }
