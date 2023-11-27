@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('add_ons', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('IDAddOns');
+            $table->string('Descriptions');
         });
     }
 

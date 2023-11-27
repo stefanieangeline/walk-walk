@@ -14,8 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('IDUser');
+            $table->string('NameUser');
+            $table->string('EmailUser')->unique();
+            $table->string('NoTelpUser');
+            $table->date('DOBUser');
+            $table->string('PasswordUser');
+            $table->foreignId('NationalityUser')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDCountry')->on('countries');
         });
     }
 

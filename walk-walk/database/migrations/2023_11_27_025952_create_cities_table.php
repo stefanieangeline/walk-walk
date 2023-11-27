@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cities', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('IDCity');
+            $table->string('NameCity');
+            $table->foreignId('IDCountry')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDCountry')->on('countries');
         });
     }
 

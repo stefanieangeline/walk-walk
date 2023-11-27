@@ -14,8 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('passengers', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('IDPassenger');
+            $table->string('NamePassenger');
+            $table->string('GenderPassenger');
+            $table->date('DOBPassenger');
+            $table->string('PassportNoPassenger');
+            $table->string('AgeCategoryPassenger');
+            $table->foreignId('NationalityPassenger')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDCountry')->on('countries');
         });
     }
 

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use PhpParser\Node\NullableType;
 
 return new class extends Migration
 {
@@ -14,8 +15,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('room_facility_details', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('IDDetailFacility');
+            $table->string('NameFacility');
         });
     }
 

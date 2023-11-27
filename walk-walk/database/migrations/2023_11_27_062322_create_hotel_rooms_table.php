@@ -14,8 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('hotel_rooms', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->foreignId('IDHotel')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDHotel')->on('hotels');
+
+            $table->string('TypeRoom');
+            $table->integer('CapacityRoom');
+            $table->integer('PriceRoom');
+            $table->foreignId('IDAddOns')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDAddOns')->on('add_ons');
+            $table->integer('WideRoom');
+            $table->primary(['IDHotel','TypeRoom']);
         });
     }
 
