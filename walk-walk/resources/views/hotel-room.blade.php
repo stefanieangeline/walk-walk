@@ -147,7 +147,7 @@
 
         <div class="room-types-box">
             <div class="header-types-box">
-                <p class="amount-types">4 room types</p>
+                <p class="amount-types">3 room types</p>
                 <p class="info">Price do not include taxes & fees</p>
             </div>
             <div class="room-type-box">

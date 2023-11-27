@@ -27,7 +27,7 @@
                     </div>
                     <div class="date-and-dest">
                         <div class="date">
-                            <p>Thursday, 2 March 2023</p>
+                            <p>Thursday, 3 March 2023</p>
                         </div>
                         <div class="dest">
                             <div class="hours">

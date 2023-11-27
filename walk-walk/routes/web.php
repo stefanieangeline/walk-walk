@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\EticketController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\HelpController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\HotelPaymentController;
+use App\Http\Controllers\HotelRoomController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SigninController;
 use Illuminate\Support\Facades\Route;
@@ -38,3 +40,7 @@ Route::get('/account', [AccountController::class,'index'])->name('account');
 Route::get('/help', [HelpController::class,'index'])->name('help');
 
 Route::get('/hotel-payment', [HotelPaymentController::class, 'index'])->name('hotel-payment');
+
+Route::get('/eticket', [EticketController::class,'index'])->name('e-ticket');
+
+Route::get('/hotel-room', [HotelRoomController::class, 'index'])->name('hotel-room');
