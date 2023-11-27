@@ -64,14 +64,7 @@
     </div>
 
     <div class="content">
-        <!-- <div class="bg-content">
-            <h2>Scan QR Code below to finish your payment</h2>
-            <img src="assets/icon/barcode.svg" alt="">
-            <h2>Rp.2.980.000</h2>
-            <div class="input">
-                <input type="text" name="Gender" placeholder="Input Your OTP Code" required>
-            </div>
-        </div> -->
+        @include("shared.e-ticket-flight")
     </div>
     @include("shared.footer")
 

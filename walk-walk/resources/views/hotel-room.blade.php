@@ -147,7 +147,7 @@
 
         <div class="room-types-box">
             <div class="header-types-box">
-                <p class="amount-types">3 room types</p>
+                <p class="amount-types">4 room types</p>
                 <p class="info">Price do not include taxes & fees</p>
             </div>
             <div class="room-type-box">
@@ -191,11 +191,28 @@
                         </div>
                     </div>
                     <div class="line-blue"></div>
-                    <div class="add-on"></div>
+                    <div class="add-on">
+                        <p class="add-on-txt">Add on(s)</p>
+                        <div class="adds-box">
+                            <img src="/assets/icon/SpoonFork.svg" class="adds-icon">
+                            <p class="adds-txt">Include Breakfast</p>
+                        </div>
+                        <div class="adds-box">
+                            <img src="/assets/icon/wifi.svg" class="adds-icon">
+                            <p class="adds-txt">Free Wi-Fi</p>
+                        </div>
+                    </div>
                     <div class="line-blue"></div>
-                    <div class="person"></div>
+                    <div class="person">
+                        <img src="/assets/icon/guest.svg" class="person-icon">
+                        <p class="person-txt">2</p>
+                    </div>
                     <div class="line-blue"></div>
-                    <div class="price"></div>
+                    <div class="price">
+                        <p class="big-price">Rp 325.000</p>
+                        <p class="tax-text">After tax Rp 423.076 per room</p>
+                        <p class="reserve-button">Reserve</p>
+                    </div>
                 </div>
             </div>
         </div>

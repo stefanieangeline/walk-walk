@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\CustomerHotelDetailController;
 use App\Http\Controllers\EticketController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\HelpController;
@@ -44,3 +45,5 @@ Route::get('/hotel-payment', [HotelPaymentController::class, 'index'])->name('ho
 Route::get('/eticket', [EticketController::class,'index'])->name('e-ticket');
 
 Route::get('/hotel-room', [HotelRoomController::class, 'index'])->name('hotel-room');
+
+Route::get('/customer-hotel-detail', [CustomerHotelDetailController::class, 'index'])->name('customer-hotel-detail');

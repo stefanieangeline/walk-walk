@@ -19,7 +19,7 @@
 .e-ticket {
   display: flex;
   flex-direction: column;
-  max-width: 80vw;
+  width: 85%;
   height: auto;
   border-radius: 10px;
   background-color: var(--strong-blue)

@@ -355,9 +355,6 @@ body {
     margin-right: 20px;
 }
 
-.select-room-box{
-
-}
 
 .select-room-txt{
     background-color: var(--another-blue);
@@ -413,8 +410,7 @@ body {
 }
 
 .up-pic-one{
-    height: 33,33%;
-    width: 100%;
+    width: 33.33%;
     border-radius: 22px;
     padding-right: 5px;
     object-fit: cover;
@@ -425,8 +421,8 @@ body {
 }
 
 .down-pic-one{
-    height: 33,33%;
-    width: 100%;
+    width: 33.33%;
+    /* width: 100%; */
     border-radius: 22px;
     padding-right: 5px;
     object-fit: cover;
@@ -574,6 +570,10 @@ body {
     margin-top: 5px;
     border-radius: 10px;
     padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .type-name{
@@ -601,7 +601,7 @@ body {
 }
 
 .bottom-box-type{
-    width: 100%;
+    width: 98.5%;
     /* height: 77vh; */
     /* margin-top: 5px;
     margin-left: 8px; */
@@ -638,8 +638,21 @@ body {
     width: 10vw;
     height: 67vh;
     margin-top: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.person-icon{
+    padding-top: 2px;
+    padding-bottom: 5px;
+}
+
+.person-txt{
+    font-family: roboto-cons-regular;
+    color: var(--shade-blue);
+    font-size: 18px;
+}
 .pic-room-detail{
     width: 19vw;
     height: 43vh;
@@ -693,16 +706,16 @@ body {
 
 .facil-box{
     width: 19vw;
-    height: 5vh;
-    background-color:red ;
+    /* height: 5vh; */
+    /* background-color:red ; */
     margin-top: 2px;
     display: flex;
     flex-direction: row;
 }
 
 .facil-icon{
-    width: 2vw;
-    height: 1vh;
+    width: 1.4vw;
+    /* height: 1.5vh; */
 }
 
 .facil-text{
@@ -713,10 +726,73 @@ body {
 }
 
 .add-on-txt{
+    font-family: roboto-cons-bold;
+    color: var(--shade-blue);
+    padding-left: 12px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+
+.adds-box{
+    width: 17vw;
+    /* height: 5vh; */
+    /* background-color:red ; */
+    margin-top: 2px;
+    margin-left: 12px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.adds-icon{
+    width: 1.4vw;
+    /* height: 1.5vh; */
+}
+
+.adds-txt{
     font-family: roboto-cons-regular;
     color: var(--shade-blue);
     padding-left: 7px;
     font-size: 18px;
+}
+
+.price{
+    width: 32vw;
+    /* height: 67vh; */
+    margin-top: 7px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    /* align-items: center; */
+    /* background-color: aqua; */
+}
+
+.big-price{
+    font-family: roboto-cons-bold;
+    color: var(--shade-blue);
+    font-size: 25px;
+    /* background-color: var(--shade-blue);
+    padding: 15px 25px; */
+    /* border-radius: 15px; */
+}
+
+.tax-text{
+    font-family: roboto-cons-regular;
+    padding-top: 1px;
+    padding-bottom: 5px;
+    color: var(--grey);
+}
+
+.reserve-button{
+    font-family: roboto-cons-bold;
+    color: white;
+    font-size: 20px;
+    background-color: var(--another-blue);
+    padding: 10px 30px; 
+    margin-bottom: 5px;
+    border-radius: 12px; 
 }
 
 /* =================== ROOM SERVICE & AMINITY =================== */

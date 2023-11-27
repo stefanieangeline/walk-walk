@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-ticket</title>
-    <link rel="stylesheet" href="/jalan-jalan/css/e-ticket-flight.css">
-    <link rel="stylesheet" href="/jalan-jalan/css/font-and-color.css">
+    <link rel="stylesheet" href="/css/e-ticket-flight.css">
+    <link rel="stylesheet" href="/css/font-and-color.css">
     <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
 
 </head>
@@ -16,14 +16,14 @@
                 <h3>E-Ticket</h3>
             </div>
             <div class="header-logo">
-                <img src="/jalan-jalan/assets/logo/jalan-jalan.svg" alt="">
+                <img src="/assets/logo/jalan-jalan.svg" alt="">
             </div>
         </div>
         <div class="ticket-detail">
             <div class="ticket-detail-header">
                 <div class="ticket-detail-header-left">
                     <div class="airline-logo">
-                        <img src="/jalan-jalan/assets/logo/LogoAirline1.png" alt="logoAirline">
+                        <img src="/assets/logo/LogoAirline1.png" alt="logoAirline">
                     </div>
                     <div class="date-and-dest">
                         <div class="date">
@@ -36,7 +36,7 @@
                                 <p>16.30</p>
                             </div>
                             <div class="point-img">
-                                <img src="/jalan-jalan/assets/icon/flight-point.png" alt="point">
+                                <img src="/assets/icon/flight-point.png" alt="point">
                             </div>
                             <div class="dest-airport">
                                 <div class="from">
