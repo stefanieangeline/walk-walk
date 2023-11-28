@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('airports', function (Blueprint $table) {
             $table->id('IDAirport');
+            $table->string('CodeAirport');
             $table->string('NameAirport');
             $table->foreignId('IDCity')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDCity')->on('cities');
             $table->timestamps();
