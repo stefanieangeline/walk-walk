@@ -4,20 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Hotel Detail</title>
+    <link rel="stylesheet" href="/css/font-and-color.css">
     <link rel="stylesheet" href="/css/customer-hotel-detail.css">
     <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="bg-pd">
         <div class="left-side">
-            <div class="left-left">
-                <i class="fa-solid fa-chevron-left"></i>
-            </div>
-            <h3>Back</h3>
+            <a href="#" class="left-a">
+                <div class="left-left">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+                <div class="left-right">
+                    <p>Back</p>
+                </div>
+            </a>
         </div>
         <div class="mid">
             <div class="step1">
-                
+                <div class="info1">
+                    <div class="circle">
+                        <p>1</p>
+                    </div>
+                    <p>Your Selection</p>
+                </div>
+            </div>
+            <div class="arrow1">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="step2">
+                <div class="info1">
+                    <div class="circle">
+                        <p>2</p>
+                    </div>
+                    <p>Room and Payment Details</p>
+                </div>
+            </div>
+            <div class="arrow1">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="step3">
+                <div class="info1">
+                    <div class="circle">
+                        <p>3</p>
+                    </div>
+                    <p>Final Step</p>
+                </div>
             </div>
         </div>
         

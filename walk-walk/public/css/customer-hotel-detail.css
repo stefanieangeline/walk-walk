@@ -33,20 +33,39 @@
   .left-side{
     display: flex;
     color: white;
-    font-family: rooto-cons-regular;
+    font-family: roboto-cons-regular;
+  }
+
+  .left-a{
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--white);
+    gap: 10px;
   }
 
   .mid {
     display: flex;
     align-items: center;
-    position: absolute;
-    width: 75%;
-    left: 11.5%;
-    top: 5%;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 50px;
   }
 
+  .info1{
+    padding: 10px 50px 10px 50px;
+    border-radius: 30px;
+    background-color: var(--white);
+    position: relative;
+  }
 
+  .circle{
+    position: absolute;
+    top: -8px;
+    left: -15px;
+    padding: 20px 25px 20px 25px;
+    border-radius: 50%;
+    background-color: var(--strong-blue);
+  }
   
   .right-side {
     display: flex;
