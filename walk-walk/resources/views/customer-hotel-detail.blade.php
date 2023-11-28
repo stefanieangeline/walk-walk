@@ -26,7 +26,7 @@
                     <div class="circle">
                         <p>1</p>
                     </div>
-                    <p>Your Selection</p>
+                    <p class="info-info1">Your Selection</p>
                 </div>
             </div>
             <div class="arrow1">
@@ -37,7 +37,7 @@
                     <div class="circle">
                         <p>2</p>
                     </div>
-                    <p>Room and Payment Details</p>
+                    <p class="info-info1">Room and Payment Details</p>
                 </div>
             </div>
             <div class="arrow1">
@@ -48,7 +48,7 @@
                     <div class="circle">
                         <p>3</p>
                     </div>
-                    <p>Final Step</p>
+                    <p class="info-info1" >Final Step</p>
                 </div>
             </div>
         </div>
@@ -68,8 +68,44 @@
     <div class="content">
         <div class="left-content">
             <div class="left1">
-                <p>tes</p>
-                
+                <div class="hotel-pic">
+                    <img src="assets/icon/Arunika/Deluxe/1.jpg" alt="hotelroom">
+                </div>
+                <div class="hotel-detail">
+                    <div class="top-hotel-detail">
+                        <div class="hotel-name">
+                            <p>Arunika Hotel and Spa</p>
+                        </div>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="mid-hotel-detail">
+                        <div class="type-room">
+                            <p>Deluxe Room</p>
+                        </div>
+                        <div class="type-room-detail">
+                            <div class="room-capacity">
+                                <i class="fa-solid fa-person"></i>
+                                <p>2 Adults</p>
+                            </div>
+                            <div class="bed-type">
+                                <i class="fa-solid fa-bed"></i>
+                                <p>1 King Size Bed</p>
+                            </div>
+                            <div class="room-area">
+                                <i class="fa-solid fa-ruler-vertical"></i>
+                                <p>30 m<sup>2</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-hotel-detail">
+
+                    </div>
+                </div>
             </div>
 
             <div class="left2">
@@ -106,7 +142,6 @@
         </div>
 
         <div class="bigContainer-right">
-            <!-- <h3>halo</h3> -->
             <div class="right-content">
                 <h2>Price Detail</h2>
                 <div class="person">
@@ -155,6 +190,6 @@
         
 
     </div>
-    @include("shared.footer");
+    @include("shared.footer")
 </body>
 </html>

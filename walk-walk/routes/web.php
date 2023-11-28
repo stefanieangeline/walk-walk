@@ -47,3 +47,11 @@ Route::get('/eticket', [EticketController::class,'index'])->name('e-ticket');
 Route::get('/hotel-room', [HotelRoomController::class, 'index'])->name('hotel-room');
 
 Route::get('/customer-hotel-detail', [CustomerHotelDetailController::class, 'index'])->name('customer-hotel-detail');
+
+Route::get('/payment-barcode', function(){
+    return view('payment-barcode');
+});
+
+Route::get('/passanger-detail', function(){
+    return view('passanger-detail');
+});

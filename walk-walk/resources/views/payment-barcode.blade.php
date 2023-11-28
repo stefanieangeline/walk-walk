@@ -4,63 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/jalan-jalan/css/font-and-color.css">
-    <link rel="stylesheet" href="/jalan-jalan/css/payment-barcode.css">
-    <link rel="stylesheet" href="/jalan-jalan/css/nav-bar.css">
+    <link rel="stylesheet" href="css/font-and-color.css">
+    <link rel="stylesheet" href="/css/payment-barcode.css">
+    <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="/css/nav-bar.css"> -->
 </head>
 <body>
     <div class="bg-pd">
         <div class="left-side">
-            <img src="assets/icon/nextButton.svg" alt="">
-            <h3>Back</h3>
+            <a href="#" class="left-a">
+                <div class="left-left">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+                <div class="left-right">
+                    <p>Back</p>
+                </div>
+            </a>
         </div>
         <div class="mid">
-            <div class="step">
-                <div class="circle">
-                    <p>1</p>
-                </div>
-                <div class="circle1">
+            <div class="step1">
+                <div class="info1">
+                    <div class="circle_finish">
+                        <p>1</p>
+                    </div>
                     <p>Flight Selection</p>
                 </div>
-                <img src="assets/icon/nextButton.svg" alt="">
             </div>
-
-            <div class="step">
-                <div class="circle2">
-                    <p>2</p>
-                </div>
-                <div class="circle1-2">
-                    <p>Passanger Detail</p>
-                </div>
-                <img src="assets/icon/nextButton.svg" alt="">
+            <div class="arrow1">
+                <i class="fa-solid fa-chevron-right"></i>
             </div>
-
-            <div class="step">
-                <div class="circle3">
-                    <p>3</p>
+            <div class="step2">
+                <div class="info1">
+                    <div class="circle_finish">
+                        <p>2</p>
+                    </div>
+                    <p>Passanger Details</p>
                 </div>
-                <div class="circle1-3">
+            </div>
+            <div class="arrow1">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="step3">
+                <div class="info1">
+                    <div class="circle_finish">
+                        <p>3</p>
+                    </div>
                     <p>Payment Detail</p>
                 </div>
-                <img src="assets/icon/nextButton.svg" alt="">
             </div>
-
-             <div class="step">
-                <div class="circle4">
-                    <p>4</p>
-                </div>
-                <div class="circle1-4">
+            <div class="arrow1">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="step4">
+                <div class="info1">
+                    <div class="circle">
+                        <p>4</p>
+                    </div>
                     <p>E-Ticket</p>
-                </div>   
-                <img src="assets/icon/nextButton.svg" class="arrow4">   
+                </div>
             </div>
         </div>
         
         <div class="right-side">
-            <a href="/jalan-jalan/help.php" class="nav-link">Help</a>
-            <a href="/jalan-jalan/myaccount.php" class="nav-link">
-                <img src="assets/icon/user.svg">
-            </a>
+            <div class="left-right">
+                <a href="/jalan-jalan/help.php" class="nav-link">Help</a>
+            </div>
+            <div class="right-right">
+                <a href="/jalan-jalan/myaccount.php" class="nav-link">
+                    <img src="assets/icon/user.svg">
+                </a>
+            </div>
         </div>
     </div>
 
@@ -76,7 +89,7 @@
         
 
     </div>
-    <?php include "footer.php" ?>
+    @include("shared.footer")
     
 
 
