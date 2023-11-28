@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreign(['IDHotel','TypeRoom'])->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references(['IDHotel','TypeRoom'])->on('hotel_rooms');
             $table->string('NameFacilityRoom')->unique();
             $table->primary(['IDHotel','TypeRoom','NameFacilityRoom']);
-            // $table->timestamps();
+            $table->timestamps();
         });
     }
 

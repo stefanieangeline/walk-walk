@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignId('IDAddOns')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDAddOns')->on('add_ons');
             $table->integer('WideRoom');
             $table->primary(['IDHotel','TypeRoom']);
+            $table->timestamps();
         });
     }
 

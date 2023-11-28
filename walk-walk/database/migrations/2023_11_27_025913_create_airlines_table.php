@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('IDAirline');
             $table->string('NameAirline');
             $table->boolean('Status');
+            $table->timestamps();
         });
     }
 

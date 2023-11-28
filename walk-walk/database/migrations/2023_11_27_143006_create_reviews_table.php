@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('IDUser')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDUser')->on('users');
             $table->string('Description',2000);
             $table->decimal('Rating');
+            $table->timestamps();
         });
     }
 

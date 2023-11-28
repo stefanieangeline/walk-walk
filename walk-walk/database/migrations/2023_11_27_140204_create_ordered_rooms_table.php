@@ -22,8 +22,7 @@ return new class extends Migration
             $table->date('CheckInDate');
             $table->date('CheckOutDate');
             $table->boolean('Status');
-
-
+            $table->timestamps();
         });
     }
 

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->date('DOBUser');
             $table->string('PasswordUser');
             $table->foreignId('NationalityUser')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDCountry')->on('countries');
+            $table->timestamps();
         });
     }
 

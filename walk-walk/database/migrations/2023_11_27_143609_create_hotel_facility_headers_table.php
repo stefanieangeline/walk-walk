@@ -14,10 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('hotel_facility_headers', function (Blueprint $table) {
-           
+
             $table->foreignId('IDHotel')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDHotel')->on('hotels');
             $table->foreignId('IDDetailFacilityHotel')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDDetailFacilityHotel')->on('hotel_facility_details');
             $table->primary(['IDHotel','IDDetailFacilityHotel']);
+            $table->timestamps();
         });
     }
 

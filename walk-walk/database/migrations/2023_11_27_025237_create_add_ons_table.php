@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('add_ons', function (Blueprint $table) {
             $table->id('IDAddOns');
             $table->string('Descriptions');
+            $table->timestamps();
         });
     }
 

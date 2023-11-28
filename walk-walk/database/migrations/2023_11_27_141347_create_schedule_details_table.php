@@ -21,6 +21,7 @@ return new class extends Migration
             $table->double('Price');
             $table->integer('Seat');
             $table->primary(['IDSchedule','Class']);
+            $table->timestamps();
         });
     }
 

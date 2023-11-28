@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('IDAirport')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDAirport')->on('airports');
             $table->foreignId('IDTenants')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDTenants')->on('airport_tenants_details');
             $table->primary(['IDAirport','IDTenants']);
+            $table->timestamps();
         });
     }
 

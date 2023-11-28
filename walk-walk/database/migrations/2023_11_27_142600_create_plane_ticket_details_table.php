@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('IDPlaneTicket')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDPlaneTicket')->on('plane_tickets');
             $table->foreignId('IDPassenger')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDPassenger')->on('passengers');
             $table->primary(['IDPlaneTicket','IDPassenger']);
+            $table->timestamps();
         });
     }
 

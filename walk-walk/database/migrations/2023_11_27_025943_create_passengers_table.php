@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('PassportNoPassenger');
             $table->string('AgeCategoryPassenger');
             $table->foreignId('NationalityPassenger')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDCountry')->on('countries');
+            $table->timestamps();
         });
     }
 

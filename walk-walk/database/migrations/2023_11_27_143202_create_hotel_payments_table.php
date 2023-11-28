@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('IDHotelPayment');
             $table->foreignId('IDOrder')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDOrder')->on('ordered_rooms');
             $table->foreignId('IDUser')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDUser')->on('users');
+            $table->timestamps();
         });
     }
 

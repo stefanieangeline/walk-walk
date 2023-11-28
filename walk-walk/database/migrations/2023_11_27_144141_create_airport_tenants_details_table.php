@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('IDTenants');
             $table->string('NameTenants');
             $table->string('CategoryTenants');
+            $table->timestamps();
         });
     }
 

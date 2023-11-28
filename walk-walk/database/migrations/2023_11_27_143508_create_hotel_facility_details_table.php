@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('hotel_facility_details', function (Blueprint $table) {
             $table->id('IDDetailFacilityHotel');
             $table->string('NameFacility');
+            $table->timestamps();
         });
     }
 

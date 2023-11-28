@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('IDSchedule')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDSchedule')->on('schedules');
             $table->date('BookDate');
             $table->boolean('Status');
+            $table->timestamps();
         });
     }
 
