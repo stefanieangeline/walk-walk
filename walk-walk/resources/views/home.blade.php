@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/home.css">
     <link rel="shortcut icon" href="/assets/logo/logo-icon.svg" type="image/svg">
+    <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
     <script src="/js/home.js" defer=""></script>
     <title>Jalan-jalan | Home</title>
 </head>
@@ -121,7 +122,30 @@
     <div class="content">
         <div class="recommendation">
             <p>Recommendation Hotels</p>
-            
+            <div class="wrapper">
+                <ul class="carousel">
+                    <li class="card">
+                        <div class="img-card">
+                            <img src="assets/icon/hotel1.jpg" alt="img-hotel">
+                        </div>
+                        <div class="hotel-info">
+                            <p>Sunway Hotel</p>
+                            <div class="mid-hotel-info">
+                                <div class="star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="dots"><i class="fa-solid fa-circle"></i></div>
+                                <div class="rating">
+                                    <img src="assets/icon/rating-star-blue.png" alt="rating-star">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     @include("shared.footer")
