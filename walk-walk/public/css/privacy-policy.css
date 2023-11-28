@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    /* overflow-x: hidden; */
+}
+
+body {
+    background-color: var(--blue-base);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.bg-pd {
+  display: flex;
+  /* flex-direction: row-reverse; */
+  justify-content: space-between;
+  width: 100vw;
+  height: 100px;
+  background-color: var(--blue-base);
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.left-side{
+    display: flex;
+    color: white;
+    font-family: roboto-cons-regular;
+    margin-right: 2%;
+  }
+
+  .left-a{
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--white);
+    gap: 10px;
+  }
+
+  .mid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .info1{
+    padding: 5px 50px 5px 50px;
+    border-radius: 30px;
+    background-color: var(--white);
+    position: relative;
+    color: var(--strong-blue);
+  }
+
+  .info1 p{
+      font-family: roboto-cons-bold;
+  }
+  
+  .circle_finish{
+    position: absolute;
+    top: -6px;
+    left: -15px;
+    padding: 20px 25px 20px 25px;
+    border-radius: 50%;
+    background-color: var(--strong-blue);
+    color: white;
+  }
+
+  .circle{
+    position: absolute;
+    top: -6px;
+    left: -15px;
+    padding: 20px 25px 20px 25px;
+    border-radius: 50%;
+    background-color: white;
+    color: var(--strong-blue);
+  }
+
+  .arrow1{
+    color: white;
+  }
+  
+  .right-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .step2, .step3, .step4{
+      margin-left: 1%;
+  }
+
+  
+/* 
+.navbar-container {
+    width: 100vw;
+    height: 100px;
+    background-color: var(--blue-base);
+    padding-right: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.left-side {
+    display: flex;
+    color: white;
+    font-family: roboto-cons-regular;
+    margin-right: 2%;
+}
+.left-a {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--white);
+    gap: 10px;
+}
+.navbar-title {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: roboto-cons-bold;
+}
+.navbar-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-right a{
+    color: white;
+    font-family: roboto-cons-bold;
+} */

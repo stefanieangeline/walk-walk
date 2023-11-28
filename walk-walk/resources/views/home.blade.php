@@ -118,6 +118,12 @@
             </div>
         </div>
     </div>
+    <div class="content">
+        <div class="recommendation">
+            <p>Recommendation Hotels</p>
+            
+        </div>
+    </div>
     @include("shared.footer")
 </body>
 </html>

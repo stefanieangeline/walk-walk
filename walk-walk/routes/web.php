@@ -55,3 +55,7 @@ Route::get('/payment-barcode', function(){
 Route::get('/passanger-detail', function(){
     return view('passanger-detail');
 });
+
+Route::get('/privacy-policy', function(){
+    return view('privacy-policy');
+});

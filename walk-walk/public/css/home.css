@@ -12,6 +12,8 @@
     height: fit-content;
     width: 100%;
     position: relative;
+    background-image: url('https://drive.google.com/uc?export=view&id=1jt8Rg0c4b5hp7X3-2Ib6osexfsijso2g');
+    background-size: cover;
 }
 
 .background-image {
@@ -294,4 +296,10 @@
 
 .rotate180deg {
     transform: rotate(-180deg);
+}
+
+.content{
+    background-color: var(--white);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }

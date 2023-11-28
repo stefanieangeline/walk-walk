@@ -82,6 +82,14 @@
     background-color: var(--strong-blue);
   }
 
+  .unfinished{
+    background-color: var(--white);
+  }
+
+  .unfinished p{
+    color: var(--strong-blue);
+  }
+
   .info-info1{
     color: var(--strong-blue);
   }
@@ -134,17 +142,58 @@
   .hotel-detail{
     display: flex;
     flex-direction: column;
+    gap: 30px;
   }
 
   .top-hotel-detail{
     display: flex;
+    align-items: center;
     gap: 20px;
+  }
+
+  .hotel-name p{
+    font-size: 30px;
+    color: var(--shade-blue);
+    font-family: roboto-cons-bold;
   }
 
   .star i{
     color: #FCB130;
   }
+
+  .type-room p{
+    font-size: 20px;
+    color: var(--shade-blue);
+    font-family: roboto-cons-bold;
+  }
+
+  .type-room-detail, .bottom-hotel-detail{
+    display: flex;
+  }
+
+  .type-room-detail p, .bottom-hotel-detail p{
+    color: var(--shade-blue);
+  }
   
+  .room-capacity, .bed-type, .room-area, .days-ordered, .quantity-room-ordered{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .bed-type, .room-area, .quantity-room-ordered{
+    padding-left: 20px;
+  }
+
+  .room-capacity i, .bed-type i, .room-area i, .days-ordered i, .quantity-room-ordered i{
+    font-size: 20px;
+    color: var(--blue-base);
+  }
+
+  .room-area p{
+    padding-bottom: 5px;
+  }
+
   .left2 {
     background-color: white;
     width: 100%;
@@ -170,7 +219,11 @@
   
   .left2 h5 {
     color: var(--shade-blue);
-    font-family: roboto-cons-regular;
+    font-family: roboto-cons-light;
+  }
+
+  .left2 span{
+    color: red;
   }
   
   /* stef edit */
@@ -318,11 +371,31 @@
   
   .fix-price {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     margin-top: 1%;
     color: var(--shade-blue);
     font-family: roboto-cons-regular;
+  }
+
+  .total-tax, .service, .tax{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1%;
+    color: var(--shade-blue);
+    font-family: roboto-cons-regular;
+    justify-content: space-between;
+  }
+
+  .vertical-line{
+    border-left: 1px solid var(--light-blue);
+  }
+
+  .tax-detail{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1%;
+    border-left: 1px solid var(--light-blue);
+    padding-left: 7px;
   }
   
   .tax {

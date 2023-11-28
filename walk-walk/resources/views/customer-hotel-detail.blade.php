@@ -45,7 +45,7 @@
             </div>
             <div class="step3">
                 <div class="info1">
-                    <div class="circle">
+                    <div class="circle unfinished">
                         <p>3</p>
                     </div>
                     <p class="info-info1" >Final Step</p>
@@ -94,24 +94,30 @@
                             </div>
                             <div class="bed-type">
                                 <i class="fa-solid fa-bed"></i>
-                                <p>1 King Size Bed</p>
+                                <p>1 King Bed Size</p>
                             </div>
                             <div class="room-area">
                                 <i class="fa-solid fa-ruler-vertical"></i>
-                                <p>30 m<sup>2</sup></p>
+                                <p>30 m <sup>2</sup></p>
                             </div>
                         </div>
                     </div>
                     <div class="bottom-hotel-detail">
-
+                        <div class="days-ordered">
+                            <i class="fa-regular fa-calendar-days"></i>
+                            <p>Thu, Mar 2 - Tue, Mar 7</p>
+                        </div>
+                        <div class="quantity-room-ordered">
+                            <i class="fa-solid fa-door-closed"></i>
+                            <p>1 room</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="left2">
-                <h2>Passanger 1 (Adult Ticket)</h2>
-                <h5>*Please make sure that you enter the name exactly as it appears on the ID that will be used when checking in</h5>
-                <h5>*Please make sure your ID is valid for at least six months after your date of travel</h5>
+                <h2>Guest Info</h2>
+                <h5><span>*</span> Guest names must match the valid ID which will be used at check-in</h5>
                 <div class="form">
                     <div class="name-section">
                         <h3>Full Name</h3>
@@ -120,19 +126,19 @@
                         </div>
                     </div>
                     <div class="gender-section">
-                            <h3>Gender</h3>
+                            <h3>Email</h3>
                             <div class="input">
-                                <input type="text" name="Gender" placeholder="ex: Female" required>
+                                <input type="Email" name="Email" placeholder="ex: stefanie@mail.com" required>
                             </div>
                     </div>
                     <div class="birth-section">
-                            <h3>Date of Birth</h3>
+                            <h3>Phone Number</h3>
                             <div class="input">
-                                <input type="date" class="InputBio" required>
+                                <input type="text" class="InputBio" placeholder="ex: 08123458695" required>
                             </div>
                     </div>
                     <div class="nationality-section">
-                            <h3>Nationality</h3>
+                            <h3>Country / Region of residence</h3>
                             <div class="input">
                             <input type="text" class="InputBio" placeholder="ex: Indonesia" required>
                             </div>
@@ -145,38 +151,30 @@
             <div class="right-content">
                 <h2>Price Detail</h2>
                 <div class="person">
-                    <p>Adult</p>
-                    <p>Rp.2.890.000 x 1</p>
+                    <p>1 room x 1 night</p>
+                    <p>Rp. 325.000</p>
                 </div>
                 <div class="fix-price">
-                    <p>Fare</p>
-                    <p>Rp.2.000.000</p>
-                </div>
-                <div class="tax">
-                    <p>Taxes & Fees</p>
-                    <p>Rp.890.000</p>
-                </div>
-                <hr class="garis-hor">
-                <h2>Baggage Info</h2>
-                <p class="pass-type">Adult (Passanger 1)</p>
-                <div class="baggage">
-                    <div class="baggage-left">
-                        <img src="assets/icon/lugguage.svg" alt="">
-                        <p>Cheked Baggage</p>
+                    <div class="total-tax">
+                        <p>Taxes and Fees</p>
+                        <p>Rp. 77.343</p>
                     </div>
-                    <p>1 x 20 kg</p> 
-                </div>
-                <div class="carryOn">
-                    <div class="carryOn-Left">
-                        <img src="assets/icon/lugguage.svg" alt="">
-                        <p>Carry On Baggage</p>
+                    <div class="tax-detail">
+                        {{-- <div class="vertical-line"></div> --}}
+                        <div class="service">
+                            <p>Service Fee</p>
+                            <p>Rp. 40.513</p>
+                        </div>
+                        <div class="tax">
+                            <p>Tax</p>
+                            <p>Rp. 38.683</p>
+                        </div>
                     </div>
-                    <p>included</p> 
                 </div>
                 <hr class="garis-hor">
                 <div class="total-price">
                     <h2>Total Price</h2>
-                    <h2>Rp.2.890.000</h2>
+                    <h2>Rp. 402.343</h2>
                 </div>   
             </div>
 

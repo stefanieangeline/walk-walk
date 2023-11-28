@@ -795,6 +795,208 @@ body {
     border-radius: 12px; 
 }
 
+
+/* =================== GUEST RATING & REVIEW =================== */
+.guest-rating-review {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 90vw;
+    padding: 40px;
+    background-color: var(--white);
+    margin-top: 8px;
+    border-radius: 22px;
+}
+
+.grr-text{
+    font-family: roboto-cons-bold;
+    color: var(--shade-blue);
+    font-size: 22px;
+}
+
+.review-summary{
+    height:25vh;
+    width: 97%;
+    border-color: var(--light-blue);
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+    /* padding-top: 10px;
+    padding-bottom:  10px; */
+}
+
+.rating-star-img{
+    padding-left: 20px;
+}
+
+.rating-desc{
+    width: 20vw;
+    margin-left: 20px;
+    /* background-color: mediumaquamarine; */
+}
+
+.rating-numb{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.rate{
+    font-family: roboto-cons-bold;
+    color: var(--another-blue);
+    font-size: 38px;
+}
+
+.standard{
+    font-family: roboto-cons-bold;
+    color: var(--light-blue);
+    font-size: 32px;
+    padding-left: 2px ;
+}
+
+.many-users{
+    font-family: roboto-cons-regular;
+    color: var(--another-blue);
+    font-size: 19px;
+}
+
+.rate-division{
+    width: 40vw;
+    height: 75%;
+    margin-left: 150px;
+    /* background-color: coral; */
+    
+}
+
+.up-div{
+    width: 100%;
+    /* background-color: brown; */
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.button-division{
+    font-family: roboto-cons-medium;
+    font-size: 16px;
+    color: white;
+    background-color: var(--blue-base);
+    border-radius: 5px;
+    border-color: var(--another-blue);
+    border-style: solid;
+    border-width: 1px;
+    width: 30vw;
+    height: 7vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 7px;
+}
+
+.bottom-div{
+    width: 100%;
+    /* background-color: brown; */
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.user-rates{
+    width: 97%;
+    /* background-color: lightcoral; */
+    margin-top: 10px;
+    padding-bottom: 30px;
+}
+
+.user-profile{
+    height: 9vh;
+    /* background-color: violet; */
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.dp-user{
+    width: 3.5vw;
+    height: 8vh;
+    border-radius: 100px;
+}
+
+.user-info{
+    margin-left: 10px;
+}
+
+.username{
+    font-family: roboto-cons-bold;
+    color: var(--shade-blue);
+    font-size: 20px;
+}
+
+.rating-star{
+    /* height: 5vh; */
+    width: fit-content;
+    /* margin-left: 33px;
+    margin-top: 45px; */
+    border-radius: 30px;
+    background-color: var(--another-blue);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1px 5px;
+}
+
+.user-rating{
+    font-family: roboto-cons-bold;
+    color: white;
+    font-size: 13px;
+    /* padding-left: 10px;
+    padding-top: 2px; */
+}
+
+.user-standard{
+    font-family: roboto-cons-bold;
+    color: var(--grey);
+    font-size: 13px;
+    /* padding-top: 2px; */
+}
+
+.user-rates-desc{
+    margin-top: 10px;
+}
+
+.desc-rate{
+    font-family: roboto-cons-regular;
+    color: var(--blue-cloudy);
+    font-size: 13px;
+}
+
+.img-desc-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.img-desc{
+    width: 6vw;
+    height: 6vw;
+    border-radius: 15px;
+    margin-top: 5px;
+    margin-right: 5px;
+
+}
+
+.rating-blue-line{
+    width: 97%;
+    height: 0.5px;
+    background-color: var(--light-blue);
+}
+
 /* =================== ROOM SERVICE & AMINITY =================== */
 .room-service-aminity {
     display: flex;
