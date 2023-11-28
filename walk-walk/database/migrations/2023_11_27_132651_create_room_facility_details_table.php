@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('IDHotel');
             $table->string('TypeRoom');
             $table->foreign(['IDHotel','TypeRoom'])->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references(['IDHotel','TypeRoom'])->on('hotel_rooms');
-            $table->string('NameFacilityRoom')->unique();
+            $table->string('NameFacilityRoom');
             $table->primary(['IDHotel','TypeRoom','NameFacilityRoom']);
             $table->timestamps();
         });

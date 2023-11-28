@@ -18,8 +18,11 @@ return new class extends Migration
             $table->string('TypeRoom');
             $table->integer('CapacityRoom');
             $table->integer('PriceRoom');
-            $table->foreignId('IDAddOns')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDAddOns')->on('add_ons');
+            // $table->foreignId('IDAddOns')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDAddOns')->on('add_ons');
             $table->integer('WideRoom');
+            $table->integer('QuantityRoom');
+
+
             $table->primary(['IDHotel','TypeRoom']);
             $table->timestamps();
         });
