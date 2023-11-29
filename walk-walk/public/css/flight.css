@@ -134,6 +134,11 @@ body {
 .leaving::placeholder{
     color: white;
 }
+
+.leaving_from input:focus{
+    outline: none;
+}
+
 .going_to{
     width: 225px;
     height: 58px;
@@ -147,6 +152,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between; 
+}
+
+.going_to input:focus{
+    outline: none;
 }
 
 .date{

@@ -31,7 +31,7 @@
                 <div class="drop-down-select">
                     <h4 class="room-guest-info">Rooms and Guests</h4>
                     <div class="display-info">
-                        <h2 id="hotel-display-info">1 room, 2 adults</h2>
+                        <h2 id="hotel-display-info">1 rooms, 2 guest</h2>
                     </div>
                     <div class="drop-down-container" id="hotel-drop-down-container">
                         <div class="num-input">
@@ -39,7 +39,7 @@
                             <input type="number" min="1" id="rooms-input" value="1">
                         </div>
                         <div class="num-input">
-                            <h4>Adults</h4>
+                            <h4>Guests</h4>
                             <input type="number" min="1" id="guests-input" value="2">
                         </div>
                     </div>
@@ -132,7 +132,14 @@
                                 <img src="/assets\icon\Arunika\Deluxe\2.jpg" class="rd-2">
                                 <img src="/assets\icon\Arunika\Deluxe\3.jpg" class="rd-2">
                             </div>
-                        </div>
+                            <div class="bottom-pics">
+                                <img src="/assets\icon\Arunika\Deluxe\2.jpg" class="rd-2">
+                                <img src="/assets\icon\Arunika\Deluxe\3.jpg" class="rd-2">
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="line-blue"></div>
+                    <div class="add-on">
                         <div class="room-facil">
                             <div class="bed-type">
                                 <img src="/assets\icon\queen-bed-blue.svg" class="bt-icon">
@@ -155,10 +162,7 @@
                                 <p class="facil-text">Air conditioning</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="line-blue"></div>
-                    <div class="add-on">
-                        <p class="add-on-txt">Add on(s)</p>
+                        <!-- <p class="add-on-txt">Add on(s)</p> -->
                         <div class="adds-box">
                             <img src="/assets/icon/SpoonFork.svg" class="adds-icon">
                             <p class="adds-txt">Include Breakfast</p>

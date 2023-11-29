@@ -59,3 +59,11 @@ Route::get('/passanger-detail', function(){
 Route::get('/privacy-policy', function(){
     return view('privacy-policy');
 });
+
+Route::get('/about-us', function(){
+    return view('about-us');
+});
+
+Route::get('/FAQ', function(){
+    return view('FAQ');
+});

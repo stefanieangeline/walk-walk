@@ -118,3 +118,31 @@ switchBtn.addEventListener("click", (e) => {
     flightSrc.value = flightDst.value
     flightDst.value = temp
 })
+
+//slider recommendation 
+const carousel = document.querySelector(".carousel");
+const arrowBtns = document.querySelectorAll(".arrow");
+const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+const carouselChildren = [...carousel.children];
+
+//get the number of cards that fit in the carousel at once
+let cardPerView = Math.round(carousel.offsetWidth/firstCardWidth);
+
+//insert copies of the last few cards to beginning of carousel for infinite scroll
+carouselChildren.slice(-cardPerView).reverse().forEach(card => {
+    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+});
+
+//insert copies of the last few cards to beginning of carousel for infinite scroll
+carouselChildren.slice(0, cardPerView).forEach(card => {
+    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+});
+
+//add event listener buat btn
+arrowBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        //check if the listener is working
+        // console.log(btn.id);
+        carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth
+    })
+})

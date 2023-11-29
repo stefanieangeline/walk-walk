@@ -83,6 +83,10 @@ body {
     color: var(--white);
 }
 
+.in-box input:focus{
+    outline: none;
+}
+
 .line-box {
     border: 1px solid var(--white);
     height: 60px;
@@ -108,6 +112,10 @@ body {
     font-family: roboto-cons-medium;
     font-size: 22px;
     color: var(--white);
+}
+
+.out-box input:focus{
+    outline: none;
 }
 
 .out-box ::-webkit-calendar-picker-indicator{
@@ -627,12 +635,7 @@ body {
     background-color: var(--light-blue);
 }
 
-.add-on{
-    width: 18vw;
-    height: 67vh;
-    margin-top: 7px;
-    /* background-color: lightcoral; */
-}
+
 
 .person{
     width: 10vw;
@@ -683,9 +686,10 @@ body {
 
 .room-facil{
     width: 19vw;
-    height: 30vh;
+    /* height: 30vh; */
     /* background-color: chartreuse; */
     margin-top: 5px;
+    margin-left: 10px;
 }
 
 .bed-type{
@@ -714,7 +718,7 @@ body {
 }
 
 .facil-icon{
-    width: 1.4vw;
+    width: 1.2vw;
     /* height: 1.5vh; */
 }
 
@@ -722,7 +726,15 @@ body {
     font-family: roboto-cons-regular;
     color: var(--shade-blue);
     padding-left: 7px;
-    font-size: 18px;
+    font-size: 16px;
+    padding-bottom: 5px;
+}
+
+.add-on{
+    width: 18vw;
+    height: 67vh;
+    margin-top: 7px;
+    /* background-color: lightcoral; */
 }
 
 .add-on-txt{
@@ -739,14 +751,14 @@ body {
     /* height: 5vh; */
     /* background-color:red ; */
     margin-top: 2px;
-    margin-left: 12px;
+    margin-left: 10px;
     display: flex;
     flex-direction: row;
 
 }
 
 .adds-icon{
-    width: 1.4vw;
+    width: 1.2vw;
     /* height: 1.5vh; */
 }
 
@@ -754,7 +766,8 @@ body {
     font-family: roboto-cons-regular;
     color: var(--shade-blue);
     padding-left: 7px;
-    font-size: 18px;
+    padding-bottom: 5px;
+    font-size: 16px;
 }
 
 .price{
