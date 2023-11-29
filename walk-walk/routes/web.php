@@ -67,3 +67,7 @@ Route::get('/about-us', function(){
 Route::get('/FAQ', function(){
     return view('FAQ');
 });
+
+Route::get('/about-group', function(){
+    return view('about-group');
+});

@@ -20,7 +20,7 @@
 
             <div class="footer-right">
                 <ul class="footer-Help">
-                    <li><h2 class="title">Help</h2></li>
+                    <li><h2 class="titleF">Help</h2></li>
                     <li><a>FAQs</a></li>
                     <li><a>About Us</a></li>
                     <li><a>Privacy Policy</a></li>
