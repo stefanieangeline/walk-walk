@@ -312,6 +312,12 @@
     border-radius: 20px;
 }
 
+.recommend-header{
+    color: var(--shade-blue);
+    font-family: roboto-cons-bold;
+    font-size: 30px;
+}
+
 .slide{
     display: flex;
     align-items: center;
@@ -321,7 +327,7 @@
 
 /* ubah ubah gambar */
 .card .img-card img{
-    width: fit-content;
+    width: 350px;
     height: 240px;
     object-fit: cover;
     border-bottom-left-radius: 20px;
@@ -342,11 +348,14 @@
     display: flex;
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
+    width: 350px;
 }
 
 .hotel-info{
     display: flex;
     flex-direction: column;
+    gap: 10px;
+    margin: 5px;
 }
 
 .star i{
@@ -355,6 +364,17 @@
 
 .dots{
     font-size: 5px;
+}
+
+.top-hotel-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.hotel-name{
+    color: var(--shade-blue);
+    font-size: 20px;
+    font-family: roboto-cons-bold;
 }
 
 .mid-hotel-info{
@@ -379,6 +399,32 @@
     display: flex;
     align-items: center;
     gap: 2px;
+}
+
+.rating-num{
+    color: var(--other-blue);
+    font-family: roboto-cons-bold;
+}
+
+.rating-quantity{
+    color: var(--shade-blue);
+    font-family: roboto-cons-regular;
+}
+
+.price{
+    color: var(--shade-blue);
+    font-size: 20px;
+    font-family: roboto-cons-bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.price span{
+    color: var(--grey-dark);
+    font-size: 15px;
+    font-family: roboto-cons-regular;
+    align-self: self-end;
 }
 
 .wrapper{
@@ -431,58 +477,52 @@
     cursor: pointer;
 }
 
-@media (max-width: 1300px) {
+@media (min-width: 1300px) {
+    .wrapper .carousel{
+        grid-auto-columns: calc((100%/2) + 16px);
+    }
+}
+
+@media (min-width: 1250px) {
     .wrapper .carousel{
         grid-auto-columns: calc((100%/3) - 9px);
-    }
-
-    .recommendation{
-        padding: 50px;
+        gap: 50px;
     }
 }
 
 @media (max-width: 1150px) {
-    .card .img-card img{
-        height: 200px;
+    .wrapper .carousel{
+        gap: 100px;
     }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1050px) {
     .wrapper .carousel{
-        grid-auto-columns: calc((100%/3) - 20px);
-        gap: 100px;
-    }
-
-    .card .img-card img{
-        height: 210px;
+        grid-auto-columns: calc((100%/3));
     }
 }
 
 @media (max-width: 1000px) {
     .wrapper .carousel{
-        grid-auto-columns: calc((100%/2) - 30px);
-        gap: 100px;
+        grid-auto-columns: calc((100%/3) + 30px);
     }
-
-    .card .img-card img{
-        height: 250px;
-    }
-
 }
 
 @media (max-width: 900px) {
-    .card .img-card img{
-        height: 200px;
+    .wrapper .carousel{
+        grid-auto-columns: calc((100%/2));
     }
 }
 
 @media (max-width: 700px) {
     .wrapper .carousel{
-        grid-auto-columns: calc(100% - 10px);
-        gap: 50px;
-    }
-
-    .card .img-card img{
-        height: 220px;
+        grid-auto-columns: calc((100%/2) + 50px);
     }
 }
+
+@media (max-width: 610px) {
+    .wrapper .carousel{
+        grid-auto-columns: calc((100%) - 100px);
+    }
+}
+
