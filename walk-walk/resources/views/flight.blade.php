@@ -44,7 +44,7 @@
             <div class="bottom">
                 <div class="leaving_from">
                     <img src="assets/icon/flight_take offf.svg">
-                    <input type="text" placeholder="Leaving from" class="leaving">
+                    <input type="text" name="source" placeholder="Leaving from" class="leaving" value="{{$source}}">
                 </div>
 
                 <div class="to">
@@ -53,14 +53,14 @@
 
                 <div class="going_to">
                     <img src="assets/icon/flight_landingg.svg">
-                    <input type="text" placeholder="Going to" class="leaving">
+                    <input type="text" name="destination" placeholder="Going to" class="leaving" value="{{$dest}}">
                 </div>
 
                 <div class="date">
                     <!-- <p class="text_date">March 2, 2023</p> -->
-                    <input class="input_date"type="date">
+                    <input class="input_date"type="date" name="departureDate">
                     <div class="vertical"></div>
-                    <input class="input_date"type="date">
+                    <input class="input_date"type="date" name="arrivalDate">
                 </div>
 
                 <input type='submit' class="search_button">

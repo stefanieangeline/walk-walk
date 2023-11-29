@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class City extends Model
 {
     use HasFactory;
+
+    public function getCityID($name) {
+        return City::like("name", "like", "%".$name."%")->first()->id;
+    }
 }
