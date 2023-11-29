@@ -122,29 +122,113 @@
     <div class="content">
         <div class="recommendation">
             <p>Recommendation Hotels</p>
-            <div class="wrapper">
-                <ul class="carousel">
-                    <li class="card">
-                        <div class="img-card">
-                            <img src="assets/icon/hotel1.jpg" alt="img-hotel">
-                        </div>
-                        <div class="hotel-info">
-                            <p>Sunway Hotel</p>
-                            <div class="mid-hotel-info">
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
-                                <div class="dots"><i class="fa-solid fa-circle"></i></div>
-                                <div class="rating">
-                                    <img src="assets/icon/rating-star-blue.png" alt="rating-star">
+            <div class="slide">
+                <div class="wrapper">
+                    <i class="fa-solid fa-chevron-left"></i>
+                    <ul class="carousel">
+                        <li class="card">
+                            <div class="img-card">
+                                <img src="/assets/images/hotel1.jpg" alt="img-hotel">
+                            </div>
+                            <div class="hotel-info">
+                                <p>Sunway Hotel</p>
+                                <div class="mid-hotel-info">
+                                    <div class="star">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <div class="dots"><i class="fa-solid fa-circle"></i></div>
+                                    <div class="rating">
+                                        <img src="assets/icon/rating-star-blue.png" alt="rating-star">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
+                        <li class="card">
+                            <div class="img-card">
+                                <img src="/assets/images/hotel1.jpg" alt="img-hotel">
+                            </div>
+                            <div class="hotel-info">
+                                <p>Sunway Hotel</p>
+                                <div class="mid-hotel-info">
+                                    <div class="star">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <div class="dots"><i class="fa-solid fa-circle"></i></div>
+                                    <div class="rating">
+                                        <img src="assets/icon/rating-star-blue.png" alt="rating-star">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="img-card">
+                                <img src="/assets/images/hotel1.jpg" alt="img-hotel">
+                            </div>
+                            <div class="hotel-info">
+                                <p>Sunway Hotel</p>
+                                <div class="mid-hotel-info">
+                                    <div class="star">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <div class="dots"><i class="fa-solid fa-circle"></i></div>
+                                    <div class="rating">
+                                        <img src="assets/icon/rating-star-blue.png" alt="rating-star">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="img-card">
+                                <img src="/assets/images/hotel1.jpg" alt="img-hotel">
+                            </div>
+                            <div class="hotel-info">
+                                <p>Sunway Hotel</p>
+                                <div class="mid-hotel-info">
+                                    <div class="star">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <div class="dots"><i class="fa-solid fa-circle"></i></div>
+                                    <div class="rating">
+                                        <img src="assets/icon/rating-star-blue.png" alt="rating-star">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="img-card">
+                                <img src="/assets/images/hotel1.jpg" alt="img-hotel">
+                            </div>
+                            <div class="hotel-info">
+                                <p>Sunway Hotel</p>
+                                <div class="mid-hotel-info">
+                                    <div class="star">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <div class="dots"><i class="fa-solid fa-circle"></i></div>
+                                    <div class="rating">
+                                        <img src="assets/icon/rating-star-blue.png" alt="rating-star">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
             </div>
         </div>
     </div>
