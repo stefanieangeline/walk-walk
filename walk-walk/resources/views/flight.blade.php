@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
+    {{-- @dump($schedules) --}}
     @include("shared.nav-bar")
     <div class="bg-flight">
-        <div class="box-choice">
+        <form action="" method="GET" class="box-choice">
             <div class="top">
                 <div class="flight-selected">
                     <img src="assets/icon/pesawat.svg" class="img">
@@ -21,18 +22,20 @@
                 </div>
                 <div class="people-selected">
                     <img src="assets/icon/people.svg" class="img">
-                    <select name="people" class="people-opt">
+                    <select name="age" class="people-opt">
                         <option value="Adult">Adult</option>
-                        <option value="Children">Children</option>
-                        <option value="Infants">Infants</option>
+                        <option value="Child">Children</option>
+                        <option value="Senior">Infants</option>
                     </select>
                 </div>
                 <div class="seat-option">
                     <img src="assets/icon/seat.svg" class="img">
-                    <select name="seat" class="seat-opt">
+                    
+                    <select name="class" class="seat-opt">
+                        {{-- <option value="%">All Class</option> --}}
                         <option value="Economy">Economy</option>
                         <option value="Business">Business</option>
-                        <option value="First-Class">First CLass</option>
+                        
                     </select>
                 </div>
             </div>
@@ -59,11 +62,12 @@
                     <input class="input_date"type="date">
                 </div>
 
-                <div class="search_button">
-                    <img src="assets/icon/searchbutton.svg">
-                </div>
+                <input type='submit' class="search_button">
+                    {{-- <img src="assets/icon/searchbutton.svg"> --}}
+            
             </div>
-        </div>
+        
+        </form>
     </div>
 
     <div class="content_flight">
@@ -90,14 +94,15 @@
             <hr class="line">
 
             <h2 class="titlee">Range Price</h2>
+
             <div class="opt-price">
-                    <input type="checkbox" class="button"><p> < Rp.1.000.000,00</p>
+                    <input type="radio" class="button"><p> < Rp.1.000.000,00</p>
             </div>
             <div class="opt-price">
-                    <input type="checkbox" class="button"><p> Rp.1.000.000,00 - Rp.2.500.000,00</p>
+                    <input type="radio" class="button"><p> Rp.1.000.000,00 - Rp.2.500.000,00</p>
             </div>
             <div class="opt-price">
-                    <input type="checkbox" class="button"><p> > Rp.2.500.000,00</p>
+                    <input type="radio" class="button"><p> > Rp.2.500.000,00</p>
             </div>
 
         </div>
@@ -106,14 +111,14 @@
             <div class="price_sort_container">
                 <div class="rec_price">
                     <p>Recommended Price</p>
-                    <p class="price_number">Rp.1.800.0000,00</p>
+                    <p class="price_number">Rp. {{ $averagePrice }}</p>
                 </div>
 
                 <div class="divider_price"></div>
 
                 <div class="low_price">
                     <p>Lowest Price</p>
-                    <p class="price_number">Rp.1.450.0000,00</p>
+                    <p class="price_number">Rp. {{ $minimumPrice }}</p>
                 </div>
 
                 <div class="divider_price"></div>
@@ -126,8 +131,13 @@
                     </select>
                 </div>
             </div>
-
-
+            {{-- @foreach ($schedules as $schedule)
+                {{ $schedule->FlightNumber}}
+                @foreach ($schedule->details() as $detail)
+                    {{ $detail->Price }}
+                @endforeach
+            @endforeach --}}
+            @foreach ($schedules as $schedule)
             <div class="flight_detail">
                 <div class="airline_logo">
                     <img src="assets/icon/jetstar.svg" alt="">
@@ -135,25 +145,28 @@
                 </div>
                 <div class="flight_schedule">
                     <div class="airport_schedule">
-                        <p>15:00</p>
-                        <p>CGK</p>
+                        <p>{{$schedule->DepartureTime}}</p>
+                        <p>{{$schedule->CodeAirportSource}}</p>
                     </div>
-                    <div class="divider_schedule"></div>
+                    <div class="divider_schedule">
+
+                    </div>
                     <div class="airport_schedule">
-                        <p>16:30</p>
-                        <p>DPS</p>
+                        <p>{{$schedule->ArrivalTime}}</p>
+                        <p>{{$schedule->CodeAirportDestination}}</p>
                     </div>
 
                 </div>
                 <div class="flight_price">
-                    <p>Rp. 1.950.000,00</p>
+                    <p>Rp. {{$schedule->Price}}</p>
                 </div>
                 <div class="submit_flight">
                     <input type="submit" class="flight_button" value="Select">
                 </div>
-
-
             </div>
+                
+            @endforeach
+            {{-- @foreach ($schedules as $schedule)
             <div class="flight_detail">
                 <div class="airline_logo">
                     <img src="assets/icon/jetstar.svg" alt="">
@@ -161,179 +174,26 @@
                 </div>
                 <div class="flight_schedule">
                     <div class="airport_schedule">
-                        <p>15:00</p>
-                        <p>CGK</p>
+                        <p>{{$schedule->DepartureTime}}</p>
+                        <p>{{$schedule->NameAirport}}</p>
                     </div>
-                    <div class="divider_schedule"></div>
+                    <div class="divider_schedule">
+
+                    </div>
                     <div class="airport_schedule">
-                        <p>16:30</p>
-                        <p>DPS</p>
+                        <p>{{$schedule->ArrivalTime}}</p>
+                        <p>{{$schedule->NameAirport}}</p>
                     </div>
 
                 </div>
                 <div class="flight_price">
-                    <p>Rp. 1.950.000,00</p>
-                </div>
-                <div class="submit_flight">
-                    <input type="submit" class="flight_button" value="Select">
-                </div>
-
-
-            </div>
-            <div class="flight_detail">
-                <div class="airline_logo">
-                    <img src="assets/icon/jetstar.svg" alt="">
-
-                </div>
-                <div class="flight_schedule">
-                    <div class="airport_schedule">
-                        <p>15:00</p>
-                        <p>CGK</p>
-                    </div>
-                    <div class="divider_schedule"></div>
-                    <div class="airport_schedule">
-                        <p>16:30</p>
-                        <p>DPS</p>
-                    </div>
-
-                </div>
-                <div class="flight_price">
-                    <p>Rp. 1.950.000,00</p>
-                </div>
-                <div class="submit_flight">
-                    <input type="submit" class="flight_button" value="Select">
-                </div>
-
-
-            </div>
-            <div class="flight_detail">
-                <div class="airline_logo">
-                    <img src="assets/icon/jetstar.svg" alt="">
-
-                </div>
-                <div class="flight_schedule">
-                    <div class="airport_schedule">
-                        <p>15:00</p>
-                        <p>CGK</p>
-                    </div>
-                    <div class="divider_schedule"></div>
-                    <div class="airport_schedule">
-                        <p>16:30</p>
-                        <p>DPS</p>
-                    </div>
-
-                </div>
-                <div class="flight_price">
-                    <p>Rp. 1.950.000,00</p>
-                </div>
-                <div class="submit_flight">
-                    <input type="submit" class="flight_button" value="Select">
-                </div>
-
-
-            </div>
-            <div class="flight_detail">
-                <div class="airline_logo">
-                    <img src="assets/icon/jetstar.svg" alt="">
-
-                </div>
-                <div class="flight_schedule">
-                    <div class="airport_schedule">
-                        <p>15:00</p>
-                        <p>CGK</p>
-                    </div>
-                    <div class="divider_schedule"></div>
-                    <div class="airport_schedule">
-                        <p>16:30</p>
-                        <p>DPS</p>
-                    </div>
-
-                </div>
-                <div class="flight_price">
-                    <p>Rp. 1.950.000,00</p>
-                </div>
-                <div class="submit_flight">
-                    <input type="submit" class="flight_button" value="Select">
-                </div>
-
-
-            </div>
-            <div class="flight_detail">
-                <div class="airline_logo">
-                    <img src="assets/icon/jetstar.svg" alt="">
-
-                </div>
-                <div class="flight_schedule">
-                    <div class="airport_schedule">
-                        <p>15:00</p>
-                        <p>CGK</p>
-                    </div>
-                    <div class="divider_schedule"></div>
-                    <div class="airport_schedule">
-                        <p>16:30</p>
-                        <p>DPS</p>
-                    </div>
-
-                </div>
-                <div class="flight_price">
-                    <p>Rp. 1.950.000,00</p>
-                </div>
-                <div class="submit_flight">
-                    <input type="submit" class="flight_button" value="Select">
-                </div>
-
-
-            </div>
-            <div class="flight_detail">
-                <div class="airline_logo">
-                    <img src="assets/icon/jetstar.svg" alt="">
-
-                </div>
-                <div class="flight_schedule">
-                    <div class="airport_schedule">
-                        <p>15:00</p>
-                        <p>CGK</p>
-                    </div>
-                    <div class="divider_schedule"></div>
-                    <div class="airport_schedule">
-                        <p>16:30</p>
-                        <p>DPS</p>
-                    </div>
-
-                </div>
-                <div class="flight_price">
-                    <p>Rp. 1.950.000,00</p>
-                </div>
-                <div class="submit_flight">
-                    <input type="submit" class="flight_button" value="Select">
-                </div>
-
-
-            </div>
-            <div class="flight_detail">
-                <div class="airline_logo">
-                    <img src="assets/icon/jetstar.svg" alt="">
-
-                </div>
-                <div class="flight_schedule">
-                    <div class="airport_schedule">
-                        <p>15:00</p>
-                        <p>CGK</p>
-                    </div>
-                    <div class="divider_schedule"></div>
-                    <div class="airport_schedule">
-                        <p>16:30</p>
-                        <p>DPS</p>
-                    </div>
-
-                </div>
-                <div class="flight_price">
-                    <p>Rp. 1.950.000,00</p>
+                    <p>Rp. {{$schedule->Price}}</p>
                 </div>
                 <div class="submit_flight">
                     <input type="submit" class="flight_button" value="Select">
                 </div>
             </div>
+            @endforeach --}}
         </div>
     </div>
     @include("shared.footer")
