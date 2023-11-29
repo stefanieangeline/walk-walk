@@ -59,7 +59,6 @@ Route::get('/passanger-detail', function(){
 Route::get('/privacy-policy', function(){
     return view('privacy-policy');
 });
-<<<<<<< HEAD
 
 Route::get('/about-us', function(){
     return view('about-us');
@@ -68,5 +67,3 @@ Route::get('/about-us', function(){
 Route::get('/FAQ', function(){
     return view('FAQ');
 });
-=======
->>>>>>> 5489ece9551a26d1d5ad6a1e5b073defebd3ba44
