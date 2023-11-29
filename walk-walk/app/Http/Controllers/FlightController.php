@@ -13,7 +13,7 @@ class FlightController extends Controller
         return DB::table("schedules")->where("IDAirportSource", $IDAirportSrc)->where("IDAirportDestination", $IDAirportDst)->get();
     }
 
-    public function index() {
+    public function old() {
         $schedules = null;
         if (request()->has("src") && request()->has("dst")) {
             $schedules = Schedule::query()->where("IDAirportSource", request()->get("src", ""))->where("IDAirportDestination", request()->get("dst", ""))->get();
@@ -23,14 +23,12 @@ class FlightController extends Controller
 
         return view("flight", ['schedules' => $schedules]);
     }
-    public function index1(){
-        // $schedules1 = Schedule::select('schedules.*')->join('schedule_details','schedule_details.IDSchedule','=','IDSchedule');
-        // echo $schedules1;
-
-        // $age = request()->get("age");
+    public function index(){
         $class = request()->get("class");
-        // echo $class;
 
+        if ($class == null) {
+            $class = "economy";
+        }
 
         return view('flight',[
         'schedules' => Schedule::query()
@@ -50,9 +48,9 @@ class FlightController extends Controller
         ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
         ->where('schedule_details.Class','like', $class)
         ->min('schedule_details.Price')
-        
-        
+
+
     ]);
-        
+
     }
 }

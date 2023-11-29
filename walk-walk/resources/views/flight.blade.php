@@ -6,12 +6,13 @@
     <title>Flight</title>
     <link rel="stylesheet" href="/css/flight.css">
     <link rel="stylesheet" href="/css/home.css">
+    <script src="/js/flight.js" defer=""></script>
 </head>
 <body>
     {{-- @dump($schedules) --}}
     @include("shared.nav-bar")
     <div class="bg-flight">
-        <form action="" method="GET" class="box-choice">
+        <form action="" method="GET" class="box-choice" name="box-choice">
             <div class="top">
                 <div class="flight-selected">
                     <img src="assets/icon/pesawat.svg" class="img">
@@ -30,12 +31,12 @@
                 </div>
                 <div class="seat-option">
                     <img src="assets/icon/seat.svg" class="img">
-                    
+
                     <select name="class" class="seat-opt">
                         {{-- <option value="%">All Class</option> --}}
                         <option value="Economy">Economy</option>
                         <option value="Business">Business</option>
-                        
+
                     </select>
                 </div>
             </div>
@@ -64,9 +65,9 @@
 
                 <input type='submit' class="search_button">
                     {{-- <img src="assets/icon/searchbutton.svg"> --}}
-            
+
             </div>
-        
+
         </form>
     </div>
 
@@ -164,7 +165,7 @@
                     <input type="submit" class="flight_button" value="Select">
                 </div>
             </div>
-                
+
             @endforeach
             {{-- @foreach ($schedules as $schedule)
             <div class="flight_detail">
