@@ -11,7 +11,7 @@
     {{-- @dump($schedules) --}}
     @include("shared.nav-bar")
     <div class="bg-flight">
-        <div class="box-choice">
+        <form action="" method="GET" class="box-choice">
             <div class="top">
                 <div class="flight-selected">
                     <img src="assets/icon/pesawat.svg" class="img">
@@ -22,18 +22,20 @@
                 </div>
                 <div class="people-selected">
                     <img src="assets/icon/people.svg" class="img">
-                    <select name="people" class="people-opt">
+                    <select name="age" class="people-opt">
                         <option value="Adult">Adult</option>
-                        <option value="Children">Children</option>
-                        <option value="Infants">Infants</option>
+                        <option value="Child">Children</option>
+                        <option value="Senior">Infants</option>
                     </select>
                 </div>
                 <div class="seat-option">
                     <img src="assets/icon/seat.svg" class="img">
-                    <select name="seat" class="seat-opt">
+                    
+                    <select name="class" class="seat-opt">
+                        {{-- <option value="%">All Class</option> --}}
                         <option value="Economy">Economy</option>
                         <option value="Business">Business</option>
-                        <option value="First-Class">First CLass</option>
+                        
                     </select>
                 </div>
             </div>
@@ -60,11 +62,12 @@
                     <input class="input_date"type="date">
                 </div>
 
-                <div class="search_button">
-                    <img src="assets/icon/searchbutton.svg">
-                </div>
+                <input type='submit' class="search_button">
+                    {{-- <img src="assets/icon/searchbutton.svg"> --}}
+            
             </div>
-        </div>
+        
+        </form>
     </div>
 
     <div class="content_flight">
@@ -108,14 +111,14 @@
             <div class="price_sort_container">
                 <div class="rec_price">
                     <p>Recommended Price</p>
-                    <p class="price_number">Rp.1.800.0000,00</p>
+                    <p class="price_number">Rp. {{ $averagePrice }}</p>
                 </div>
 
                 <div class="divider_price"></div>
 
                 <div class="low_price">
                     <p>Lowest Price</p>
-                    <p class="price_number">Rp.1.450.0000,00</p>
+                    <p class="price_number">Rp. {{ $minimumPrice }}</p>
                 </div>
 
                 <div class="divider_price"></div>

@@ -26,23 +26,31 @@ class FlightController extends Controller
     public function index1(){
         // $schedules1 = Schedule::select('schedules.*')->join('schedule_details','schedule_details.IDSchedule','=','IDSchedule');
         // echo $schedules1;
+
+        // $age = request()->get("age");
+        $class = request()->get("class");
+        // echo $class;
+
+
         return view('flight',[
         'schedules' => Schedule::query()
         ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
         ->join('airports as b','schedules.IDAirportDestination','=','b.IDAirport')
         ->join('airports as a','schedules.IDAirportSource','=','a.IDAirport')
-        ->select('schedules.*','a.CodeAirport as CodeAirportSource','b.CodeAirport as CodeAirportDestination')->distinct()
-        ->get(),
-        // 'airportsource' => Airport::select('airports.CodeAirport')
-        // ->join('airports','schedules.IDAirportSource','=','airports.IDAirport')
-        // ->get(),
-        // 'airportdestination' => Airport::select('airports.CodeAirport')
-        // ->join('airports','schedules.IDAirportDestination','=','airports.IDAirport')
-        // ->get(),
-        // 'count' => Schedule::query()
-        // ->select('count(IDSchedule)') 
-        // ->get()
+        ->select('schedules.DepartureTime','schedules.ArrivalTime','schedule_details.Price','a.CodeAirport as CodeAirportSource','b.CodeAirport as CodeAirportDestination')->distinct()
+        ->where('schedule_details.Class','like', $class)
 
+        ->get(),
+        'averagePrice' => Schedule::query()
+        ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
+        ->where('schedule_details.Class', 'like',$class)
+        ->avg('schedule_details.Price'),
+
+        'minimumPrice' => Schedule::query()
+        ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
+        ->where('schedule_details.Class','like', $class)
+        ->min('schedule_details.Price')
+        
         
     ]);
         

@@ -164,6 +164,7 @@ body {
 }
 
 .search_button{
+    width: 10%;
     margin-left: 2%;
     align-items: center;
 }
