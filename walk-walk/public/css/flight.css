@@ -120,7 +120,7 @@ body {
     border-color: white;
     display: flex;
     align-items: center;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 
 .leaving{
@@ -146,7 +146,7 @@ body {
     border-color: white;
     display: flex;
     align-items: center;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 
 .date{
@@ -158,7 +158,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between; 
+    justify-content: space-between;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -284,14 +284,14 @@ body {
     width: 70%;
     /* height: 500px; */
     /* background-color: gray; */
-    
+
     /* border-style: solid; */
     height: fit-content;
     /* padding: 1%; */
     display: flex;
     flex-direction: column;
     gap: 5%;
-    
+
 
 }
 .right-box *{
@@ -323,7 +323,7 @@ body {
     flex-direction: column;
     justify-content: center;
     padding-left: 5%;
-    
+
 
 }
 .low_price{
@@ -429,8 +429,9 @@ body {
 .divider_schedule{
     height: 100%;
     width: 60%;
-    background-image: url("/jalan-jalan/assets/icon/src-dest.svg");
+    background-image: url("/assets/icon/src-dest.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    margin: 0px 10px;
 }
