@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class,'index'])->name('home');
 
+Route::get('/flights1', [FlightController::class, 'index1'])->name('flights');
 Route::get('/flights', [FlightController::class, 'index'])->name('flights');
 
 Route::get('/hotels', [HotelController::class, 'index'])->name('hotels');

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
+    {{-- @dump($schedules) --}}
     @include("shared.nav-bar")
     <div class="bg-flight">
         <div class="box-choice">
@@ -142,25 +143,54 @@
                 <div class="flight_schedule">
                     <div class="airport_schedule">
                         <p>{{$schedule->DepartureTime}}</p>
-                        <p>{{$schedule->getAirportCode($schedule->IDAirportSource)}}</p>
+                        <p>{{$schedule->CodeAirportSource}}</p>
                     </div>
                     <div class="divider_schedule">
 
                     </div>
                     <div class="airport_schedule">
                         <p>{{$schedule->ArrivalTime}}</p>
-                        <p>{{$schedule->getAirportCode($schedule->IDAirportDestination)}}</p>
+                        <p>{{$schedule->CodeAirportDestination}}</p>
                     </div>
 
                 </div>
                 <div class="flight_price">
-                    <p>Rp. {{$schedule->minPriceInSchedule($schedule->IDSchedule)}}</p>
+                    <p>Rp. {{$schedule->Price}}</p>
                 </div>
                 <div class="submit_flight">
                     <input type="submit" class="flight_button" value="Select">
                 </div>
             </div>
+                
             @endforeach
+            {{-- @foreach ($schedules as $schedule)
+            <div class="flight_detail">
+                <div class="airline_logo">
+                    <img src="assets/icon/jetstar.svg" alt="">
+
+                </div>
+                <div class="flight_schedule">
+                    <div class="airport_schedule">
+                        <p>{{$schedule->DepartureTime}}</p>
+                        <p>{{$schedule->NameAirport}}</p>
+                    </div>
+                    <div class="divider_schedule">
+
+                    </div>
+                    <div class="airport_schedule">
+                        <p>{{$schedule->ArrivalTime}}</p>
+                        <p>{{$schedule->NameAirport}}</p>
+                    </div>
+
+                </div>
+                <div class="flight_price">
+                    <p>Rp. {{$schedule->Price}}</p>
+                </div>
+                <div class="submit_flight">
+                    <input type="submit" class="flight_button" value="Select">
+                </div>
+            </div>
+            @endforeach --}}
         </div>
     </div>
     @include("shared.footer")
