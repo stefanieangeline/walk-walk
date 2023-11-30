@@ -35,7 +35,7 @@
                         <!-- <img src="assets/icon/guest.svg"> -->
                         <div class="display-info">
                             <p id="flight-display-info">1 adult, 2 children</p>
-                            <img src="assets/icon/chevron-down.svg" class="input-icon chevron" id="flight-drop-down-icon">
+                            <img src="assets/icon/drop-down-strong-blue.svg" class="input-icon chevron" id="flight-drop-down-icon">
                         </div>
                         <div class="drop-down-container" id="flight-drop-down-container">
                             <div class="num-input">
