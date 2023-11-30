@@ -15,9 +15,12 @@
        </div>
        <div class="form_sign">
         <p class="create_account">Log In</p>
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
-        <input type="submit" value="Log In" id="register">
+        <form method="POST" name="login">
+            @csrf
+            <input name="email" type="email" placeholder="Email">
+            <input name="password" type="password" placeholder="Password">
+            <input name="submit" type="submit" value="Log In" id="register">
+        </form>
         <p class="log_in_button">Don't have an account? </p><a href="{{route('sign-in')}}" class="log_in_button_click">Click here to sign Up</a>
 
        </div>

@@ -32,9 +32,10 @@ Route::get('/hotels', [HotelController::class, 'index'])->name('hotels');
 
 Route::get('/hotels/detail', [HotelController::class, 'detail'])->name('hotels');
 
-Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/login', [LoginController::class, 'login'])->name('login');
 
-Route::get('/sign-in', [SigninController::class, 'index'])->name('sign-in');
+Route::post('/sign-in', [SigninController::class, 'index'])->name('sign-in');
 
 Route::get('/account', [AccountController::class,'index'])->name('account');
 
