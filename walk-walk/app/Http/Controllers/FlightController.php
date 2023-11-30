@@ -29,6 +29,8 @@ class FlightController extends Controller
         $source = request()->get("source");
         $dest = request()->get("destination");
         $depDate = request()->get("departureDate");
+        $queryarrivaltime = "CAST(schedules.ArrivalTime as time) as ArrivalTime";
+        $querydeparturetime = "CAST(schedules.DepartureTime as time) as DepartureTime";
 
         if ($class == null) {
             $class = "economy";
@@ -43,7 +45,7 @@ class FlightController extends Controller
                 ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
                 ->join('airports as b','schedules.IDAirportDestination','=','b.IDAirport')
                 ->join('airports as a','schedules.IDAirportSource','=','a.IDAirport')
-                ->select('schedules.DepartureTime','schedules.ArrivalTime','schedule_details.Price','a.CodeAirport as CodeAirportSource','b.CodeAirport as CodeAirportDestination')->distinct()
+                ->select(DB::raw($querydeparturetime),DB::raw($queryarrivaltime),'schedule_details.Price','a.CodeAirport as CodeAirportSource','b.CodeAirport as CodeAirportDestination')->distinct()
                 ->where('schedule_details.Class','like', $class)
                 ->where('a.IDAirport', $IDsource)
                 ->where('b.IDAirport', $IDdest)
@@ -68,7 +70,7 @@ class FlightController extends Controller
                 ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
                 ->join('airports as b','schedules.IDAirportDestination','=','b.IDAirport')
                 ->join('airports as a','schedules.IDAirportSource','=','a.IDAirport')
-                ->select('schedules.DepartureTime','schedules.ArrivalTime','schedule_details.Price','a.CodeAirport as CodeAirportSource','b.CodeAirport as CodeAirportDestination')->distinct()
+                ->select(DB::raw($querydeparturetime),DB::raw($queryarrivaltime),'schedule_details.Price','a.CodeAirport as CodeAirportSource','b.CodeAirport as CodeAirportDestination')->distinct()
                 ->where('schedule_details.Class','like', $class)
                 ->get(),
 
