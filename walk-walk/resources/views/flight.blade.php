@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flight</title>
     <link rel="stylesheet" href="/css/flight.css">
-    <link rel="stylesheet" href="/css/home.css">
     <script src="/js/flight.js" defer=""></script>
 </head>
 <body>
@@ -14,21 +13,47 @@
     <div class="bg-flight">
         <form action="" method="GET" class="box-choice" name="box-choice">
             <div class="top">
-                <div class="flight-selected">
+                <!-- <div class="flight-selected">
                     <img src="assets/icon/pesawat.svg" class="img">
                     <select name="flight" class="flight-opt">
                         <option value="one-Way">One Way</option>
                         <option value="two-Way">Two Way</option>
                     </select>
-                </div>
-                <div class="people-selected">
+                </div> -->
+                <!-- <div class="people-selected">
                     <img src="assets/icon/people.svg" class="img">
                     <select name="age" class="people-opt">
                         <option value="Adult">Adult</option>
                         <option value="Child">Children</option>
                         <option value="Senior">Infants</option>
                     </select>
+                </div> -->
+
+                <div class="input-row drop-down-menu">
+                    <div class="drop-down-select">
+                        <img src="assets/icon/people.svg" class="img">
+                        <!-- <img src="assets/icon/guest.svg"> -->
+                        <div class="display-info">
+                            <p id="flight-display-info">1 adult, 2 children</p>
+                            <img src="assets/icon/chevron-down.svg" class="input-icon chevron" id="flight-drop-down-icon">
+                        </div>
+                        <div class="drop-down-container" id="flight-drop-down-container">
+                            <div class="num-input">
+                                <h4>Adult</h4>
+                                <input type="number" min="1" id="adult-input" value="1">
+                            </div>
+                            <div class="num-input">
+                                <h4>Children</h4>
+                                <input type="number" min="1" id="children-input" value="1">
+                            </div>
+                            <div class="num-input">
+                                <h4>Senior</h4>
+                                <input type="number" min="1" id="children-input" value="1">
+                            </div>
+                        </div>   
+                    </div>  
                 </div>
+
                 <div class="seat-option">
                     <img src="assets/icon/seat.svg" class="img">
 
@@ -39,6 +64,7 @@
 
                     </select>
                 </div>
+                
             </div>
 
             <div class="bottom">
