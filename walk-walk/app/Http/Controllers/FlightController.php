@@ -37,8 +37,8 @@ class FlightController extends Controller
         }
 
         if ($source != "" && $dest != "") {
-            $IDsource = City::query()->where("nameCity", "like", "%".$source."%")->first()->IDCity;
-            $IDdest = City::query()->where("nameCity", "like","%".$dest."%")->first()->IDCity;
+            $IDsource = City::query()->where("nameCity", "like", "%".$source."%")->select("IDCity")->get()->toArray();
+            $IDdest = City::query()->where("nameCity", "like","%".$dest."%")->select("IDCity")->get()->toArray();
 
             return view('flight',[
                 'schedules' => Schedule::query()
