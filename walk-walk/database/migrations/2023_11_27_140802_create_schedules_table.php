@@ -19,8 +19,8 @@ return new class extends Migration
             $table->foreignId('IDAirline')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDAirline')->on('airlines');
             $table->foreignId('IDAirportSource')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDAirport')->on('airports');
             $table->foreignId('IDAirportDestination')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDAirport')->on('airports');
-            $table->time('DepartureTime');
-            $table->time('ArrivalTime');
+            $table->dateTime('DepartureTime');
+            $table->dateTime('ArrivalTime');
             $table->timestamps();
         });
     }
