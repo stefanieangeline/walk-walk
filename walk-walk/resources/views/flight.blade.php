@@ -34,10 +34,15 @@
                         <img src="assets/icon/people.svg" class="img">
                         <!-- <img src="assets/icon/guest.svg"> -->
                         <div class="display-info">
-                            <p id="flight-display-info">1 adult, 2 children</p>
+                            <p id="flight-display-info">1 senior, 1 adult, 2 children</p>
                             <img src="assets/icon/drop-down-strong-blue.svg" class="input-icon chevron" id="flight-drop-down-icon">
                         </div>
+                        
                         <div class="drop-down-container" id="flight-drop-down-container">
+                            <div class="num-input">
+                                <h4>Senior</h4>
+                                <input type="number" min="1" id="children-input" value="1">
+                            </div>
                             <div class="num-input">
                                 <h4>Adult</h4>
                                 <input type="number" min="1" id="adult-input" value="1">
@@ -45,11 +50,7 @@
                             <div class="num-input">
                                 <h4>Children</h4>
                                 <input type="number" min="1" id="children-input" value="1">
-                            </div>
-                            <div class="num-input">
-                                <h4>Senior</h4>
-                                <input type="number" min="1" id="children-input" value="1">
-                            </div>
+                            </div>  
                         </div>   
                     </div>  
                 </div>

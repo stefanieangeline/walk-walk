@@ -69,7 +69,6 @@
                         </div> -->
                         <div class="border-input">
                             <input type="date" class="input-date">
-                            <!-- <input type="date" class="input-date"> -->
                         </div>
                         <div class="sub-input border-input">
                             <img src="assets/icon/chair-blue.svg">
@@ -81,9 +80,6 @@
                             </select>
                         </div>
                     </div>
-                    <!-- <div class="input-row">
-                        <input type="date" class="input-date">
-                    </div> -->
                     <div class="input-row flight-src-dst">
                         <div class="sub-text">
                             <img src="assets/icon/flight-take-off.svg">
@@ -103,11 +99,15 @@
                                 <h2 id="flight-display-info">1 adult, 2 children</h2>
                             </div>
                             <div class="drop-down-container" id="flight-drop-down-container">
-                                <div class="num-input">
+                                <div class="num-input-flight">
+                                    <h4>Senior</h4>
+                                    <input type="number" min="1" id="children-input" value="1">
+                                </div>
+                                <div class="num-input-flight">
                                     <h4>Adult</h4>
                                     <input type="number" min="1" id="adult-input" value="1">
                                 </div>
-                                <div class="num-input">
+                                <div class="num-input-flight">
                                     <h4>Children</h4>
                                     <input type="number" min="1" id="children-input" value="1">
                                 </div>
