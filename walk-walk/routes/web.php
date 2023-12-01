@@ -73,3 +73,12 @@ Route::get('/FAQ', function(){
 Route::get('/about-group', function(){
     return view('about-group');
 });
+
+Route::get('/nav-bar', function(){
+    return view('shared.nav-bar-before');
+});
+
+Route::get('/nav-barB', function(){
+    return view('shared.nav-bar-home-before');
+});
+

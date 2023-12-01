@@ -27,12 +27,22 @@ function checkLink() {
 
 
 // change nav background color when scroll
-navBar = document.getElementById("nav-bar")
+navBar = document.getElementById("nav-bar");
 
 document.addEventListener("scroll", (e) => {
     if (window.scrollY > 0) {
         addClassList(navBar, "scrolled")
     } else {
         remClassList(navBar, "scrolled")
+    }
+})
+
+
+const ButtonRegister = document.querySelector(".register");
+document.addEventListener("scroll", (e) => {
+    if (window.scrollY > 0) {
+        addClassList(ButtonRegister, "bg-scrolled");
+    } else {
+        remClassList(ButtonRegister, "bg-scrolled");
     }
 })

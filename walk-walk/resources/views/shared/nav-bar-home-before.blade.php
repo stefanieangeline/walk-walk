@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigation bar</title>
     <link rel="shortcut icon" href="/assets/logo/logo-icon.svg" type="image/svg">
-    <link rel="stylesheet" href="css/nav-bar.css">
+    <link rel="stylesheet" href="css/nav-bar-before.css">
     <link rel="stylesheet" href="css/font-and-color.css">
     <script src="/js/nav-bar.js" defer=""></script>
 </head>
@@ -16,17 +16,9 @@
                 <img src="assets/logo/jalan-jalan.svg" class="logo">
             </a>
         </div>
-        <!-- <div class="mid-side">
-            <form action="">
-                <input type="text" id="nav-search" name="search" class="search-bar" placeholder="Search destination...">
-            </form>
-            <img src="/assets/icon/search.svg" class="search-icon">
-        </div> -->
         <div class="right-side">
-            <a href="{{route("help")}}" class="nav-link">Help</a>
-            <a href="{{route("account")}}" class="nav-link">
-                <img src="assets/icon/user.svg">
-            </a>
+            <a href="{{route("help")}}" class="nav-link">Log In</a>
+            <a href="#" id="register" class="register">Register</a>
         </div>
     </div>
 </body>

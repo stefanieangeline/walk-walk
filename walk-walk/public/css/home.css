@@ -83,10 +83,11 @@
 }
 
 .input-row {
+    height: fit-content;
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: 20px 0px;
     border: 1.5px solid var(--blue-base);
@@ -103,22 +104,34 @@
     border-radius: 10px;
 }
 
+.border-input{
+    border: 1.5px solid var(--blue-base);
+    border-radius: 10px;
+}
+
 .input-date {
     width: 195px;
     padding: 15px 10px;
+    border-radius: 20px;
     border: none;
     font-family: roboto-cons-light;
     font-size: 20px;
     color: var(--grey-dark);
 }
 
-.input-date:focus, .input-field:focus{
+.input-date:focus, .input-field:focus, .sub-input select:focus{
     outline: none;
+}
+
+.input[type="date"]::-webkit-calendar-picker-indicator {
+    
 }
 
 .drop-down-select {
     width: 400px;
     position: relative;
+    padding-left: 20px;
+    /* padding-right: 20px; */
 }
 
 .room-guest-info {
@@ -192,6 +205,7 @@
     justify-content: center;
     align-items: center;
     margin: 0px 20px;
+    padding :12px 10px;
 }
 
 .sub-input:last-child {

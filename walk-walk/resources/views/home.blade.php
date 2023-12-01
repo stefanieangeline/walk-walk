@@ -10,7 +10,7 @@
     <title>Jalan-jalan | Home</title>
 </head>
 <body>
-    @include("shared.nav-bar-search")
+    @include("shared.nav-bar-home-before")
     <div class="opening">
         <img class="background-image" src="https://drive.google.com/uc?export=view&id=1jt8Rg0c4b5hp7X3-2Ib6osexfsijso2g">
         <div class="main-container">
@@ -60,14 +60,18 @@
                 </div>
                 <div class="detail-info" id="flight-detail-info">
                     <div class="input-row left-align">
-                        <div class="sub-input">
+                        <!-- <div class="sub-input">
                             <img src="assets/icon/airplane-icon-blue.svg">
                             <select name="">
                                 <option class="option-edit">Two way</option>
                                 <option class="option-edit">One way</option>
                             </select>
+                        </div> -->
+                        <div class="border-input">
+                            <input type="date" class="input-date">
+                            <!-- <input type="date" class="input-date"> -->
                         </div>
-                        <div class="sub-input">
+                        <div class="sub-input border-input">
                             <img src="assets/icon/chair-blue.svg">
                             <select name="">
                                 <option class="option-edit">Economy</option>
@@ -77,10 +81,9 @@
                             </select>
                         </div>
                     </div>
-                    <div class="input-row">
+                    <!-- <div class="input-row">
                         <input type="date" class="input-date">
-                        <input type="date" class="input-date">
-                    </div>
+                    </div> -->
                     <div class="input-row flight-src-dst">
                         <div class="sub-text">
                             <img src="assets/icon/flight-take-off.svg">
