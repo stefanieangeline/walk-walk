@@ -14,28 +14,28 @@
         <img class="logo" src="assets\logo\jalan-jalan.svg" alt="">
 
        </div>
-       <div class="form_sign">
-        <!-- <img class="form_logo"src="https://drive.google.com/uc?export=view&id=12jmEVX5IqeXAXHD-0Ql8x6ZMVpptS-uS" alt=""> -->
+       <form method="POST" class="form_sign">
+        @csrf
         <p class="create_account">Create Account</p>
-        <input type="email" placeholder="Email (xxx@xx.com)" id="email">
-        <input type="text" placeholder="Mobile Number" id="mobilenumber">
-        <input type="text" placeholder="Full Name" id="fullname">
-        <input type="password" placeholder="Password (length must be more than 8)" id="password">
-        <input type="submit" value="Register" id="register" onclick="register_account()">
+        <input name="email" type="email" placeholder="Email (xxx@xx.com)" id="email">
+        <input name="phoneNumber" type="text" placeholder="Mobile Number" id="mobilenumber">
+        <input name="name" type="text" placeholder="Full Name" id="fullname">
+        <input name="password" type="password" placeholder="Password (length must be more than 8)" id="password">
+        <input type="submit" value="Register" id="register">
         <!-- <p class="error_message_password">Password length must be 8 or more</p>
         <p class="error_message_email">Email not valid</p> -->
         <p class="log_in_button">Have an account? </p><a href="{{route('login')}}" class="log_in_button_click">Click here to sign in</a>
 
-       </div>
+        </form>
 
 
     </div>
-    <div class="signin_success" id="signin_success" onclick="pindah_page()">
+    {{-- <div class="signin_success" id="signin_success" onclick="pindah_page()">
         <img src="https://drive.google.com/uc?export=view&id=1A47b-rvYcr3Dc7mxMQ1gdo9NsTZnlBxe" alt="">
         <p class="awesome">Awesome</p>
         <p>Your Account has been successfully created </p>
         <p class="click_anywhere">Click anywhere to continue</p>
-    </div>
-    <script src="/js/signin.js"></script>
+    </div> --}}
+    {{-- <script src="/js/signin.js"></script> --}}
 </body>
 </html>

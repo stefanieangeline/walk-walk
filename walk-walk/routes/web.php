@@ -35,7 +35,8 @@ Route::get('/hotels/detail', [HotelController::class, 'detail'])->name('hotels')
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 
-Route::post('/sign-in', [SigninController::class, 'index'])->name('sign-in');
+Route::get('/sign-in', [SigninController::class, 'index'])->name('sign-in');
+Route::post('/sign-in', [SigninController::class, 'store']);
 
 Route::get('/account', [AccountController::class,'index'])->name('account');
 

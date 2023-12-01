@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -12,20 +12,18 @@ class LoginController extends Controller
     }
 
     public function authenticate () {
+        request()->session()->regenerate();
 
         $validated = request()->validate([
             "email"=> "required|email",
-            "password"=> "required|confirmed"
+            "password"=> "required"
             ]
         );
 
         if (auth()->attempt($validated)) {
-            request()->session()->regenerate();
             return redirect()->route("home");
         }
 
-        dump("hallo");
-
-        // return redirect()->route("login");
+        return redirect()->route("login");
     }
 }

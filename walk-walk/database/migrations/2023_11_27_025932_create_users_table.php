@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id('IDUser');
-            $table->string('NameUser');
-            $table->string('EmailUser')->unique();
+            $table->string('name');
+            $table->string('email')->unique();
             $table->string('NoTelpUser');
             $table->date('DOBUser');
-            $table->string('PasswordUser');
+            $table->string('password');
             $table->foreignId('NationalityUser')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDCountry')->on('countries');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
