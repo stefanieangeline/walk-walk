@@ -17,7 +17,8 @@
             <div class="slogan-container">
                 <h2 class="slogan">Explore the world your way: your journey start with us</h2>
             </div>
-            <div class="select-box">
+
+            <form action="" method="get" class="select-box">
                 <div class="select-mode">
                     <div class="select-option" id="hotel-mode">
                         <img src="assets/icon/hotel-icon.svg">
@@ -28,15 +29,18 @@
                         <p class="select-text">Flights</p>
                     </div>
                 </div>
+
                 <div class="detail-info show" id="hotel-detail-info">
                     <div class="input-row">
                         <input type="text" class="input-field" placeholder="Enter a destination or property">
                         <img src="assets/icon/search.svg" class="input-icon">
                     </div>
+
                     <div class="input-row">
                         <input type="date" class="input-date">
                         <input type="date" class="input-date">
                     </div>
+
                     <div class="input-row drop-down-menu">
                         <div class="drop-down-select">
                             <h4 class="room-guest-info">Rooms and guests</h4>
@@ -58,6 +62,7 @@
                         <img src="assets/icon/chevron-down.svg" class="input-icon chevron" id="hotel-drop-down-icon">
                     </div>
                 </div>
+
                 <div class="detail-info" id="flight-detail-info">
                     <div class="input-row left-align">
                         <!-- <div class="sub-input">
@@ -68,11 +73,11 @@
                             </select>
                         </div> -->
                         <div class="border-input">
-                            <input type="date" class="input-date">
+                            <input name="date" type="date" class="input-date">
                         </div>
                         <div class="sub-input border-input">
                             <img src="assets/icon/chair-blue.svg">
-                            <select name="">
+                            <select name="class">
                                 <option class="option-edit">Economy</option>
                                 <option class="option-edit">Economy Premium</option>
                                 <option class="option-edit">Business</option>
@@ -83,12 +88,12 @@
                     <div class="input-row flight-src-dst">
                         <div class="sub-text">
                             <img src="assets/icon/flight-take-off.svg">
-                            <input type="text" class="input-text" placeholder="Leaving from" id="flight-src">
+                            <input name="source" type="text" class="input-text" placeholder="Leaving from" id="flight-src">
                         </div>
                         <img src="assets/icon/rotate-blue.svg" class="rotate-icon" id="rotate-icon">
                         <div class="sub-text">
                             <img src="assets/icon/flight-landing.svg">
-                            <input type="text" class="input-text" placeholder="Going to" id="flight-dst">
+                            <input name="destination" type="text" class="input-text" placeholder="Going to" id="flight-dst">
                         </div>
                     </div>
                     <div class="input-row drop-down-menu">
@@ -101,27 +106,29 @@
                             <div class="drop-down-container" id="flight-drop-down-container">
                                 <div class="num-input-flight">
                                     <h4>Senior</h4>
-                                    <input type="number" min="1" id="children-input" value="1">
+                                    <input name="senior" type="number" min="1" id="children-input" value="1">
                                 </div>
                                 <div class="num-input-flight">
                                     <h4>Adult</h4>
-                                    <input type="number" min="1" id="adult-input" value="1">
+                                    <input name="adult" type="number" min="1" id="adult-input" value="1">
                                 </div>
                                 <div class="num-input-flight">
                                     <h4>Children</h4>
-                                    <input type="number" min="1" id="children-input" value="1">
+                                    <input name="children" type="number" min="1" id="children-input" value="1">
                                 </div>
                             </div>
                         </div>
                         <img src="assets/icon/chevron-down.svg" class="input-icon chevron" id="flight-drop-down-icon">
                     </div>
                 </div>
+
                 <div class="search-box">
                     <button class="search-btn" id="search-btn">SEARCH</button>
-                </div>
-            </div>
+                </div>   
+            </form>
         </div>
     </div>
+
     <div class="content">
         <div class="recommendation">
             <p class="recommend-header">Recommended Stay</p>
