@@ -84,6 +84,7 @@
             <h2>Rp.2.980.000</h2>
             <div class="input">
                 <input type="text" name="Gender" placeholder="Input Your OTP Code" required>
+                <a class="submit-btn"><i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
         
