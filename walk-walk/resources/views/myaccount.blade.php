@@ -47,7 +47,7 @@
                             <i class="fa-regular fa-circle-user"></i>
                         </div>
                         <div class="profile-header-detail">
-                            <p class="name">{{$user->name}}</p>
+                            <p class="name">{{$user->Name}}</p>
                             <p class="id">US000004</p>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                             <div class="name-section">
                                 <p>Name</p>
                                 <div class="input">
-                                    <input type="text" name="Name" value={{$user->name}} disabled>
+                                    <input type="text" name="Name" value = {{$user->Name}} disabled>
                                     <i class="fa-solid fa-user"></i>
                                 </div>
                             </div>

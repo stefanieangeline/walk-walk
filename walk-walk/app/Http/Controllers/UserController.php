@@ -14,7 +14,14 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $user = new User();
+        $user->name = "stef";
+        $user->email = "stef@email";
+        $user->password = bcrypt("email");
+        $user->NoTelpUser = "123";
+        $user->DOBUser = "2000-01-01";
+        $user->NationalityUser = 1;
+        $user->save();
     }
 
     /**
@@ -46,7 +53,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('myaccount', compact('user'));
+        // return view('myaccount',['userName' => ]);
     }
 
     /**

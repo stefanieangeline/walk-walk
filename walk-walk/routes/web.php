@@ -39,7 +39,7 @@ Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/sign-in', [SigninController::class, 'index'])->name('sign-in');
 Route::post('/sign-in', [SigninController::class, 'store']);
 
-// Route::get('/account', [AccountController::class,'index'])->name('account');
+Route::get('/account', [AccountController::class,'index'])->name('account');
 
 Route::get('/help', [HelpController::class,'index'])->name('help');
 
@@ -82,5 +82,3 @@ Route::get('/nav-bar', function(){
 Route::get('/nav-barB', function(){
     return view('shared.nav-bar-home-before');
 });
-
-Route::resource('/account', UserController::class)->only('show')->middleware('auth');
