@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Country;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,6 +16,11 @@ class UserController extends Controller
      */
     public function index()
     {
+        $country = new Country();
+        $country->IDCountry = 1;
+        $country->NameCountry = "Indonesia";
+        $country->save();
+
         $user = new User();
         $user->name = "stef";
         $user->email = "stef@email";
@@ -51,9 +58,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
-        // return view('myaccount',['userName' => ]);
+        $user = User::where('IDUser', $id)->first();
+        return view('myaccount', compact('user'));
     }
 
     /**

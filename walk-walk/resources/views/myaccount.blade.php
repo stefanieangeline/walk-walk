@@ -47,7 +47,7 @@
                             <i class="fa-regular fa-circle-user"></i>
                         </div>
                         <div class="profile-header-detail">
-                            <p class="name">{{$user->Name}}</p>
+                            <p class="name">{{$user->name}}</p>
                             <p class="id">US000004</p>
                         </div>
                     </div>
@@ -56,42 +56,42 @@
                             <div class="name-section">
                                 <p>Name</p>
                                 <div class="input">
-                                    <input type="text" name="Name" value = {{$user->Name}} disabled>
+                                    <input type="text" name="Name" value = {{$user->name}} disabled>
                                     <i class="fa-solid fa-user"></i>
                                 </div>
                             </div>
                             <div class="email-section">
                                 <p>Email</p>
                                 <div class="input">
-                                    <input type="email" name="Email" value="alice.brown@example.com" disabled>
+                                    <input type="email" name="Email" value="{{$user->email}}" disabled>
                                     <i class="fa-solid fa-envelope"></i>
                                 </div>
                             </div>
                             <div class="password-section">
                                 <p>Password</p>
                                 <div class="input">
-                                    <input type="text" name="Password" value="strongpass" disabled>
+                                    <input type="password" name="Password" value="no" disabled>
                                     <i class="fa-solid fa-key"></i>
                                 </div>
                             </div>
                             <div class="dob-section">
                                 <p>Date of Birth</p>
                                 <div class="input">
-                                    <input type="date" name="dob" value="1980-12-10" disabled>
+                                    <input type="date" name="dob" value="{{$user->DOBUser}}" disabled>
                                     <i class="fa-solid fa-calendar-days"></i>
                                 </div>
                             </div>
                             <div class="nationality-section">
                                 <p>Nationality</p>
                                 <div class="input">
-                                    <input type="text" name="nationality" value="FRA" disabled>
+                                    <input type="text" name="nationality" value="{{$user->NationalityUser}}" disabled>
                                     <i class="fa-solid fa-flag"></i>
                                 </div>
                             </div>
                             <div class="phone-section">
                                 <p>Mobile Number</p>
                                 <div class="input">
-                                    <input type="number" name="phone-number" value="1112223333" disabled>
+                                    <input type="number" name="phone-number" value="{{$user->NoTelpUser}}" disabled>
                                     <i class="fa-solid fa-phone"></i>
                                 </div>
                             </div>

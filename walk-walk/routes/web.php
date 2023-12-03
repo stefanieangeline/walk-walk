@@ -40,6 +40,7 @@ Route::get('/sign-in', [SigninController::class, 'index'])->name('sign-in');
 Route::post('/sign-in', [SigninController::class, 'store']);
 
 Route::get('/account', [UserController::class,'index'])->name('account');
+Route::get('/account/{id}', [UserController::class,'show']);
 
 Route::get('/help', [HelpController::class,'index'])->name('help');
 
