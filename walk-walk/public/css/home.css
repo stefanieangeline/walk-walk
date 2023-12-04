@@ -171,7 +171,7 @@
 }
 
 .num-input {
-    width: 400px;
+    width: 350px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -195,7 +195,7 @@
 
 
 .num-input-flight {
-    width: 460px;
+    width: 400px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

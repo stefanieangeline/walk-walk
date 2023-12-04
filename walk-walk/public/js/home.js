@@ -54,14 +54,19 @@ guestQty.addEventListener("change", (e) => {
 })
 
 // menerima input perubahan jumlah penumpang dewasa atau anak-anak
+seniorQty = document.getElementById("senior-input")
 adultQty = document.getElementById("adult-input")
 childrenQty = document.getElementById("children-input")
 flightDispInfo = document.getElementById("flight-display-info")
 refreshflightDispInfo()
 
 function refreshflightDispInfo() {
-    flightDispInfo.innerHTML = adultQty.value + " adult, " + childrenQty.value +" children"
+    flightDispInfo.innerHTML = seniorQty.value + " senior, " +adultQty.value + " adult, " + childrenQty.value +" children"
 }
+
+seniorQty.addEventListener("change", (e) => {
+    refreshflightDispInfo();
+});
 
 adultQty.addEventListener("change", (e) => {
     refreshflightDispInfo()
@@ -69,12 +74,6 @@ adultQty.addEventListener("change", (e) => {
 
 childrenQty.addEventListener("change", (e) => {
     refreshflightDispInfo()
-})
-
-// action kalo search button dipencet
-searchBtn = document.getElementById("search-btn")
-searchBtn.addEventListener("click", (e) => {
-    window.location.href = "http://google.com"
 })
 
 // munculin opsi buat pilih hotel ato pilih penerbangan
@@ -105,6 +104,16 @@ flightMode.addEventListener("click", (e) => {
         remClassList(activeContainer, "show")
         activeMode = flightMode
         activeContainer = flightDetailInfo
+    }
+})
+
+// action kalo search button dipencet
+searchBtn = document.getElementById("search-btn")
+searchBtn.addEventListener("click", (e) => {
+    if (activeContainer == flightDetailInfo) {
+        document.forms["flight-form"].submit();
+    } else if (activeContainer == hotelDetailInfo) {
+        document.forms["hotel-form"].submit();
     }
 })
 

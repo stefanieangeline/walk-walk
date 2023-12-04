@@ -21,3 +21,25 @@ flightDropBtn.addEventListener("click", (e) => {
         remClassList(flightDropBtn, "rotate180deg");
     }
 });
+
+seniorQty = document.getElementById("senior-input")
+adultQty = document.getElementById("adult-input")
+childrenQty = document.getElementById("children-input")
+flightDispInfo = document.getElementById("flight-display-info")
+refreshflightDispInfo()
+
+function refreshflightDispInfo() {
+    flightDispInfo.innerHTML = seniorQty.value + " senior, " +adultQty.value + " adult, " + childrenQty.value +" children"
+}
+
+seniorQty.addEventListener("change", (e) => {
+    refreshflightDispInfo();
+});
+
+adultQty.addEventListener("change", (e) => {
+    refreshflightDispInfo()
+})
+
+childrenQty.addEventListener("change", (e) => {
+    refreshflightDispInfo()
+})

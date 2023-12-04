@@ -24,11 +24,23 @@ class FlightController extends Controller
 
         return view("flight", ['schedules' => $schedules]);
     }
+
+    public function search(Request $request){
+        $class = $request->input('class');
+        $source = $request->input('source');
+        $dest = $request->input('destination');
+        return view('flight', compact('date', 'class', 'source', 'destination', 'senior', 'adult', 'children'));
+    }
+
     public function index(){
         $class = request()->get("class");
         $source = request()->get("source");
         $dest = request()->get("destination");
-        $depDate = request()->get("departureDate");
+        $depDate = request()->get("date");
+        $senior = request()->get('senior');
+        $adult = request()->get('adult');
+        $children = request()->get('children');
+
         $queryarrivaltime = "CAST(schedules.ArrivalTime as time) as ArrivalTime";
         $querydeparturetime = "CAST(schedules.DepartureTime as time) as DepartureTime";
 
@@ -62,7 +74,12 @@ class FlightController extends Controller
                 ->min('schedule_details.Price'),
 
                 'source' => $source,
-                'dest' => $dest
+                'dest' => $dest,
+                'depDate' => $depDate,
+                'senior' => $senior,
+                'adult' => $adult,
+                'children' => $children,
+                'class' => $class
             ]);
         } else {
             return view('flight',[
@@ -85,7 +102,12 @@ class FlightController extends Controller
                 ->min('schedule_details.Price'),
 
                 'source' => $source,
-                'dest' => $dest
+                'dest' => $dest,
+                'depDate' => $depDate,
+                'senior' => $senior,
+                'adult' => $adult,
+                'children' => $children,
+                'class' => $class
             ]);
         }
     }

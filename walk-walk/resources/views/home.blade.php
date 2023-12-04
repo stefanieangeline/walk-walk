@@ -22,7 +22,7 @@
                 <h2 class="slogan">Explore the world your way: your journey start with us</h2>
             </div>
 
-            <form action="" method="get" class="select-box">
+            <div class="select-box">
                 <div class="select-mode">
                     <div class="select-option" id="hotel-mode">
                         <img src="assets/icon/hotel-icon.svg">
@@ -34,7 +34,7 @@
                     </div>
                 </div>
 
-                <div class="detail-info show" id="hotel-detail-info">
+                <form name="hotel-form" action="{{ route('hotels') }}" method="get" class="detail-info show" id="hotel-detail-info">
                     <div class="input-row">
                         <input type="text" class="input-field" placeholder="Enter a destination or property">
                         <img src="assets/icon/search.svg" class="input-icon">
@@ -65,9 +65,9 @@
                         </div>
                         <img src="assets/icon/chevron-down.svg" class="input-icon chevron" id="hotel-drop-down-icon">
                     </div>
-                </div>
+                </form>
 
-                <div class="detail-info" id="flight-detail-info">
+                <form name="flight-form" action="{{ route('flights') }}" method="get" class="detail-info" id="flight-detail-info">
                     <div class="input-row left-align">
                         <!-- <div class="sub-input">
                             <img src="assets/icon/airplane-icon-blue.svg">
@@ -105,12 +105,12 @@
                             <h4 class="room-guest-info">Travelers</h4>
                             <div class="display-info">
                                 <img src="assets/icon/guest.svg">
-                                <h2 id="flight-display-info">1 adult, 2 children</h2>
+                                <h2 id="flight-display-info">1 senior, 1 adult, 1 children</h2>
                             </div>
                             <div class="drop-down-container" id="flight-drop-down-container">
                                 <div class="num-input-flight">
                                     <h4>Senior</h4>
-                                    <input name="senior" type="number" min="1" id="children-input" value="1">
+                                    <input name="senior" type="number" min="1" id="senior-input" value="1">
                                 </div>
                                 <div class="num-input-flight">
                                     <h4>Adult</h4>
@@ -124,12 +124,12 @@
                         </div>
                         <img src="assets/icon/chevron-down.svg" class="input-icon chevron" id="flight-drop-down-icon">
                     </div>
-                </div>
+                </form>
 
                 <div class="search-box">
                     <button class="search-btn" id="search-btn">SEARCH</button>
                 </div>   
-            </form>
+            </div>
         </div>
     </div>
 

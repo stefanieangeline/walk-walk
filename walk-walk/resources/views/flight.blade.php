@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flight</title>
     <link rel="stylesheet" href="/css/flight.css">
+    <!-- <script src="/js/home.js"></script> -->
     <script src="/js/flight.js" defer=""></script>
 </head>
 <body>
@@ -41,15 +42,15 @@
                         <div class="drop-down-container" id="flight-drop-down-container">
                             <div class="num-input">
                                 <h4>Senior</h4>
-                                <input type="number" min="1" id="children-input" value="1">
+                                <input name="senior" type="number" min="1" id="senior-input" value="{{$senior}}">
                             </div>
                             <div class="num-input">
                                 <h4>Adult</h4>
-                                <input type="number" min="1" id="adult-input" value="1">
+                                <input name="adult" type="number" min="1" id="adult-input" value="{{$adult}}">
                             </div>
                             <div class="num-input">
                                 <h4>Children</h4>
-                                <input type="number" min="1" id="children-input" value="1">
+                                <input name="children" type="number" min="1" id="children-input" value="{{$children}}">
                             </div>  
                         </div>   
                     </div>  
@@ -59,9 +60,10 @@
                     <img src="assets/icon/seat.svg" class="img">
 
                     <select name="class" class="seat-opt">
-                        {{-- <option value="%">All Class</option> --}}
-                        <option value="Economy">Economy</option>
-                        <option value="Business">Business</option>
+                        <option class="option-edit" @if($class == "Economy") selected @endif>Economy</option>
+                        <option class="option-edit" @if($class == "Economy Premium") selected @endif>Economy Premium</option>
+                        <option class="option-edit" @if($class == "Business") selected @endif>Business</option>
+                        <option class="option-edit" @if($class == "First Class") selected @endif>First Class</option>
 
                     </select>
                 </div>
@@ -85,9 +87,9 @@
 
                 <div class="date">
                     <!-- <p class="text_date">March 2, 2023</p> -->
-                    <input class="input_date"type="date" name="departureDate">
-                    <div class="vertical"></div>
-                    <input class="input_date"type="date" name="arrivalDate">
+                    <input class="input_date "type="date" name="date" value="{{$depDate}}">
+                    <!-- <div class="vertical"></div>
+                    <input class="input_date"type="date" name="arrivalDate"> -->
                 </div>
 
                 <input type='submit' class="search_button">
