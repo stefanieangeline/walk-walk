@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Airport;
 use App\Models\City;
 use App\Models\Schedule;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class FlightController extends Controller
@@ -23,13 +23,6 @@ class FlightController extends Controller
         }
 
         return view("flight", ['schedules' => $schedules]);
-    }
-
-    public function search(Request $request){
-        $class = $request->input('class');
-        $source = $request->input('source');
-        $dest = $request->input('destination');
-        return view('flight', compact('date', 'class', 'source', 'destination', 'senior', 'adult', 'children'));
     }
 
     public function index(){
