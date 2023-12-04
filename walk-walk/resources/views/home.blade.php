@@ -36,13 +36,13 @@
 
                 <form name="hotel-form" action="{{ route('hotels') }}" method="get" class="detail-info show" id="hotel-detail-info">
                     <div class="input-row">
-                        <input type="text" class="input-field" placeholder="Enter a destination or property">
+                        <input type="text" class="input-field" placeholder="Enter a destination or property" name="destination">
                         <img src="assets/icon/search.svg" class="input-icon">
                     </div>
 
                     <div class="input-row">
-                        <input type="date" class="input-date">
-                        <input type="date" class="input-date">
+                        <input type="date" class="input-date" name="inDate">
+                        <input type="date" class="input-date" name="outDate">
                     </div>
 
                     <div class="input-row drop-down-menu">
@@ -55,11 +55,11 @@
                             <div class="drop-down-container" id="hotel-drop-down-container">
                                 <div class="num-input">
                                     <h4>Rooms</h4>
-                                    <input type="number" min="1" id="rooms-input" value="1">
+                                    <input type="number" min="1" id="rooms-input" value="1" name="room">
                                 </div>
                                 <div class="num-input">
                                     <h4>Adults</h4>
-                                    <input type="number" min="1" id="guests-input" value="2">
+                                    <input type="number" min="1" id="guests-input" value="1" name="guest">
                                 </div>
                             </div>
                         </div>

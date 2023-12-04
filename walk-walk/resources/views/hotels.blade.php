@@ -13,18 +13,18 @@
         <div class="box-choice">
             <div class="dest-box box-width">
                 <h2>Destination</h2>
-                <input type="text" placeholder="Search a place..." value="Bali">
+                <input type="text" placeholder="Search a place..." name="destination" value="{{$dest}}">
             </div>
             <div class="check-in-out-box box-width">
                 <div class="in-box">
                     <h2>Check-in</h2>
-                    <input type="date">
+                    <input type="date" value="{{$inDate}}" name="inDate">
                 </div>
                 <div class="line-box">
                 </div>
                 <div class="out-box">
                     <h2>Check-out</h2>
-                    <input type="date">
+                    <input type="date" value="{{$outDate}}" name="outDate">
                 </div>
             </div>
             <div class="input-row drop-down-menu box-width">
@@ -36,11 +36,11 @@
                     <div class="drop-down-container" id="hotel-drop-down-container">
                         <div class="num-input">
                             <h4>Rooms</h4>
-                            <input type="number" min="1" id="rooms-input" value="1">
+                            <input type="number" min="1" id="rooms-input" name="room" value="{{$room}}">
                         </div>
                         <div class="num-input">
                             <h4>Adults</h4>
-                            <input type="number" min="1" id="guests-input" value="2">
+                            <input type="number" min="1" id="guests-input" name="guest" value="{{$guest}}">
                         </div>
                     </div>
                 </div>
@@ -287,5 +287,7 @@
             </div>
         </div>
     </div>
+    </div>
+    @include("shared.footer")
 </body>
 </html>

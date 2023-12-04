@@ -31,7 +31,7 @@ Route::get('/flights', [FlightController::class, 'index'])->name('flights');
 
 Route::get('/hotels', [HotelController::class, 'index'])->name('hotels');
 
-Route::get('/hotels/detail', [HotelController::class, 'detail'])->name('hotels');
+// Route::get('/hotels/detail', [HotelController::class, 'detail'])->name('hotelsDetail');
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/login', [LoginController::class, 'login'])->name('login');

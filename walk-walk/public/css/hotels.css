@@ -5,6 +5,10 @@
 
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
     background-color: var(--blue-base);
 }
@@ -17,7 +21,7 @@ body {
 }
 
 .box-choice {
-    width: 90vw;
+    width: 85vw;
     background-color: var(--strong-blue);
     padding: 10px;
     border-radius: 20px;
@@ -329,12 +333,13 @@ body {
 
 .content_hotels{
     width: 100vw;
-    height: 700px;
+    height: fit-content;
     background-color: #F6F7F7;
     border-radius: 45px 45px 0px 0px;
     padding-top: 90px;
     padding-left: 109px;
     padding-right: 109px;
+    padding-bottom: 25px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
