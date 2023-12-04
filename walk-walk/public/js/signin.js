@@ -69,6 +69,6 @@ function register_account() {
 
 }
 
-function pindah_page() {
-	window.location.href = "home.php"
-}
+// function pindah_page() {
+// 	window.location.href = "home.php"
+// }
