@@ -47,13 +47,39 @@ a{
     overflow-x: hidden; 
     overflow-y: hidden; 
     padding-top: 20px;
+    position: relative;
+    position: fixed;
 }
+
 
 .content{
     display: flex;
     flex-direction: column;
     background-color: var(--white);
     height: 100vh;
+}
+
+.content-top{
+    display: flex;
+    flex-direction: column;
+}
+
+.content-buttom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    position: absolute;
+    bottom: 40px;
+    left: 100px;
+}
+
+.content-buttom a{
+    color: var(--shade-blue);
+}
+
+.content-buttom a:hover{
+    color: var(--blue-base);
 }
 
 .fa-solid{
@@ -116,6 +142,7 @@ a{
 /* sisi sebelah kanan */
 .main{
     width: 80vw;
+    margin-left: 20vw;
     background-color:var(--blue-base);
     display: flex;
     justify-content: center;
@@ -211,7 +238,7 @@ a{
 
 .bottom-card-body{
     display: flex;
-    gap: 30px;
+    gap: 50px;
     margin-bottom: 20px;
 }
 
@@ -230,6 +257,12 @@ a{
     font-size: 25px;
 }
 
+.right-part{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .btn-right-part{
     padding: 5px 10px 5px 10px;
     border-radius: 10px;
@@ -238,19 +271,20 @@ a{
     color: var(--white);
     border: none;
     margin-right: 10px;
-    text-align: center;
+    
 }
 
 .btn-right-part i{
     color: var(--white);
     font-size: 15px;
+    margin-left: 5px;
 }
 
 .btn-right-part:hover{
     cursor: pointer;
     background-color: var(--white);
     color: var(--shade-blue);
-    border: 2px solid var(--shade-blue);
+    border: 1px solid var(--shade-blue);
 }
 
 .btn-right-part:hover i{
