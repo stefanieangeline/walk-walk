@@ -15,24 +15,29 @@
                 <img class ="logo-img" src="assets/logo/jalan-jalan.svg" alt="logo">
             </div>
             <div class="content">
-                <a href="#">
-                    <div class="myaccount active">
-                        <i class="fa-solid fa-user active"></i>
-                        <p class="push-right">My Account</p>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="myorder">
-                        <i class="fa-solid fa-receipt"></i>
-                        <p class="push-right-1">My Order</p>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="history">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
-                        <p class="push-right">History</p>
-                    </div>
-                </a>
+                <div class="content-top">
+                    <a href="#">
+                        <div class="myaccount active">
+                            <i class="fa-solid fa-user active"></i>
+                            <p class="push-right">My Account</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="myorder">
+                            <i class="fa-solid fa-receipt"></i>
+                            <p class="push-right-1">My Order</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="history">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            <p class="push-right">History</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="content-buttom">
+                    <a href="#">Sign Out</a>
+                </div>
             </div>
         </div>
         <div class="main">
@@ -47,7 +52,7 @@
                             <i class="fa-regular fa-circle-user"></i>
                         </div>
                         <div class="profile-header-detail">
-                            <p class="name">{{$user->name}}</p>
+                            <p class="name"> testestest{{--{{$user->name}}--}}</p> 
                             <p class="id">US000004</p>
                         </div>
                     </div>
@@ -56,14 +61,14 @@
                             <div class="name-section">
                                 <p>Name</p>
                                 <div class="input">
-                                    <input type="text" name="Name" value = {{$user->name}} disabled>
+                                    <input type="text" name="Name" value = "testestest"{{--{{$user->name}}--}} disabled>
                                     <i class="fa-solid fa-user"></i>
                                 </div>
                             </div>
                             <div class="email-section">
                                 <p>Email</p>
                                 <div class="input">
-                                    <input type="email" name="Email" value="{{$user->email}}" disabled>
+                                    <input type="email" name="Email" value= alalala@gmail {{--{{$user->name}}--}} disabled>
                                     <i class="fa-solid fa-envelope"></i>
                                 </div>
                             </div>
@@ -77,21 +82,21 @@
                             <div class="dob-section">
                                 <p>Date of Birth</p>
                                 <div class="input">
-                                    <input type="date" name="dob" value="{{$user->DOBUser}}" disabled>
+                                    <input type="date" name="dob" value="12/01/2001{{--{{$user->DOBUser}}--}}" disabled>
                                     <i class="fa-solid fa-calendar-days"></i>
                                 </div>
                             </div>
                             <div class="nationality-section">
                                 <p>Nationality</p>
                                 <div class="input">
-                                    <input type="text" name="nationality" value="{{$user->NationalityUser}}" disabled>
+                                    <input type="text" name="nationality" value="Indonesia{{--{{$user->NationalityUser}}--}}" disabled>
                                     <i class="fa-solid fa-flag"></i>
                                 </div>
                             </div>
                             <div class="phone-section">
                                 <p>Mobile Number</p>
                                 <div class="input">
-                                    <input type="number" name="phone-number" value="{{$user->NoTelpUser}}" disabled>
+                                    <input type="number" name="phone-number" value="02992102919{{--{{$user->NoTelpUser}}--}}" disabled>
                                     <i class="fa-solid fa-phone"></i>
                                 </div>
                             </div>

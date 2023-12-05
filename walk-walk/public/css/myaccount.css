@@ -33,6 +33,7 @@ a{
     overflow-x: hidden; 
     overflow-y: hidden; 
     padding-top: 20px;
+    position: relative;
 }
 
 .content{
@@ -40,6 +41,29 @@ a{
     flex-direction: column;
     background-color: var(--white);
     height: 100vh;
+}
+
+.content-top{
+    display: flex;
+    flex-direction: column;
+}
+
+.content-buttom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    position: absolute;
+    bottom: 40px;
+    left: 100px;
+}
+
+.content-buttom a{
+    color: var(--shade-blue);
+}
+
+.content-buttom a:hover{
+    color: var(--blue-base);
 }
 
 .fa-solid{

@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/flight-payment.css">
     <link rel="stylesheet" href="css/font-and-color.css">
+    <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="big-container">
@@ -14,7 +15,7 @@
                 <img src="assets/icon/nextButton.svg" alt="">
             </div>
             <div class="navbar-title">
-                <h1>Booking Confirmation !</h1>
+                <h1>Booking Confirmation</h1>
             </div>
             <div class="navbar-right">
                 <a href="/jalan-jalan/help.php" class="nav-link">Help</a>
@@ -70,7 +71,7 @@
                         </div>
                         <div class="bottom-right">
                             <!-- <h4>See Airport Details</h4> -->
-                            <button>Airport Details</button>
+                            <button class="btn-right">Check E-Ticket<i class="fa-solid fa-circle-info"></i></button>
                         </div>
                     </div>
 
@@ -78,7 +79,7 @@
             </div> 
         </div> 
     </div>
-    <?php include "footer.php" ?>
+    @include('shared.footer')
 
 
 

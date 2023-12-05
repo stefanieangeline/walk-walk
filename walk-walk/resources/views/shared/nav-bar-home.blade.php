@@ -16,12 +16,6 @@
                 <img src="assets/logo/jalan-jalan.svg" class="logo">
             </a>
         </div>
-        <!-- <div class="mid-side">
-            <form action="">
-                <input type="text" id="nav-search" name="search" class="search-bar" placeholder="Search destination...">
-            </form>
-            <img src="/assets/icon/search.svg" class="search-icon">
-        </div> -->
         <div class="right-side">
             <a href="{{route("help")}}" class="nav-link">Help</a>
             <a href="{{route("account")}}" class="nav-link">

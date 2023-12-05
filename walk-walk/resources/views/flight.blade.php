@@ -10,7 +10,7 @@
 </head>
 <body>
     {{-- @dump($schedules) --}}
-    @include("shared.nav-bar")
+    @include("shared.nav-bar-standard")
     <div class="bg-flight">
         <form action="" method="GET" class="box-choice" name="box-choice">
             <div class="top">
@@ -35,7 +35,7 @@
                         <img src="assets/icon/people.svg" class="img">
                         <!-- <img src="assets/icon/guest.svg"> -->
                         <div class="display-info">
-                            <p id="flight-display-info">1 senior, 1 adult, 2 children</p>
+                            <p id="flight-display-info">1 senior, 1 adult, 1 children</p>
                             <img src="assets/icon/drop-down-strong-blue.svg" class="input-icon chevron" id="flight-drop-down-icon">
                         </div>
                         

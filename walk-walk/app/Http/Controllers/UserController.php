@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Country;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -16,19 +17,21 @@ class UserController extends Controller
      */
     public function index()
     {
-        $country = new Country();
-        $country->IDCountry = 1;
-        $country->NameCountry = "Indonesia";
-        $country->save();
-
         $user = new User();
-        $user->name = "stef";
-        $user->email = "stef@email";
-        $user->password = bcrypt("email");
-        $user->NoTelpUser = "123";
+        $user->name = "Stef";
+        $user->email = "stef@email.com";
+        $user->password = bcrypt("password");
+        $user->NoTelpUser = "08123456789";
         $user->DOBUser = "2000-01-01";
         $user->NationalityUser = 1;
         $user->save();
+
+        if (Auth::attempt(['email' => $user->email, 'password' => $user->password], $user)) {
+            request()->session()->regenerate();
+            return redirect()->route("home");
+        }
+
+        return view("flights");
     }
 
     /**
@@ -58,11 +61,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $user = User::where('IDUser', $id)->first();
-        return view('myaccount', compact('user'));
-    }
+    // public function show($id)
+    // {
+    //     $user = User::where('IDUser', $id)->first();
+    //     return view('myaccount', compact('user'));
+    // }
 
     /**
      * Show the form for editing the specified resource.

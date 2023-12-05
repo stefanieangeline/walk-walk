@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Detail</title>  
-    <link rel="stylesheet" href="/jalan-jalan/css/booking-detail.css">
-    <link rel="stylesheet" href="/jalan-jalan/css/font-and-color.css">
+    <link rel="stylesheet" href="/css/booking-detail.css">
+    <link rel="stylesheet" href="/css/font-and-color.css">
     <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="history-page">
         <div class="side-bar-left">
             <div class="logo">
-                <img class ="logo-img" src="/jalan-jalan/assets/logo/jalan-jalan.svg" alt="logo">
+                <img class ="logo-img" src="/assets/logo/jalan-jalan.svg" alt="logo">
             </div>
             <div class="content">
                 <a href="#">

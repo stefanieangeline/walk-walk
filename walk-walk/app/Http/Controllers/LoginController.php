@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Hash;
+use Illuminate\Support\Facades\Session;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,7 +14,6 @@ class LoginController extends Controller
     }
 
     public function authenticate () {
-        request()->session()->regenerate();
 
         $validated = request()->validate([
             "email"=> "required|email",
@@ -20,7 +21,8 @@ class LoginController extends Controller
             ]
         );
 
-        if (auth()->attempt($validated)) {
+        if (Auth::attempt(['email' => $validated["email"], 'password' => $validated["password"]], $remember)) {
+            request()->session()->regenerate();
             return redirect()->route("home");
         }
 

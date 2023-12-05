@@ -8,7 +8,7 @@
     <title>Hotel's Room</title>
 </head>
 <body>
-    @include("shared.nav-bar")
+    @include("shared.nav-bar-standard")
     <div class="background">
     <div class="box-choice">
             <div class="dest-box box-width">

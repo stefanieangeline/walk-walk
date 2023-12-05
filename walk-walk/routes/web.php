@@ -39,8 +39,10 @@ Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/sign-in', [SigninController::class, 'index'])->name('sign-in');
 Route::post('/sign-in', [SigninController::class, 'store']);
 
+// ini yg nnti dipake
 Route::get('/account', [UserController::class,'index'])->name('account');
 Route::get('/account/{id}', [UserController::class,'show']);
+
 
 Route::get('/help', [HelpController::class,'index'])->name('help');
 
@@ -83,3 +85,19 @@ Route::get('/nav-bar', function(){
 Route::get('/nav-barB', function(){
     return view('shared.nav-bar-home-before');
 });
+
+//sementara
+Route::get('/flight-payment', function(){
+    return view('flight-payment');
+});
+
+Route::get('/history', function(){
+    return view('history');
+});
+
+Route::get('/booking-detail', function(){
+    return view('booking-detail');
+});
+
+
+Route::get('/user', [UserController::class, 'index'])->name('user');

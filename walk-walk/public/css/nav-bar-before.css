@@ -4,11 +4,6 @@
     user-select: none;
 }
 
-/* body{
-    background-color: burlywood;
-    height: 2000px;
-} */
-
 .nav-bar {
     top: 0px;
     display: flex;
@@ -57,17 +52,7 @@ a{
     text-decoration: none;
 }
 
-.register{
-    padding : 10px 20px 10px 20px;
-    background-color: var(--strong-blue);
-    color: white;
-    border-radius: 10px;
-    font-family: roboto-cons-bold;
-    font-size: 20px;
-}
-.register:hover{
-    opacity: 0.7;
-}
+
 
 .nav-link {
     margin: 0px 20px;

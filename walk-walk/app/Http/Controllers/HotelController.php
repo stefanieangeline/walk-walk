@@ -23,15 +23,16 @@ class HotelController extends Controller
             'hotels' => Hotel::query()
             ->join('Cities','Cities.IDCity','=','Hotels.IDCity')
             ->join('Countries','Cities.IDCountry','=','Countries.IDCountry')
-            // ->join('Hotel_facility_headers', 'Hotels.IDHotel','=','Hotel_facility_headers.IDHotel')
-            // ->join('Hotel_facility_details', 'Hotel_facility_headers.IDDetailFacilityHotel','=','Hotel_facility_details.IDDetailFacilityHotel')
-            // ->join('Hotel_rooms', 'Hotels.IDHotel','=','Hotel_rooms.IDHotel')
+            ->join('Hotel_rooms', 'Hotels.IDHotel','=','Hotel_rooms.IDHotel')
+            // ->select('Hotels.*', 'MIN(Hotel_rooms.PriceRoom) as min_price')
             // ->select('Hotels.NameHotel','Cities.NameCity as HotelCity','Hotels.StarHotel','Hotels.RatingHotel', 
-            //         'Hotel_facility_details.NameFacility','Hotel_rooms.TypeRoom', 'Hotel_rooms.PriceRoom', 'Hotel_rooms.WideRoom')
+            //          'Hotel_facility_details.NameFacility','Hotel_rooms.TypeRoom', 'Hotel_rooms.PriceRoom', 'Hotel_rooms.WideRoom')
+            // ->select('Hotels.*')
             ->where(function ($query) use ($dest) {
                 $query->where('Cities.NameCity', 'like', '%' . $dest . '%')
                 ->orWhere('Countries.NameCountry', 'like', '%' . $dest . '%');
             })
+            // ->groupBy('Hotels.IDHotel') 
             ->get(),
 
             'dest'=> $dest,

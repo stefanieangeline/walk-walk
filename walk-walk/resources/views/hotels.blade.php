@@ -8,7 +8,7 @@
     <title>Hotels</title>
 </head>
 <body>
-    @include("shared.nav-bar")
+    @include("shared.nav-bar-standard")
     <div class="background">
         <div class="box-choice">
             <div class="dest-box box-width">
@@ -32,7 +32,7 @@
                 <div class="drop-down-select">
                     <h4 class="room-guest-info">Rooms and Guests</h4>
                     <div class="display-info">
-                        <h2 id="hotel-display-info">1 room, 2 adults</h2>
+                        <h2 id="hotel-display-info">1 room, 1 adults</h2>
                     </div>
                     <div class="drop-down-container" id="hotel-drop-down-container">
                         <div class="num-input">
@@ -50,6 +50,7 @@
             <img src="assets/icon/searchbutton.svg">
         </div>
     </div>
+
     <div class="content_hotels">
         <div class="left-side-bar">
             <div class="price-range range">
@@ -119,51 +120,63 @@
         <div class="right-box">
             @foreach($hotels as $hotel)
             <div class="hotel-detail">
-                <img src="https://drive.google.com/uc?export=view&id=1jt8Rg0c4b5hp7X3-2Ib6osexfsijso2g" class="hotel-image">
-                <div class="detail-info">
-                    <div class="hotel-name-rating">
-                        <h2>{{$hotel -> NameHotel}}</h2>
-                        <div class="hotel-rating-star">
-                            <img src="assets/icon/star-gold.svg">
-                            <img src="assets/icon/star-gold.svg">
-                            <img src="assets/icon/star-gold.svg">
-                        </div>
-                    </div>
-                    <div class="hotel-rating-review">
-                        <div class="hotel-rating">
-                            <h4>{{$hotel -> RatingHotel}}</h4>
-                            <h5>/5</h5>
-                        </div>
-                        <div class="hotel-review">
-                            <h4>100 reviews</h4>
-                        </div>
-                    </div>
-                    <div class="hotel-place">
-                        <div class="hotel-nav">
-                            <img src="assets/icon/location-blue.svg">
-                            <h4>{{$hotel->NameCity}}</h4>
-                        </div>
-                        <div class="hotel-dist">
-                            <h4>2km to center</h4>
-                        </div>
-                    </div>
-                    <div class="hotel-facility">
-                        <h4>{{$hotel->FacilityHotel}}</h4>
-                        <!-- <h4>Parking</h4>
-                        <h4>Free pool access</h4> -->
-                    </div>
-                    <div class="hotel-room">
-                        <h3 class="room-type">Premier Room</h3>
-                        <div class="bed-type">
-                            <div class="room-area">
-                                <img src="assets/icon/queen-bed-blue.svg">
-                                <h4>King bed</h4>
-                            </div>
-                            <div class="room-area">
-                                <img src="assets/icon/house-area-blue.svg">
-                                <h4>30m<sup>2</sup></h4>
+                <div class="right-left">
+                    <img src="https://drive.google.com/uc?export=view&id=1jt8Rg0c4b5hp7X3-2Ib6osexfsijso2g" class="hotel-image">
+                    <div class="detail-info">
+                        <div class="hotel-name-rating">
+                            <h2>{{$hotel -> NameHotel}}</h2>
+                            <div class="hotel-rating-star">
+                                @for($i = 0; $i < $hotel->StarHotel; $i++)
+                                     <img src="assets/icon/star-gold.svg">
+                                @endfor
+                                <!-- <img src="assets/icon/star-gold.svg">
+                                <img src="assets/icon/star-gold.svg">
+                                <img src="assets/icon/star-gold.svg"> -->
                             </div>
                         </div>
+                        <div class="hotel-rating-review">
+                            <div class="hotel-rating">
+                                <h4>{{$hotel -> RatingHotel}}</h4>
+                                <h5>/5</h5>
+                            </div>
+                            <div class="hotel-review">
+                                <h4>100 reviews</h4>
+                            </div>
+                        </div>
+                        <div class="hotel-place">
+                            <div class="hotel-nav">
+                                <img src="assets/icon/location-blue.svg">
+                                <h4>{{$hotel->NameCity}}</h4>
+                            </div>
+                            <!-- <div class="hotel-dist">
+                                <h4>2km to center</h4>
+                            </div> -->
+                        </div>
+                        <div class="hotel-facility">
+                            @php
+                                $facilities = explode(',', $hotel->FacilityHotel);
+                            @endphp
+
+                            @foreach ($facilities as $facility)
+                                <span class="facility-item">{{ trim($facility ) }}</span>
+                            @endforeach
+                            <!-- <h4>{{$hotel->FacilityHotel}}</h4> -->
+                            <!-- <h4>Parking</h4>
+                            <h4>Free pool access</h4> -->
+                        </div>
+                        <!-- <div class="hotel-room">
+                            <h3 class="room-type">Premier Room</h3>
+                            <div class="bed-type">
+                                <div class="room-area">
+                                    <img src="assets/icon/queen-bed-blue.svg">
+                                    <h4>King bed</h4>
+                                </div>
+                                <div class="room-area">
+                                    <img src="assets/icon/house-area-blue.svg">
+                                    <h4>30m<sup>2</sup></h4>
+                                </div>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="hotel-price">
@@ -176,121 +189,6 @@
                 </div>
             </div>
             @endforeach
-
-            <!-- <div class="hotel-detail">
-                <img src="https://drive.google.com/uc?export=view&id=1jt8Rg0c4b5hp7X3-2Ib6osexfsijso2g" class="hotel-image">
-                <div class="detail-info">
-                    <div class="hotel-name-rating">
-                        <h2>Arunika Hotel and Spa</h2>
-                        <div class="hotel-rating-star">
-                            <img src="assets/icon/star-gold.svg">
-                            <img src="assets/icon/star-gold.svg">
-                            <img src="assets/icon/star-gold.svg">
-                        </div>
-                    </div>
-                    <div class="hotel-rating-review">
-                        <div class="hotel-rating">
-                            <h4>4.5</h4>
-                            <h5>/5</h5>
-                        </div>
-                        <div class="hotel-review">
-                            <h4>100 reviews</h4>
-                        </div>
-                    </div>
-                    <div class="hotel-place">
-                        <div class="hotel-nav">
-                            <img src="assets/icon/location-blue.svg">
-                            <h4>Kuta</h4>
-                        </div>
-                        <div class="hotel-dist">
-                            <h4>2km to center</h4>
-                        </div>
-                    </div>
-                    <div class="hotel-facility">
-                        <h4>Breakfast</h4>
-                        <h4>Parking</h4>
-                        <h4>Free pool access</h4>
-                    </div>
-                    <div class="hotel-room">
-                        <h3 class="room-type">Premier Room</h3>
-                        <div class="bed-type">
-                            <div class="room-area">
-                                <img src="assets/icon/queen-bed-blue.svg">
-                                <h4>King bed</h4>
-                            </div>
-                            <div class="room-area">
-                                <img src="assets/icon/house-area-blue.svg">
-                                <h4>30m<sup>2</sup></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hotel-price">
-                    <h4 class="discount-percent">30% off</h4>
-                    <div class="price-detail">
-                        <h5 class="actual-price">Rp. 420.000</h5>
-                        <h4 class="discount-price">Rp. 300.000</h4>
-                    </div>
-                    <button>Check Availability</button>
-                </div>
-            </div>
-            <div class="hotel-detail">
-                <img src="https://drive.google.com/uc?export=view&id=1jt8Rg0c4b5hp7X3-2Ib6osexfsijso2g" class="hotel-image">
-                <div class="detail-info">
-                    <div class="hotel-name-rating">
-                        <h2>Arunika Hotel and Spa</h2>
-                        <div class="hotel-rating-star">
-                            <img src="assets/icon/star-gold.svg">
-                            <img src="assets/icon/star-gold.svg">
-                            <img src="assets/icon/star-gold.svg">
-                        </div>
-                    </div>
-                    <div class="hotel-rating-review">
-                        <div class="hotel-rating">
-                            <h4>4.5</h4>
-                            <h5>/5</h5>
-                        </div>
-                        <div class="hotel-review">
-                            <h4>100 reviews</h4>
-                        </div>
-                    </div>
-                    <div class="hotel-place">
-                        <div class="hotel-nav">
-                            <img src="assets/icon/location-blue.svg">
-                            <h4>Kuta</h4>
-                        </div>
-                        <div class="hotel-dist">
-                            <h4>2km to center</h4>
-                        </div>
-                    </div>
-                    <div class="hotel-facility">
-                        <h4>Breakfast</h4>
-                        <h4>Parking</h4>
-                        <h4>Free pool access</h4>
-                    </div>
-                    <div class="hotel-room">
-                        <h3 class="room-type">Premier Room</h3>
-                        <div class="bed-type">
-                            <div class="room-area">
-                                <img src="assets/icon/queen-bed-blue.svg">
-                                <h4>King bed</h4>
-                            </div>
-                            <div class="room-area">
-                                <img src="assets/icon/house-area-blue.svg">
-                                <h4>30m<sup>2</sup></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hotel-price">
-                    <h4 class="discount-percent">30% off</h4>
-                    <div class="price-detail">
-                        <h5 class="actual-price">Rp. 420.000</h5>
-                        <h4 class="discount-price">Rp. 300.000</h4>
-                    </div>
-                    <button>Check Availability</button>
-                </div>
-            </div> -->
         </div>
     </div>
     @include("shared.footer")

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigation bar</title>
-    <link rel="stylesheet" href="/css/nav-bar-before.css">
+    <link rel="stylesheet" href="/css/nav-bar.css">
     <link rel="stylesheet" href="/css/font-and-color.css">
     <link rel="shortcut icon" href="/assets/logo/logo-icon.svg" type="image/svg">
     <script src="/js/nav-bar.js" defer=""></script>
@@ -19,8 +19,8 @@
             <a href="{{route("flights")}}" class="nav-link">Flights</a>
         </div>
         <div class="right-side">
-            <a href="{{route("help")}}" class="nav-link">Log In</a>
-            <a href="#" class="register">Register</a>
+            <a href="{{route("login")}}" class="nav-link">Log In</a>
+            <a href="{{route("sign-in")}}" class="register">Register</a>
         </div>
     </div>
 </body>
