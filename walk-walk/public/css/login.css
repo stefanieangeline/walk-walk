@@ -70,7 +70,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #19A7CE;
+    background: var(--background);
 
     /* background-color: black; */
     justify-content: center;

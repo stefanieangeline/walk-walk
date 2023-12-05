@@ -11,8 +11,9 @@
     --near-black: #1d1e1f;
     --another-blue: #0A4D78;
     --blue-cloudy : #358E9D;
-
+    --background : linear-gradient(60deg, rgba(20,108,148,1) 0%, rgba(25,167,206,1) 30%, rgba(21,156,207,1) 69%, rgba(0,100,210,1) 100%);
 }
+
 
 @font-face {
     font-family: roboto-medium;
