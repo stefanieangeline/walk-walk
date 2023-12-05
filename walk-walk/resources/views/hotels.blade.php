@@ -117,12 +117,12 @@
         </div>
 
         <div class="right-box">
-            
+            @foreach($hotels as $hotel)
             <div class="hotel-detail">
                 <img src="https://drive.google.com/uc?export=view&id=1jt8Rg0c4b5hp7X3-2Ib6osexfsijso2g" class="hotel-image">
                 <div class="detail-info">
                     <div class="hotel-name-rating">
-                        <h2>Arunika Hotel & Spa</h2>
+                        <h2>{{$hotel -> NameHotel}}</h2>
                         <div class="hotel-rating-star">
                             <img src="assets/icon/star-gold.svg">
                             <img src="assets/icon/star-gold.svg">
@@ -131,7 +131,7 @@
                     </div>
                     <div class="hotel-rating-review">
                         <div class="hotel-rating">
-                            <h4>4.5</h4>
+                            <h4>{{$hotel -> RatingHotel}}</h4>
                             <h5>/5</h5>
                         </div>
                         <div class="hotel-review">
@@ -141,16 +141,16 @@
                     <div class="hotel-place">
                         <div class="hotel-nav">
                             <img src="assets/icon/location-blue.svg">
-                            <h4>Kuta</h4>
+                            <h4>{{$hotel->NameCity}}</h4>
                         </div>
                         <div class="hotel-dist">
                             <h4>2km to center</h4>
                         </div>
                     </div>
                     <div class="hotel-facility">
-                        <h4>Breakfast</h4>
-                        <h4>Parking</h4>
-                        <h4>Free pool access</h4>
+                        <h4>{{$hotel->FacilityHotel}}</h4>
+                        <!-- <h4>Parking</h4>
+                        <h4>Free pool access</h4> -->
                     </div>
                     <div class="hotel-room">
                         <h3 class="room-type">Premier Room</h3>
@@ -175,7 +175,7 @@
                     <button>Check Availability</button>
                 </div>
             </div>
-            
+            @endforeach
 
             <!-- <div class="hotel-detail">
                 <img src="https://drive.google.com/uc?export=view&id=1jt8Rg0c4b5hp7X3-2Ib6osexfsijso2g" class="hotel-image">
