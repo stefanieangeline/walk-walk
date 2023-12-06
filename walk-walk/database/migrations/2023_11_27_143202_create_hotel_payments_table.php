@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('hotel_payments', function (Blueprint $table) {
             $table->id('IDHotelPayment');
             $table->foreignId('IDOrder')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDOrder')->on('ordered_rooms');
-            $table->foreignId('IDUser')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDUser')->on('users');
+            $table->foreignId('id')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('id')->on('users');
             $table->timestamps();
         });
     }

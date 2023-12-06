@@ -10,10 +10,11 @@
     <title>Jalan-jalan | Home</title>
 </head>
 <body>
-    <?php use Illuminate\Support\Facades\Auth; if (Auth::check()){
-        echo "berhasil";
+    <?php use Illuminate\Support\Facades\Auth; 
+    if (Auth::check()){
+        // echo "berhasil";
     } else {
-        echo "gagal";
+        // echo "gagal";
     }
     ?>
     @auth
@@ -21,6 +22,15 @@
     @elseguest
         @include("shared.nav-bar-home-before")
     @endauth
+    {{-- {{ Auth::user() }} --}}
+    
+    {{-- @auth
+        {{ "berhasil" }}
+    @endauth
+    @guest
+        {{ "salah" }}
+    @endguest --}}
+
     <div class="opening">
         <img class="background-image" src="https://drive.google.com/uc?export=view&id=1jt8Rg0c4b5hp7X3-2Ib6osexfsijso2g">
         <div class="main-container">
