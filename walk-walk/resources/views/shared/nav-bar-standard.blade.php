@@ -17,13 +17,21 @@
             </a>
             <a href="{{route("hotels")}}" class="nav-link active">Hotels</a>
             <a href="{{route("flights")}}" class="nav-link">Flights</a>
-            <a href="{{route("home")}}" class="nav-link">History</a>
+            @auth
+                <a href="{{route("home")}}" class="nav-link">History</a>
+            @endauth
         </div>
         <div class="right-side">
-            <a href="{{route("help")}}" class="nav-link">Help</a>
-            <a href="{{route("account")}}" class="nav-link">
-                <img src="/assets/icon/user.svg">
-            </a>
+            @auth
+                <a href="{{route("help")}}" class="nav-link">Help</a>
+                <a href="{{route("account")}}" class="nav-link">
+                    <img src="/assets/icon/user.svg">
+                </a>
+            @endauth
+            @guest
+                <a href="{{route("login")}}" class="nav-link">Log In</a>
+                <a href="{{route("sign-in")}}" class="register">Register</a>
+            @endguest
         </div>
     </div>
 </body>

@@ -17,10 +17,16 @@
             </a>
         </div>
         <div class="right-side">
-            <a href="{{route("help")}}" class="nav-link">Help</a>
-            <a href="{{route("account")}}" class="nav-link">
-                <img src="assets/icon/user.svg">
-            </a>
+            @guest
+                <a href="{{route("login")}}" class="nav-link">Log In</a>
+                <a href="{{route("sign-in")}}" id="register" class="register">Register</a>
+            @endguest
+            @auth
+                <a href="{{route("help")}}" class="nav-link">Help</a>
+                <a href="{{route("account")}}" class="nav-link">
+                    <img src="assets/icon/user.svg">
+                </a>
+            @endauth
         </div>
     </div>
 </body>

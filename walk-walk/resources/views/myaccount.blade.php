@@ -35,8 +35,11 @@
                         </div>
                     </a>
                 </div>
-                <div class="content-buttom">
-                    <a href="#">Sign Out</a>
+                <div class="content-bottom">
+                    <form action="{{route("logout")}}" method="POST">
+                        @csrf
+                        <button type="submit">Sign Out</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -52,8 +55,8 @@
                             <i class="fa-regular fa-circle-user"></i>
                         </div>
                         <div class="profile-header-detail">
-                            <p class="name"> testestest{{--{{$user->name}}--}}</p> 
-                            <p class="id">US000004</p>
+                            <p class="name">{{ Auth::user()->name }}</p>
+                            <p class="id">{{ Auth::user()->id }}</p>
                         </div>
                     </div>
                     <div class="profile-detail">
@@ -61,42 +64,42 @@
                             <div class="name-section">
                                 <p>Name</p>
                                 <div class="input">
-                                    <input type="text" name="Name" value = "testestest"{{--{{$user->name}}--}} disabled>
+                                    <input type="text" name="Name" value ="{{ Auth::user()->name }}" disabled>
                                     <i class="fa-solid fa-user"></i>
                                 </div>
                             </div>
                             <div class="email-section">
                                 <p>Email</p>
                                 <div class="input">
-                                    <input type="email" name="Email" value= alalala@gmail {{--{{$user->name}}--}} disabled>
+                                    <input type="email" name="Email" value="{{ Auth::user()->email }}" disabled>
                                     <i class="fa-solid fa-envelope"></i>
                                 </div>
                             </div>
                             <div class="password-section">
                                 <p>Password</p>
                                 <div class="input">
-                                    <input type="password" name="Password" value="no" disabled>
+                                    <input type="password" name="Password" value="{{ Auth::user()->name }}" disabled>
                                     <i class="fa-solid fa-key"></i>
                                 </div>
                             </div>
                             <div class="dob-section">
                                 <p>Date of Birth</p>
                                 <div class="input">
-                                    <input type="date" name="dob" value="12/01/2001{{--{{$user->DOBUser}}--}}" disabled>
+                                    <input type="date" name="dob" value="{{ Auth::user()->DOBUser }}" disabled>
                                     <i class="fa-solid fa-calendar-days"></i>
                                 </div>
                             </div>
                             <div class="nationality-section">
                                 <p>Nationality</p>
                                 <div class="input">
-                                    <input type="text" name="nationality" value="Indonesia{{--{{$user->NationalityUser}}--}}" disabled>
+                                    <input type="text" name="nationality" value="{{ Auth::getCountryName(Auth::user()->NationalityUser) }}" disabled>
                                     <i class="fa-solid fa-flag"></i>
                                 </div>
                             </div>
                             <div class="phone-section">
                                 <p>Mobile Number</p>
                                 <div class="input">
-                                    <input type="number" name="phone-number" value="02992102919{{--{{$user->NoTelpUser}}--}}" disabled>
+                                    <input type="number" name="phone-number" value="{{ Auth::user()->NoTelpUser }}" disabled>
                                     <i class="fa-solid fa-phone"></i>
                                 </div>
                             </div>

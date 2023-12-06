@@ -17,6 +17,15 @@ class LoginController extends Controller
         return view("login");
     }
 
+    public function logout () {
+        auth()->logout();
+
+        request()->session()->invalidate();
+        request()->session()->regenerate();
+
+        return redirect()->route("home");
+    }
+
     public function authenticate (Request $request) : RedirectResponse
     {
         $validated = $request->validate([

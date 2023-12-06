@@ -7,6 +7,7 @@ use App\Models\Country;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -15,8 +16,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function dummy() {
         $user = new User();
         $user->name = "Stef";
         $user->email = "stef@email.com";
@@ -26,12 +26,11 @@ class UserController extends Controller
         $user->NationalityUser = 1;
         $user->save();
 
-        // if (Auth::attempt(['email' => $user->email, 'password' => $user->password], $user)) {
-        //     request()->session()->regenerate();
-        //     return redirect()->route("home");
-        // }
+        return redirect()->route("home");
+    }
 
-        return view("login");
+    public function index() {
+        return view("myaccount");
     }
 
     /**

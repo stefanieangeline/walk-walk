@@ -128,7 +128,7 @@ switchBtn.addEventListener("click", (e) => {
     flightDst.value = temp
 })
 
-//slider recommendation 
+//slider recommendation
 const carousel = document.querySelector(".carousel");
 const arrowBtns = document.querySelectorAll(".arrow");
 const firstCardWidth = carousel.querySelector(".card").offsetWidth;

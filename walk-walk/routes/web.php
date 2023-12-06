@@ -35,14 +35,12 @@ Route::get('/hotels', [HotelController::class, 'index'])->name('hotels');
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware("auth");
 
 Route::get('/sign-in', [SigninController::class, 'index'])->name('sign-in');
 Route::post('/sign-in', [SigninController::class, 'store']);
 
-// ini yg nnti dipake
-Route::get('/account', [UserController::class,'index'])->name('account');
-Route::get('/account/{id}', [UserController::class,'show']);
-
+Route::get('/account', [UserController::class,'index'])->name('account')->middleware("auth");
 
 Route::get('/help', [HelpController::class,'index'])->name('help');
 
@@ -99,5 +97,4 @@ Route::get('/booking-detail', function(){
     return view('booking-detail');
 });
 
-
-Route::get('/user', [UserController::class, 'index'])->name('user');
+Route::get('/dummy', [UserController::class, 'dummy'])->name('dummy');

@@ -25,4 +25,8 @@ class User extends Authenticatable
     //     'password',
     //     'remember_token',
     // ];
+
+    public function getCountry($IDCountry) {
+        return Country::where("IDCountry", $IDCountry)->first();
+    }
 }

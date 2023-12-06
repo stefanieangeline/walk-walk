@@ -30,8 +30,8 @@ a{
     top: 0; /* Stay at the top */
     left: 0;
     background-color: var(--shade-blue);
-    overflow-x: hidden; 
-    overflow-y: hidden; 
+    overflow-x: hidden;
+    overflow-y: hidden;
     padding-top: 20px;
     position: relative;
 }
@@ -48,21 +48,24 @@ a{
     flex-direction: column;
 }
 
-.content-buttom{
+.content-bottom{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
     position: absolute;
     bottom: 40px;
-    left: 100px;
 }
 
-.content-buttom a{
+.content-bottom button{
     color: var(--shade-blue);
+    background-color: transparent;
+    border: 0px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
-.content-buttom a:hover{
+.content-bottom button:hover{
     color: var(--blue-base);
 }
 
