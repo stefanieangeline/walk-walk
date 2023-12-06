@@ -26,12 +26,7 @@ class UserController extends Controller
         $user->NationalityUser = 1;
         $user->save();
 
-        if (Auth::attempt(['email' => $user->email, 'password' => $user->password], $user)) {
-            request()->session()->regenerate();
-            return redirect()->route("home");
-        }
-
-        return view("flights");
+        return view("flight");
     }
 
     /**

@@ -10,6 +10,7 @@
 <body>
     @include("shared.nav-bar-standard")
     <div class="background">
+        <form method="get" name="search-hotel-form">
         <div class="box-choice">
             <div class="dest-box box-width">
                 <h2>Destination</h2>
@@ -47,7 +48,7 @@
                 </div>
                 <img src="assets/icon/chevron-down.svg" class="input-icon chevron" id="hotel-drop-down-icon">
             </div>
-            <img src="assets/icon/searchbutton.svg">
+            <img src="assets/icon/searchbutton.svg" id="search-hotel">
         </div>
     </div>
 
@@ -56,19 +57,21 @@
             <div class="price-range range">
                 <h2 class="side-bar-header">Range Price</h2>
                 <div class="sub-price">
-                    <input type="checkbox" value="1000000">
+                    <input type="radio" value="low" name="range" id="range-1" @if ($range == 'low') checked="checked" @endif>
                     <h4>&lt;Rp. 1.000.000,00</h4>
                 </div>
                 <div class="sub-price">
-                    <input type="checkbox" value="1750000">
+                    <input type="radio" value="mid" name="range" id="range-2" @if ($range == 'mid') checked="checked" @endif>
                     <h4>Rp. 1.000.000, 00 - Rp. 2.500.000,00</h4>
                 </div>
                 <div class="sub-price">
-                    <input type="checkbox" value="2500000">
+                    <input type="radio" value="high" name="range" id="range-3" @if ($range == 'high') checked="checked" @endif>
                     <h4>&gt;Rp. 2.500.000,00</h4>
                 </div>
             </div>
+
             <hr>
+
             <div class="star-range range">
                 <h2 class="side-bar-header">Star Rating</h2>
                 <div class="star-container">
@@ -116,6 +119,7 @@
                 </div>
             </div>
         </div>
+        </form>
 
         <div class="right-box">
             @foreach($hotels as $hotel)
@@ -180,10 +184,12 @@
                     </div>
                 </div>
                 <div class="hotel-price">
-                    <h4 class="discount-percent">30% off</h4>
-                    <div class="price-detail">
-                        <h5 class="actual-price">Rp. 420.000</h5>
-                        <h4 class="discount-price">Rp. 300.000</h4>
+                    <!-- <h4 class="price-detail">Rp.{{ $hotel->PriceRoom }}.000</h4> -->
+                    <div class="price-detail1">
+                        <h4 class="price-detail">Rp.{{ $hotel->PriceRoom }}.000</h4>
+                        <h5>After Tax Rp.{{$hotel->PriceRoom * 1.2}}.000</h5>
+                        <!-- <h4 class="discount-price">{{$hotel->PriceRoom}}</h4>
+                        <h5 class="actual-price">Rp. 4200.000</h5> -->
                     </div>
                     <button>Check Availability</button>
                 </div>

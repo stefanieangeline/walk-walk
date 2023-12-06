@@ -37,3 +37,16 @@ roomQty.addEventListener("change", (e) => {
 guestQty.addEventListener("change", (e) => {
     refreshHotelDispInfo()
 })
+
+range1 = document.getElementById("range-1")
+range2 = document.getElementById("range-2")
+range3 = document.getElementById("range-3")
+searchHotel = document.getElementById("search-hotel");
+console.log(searchHotel)
+rangeArray = [ range1, range2, range3, searchHotel ]
+
+rangeArray.forEach(range => {
+    range.addEventListener("click", (e) => {
+        document.forms["search-hotel-form"].submit()
+    })
+});
