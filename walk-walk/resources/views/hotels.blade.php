@@ -75,84 +75,75 @@
             <div class="star-range range">
                 <h2 class="side-bar-header">Star Rating</h2>
                 <div class="star-container">
-                    <div class="choose-star" name="star">
-                        <input type="radio" id="star1">
-                        <div class="sub-star">
-                            <h4>1</h4>
-                            <img src="assets/icon/star-gold.svg">
-                        </div>
+                    <div class="choose-star" >
+                        <input type="radio" id="star1" name="star" value="1" @if($star==1) checked="checked"@endif>
+                        <div class="sub-star"> <h4>1</h4> <img src="assets/icon/star-gold.svg"></div>
                     </div>
 
-                    <div class="choose-star" name="star">
-                        <input type="radio" id="star2">
-                        <div class="sub-star">
-                            <h4>2</h4>
-                            <img src="assets/icon/star-gold.svg">
-                        </div>
+                    <div class="choose-star">
+                        <input type="radio" id="star2" name="star" value="2" @if($star==2) checked="checked"@endif>
+                        <div class="sub-star"> <h4>2</h4> <img src="assets/icon/star-gold.svg"></div>
                     </div>
 
-                    <div class="choose-star" name="star">
-                        <input type="radio" id="star3">
-                        <div class="sub-star">
-                            <h4>3</h4>
-                            <img src="assets/icon/star-gold.svg">
-                        </div>
+                    <div class="choose-star" >
+                        <input type="radio" id="star3" name="star" value="3" @if($star==3) checked="checked"@endif>
+                        <div class="sub-star"> <h4>3</h4> <img src="assets/icon/star-gold.svg"></div>
                     </div>
 
-                    <div class="choose-star" name="star">
-                        <input type="radio" id="star4">
-                        <div class="sub-star">
-                            <h4>4</h4>
-                            <img src="assets/icon/star-gold.svg">
-                        </div>
+                
+                    <div class="choose-star" >
+                        <input type="radio" id="star4" name="star" value="4" @if($star==4) checked="checked"@endif>
+                        <div class="sub-star"> <h4>4</h4><img src="assets/icon/star-gold.svg"></div>
                     </div>
 
-                    <div class="choose-star" name="star">
-                        <input type="radio" id="star5">
-                        <div class="sub-star">
-                            <h4>5</h4>
-                            <img src="assets/icon/star-gold.svg">
-                        </div>
-                    </div>
-
-                    <!-- <div class="sub-star" id="star2">
-                        <h4>2</h4>
-                        <img src="assets/icon/star-gold.svg">
-                    </div> -->
-                    <!-- <div class="sub-star" id="star3">
-                        <h4>3</h4>
-                        <img src="assets/icon/star-gold.svg">
-                    </div> -->
-                    <!-- <div class="sub-star" id="star4">
-                        <h4>4</h4>
-                        <img src="assets/icon/star-gold.svg">
-                    </div> -->
-                    <!-- <div class="sub-star" id="star5">
-                        <h4>5</h4>
-                        <img src="assets/icon/star-gold.svg">
-                    </div> -->
-
+                    <div class="choose-star" >
+                        <input type="radio" id="star5" name="star" value="5" @if($star==5) checked="checked"@endif>
+                        <div class="sub-star"><h4>5</h4><img src="assets/icon/star-gold.svg"></div>
+                    </div>    
                 </div>
             </div>
+
             <hr>
+
             <div class="rating-range range">
                 <h2 class="side-bar-header">Guest Rating</h2>
                 <div class="rating-container">
-                    <div class="sub-rating">
-                        <h4>&lt;3</h4>
+
+                    <div class="choose-review">
+                        <input type="radio" id="review1" name="review" value="1" @if($review==1) checked="checked"@endif>
+                        <div class="sub-rating">      
+                            <h4>&lt;3</h4>
+                        </div>
                     </div>
-                    <div class="sub-rating">
-                        <h4>3+</h4>
+                   
+                    <div class="choose-review">
+                        <input type="radio" id="review2" name="review" value="2" @if($review==2) checked="checked"@endif>
+                        <div class="sub-rating">   
+                            <h4>3+</h4>
+                        </div>
                     </div>
-                    <div class="sub-rating">
-                        <h4>3,5+</h4>
+
+                    <div class="choose-review">
+                        <input type="radio" id="review3" name="review" value="3" @if($review==3) checked="checked"@endif>
+                        <div class="sub-rating">   
+                            <h4>3,5+</h4>
+                        </div>
                     </div>
-                    <div class="sub-rating">
-                        <h4>4+</h4>
+
+                    <div class="choose-review">
+                        <input type="radio" id="review4" name="review" value="4" @if($review==4) checked="checked"@endif>
+                        <div class="sub-rating"> 
+                            <h4>4+</h4>
+                        </div>
                     </div>
-                    <div class="sub-rating">
-                        <h4>4,5+</h4>
-                    </div>
+
+                    <div class="choose-review">
+                        <input type="radio" id="review5" name="review" value="5" @if($review==5) checked="checked"@endif>
+                        <div class="sub-rating">   
+                            <h4>4,5+</h4>
+                        </div>
+                    </div>   
+
                 </div>
             </div>
         </div>

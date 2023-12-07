@@ -288,6 +288,7 @@ body {
 .sub-price {
     display: flex;
     flex-direction: row;
+    align-items: center;
     color: var(--shade-blue);
     font-family: roboto-cons-light;
     font-size: 16px;
@@ -296,7 +297,8 @@ body {
 
 .sub-price input {
     accent-color: var(--shade-blue);
-    width: 20px;
+    width: 25px;
+    height: 20px;
     margin-right: 10px;
 }
 
@@ -315,6 +317,14 @@ body {
 .choose-star {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    gap: 3px;
+}
+
+.choose-star input{
+    accent-color: var(--shade-blue);
+    width: 25px;
+    height: 20px;
 }
 
 .sub-star {
@@ -325,7 +335,7 @@ body {
     padding: 5px 10px;
     color: var(--shade-blue);
     font-family: roboto-cons-light;
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 4px;
 }
 
@@ -336,8 +346,21 @@ body {
 
 .rating-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
+}
+
+.choose-review{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+}
+
+.choose-review input{
+    accent-color: var(--shade-blue);
+    width: 25px;
+    height: 20px;
 }
 
 .sub-rating {
@@ -348,14 +371,15 @@ body {
     padding: 5px 10px;
     color: var(--shade-blue);
     font-family: roboto-cons-light;
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 4px;
 }
+
 
 .left-side-bar {
     position: relative;
     width: 30%;
-    height: 500px;
+    height: fit-content;
     background-color: white;
     z-index: 0;
     display: flex;
@@ -364,6 +388,7 @@ body {
     padding-top: 10px;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 10px;
     border-radius: 15px;
 }
 

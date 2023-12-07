@@ -46,9 +46,17 @@ star2 = document.getElementById("star2");
 star3 = document.getElementById("star3");
 star4 = document.getElementById("star4");
 star5 = document.getElementById("star5");
+review1 = document.getElementById("review1");
+review2 = document.getElementById("review2");
+review3 = document.getElementById("review3");
+review4 = document.getElementById("review4");
+review5 = document.getElementById("review5");
+
+
+
 searchHotel = document.getElementById("search-hotel");
 console.log(searchHotel)
-rangeArray = [ range1, range2, range3, searchHotel, star1, star2, star3, star4, star5 ]
+rangeArray = [ range1, range2, range3, searchHotel, star1, star2, star3, star4, star5, review1, review2, review3, review4, review5]
 
 rangeArray.forEach(range => {
     range.addEventListener("click", (e) => {
