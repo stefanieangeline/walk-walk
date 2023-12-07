@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Airline;
 use App\Models\Airport;
 use App\Models\City;
 use App\Models\Country;
@@ -35,13 +36,24 @@ class FlightController extends Controller
         $senior = request()->get('senior');
         $adult = request()->get('adult');
         $children = request()->get('children');
-
-        $queryarrivaltime = "CAST(schedules.ArrivalTime as time) as ArrivalTime";
-        $querydeparturetime = "CAST(schedules.DepartureTime as time) as DepartureTime";
+        $sel_airline = request()->get('sel_airline');
+        $range = request()->get('range');
 
         if ($class == null) {
             $class = "economy";
         }
+
+        if ($sel_airline == null) {
+            $sel_airline = "";
+        }
+
+        if ($depDate == null) {
+            $depDate = date("Y-m-d");
+        }
+
+        $addOneDay = "DATE_ADD(\"".$depDate."\", INTERVAL 1 DAY)";
+        $queryarrivaltime = "CAST(schedules.ArrivalTime as time) as ArrivalTime";
+        $querydeparturetime = "CAST(schedules.DepartureTime as time) as DepartureTime";
 
         if ($source != "" && $dest != "") {
             $IDsource = City::query()->where("nameCity", "like", "%".$source."%")->select("IDCity")->get()->toArray();
@@ -52,48 +64,70 @@ class FlightController extends Controller
                 ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
                 ->join('airports as b','schedules.IDAirportDestination','=','b.IDAirport')
                 ->join('airports as a','schedules.IDAirportSource','=','a.IDAirport')
-                ->select(DB::raw($querydeparturetime),DB::raw($queryarrivaltime),'schedule_details.Price','a.CodeAirport as CodeAirportSource','b.CodeAirport as CodeAirportDestination')->distinct()
+                ->select(DB::raw($querydeparturetime),DB::raw($queryarrivaltime),'schedule_details.Price','a.CodeAirport as CodeAirportSource','b.CodeAirport as CodeAirportDestination', 'IDAirline')->distinct()
                 ->where('schedule_details.Class','like', $class)
                 ->where('a.IDAirport', $IDsource)
                 ->where('b.IDAirport', $IDdest)
+                ->where('schedules.DepartureTime', ">=", $depDate)
+                ->whereRaw('schedules.DepartureTime <'.$addOneDay)
+                ->when($sel_airline != "", function ($query) use ($sel_airline) {
+                    $query->where('IDAirline', $sel_airline);
+                })
+                ->when($range == "low", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'<=', 100);
+                })
+                ->when($range == "mid", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'>=', 100)
+                    ->where('schedule_details.Price' ,'<=', 150);
+                })
+                ->when($range == "high", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'>=', 150);
+                })
                 ->get(),
 
                 'averagePrice' => Schedule::query()
                 ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
                 ->where('schedule_details.Class', 'like',$class)
+                ->where('schedules.IDAirportSource', $IDsource)
+                ->where('schedules.IDAirportDestination', $IDdest)
+                ->where('schedules.IDAirportDestination', $IDdest)
+                ->where('schedules.DepartureTime', ">=", $depDate)
+                ->whereRaw('schedules.DepartureTime <'.$addOneDay)
+                ->when($sel_airline != "", function ($query) use ($sel_airline) {
+                    $query->where('IDAirline', $sel_airline);
+                })
+                ->when($range == "low", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'<=', 100);
+                })
+                ->when($range == "mid", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'>=', 100)
+                    ->where('schedule_details.Price' ,'<=', 150);
+                })
+                ->when($range == "high", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'>=', 150);
+                })
                 ->avg('schedule_details.Price'),
 
                 'minimumPrice' => Schedule::query()
                 ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
                 ->where('schedule_details.Class','like', $class)
-                ->min('schedule_details.Price'),
-
-                'source' => $source,
-                'dest' => $dest,
-                'depDate' => $depDate,
-                'senior' => $senior,
-                'adult' => $adult,
-                'children' => $children,
-                'class' => $class
-            ]);
-        } else {
-            return view('flight',[
-                'schedules' => Schedule::query()
-                ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
-                ->join('airports as b','schedules.IDAirportDestination','=','b.IDAirport')
-                ->join('airports as a','schedules.IDAirportSource','=','a.IDAirport')
-                ->select(DB::raw($querydeparturetime),DB::raw($queryarrivaltime),'schedule_details.Price','a.CodeAirport as CodeAirportSource','b.CodeAirport as CodeAirportDestination')->distinct()
-                ->where('schedule_details.Class','like', $class)
-                ->get(),
-
-                'averagePrice' => Schedule::query()
-                ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
-                ->where('schedule_details.Class', 'like',$class)
-                ->avg('schedule_details.Price'),
-
-                'minimumPrice' => Schedule::query()
-                ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
-                ->where('schedule_details.Class','like', $class)
+                ->where('schedules.IDAirportSource', $IDsource)
+                ->where('schedules.IDAirportDestination', $IDdest)
+                ->where('schedules.DepartureTime', ">=", $depDate)
+                ->whereRaw('schedules.DepartureTime <'.$addOneDay)
+                ->when($sel_airline != "", function ($query) use ($sel_airline) {
+                    $query->where('IDAirline', $sel_airline);
+                })
+                ->when($range == "low", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'<=', 100);
+                })
+                ->when($range == "mid", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'>=', 100)
+                    ->where('schedule_details.Price' ,'<=', 150);
+                })
+                ->when($range == "high", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'>=', 150);
+                })
                 ->min('schedule_details.Price'),
 
                 'source' => $source,
@@ -106,7 +140,132 @@ class FlightController extends Controller
                 "countries" => Country::all(),
                 "airports" => Airport::all(),
                 "cities" => City::all(),
-                "hotels" => Hotel::all()
+                "hotels" => Hotel::all(),
+                "airlines" => Schedule::query()
+                ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
+                ->where('schedule_details.Class','like', $class)
+                ->where('schedules.IDAirportSource', $IDsource)
+                ->where('schedules.IDAirportDestination', $IDdest)
+                ->where('schedules.DepartureTime', ">=", $depDate)
+                ->whereRaw('schedules.DepartureTime <'.$addOneDay)
+                ->when($sel_airline != "", function ($query) use ($sel_airline) {
+                    $query->where('IDAirline', $sel_airline);
+                })
+                ->when($range == "low", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'<=', 100);
+                })
+                ->when($range == "mid", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'>=', 100)
+                    ->where('schedule_details.Price' ,'<=', 150);
+                })
+                ->when($range == "high", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'>=', 150);
+                })
+                ->select("IDAirline")
+                ->distinct()
+                ->get(),
+                "sel_airline" => $sel_airline,
+                "range" => $range
+            ]);
+        } else {
+            return view('flight',[
+                'schedules' => Schedule::query()
+                ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
+                ->join('airports as b','schedules.IDAirportDestination','=','b.IDAirport')
+                ->join('airports as a','schedules.IDAirportSource','=','a.IDAirport')
+                ->select(DB::raw($querydeparturetime),DB::raw($queryarrivaltime),'schedule_details.Price','a.CodeAirport as CodeAirportSource','b.CodeAirport as CodeAirportDestination', 'IDAirline')->distinct()
+                ->where('schedule_details.Class','like', $class)
+                ->where('schedules.DepartureTime', ">=", $depDate)
+                ->whereRaw('schedules.DepartureTime <'.$addOneDay)
+                ->when($sel_airline != "", function ($query) use ($sel_airline) {
+                    $query->where('IDAirline', $sel_airline);
+                })
+                ->when($range == "low", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'<=', 100);
+                })
+                ->when($range == "mid", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'>=', 100)
+                    ->where('schedule_details.Price' ,'<=', 150);
+                })
+                ->when($range == "high", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'>=', 150);
+                })
+                ->get(),
+
+                'averagePrice' => Schedule::query()
+                ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
+                ->where('schedule_details.Class', 'like',$class)
+                ->where('schedules.DepartureTime', ">=", $depDate)
+                ->whereRaw('schedules.DepartureTime <'.$addOneDay)
+                ->when($sel_airline != "", function ($query) use ($sel_airline) {
+                    $query->where('IDAirline', $sel_airline);
+                })
+                ->when($range == "low", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'<=', 100);
+                })
+                ->when($range == "mid", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'>=', 100)
+                    ->where('schedule_details.Price' ,'<=', 150);
+                })
+                ->when($range == "high", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'>=', 150);
+                })
+                ->avg('schedule_details.Price'),
+
+                'minimumPrice' => Schedule::query()
+                ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
+                ->where('schedule_details.Class','like', $class)
+                ->where('schedules.DepartureTime', ">=", $depDate)
+                ->whereRaw('schedules.DepartureTime <'.$addOneDay)
+                ->when($sel_airline != "", function ($query) use ($sel_airline) {
+                    $query->where('IDAirline', $sel_airline);
+                })
+                ->when($range == "low", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'<=', 100);
+                })
+                ->when($range == "mid", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'>=', 100)
+                    ->where('schedule_details.Price' ,'<=', 150);
+                })
+                ->when($range == "high", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'>=', 150);
+                })
+                ->min('schedule_details.Price'),
+
+                'source' => $source,
+                'dest' => $dest,
+                'depDate' => $depDate,
+                'senior' => $senior,
+                'adult' => $adult,
+                'children' => $children,
+                'class' => $class,
+                "countries" => Country::all(),
+                "airports" => Airport::all(),
+                "cities" => City::all(),
+                "hotels" => Hotel::all(),
+                "airlines" => Schedule::query()
+                ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
+                ->where('schedule_details.Class','like', $class)
+                ->where('schedules.DepartureTime', ">=", $depDate)
+                ->whereRaw('schedules.DepartureTime <'.$addOneDay)
+                ->when($sel_airline != "", function ($query) use ($sel_airline) {
+                    $query->where('IDAirline', $sel_airline);
+                })
+                ->when($range == "low", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'<=', 100);
+                })
+                ->when($range == "mid", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'>=', 100)
+                    ->where('schedule_details.Price' ,'<=', 150);
+                })
+                ->when($range == "high", function ($query) use ($sel_airline) {
+                    $query->where('schedule_details.Price' ,'>=', 150);
+                })
+                ->select("IDAirline")
+                ->distinct()
+                ->get(),
+                "sel_airline" => $sel_airline,
+                "range" => $range
             ]);
         }
     }

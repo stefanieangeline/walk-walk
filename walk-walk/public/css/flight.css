@@ -108,6 +108,7 @@ body {
 }
 
 .bottom{
+    position: relative;
     margin-top: 5px;
     display: flex;
     flex-direction: row;
@@ -116,7 +117,7 @@ body {
 
 .leaving_from{
     position: relative;
-    width: 225px;
+    width: 25%;
     height: 58px;
     border-radius: 22px;
     border-style: solid;
@@ -148,7 +149,7 @@ body {
 
 .going_to{
     position: relative;
-    width: 225px;
+    width: 25%;
     height: 58px;
     border-radius: 22px;
     border-style: solid;
@@ -167,7 +168,7 @@ body {
 }
 
 .date{
-    width: 390px;
+    width: 25%;
     height: 58px;
     border-radius: 22px;
     border-style: solid;
@@ -180,15 +181,22 @@ body {
     padding-right: 15px;
 }
 
-.search_button{
-    width: 10%;
-    margin-left: 2%;
-    align-items: center;
+.search_button {
+    position: absolute;
+    right: 30px;
+    top: 52%;
+    transform: translateY(-50%);
 }
 
 .search_button img{
-    width: 80% ;
-    height: 80%;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.search_button img:hover {
+    opacity: 0.9;
 }
 
 .vertical{
@@ -272,15 +280,13 @@ body {
 
 .left-box{
     width: 30%;
-    height: 500px;
+    height: fit-content;
     background-color: white;
     z-index: 100;
     display: flex;
     flex-direction: column;
     margin-right: 20px;
-    padding-top: 15px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 30px;
     border-radius: 15px;
 }
 
@@ -319,7 +325,7 @@ body {
 
 .gambar{
     width: 100px;
-    height: 40px;
+    height: 100px;
 }
 
 .button{
@@ -328,7 +334,9 @@ body {
 
 .sortByFlight{
     display : flex;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .line{
@@ -421,16 +429,23 @@ body {
     display: flex;
     margin-top: 1%;
     background-color: white;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 .airline_logo{
     height: 100%;
-    width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
     /* background-color: violet; */
-
 }
+
+.airline_logo img {
+    height: 100%;
+    object-fit: contain;
+}
+
 .flight_schedule{
     height: 100%;
     width: 31%;
@@ -466,11 +481,7 @@ body {
     font-family: roboto-cons-bold;
     background-color: #146C94;
 }
-.airline_logo img{
-    width: 70%;
-    height: fit-content;
 
-}
 .airport_schedule{
     width: 20%;
     height: 100%;

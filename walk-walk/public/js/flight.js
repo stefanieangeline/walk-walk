@@ -44,6 +44,13 @@ childrenQty.addEventListener("change", (e) => {
     refreshflightDispInfo()
 })
 
+// search button
+searchBtn = document.getElementById("search-button")
+searchBtn.addEventListener("click", (e)=>{
+    document.forms["box-choice"].submit()
+})
+
+
 // buat tuker tujuan sama keberangkatan di penerbangan
 switchBtn = document.getElementById("rotate-icon")
 flightSrc = document.getElementById("flight-src")

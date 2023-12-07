@@ -9,8 +9,9 @@
 </head>
 <body>
     @include("shared.nav-bar-standard")
+    <form action="" method="GET" name="box-choice">
     <div class="bg-flight">
-        <form action="" method="GET" class="box-choice" name="box-choice">
+        <div class="box-choice">
             <div class="top">
                 <!-- <div class="flight-selected">
                     <img src="assets/icon/pesawat.svg" class="img">
@@ -75,7 +76,7 @@
                 </div>
 
                 <div class="to">
-                    <img src="assets/icon/rotate-blue.svg" class="rotate-icon" id="rotate-icon">
+                    <img src="assets/icon/rotate-white.svg" class="rotate-icon" id="rotate-icon">
                 </div>
 
                 <div class="going_to">
@@ -90,11 +91,12 @@
                     <input class="input_date"type="date" name="arrivalDate"> -->
                 </div>
 
-                <input type='submit' class="search_button">
-                    {{-- <img src="assets/icon/searchbutton.svg"> --}}
+                {{-- <input type='submit' class="search_button"> --}}
 
             </div>
-
+            <div class="search_button">
+                <img src="assets/icon/searchbutton.svg" id="search-button">
+            </div>
         </form>
     </div>
 
@@ -102,21 +104,11 @@
         <div class="left-box">
             <h2 class="titlee">Airline</h2>
             <div class="sortByFlight">
+                @foreach ($airlines as $airline)
                 <div class="opt-flight">
-                    <input type="checkbox" class="button"> <img src="assets/icon/sporeAirlane.svg" class="gambar">
+                    <input type="radio" class="button" name="sel_airline" value="{{$airline->IDAirline}}" @if ($sel_airline == $airline->IDAirline) checked="checked" @endif> <img src="assets/images/airline_logo/{{$airline->IDAirline}}.jpg" class="gambar">
                 </div>
-                <div class="opt-flight">
-                    <input type="checkbox" class="button"> <img src="assets/icon/garuda.svg" class="gambar">
-                </div>
-                <div class="opt-flight">
-                    <input type="checkbox" class="button"><img src="assets/icon/jejuair.svg" class="gambar">
-                </div>
-                <div class="opt-flight">
-                    <input type="checkbox" class="button"><img src="assets/icon/jetstar.svg" class="gambar">
-                </div>
-                <div class="opt-flight">
-                    <input type="checkbox" class="button"><img src="assets/icon/lionair.svg" class="gambar">
-                </div>
+                @endforeach
             </div>
 
             <hr class="line">
@@ -124,16 +116,17 @@
             <h2 class="titlee">Range Price</h2>
 
             <div class="opt-price">
-                    <input type="radio" class="button"><p> < Rp.1.000.000,00</p>
+                    <input type="radio" class="button" name="range" value="low" @if ($range == "low") checked="checked"@endif><p> < Rp.1.000.000,00</p>
             </div>
             <div class="opt-price">
-                    <input type="radio" class="button"><p> Rp.1.000.000,00 - Rp.2.500.000,00</p>
+                    <input type="radio" class="button" name="range" value="mid" @if ($range == "mid") checked="checked"@endif><p> Rp.1.000.000,00 - Rp.2.500.000,00</p>
             </div>
             <div class="opt-price">
-                    <input type="radio" class="button"><p> > Rp.2.500.000,00</p>
+                    <input type="radio" class="button" name="range" value="high" @if ($range == "high") checked="checked"@endif><p> > Rp.2.500.000,00</p>
             </div>
 
         </div>
+        </form>
 
         <div class="right-box">
             <div class="price_sort_container">
@@ -168,7 +161,7 @@
             @foreach ($schedules as $schedule)
             <div class="flight_detail">
                 <div class="airline_logo">
-                    <img src="assets/icon/jetstar.svg" alt="">
+                    <img src="assets/images/airline_logo/{{$schedule->IDAirline}}.jpg" alt="">
 
                 </div>
                 <div class="flight_schedule">
