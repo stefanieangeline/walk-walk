@@ -13,7 +13,26 @@ class SigninController extends Controller
     }
 
     public function store ()  {
-        $validated = request();
+        $validated = request()->validate([
+            'name' =>['required'],
+            'phoneNumber' =>['required'],
+            'email' => ['required', 'unique:users,email'],
+            'password' => ['required'],
+
+        ]);
+        $todayDate = date("Y-m-d");
+        $newUser = new User();
+        // $newUser =
+        $newUser->DOBUser = $todayDate;
+        $newUser->NationalityUser = 1;
+        $newUser->name = $validated['name'];
+        $newUser->email = $validated['email'];
+        $newUser->password = bcrypt($validated['password']);
+        $newUser->NoTelpUser = $validated['phoneNumber'];
+
+        // dd($newUser);
+        $newUser->save();
+        
 
 
 
