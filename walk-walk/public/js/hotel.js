@@ -47,19 +47,14 @@ star3 = document.getElementById("star3");
 star4 = document.getElementById("star4");
 star5 = document.getElementById("star5");
 searchHotel = document.getElementById("search-hotel");
-<<<<<<< Updated upstream
-rangeArray = [ range1, range2, range3, searchHotel ]
-=======
 console.log(searchHotel)
 rangeArray = [ range1, range2, range3, searchHotel, star1, star2, star3, star4, star5 ]
->>>>>>> Stashed changes
 
 rangeArray.forEach(range => {
     range.addEventListener("click", (e) => {
         document.forms["search-hotel-form"].submit()
     })
 });
-<<<<<<< Updated upstream
 
 // get variable
 let countries = JSON.parse(sessionStorage.getItem("countries"))
@@ -154,5 +149,3 @@ hotelDst.addEventListener("input", (e) => {
 
     makeSuggestion(hotelDst, hotelDst.value.toLowerCase(), "hotel")
 })
-=======
->>>>>>> Stashed changes
