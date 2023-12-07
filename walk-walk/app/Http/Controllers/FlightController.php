@@ -38,6 +38,7 @@ class FlightController extends Controller
         $children = request()->get('children');
         $sel_airline = request()->get('sel_airline');
         $range = request()->get('range');
+        $sort = request()->get('sort');
 
         if ($class == null) {
             $class = "economy";
@@ -83,6 +84,12 @@ class FlightController extends Controller
                 ->when($range == "high", function ($query) use ($sel_airline) {
                     $query->where('schedule_details.Price' ,'>=', 150);
                 })
+                ->when($sort == "dsc", function ($query) {
+                    $query->orderBy("schedule_details.Price", "asc");
+                })
+                ->when($sort == "dsc", function ($query) {
+                    $query->orderBy("schedule_details.Price", "desc");
+                })
                 ->get(),
 
                 'averagePrice' => Schedule::query()
@@ -165,7 +172,8 @@ class FlightController extends Controller
                 ->distinct()
                 ->get(),
                 "sel_airline" => $sel_airline,
-                "range" => $range
+                "range" => $range,
+                "sort" => $sort
             ]);
         } else {
             return view('flight',[
@@ -190,6 +198,12 @@ class FlightController extends Controller
                 ->when($range == "high", function ($query) use ($sel_airline) {
                     $query->where('schedule_details.Price' ,'>=', 150);
                 })
+                ->when($sort == "asc", function ($query) {
+                    $query->orderBy("schedule_details.Price", "asc");
+                })
+                ->when($sort == "dsc", function ($query) {
+                    $query->orderBy("schedule_details.Price", "desc");
+                })
                 ->get(),
 
                 'averagePrice' => Schedule::query()
@@ -265,7 +279,8 @@ class FlightController extends Controller
                 ->distinct()
                 ->get(),
                 "sel_airline" => $sel_airline,
-                "range" => $range
+                "range" => $range,
+                "sort" => $sort
             ]);
         }
     }

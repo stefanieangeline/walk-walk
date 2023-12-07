@@ -126,7 +126,6 @@
             </div>
 
         </div>
-        </form>
 
         <div class="right-box">
             <div class="price_sort_container">
@@ -146,10 +145,11 @@
 
                 <div class="sorting_price">
                     <p>Sorted by Price</p>
-                    <select name="" id="">
-                        <option value="">Ascending</option>
-                        <option value="">Descending</option>
+                    <select name="sort">
+                        <option value="asc" @if ($sort == "asc") selected @endif>Ascending</option>
+                        <option value="dsc" @if ($sort == "dsc") selected @endif>Descending</option>
                     </select>
+                </form>
                 </div>
             </div>
             {{-- @foreach ($schedules as $schedule)
