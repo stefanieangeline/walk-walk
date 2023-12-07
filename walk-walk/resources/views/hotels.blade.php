@@ -75,23 +75,23 @@
             <div class="star-range range">
                 <h2 class="side-bar-header">Star Rating</h2>
                 <div class="star-container">
-                    <div class="sub-star">
+                    <div class="sub-star" id="star1">
                         <h4>1</h4>
                         <img src="assets/icon/star-gold.svg">
                     </div>
-                    <div class="sub-star">
+                    <div class="sub-star" id="star2">
                         <h4>2</h4>
                         <img src="assets/icon/star-gold.svg">
                     </div>
-                    <div class="sub-star">
+                    <div class="sub-star" id="star3">
                         <h4>3</h4>
                         <img src="assets/icon/star-gold.svg">
                     </div>
-                    <div class="sub-star">
+                    <div class="sub-star" id="star4">
                         <h4>4</h4>
                         <img src="assets/icon/star-gold.svg">
                     </div>
-                    <div class="sub-star">
+                    <div class="sub-star" id="star5">
                         <h4>5</h4>
                         <img src="assets/icon/star-gold.svg">
                     </div>
