@@ -32,7 +32,7 @@
 
                 <form name="hotel-form" action="{{ route('hotels') }}" method="get" class="detail-info show" id="hotel-detail-info">
                     <div class="input-row">
-                        <input type="text" class="input-field" placeholder="Enter a destination or property" name="destination">
+                        <input type="text" class="input-field" placeholder="Enter a destination or property" name="destination" id="hotel-destination">
                         <img src="assets/icon/search.svg" class="input-icon">
                     </div>
 
@@ -307,10 +307,12 @@
         countries = {!! json_encode($countries->toArray()) !!}
         cities = {!! json_encode($cities->toArray()) !!}
         airports = {!! json_encode($airports->toArray()) !!}
+        hotels = {!! json_encode($hotels->toArray()) !!}
 
         sessionStorage.setItem("countries", JSON.stringify(countries))
         sessionStorage.setItem("cities", JSON.stringify(cities))
         sessionStorage.setItem("airports", JSON.stringify(airports))
+        sessionStorage.setItem("hotels", JSON.stringify(hotels))
     </script>
 </body>
 </html>

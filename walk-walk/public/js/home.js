@@ -160,9 +160,10 @@ arrowBtns.forEach(btn => {
 let countries = JSON.parse(sessionStorage.getItem("countries"))
 let cities = JSON.parse(sessionStorage.getItem("cities"))
 let airports = JSON.parse(sessionStorage.getItem("airports"))
+let hotels = JSON.parse(sessionStorage.getItem("hotels"))
 sessionStorage.clear()
 
-// search suggestion
+// search suggestion flight
 function createEl(elementName, className) {
     let temp = document.createElement(elementName)
     temp.classList.add(className)
@@ -182,7 +183,7 @@ function clearInput() {
     flightSrc.value = ""
 }
 
-function makeSuggestion(parent, input) {
+function makeSuggestion(parent, input, type) {
     clearSuggest()
     let container = createEl("div", "search-suggestion")
 
@@ -210,17 +211,32 @@ function makeSuggestion(parent, input) {
         }
     })
 
-    airports.forEach(airport => {
-        if (airport.NameAirport.toLowerCase().includes(input)) {
-            let suggest = createEl("h4", "sub-suggest")
-            suggest.innerHTML = airport.NameAirport
-            suggest.addEventListener("click", (e)=>{
-                parent.value = suggest.innerHTML
-                clearSuggest()
-            })
-            container.appendChild(suggest)
-        }
-    })
+    if (type == "flight") {
+        airports.forEach(airport => {
+            if (airport.NameAirport.toLowerCase().includes(input)) {
+                let suggest = createEl("h4", "sub-suggest")
+                suggest.innerHTML = airport.NameAirport
+                suggest.addEventListener("click", (e)=>{
+                    parent.value = suggest.innerHTML
+                    clearSuggest()
+                })
+                container.appendChild(suggest)
+            }
+        })
+    } else if (type == "hotel") {
+        hotels.forEach(hotel => {
+            if (hotel.NameHotel.toLowerCase().includes(input)) {
+                let suggest = createEl("h4", "sub-suggest")
+                suggest.innerHTML = hotel.NameHotel
+                suggest.addEventListener("click", (e)=>{
+                    parent.value = suggest.innerHTML
+                    clearSuggest()
+                })
+                container.appendChild(suggest)
+            }
+        })
+    }
+
 
     if (container.children.length != 0) {
         suggestTemp = container
@@ -234,7 +250,7 @@ flightSrc.addEventListener("input", (e) => {
         return
     }
 
-    makeSuggestion(flightSrc, flightSrc.value.toLowerCase())
+    makeSuggestion(flightSrc, flightSrc.value.toLowerCase(), "flight")
 })
 
 flightDst.addEventListener("input", (e) => {
@@ -243,7 +259,19 @@ flightDst.addEventListener("input", (e) => {
         return
     }
 
-    makeSuggestion(flightDst, flightDst.value.toLowerCase())
+    makeSuggestion(flightDst, flightDst.value.toLowerCase(), "flight")
 })
 
 clearInput()
+
+// search suggestion hotels
+hotelDst = document.getElementById("hotel-destination")
+
+hotelDst.addEventListener("input", (e) => {
+    if (hotelDst.value == null || hotelDst.value == "") {
+        clearSuggest()
+        return
+    }
+
+    makeSuggestion(hotelDst, hotelDst.value.toLowerCase(), "hotel")
+})

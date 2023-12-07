@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Airport;
 use App\Models\City;
 use App\Models\Country;
+use App\Models\Hotel;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,8 @@ class HomeController extends Controller
         return view("home", [
             "countries" => Country::all(),
             "airports" => Airport::all(),
-            "cities" => City::all()
+            "cities" => City::all(),
+            "hotels" => Hotel::all()
         ]);
     }
 }
