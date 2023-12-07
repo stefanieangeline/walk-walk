@@ -157,8 +157,93 @@ arrowBtns.forEach(btn => {
 })
 
 // get variable
-countries = JSON.parse(sessionStorage.getItem("countries"))
-cities = JSON.parse(sessionStorage.getItem("cities"))
-airports = JSON.parse(sessionStorage.getItem("airports"))
+let countries = JSON.parse(sessionStorage.getItem("countries"))
+let cities = JSON.parse(sessionStorage.getItem("cities"))
+let airports = JSON.parse(sessionStorage.getItem("airports"))
+sessionStorage.clear()
 
-console.log(cities)
+// search suggestion
+function createEl(elementName, className) {
+    let temp = document.createElement(elementName)
+    temp.classList.add(className)
+    return temp
+}
+
+let suggestTemp = null
+
+function clearSuggest() {
+    if (suggestTemp != null) {
+        suggestTemp.remove()
+    }
+}
+
+function clearInput() {
+    flightDst.value = ""
+    flightSrc.value = ""
+}
+
+function makeSuggestion(parent, input) {
+    clearSuggest()
+    let container = createEl("div", "search-suggestion")
+
+    countries.forEach(country => {
+        if (country.NameCountry.toLowerCase().includes(input)) {
+            let suggest = createEl("h4", "sub-suggest")
+            suggest.innerHTML = country.NameCountry
+            suggest.addEventListener("click", (e)=>{
+                parent.value = suggest.innerHTML
+                clearSuggest()
+            })
+            container.appendChild(suggest)
+        }
+    })
+
+    cities.forEach(city => {
+        if (city.NameCity.toLowerCase().includes(input)) {
+            let suggest = createEl("h4", "sub-suggest")
+            suggest.innerHTML = city.NameCity
+            suggest.addEventListener("click", (e)=>{
+                parent.value = suggest.innerHTML
+                clearSuggest()
+            })
+            container.appendChild(suggest)
+        }
+    })
+
+    airports.forEach(airport => {
+        if (airport.NameAirport.toLowerCase().includes(input)) {
+            let suggest = createEl("h4", "sub-suggest")
+            suggest.innerHTML = airport.NameAirport
+            suggest.addEventListener("click", (e)=>{
+                parent.value = suggest.innerHTML
+                clearSuggest()
+            })
+            container.appendChild(suggest)
+        }
+    })
+
+    if (container.children.length != 0) {
+        suggestTemp = container
+        parent.parentElement.appendChild(container)
+    }
+}
+
+flightSrc.addEventListener("input", (e) => {
+    if (flightSrc.value == null || flightSrc.value == "") {
+        clearSuggest()
+        return
+    }
+
+    makeSuggestion(flightSrc, flightSrc.value.toLowerCase())
+})
+
+flightDst.addEventListener("input", (e) => {
+    if (flightDst.value == null || flightDst.value == "") {
+        clearSuggest()
+        return
+    }
+
+    makeSuggestion(flightDst, flightDst.value.toLowerCase())
+})
+
+clearInput()
