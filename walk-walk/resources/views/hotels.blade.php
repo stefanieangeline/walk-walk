@@ -14,7 +14,7 @@
         <div class="box-choice">
             <div class="dest-box box-width">
                 <h2>Destination</h2>
-                <input type="text" placeholder="Search a place..." name="destination" value="{{$dest}}">
+                <input type="text" placeholder="Search a place..." name="destination" id="hotel-destination" value="{{$dest}}">
             </div>
             <div class="check-in-out-box box-width">
                 <div class="in-box">
@@ -198,5 +198,16 @@
         </div>
     </div>
     @include("shared.footer")
+    <script>
+        countries = {!! json_encode($countries->toArray()) !!}
+        cities = {!! json_encode($cities->toArray()) !!}
+        airports = {!! json_encode($airports->toArray()) !!}
+        hotel_list = {!! json_encode($hotel_list->toArray()) !!}
+
+        sessionStorage.setItem("countries", JSON.stringify(countries))
+        sessionStorage.setItem("cities", JSON.stringify(cities))
+        sessionStorage.setItem("airports", JSON.stringify(airports))
+        sessionStorage.setItem("hotels", JSON.stringify(hotel_list))
+    </script>
 </body>
 </html>

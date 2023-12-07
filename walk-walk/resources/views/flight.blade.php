@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flight</title>
     <link rel="stylesheet" href="/css/flight.css">
-    <!-- <script src="/js/home.js"></script> -->
     <script src="/js/flight.js" defer=""></script>
 </head>
 <body>
-    {{-- @dump($schedules) --}}
     @include("shared.nav-bar-standard")
     <div class="bg-flight">
         <form action="" method="GET" class="box-choice" name="box-choice">
@@ -38,7 +36,7 @@
                             <p id="flight-display-info">1 senior, 1 adult, 1 children</p>
                             <img src="assets/icon/drop-down-strong-blue.svg" class="input-icon chevron" id="flight-drop-down-icon">
                         </div>
-                        
+
                         <div class="drop-down-container" id="flight-drop-down-container">
                             <div class="num-input">
                                 <h4>Senior</h4>
@@ -51,9 +49,9 @@
                             <div class="num-input">
                                 <h4>Children</h4>
                                 <input name="children" type="number" min="1" id="children-input" value="{{$children}}">
-                            </div>  
-                        </div>   
-                    </div>  
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="seat-option">
@@ -67,22 +65,22 @@
 
                     </select>
                 </div>
-                
+
             </div>
 
             <div class="bottom">
                 <div class="leaving_from">
                     <img src="assets/icon/flight_take offf.svg">
-                    <input type="text" name="source" placeholder="Leaving from" class="leaving" value="{{$source}}">
+                    <input type="text" name="source" id="flight-src" placeholder="Leaving from" class="leaving" value="{{$source}}">
                 </div>
 
                 <div class="to">
-                    <img src="assets/icon/panah_kanan_bulet.svg">
+                    <img src="assets/icon/rotate-blue.svg" class="rotate-icon" id="rotate-icon">
                 </div>
 
                 <div class="going_to">
                     <img src="assets/icon/flight_landingg.svg">
-                    <input type="text" name="destination" placeholder="Going to" class="leaving" value="{{$dest}}">
+                    <input type="text" name="destination" id="flight-dst" placeholder="Going to" class="leaving" value="{{$dest}}">
                 </div>
 
                 <div class="date">
@@ -227,5 +225,16 @@
         </div>
     </div>
     @include("shared.footer")
+    <script>
+        countries = {!! json_encode($countries->toArray()) !!}
+        cities = {!! json_encode($cities->toArray()) !!}
+        airports = {!! json_encode($airports->toArray()) !!}
+        hotels = {!! json_encode($hotels->toArray()) !!}
+
+        sessionStorage.setItem("countries", JSON.stringify(countries))
+        sessionStorage.setItem("cities", JSON.stringify(cities))
+        sessionStorage.setItem("airports", JSON.stringify(airports))
+        sessionStorage.setItem("hotels", JSON.stringify(hotels))
+    </script>
 </body>
 </html>

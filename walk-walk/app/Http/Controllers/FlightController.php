@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Airport;
 use App\Models\City;
+use App\Models\Country;
+use App\Models\Hotel;
 use App\Models\Schedule;
 // use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -100,7 +102,11 @@ class FlightController extends Controller
                 'senior' => $senior,
                 'adult' => $adult,
                 'children' => $children,
-                'class' => $class
+                'class' => $class,
+                "countries" => Country::all(),
+                "airports" => Airport::all(),
+                "cities" => City::all(),
+                "hotels" => Hotel::all()
             ]);
         }
     }

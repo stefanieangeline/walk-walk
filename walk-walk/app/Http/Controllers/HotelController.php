@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Airport;
 use App\Models\City;
+use App\Models\Country;
 use App\Models\Hotel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -126,7 +129,11 @@ class HotelController extends Controller
             'outDate'=>$outDate,
             'room'=>$room,
             'guest'=>$guest,
-            'range'=>$range
+            'range'=>$range,
+            "countries" => Country::all(),
+            "airports" => Airport::all(),
+            "cities" => City::all(),
+            "hotel_list" => Hotel::all()
         ]);
     }
 

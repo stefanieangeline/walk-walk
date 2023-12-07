@@ -121,6 +121,7 @@ searchBtn.addEventListener("click", (e) => {
 switchBtn = document.getElementById("rotate-icon")
 flightSrc = document.getElementById("flight-src")
 flightDst = document.getElementById("flight-dst")
+hotelDst = document.getElementById("hotel-destination")
 
 switchBtn.addEventListener("click", (e) => {
     temp = flightSrc.value
@@ -181,6 +182,7 @@ function clearSuggest() {
 function clearInput() {
     flightDst.value = ""
     flightSrc.value = ""
+    hotelDst.value = ""
 }
 
 function makeSuggestion(parent, input, type) {
@@ -265,8 +267,6 @@ flightDst.addEventListener("input", (e) => {
 clearInput()
 
 // search suggestion hotels
-hotelDst = document.getElementById("hotel-destination")
-
 hotelDst.addEventListener("input", (e) => {
     if (hotelDst.value == null || hotelDst.value == "") {
         clearSuggest()
