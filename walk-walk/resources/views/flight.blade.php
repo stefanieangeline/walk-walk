@@ -154,7 +154,7 @@
                 <div class="divider_price"></div>
 
                 <div class="sorting_price">
-                    <p>Sorted by</p>
+                    <p>Sorted by Price</p>
                     <select name="" id="">
                         <option value="">Ascending</option>
                         <option value="">Descending</option>

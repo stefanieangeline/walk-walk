@@ -67,7 +67,7 @@ body {
 }
 
 .people-opt{
-    background-color: transparent;
+    /* background-color: transparent; */
     border: none;
     color: white;
     border-radius: 20px;
@@ -91,16 +91,20 @@ body {
 }
 
 .seat-opt{
-    /* background-color: transparent;
-    border: none; */
-    border-radius: 20px;
-    border: 2px solid var(--strong-blue);
+    /* background-color: transparent; */
+    border: none;
+    border-radius: 20px; 
+    border: 2px solid var(--strong-blue); 
     cursor: pointer;
     font-family: roboto-cons-light;
     font-size: 14px;
-    background-color: var(--grey);
+    background-color: var(--white);
     color: var(--strong-blue);
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;  
+}
+
+.seat-opt:focus{
+    outline: none;
 }
 
 .bottom{
@@ -361,9 +365,8 @@ body {
     align-items: center;
     padding-left: 5%;
     gap: 5%;
-
-
 }
+
 .divider_price{
     height: 100%;
     width: 0.1%;
@@ -495,7 +498,7 @@ body {
     margin: 13px 0px;
     width: 190px;
     border-radius: 20px;
-    background-color: var(--grey);
+    background-color: var(--white);
     color: var(--strong-blue);
     border: 2px solid var(--strong-blue);
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -512,8 +515,12 @@ body {
     height: 19px;
 }
 
+.display-info:focus{
+    outline: none;
+}
+
 .drop-down-container {
-    background-color: var(--grey);
+    background-color: var(--white);
     position: absolute;
     padding: 8px;
     border-radius: 10px;
@@ -523,6 +530,8 @@ body {
     box-shadow: 0px 3px 5px rgba(30, 30, 30, 0.2);
     display: none;
 }
+
+
 
 .num-input {
     width: 160px;
