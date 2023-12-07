@@ -45,7 +45,6 @@ class HotelController extends Controller
                     });
                 });
             })
-
             ->when($range == 'low', function ($query) use ($room) {
                 $query->where(function ($subquery) use ($room) {
                     $subquery->whereIn('Hotel_rooms.PriceRoom', function ($subquery) use ($room) {
@@ -57,7 +56,6 @@ class HotelController extends Controller
                     });
                 });
             })
-
             ->when($range == 'mid', function ($query) use ($room) {
                 $query->where(function ($subquery) use ($room) {
                     $subquery->whereIn('Hotel_rooms.PriceRoom', function ($subquery) use ($room) {
@@ -69,7 +67,6 @@ class HotelController extends Controller
                     });
                 });
             })
-
             ->when($range == 'high', function ($query) use ($room) {
                 $query->where(function ($subquery) use ($room) {
                     $subquery->whereIn('Hotel_rooms.PriceRoom', function ($subquery) use ($room) {
@@ -81,47 +78,6 @@ class HotelController extends Controller
                     });
                 });
             })
-
-            // ->when($range == null, function ($query) {
-            //     $query->whereIn('Hotel_rooms.PriceRoom', function ($subquery) {
-            //         $subquery->select(DB::raw('MIN(hr2.PriceRoom)'))
-            //             ->from('hotel_rooms as hr2')
-            //             ->whereRaw('hotels.IDHotel = hr2.IDHotel');
-            //     });
-            // })
-
-            // ->when($range == 'low', function ($query) {
-            //     // Logika jika range adalah low
-            //     $query->whereIn('Hotel_rooms.PriceRoom', function ($subquery) {
-            //         $subquery->select(DB::raw('MIN(hr2.PriceRoom)'))
-            //             ->from('hotel_rooms as hr2')
-            //             ->where('hr2.PriceRoom', '<', 100)
-            //             ->whereRaw('hotels.IDHotel = hr2.IDHotel');
-            //     });
-            //     // $query->where('Hotel_rooms.PriceRoom', '<', 100);
-            // })
-
-            // ->when($range == 'mid', function ($query) {
-            //     // Logika jika range adalah mid
-            //      $query->whereIn('Hotel_rooms.PriceRoom', function ($subquery) {
-            //         $subquery->select(DB::raw('MIN(hr2.PriceRoom)'))
-            //             ->from('hotel_rooms as hr2')
-            //             ->whereBetween('hr2.PriceRoom', [120, 150])
-            //             ->whereRaw('hotels.IDHotel = hr2.IDHotel');
-            //     });
-            //     // $query->whereBetween('Hotel_rooms.PriceRoom', [120, 150]);
-            // })
-
-            // ->when($range == 'high', function ($query) {
-            //     // Logika jika range adalah high
-            //     $query->whereIn('Hotel_rooms.PriceRoom', function ($subquery) {
-            //         $subquery->select(DB::raw('MIN(hr2.PriceRoom)'))
-            //             ->from('hotel_rooms as hr2')
-            //             ->where('hr2.PriceRoom', '>', 150)
-            //             ->whereRaw('hotels.IDHotel = hr2.IDHotel');
-            //     });
-            //     // $query->where('Hotel_rooms.PriceRoom', '>', 150);
-            // })
             ->get(),
 
             'dest'=> $dest,

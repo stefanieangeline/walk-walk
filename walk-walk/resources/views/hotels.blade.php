@@ -75,26 +75,63 @@
             <div class="star-range range">
                 <h2 class="side-bar-header">Star Rating</h2>
                 <div class="star-container">
-                    <div class="sub-star" id="star1">
-                        <h4>1</h4>
-                        <img src="assets/icon/star-gold.svg">
+                    <div class="choose-star" name="star">
+                        <input type="radio" id="star1">
+                        <div class="sub-star">
+                            <h4>1</h4>
+                            <img src="assets/icon/star-gold.svg">
+                        </div>
                     </div>
-                    <div class="sub-star" id="star2">
+
+                    <div class="choose-star" name="star">
+                        <input type="radio" id="star2">
+                        <div class="sub-star">
+                            <h4>2</h4>
+                            <img src="assets/icon/star-gold.svg">
+                        </div>
+                    </div>
+
+                    <div class="choose-star" name="star">
+                        <input type="radio" id="star3">
+                        <div class="sub-star">
+                            <h4>3</h4>
+                            <img src="assets/icon/star-gold.svg">
+                        </div>
+                    </div>
+
+                    <div class="choose-star" name="star">
+                        <input type="radio" id="star4">
+                        <div class="sub-star">
+                            <h4>4</h4>
+                            <img src="assets/icon/star-gold.svg">
+                        </div>
+                    </div>
+
+                    <div class="choose-star" name="star">
+                        <input type="radio" id="star5">
+                        <div class="sub-star">
+                            <h4>5</h4>
+                            <img src="assets/icon/star-gold.svg">
+                        </div>
+                    </div>
+
+                    <!-- <div class="sub-star" id="star2">
                         <h4>2</h4>
                         <img src="assets/icon/star-gold.svg">
-                    </div>
-                    <div class="sub-star" id="star3">
+                    </div> -->
+                    <!-- <div class="sub-star" id="star3">
                         <h4>3</h4>
                         <img src="assets/icon/star-gold.svg">
-                    </div>
-                    <div class="sub-star" id="star4">
+                    </div> -->
+                    <!-- <div class="sub-star" id="star4">
                         <h4>4</h4>
                         <img src="assets/icon/star-gold.svg">
-                    </div>
-                    <div class="sub-star" id="star5">
+                    </div> -->
+                    <!-- <div class="sub-star" id="star5">
                         <h4>5</h4>
                         <img src="assets/icon/star-gold.svg">
-                    </div>
+                    </div> -->
+
                 </div>
             </div>
             <hr>
