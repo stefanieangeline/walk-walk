@@ -155,3 +155,10 @@ arrowBtns.forEach(btn => {
         carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth
     })
 })
+
+// get variable
+countries = JSON.parse(sessionStorage.getItem("countries"))
+cities = JSON.parse(sessionStorage.getItem("cities"))
+airports = JSON.parse(sessionStorage.getItem("airports"))
+
+console.log(cities)

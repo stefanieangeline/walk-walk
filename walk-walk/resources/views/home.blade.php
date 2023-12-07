@@ -307,6 +307,10 @@
         countries = {!! json_encode($countries->toArray()) !!}
         cities = {!! json_encode($cities->toArray()) !!}
         airports = {!! json_encode($airports->toArray()) !!}
+
+        sessionStorage.setItem("countries", JSON.stringify(countries))
+        sessionStorage.setItem("cities", JSON.stringify(cities))
+        sessionStorage.setItem("airports", JSON.stringify(airports))
     </script>
 </body>
 </html>
