@@ -177,7 +177,7 @@ body {
 }
 
 .drop-down-container {
-    width: 100%;
+    width: 310px;
     position: absolute;
     background-color: var(--white);
     padding: 10px 25px;
@@ -209,7 +209,7 @@ body {
     font-size: 18px;
     color: var(--near-black);
     font-weight: lighter;
-    width: 50px;
+    width: 60px;
     padding: 10px;
 }
 
