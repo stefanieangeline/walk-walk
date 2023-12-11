@@ -140,7 +140,7 @@ class HotelController extends Controller
                 $subquery->where('hotels.RatingHotel', '>', 4.5);
         });
 
-        $hotels = $query->get();
+        $hotels = $query->orderBy('hotel_rooms.PriceRoom', 'asc')->get();
 
         return view("hotels", [
             'hotels' => $hotels,

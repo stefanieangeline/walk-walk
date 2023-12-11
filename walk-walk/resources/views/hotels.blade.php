@@ -151,7 +151,8 @@
 
         <div class="right-box">
             @foreach($hotels as $hotel)
-            <form name="specific-hotel-form" action="{{ route('hotel-room') }}" method="get" id="hotel-info" class="hotel-detail">
+            <form name="specific-hotel-form" action="{{ route('hotel-room') }}" method="get" id="hotel-info">
+            <div class="hotel-detail">
                 <div class="right-left">
                     <img src="https://drive.google.com/uc?export=view&id=1jt8Rg0c4b5hp7X3-2Ib6osexfsijso2g" class="hotel-image">
                     <div class="detail-info">
@@ -221,7 +222,8 @@
                     </div>
                     <button id="submit-hotel-room">Check Availability</button>
                 </div>
-            <form>
+            </div>
+            </form>
             @endforeach
         </div>
     </div>
