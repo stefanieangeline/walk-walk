@@ -64,6 +64,11 @@ rangeArray.forEach(range => {
     })
 });
 
+searchHotelRoom = document.getElementById("submit-hotel-room");
+searchHotelRoom.addEventListener("click", (e) => {
+    document.forms["specific-hotel-form"].submit();
+});
+
 // get variable
 let countries = JSON.parse(sessionStorage.getItem("countries"))
 let cities = JSON.parse(sessionStorage.getItem("cities"))
