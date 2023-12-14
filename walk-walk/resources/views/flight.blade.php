@@ -182,7 +182,7 @@
                     <p>Rp. {{$schedule->Price}}</p>
                 </div>
                 <div class="submit_flight">
-                    <input type="submit" class="flight_button" value="Select">
+                    <a href="{{route("passenger", $schedule->IDSchedule)}}" class="flight_button">Select</a>
                 </div>
             </div>
 

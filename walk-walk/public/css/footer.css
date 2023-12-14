@@ -62,6 +62,12 @@ a:hover{
 .titleF{
     font-family: roboto-cons-bold;
     color: white;
+    text-decoration: none;
+}
+
+.footer-detail{
+    color: white;
+    text-decoration: none;
 }
 
 .line{

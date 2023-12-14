@@ -17,15 +17,9 @@ class FlightController extends Controller
         return DB::table("schedules")->where("IDAirportSource", $IDAirportSrc)->where("IDAirportDestination", $IDAirportDst)->get();
     }
 
-    public function old() {
-        $schedules = null;
-        if (request()->has("src") && request()->has("dst")) {
-            $schedules = Schedule::query()->where("IDAirportSource", request()->get("src", ""))->where("IDAirportDestination", request()->get("dst", ""))->get();
-        } else {
-            $schedules = Schedule::all();
-        }
+    public function passenger($id) {
 
-        return view("flight", ['schedules' => $schedules]);
+        return view("passanger-detail");
     }
 
     public function index(){
@@ -65,7 +59,7 @@ class FlightController extends Controller
                 ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
                 ->join('airports as b','schedules.IDAirportDestination','=','b.IDAirport')
                 ->join('airports as a','schedules.IDAirportSource','=','a.IDAirport')
-                ->select(DB::raw($querydeparturetime),DB::raw($queryarrivaltime),'schedule_details.Price','a.CodeAirport as CodeAirportSource','b.CodeAirport as CodeAirportDestination', 'IDAirline')->distinct()
+                ->select(DB::raw($querydeparturetime),DB::raw($queryarrivaltime),'schedule_details.Price','a.CodeAirport as CodeAirportSource','b.CodeAirport as CodeAirportDestination', 'IDAirline', 'schedules.IDSchedule')->distinct()
                 ->where('schedule_details.Class','like', $class)
                 ->where('a.IDAirport', $IDsource)
                 ->where('b.IDAirport', $IDdest)
@@ -181,7 +175,7 @@ class FlightController extends Controller
                 ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
                 ->join('airports as b','schedules.IDAirportDestination','=','b.IDAirport')
                 ->join('airports as a','schedules.IDAirportSource','=','a.IDAirport')
-                ->select(DB::raw($querydeparturetime),DB::raw($queryarrivaltime),'schedule_details.Price','a.CodeAirport as CodeAirportSource','b.CodeAirport as CodeAirportDestination', 'IDAirline')->distinct()
+                ->select(DB::raw($querydeparturetime),DB::raw($queryarrivaltime),'schedule_details.Price','a.CodeAirport as CodeAirportSource','b.CodeAirport as CodeAirportDestination', 'IDAirline', 'schedules.IDSchedule')->distinct()
                 ->where('schedule_details.Class','like', $class)
                 ->where('schedules.DepartureTime', ">=", $depDate)
                 ->whereRaw('schedules.DepartureTime <'.$addOneDay)

@@ -486,6 +486,9 @@ body {
     border: none;
     font-family: roboto-cons-bold;
     background-color: #146C94;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .airport_schedule{

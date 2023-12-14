@@ -29,6 +29,8 @@ Route::get('/', [HomeController::class,'index'])->name('home');
 
 Route::get('/flights', [FlightController::class, 'index'])->name('flights');
 
+Route::get('/flights/{id}', [FlightController::class, 'passenger'])->name('passenger');
+
 Route::get('/hotels', [HotelController::class, 'index'])->name('hotels');
 
 Route::get('/hotels/{id}', [HotelRoomController::class, 'index'])->name('hotel-room');
@@ -54,10 +56,6 @@ Route::get('/customer-hotel-detail', [CustomerHotelDetailController::class, 'ind
 
 Route::get('/payment-barcode', function(){
     return view('payment-barcode');
-});
-
-Route::get('/passanger-detail', function(){
-    return view('passanger-detail');
 });
 
 Route::get('/privacy-policy', function(){

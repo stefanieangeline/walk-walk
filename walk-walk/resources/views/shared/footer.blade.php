@@ -21,26 +21,32 @@
             <div class="footer-right">
                 <ul class="footer-Help">
                     <li><h2 class="titleF">Help</h2></li>
-                    <li><a>FAQs</a></li>
-                    <li><a>About Us</a></li>
-                    <li><a>Privacy Policy</a></li>
+                    <li><a href="/FAQ" class="footer-detail">FAQS</a></li>
+                    <li><a href="/about-us" class="footer-detail">About Us</a></li>
+                    <li><a href="/privacy-policy" class="footer-detail">Privacy Policy</a></li>
+                    {{-- <li><a>FAQs</a></li> --}}
+                    {{-- <li><a>About Us</a></li> --}}
+                    {{-- <li><a>Privacy Policy</a></li> --}}
                 </ul>
 
                 <ul class="footer-Destinations">
-                    <li><h2  class="title">Destinations</h2></li>
+                    <li><h2  class="titleF">Destinations</h2></li>
                     <li><a>Countries</a></li>
                     <li><a>Cities</a></li>
                 </ul>
 
                 <ul class="footer-Products">
-                    <li><h2  class="title">Products</h2></li>
-                    <li><a>Flights</a></li>
-                    <li><a>Hotels</a></li>
+                    <li><h2  class="titleF">Products</h2></li>
+                    <li><a href="/flights" class="footer-detail">Flights</a></li>
+                    <li><a href="/hotels" class="footer-detail">Hotels</a></li>
+                    {{-- <li><a href="/flights">Flights</a></li> --}}
+                    {{-- <li><a>Hotels</a></li> --}}
                 </ul>
 
                 <ul class="footer-Company">
-                    <li><h2  class="title">Company</h2></li>
-                    <li><a>About Jalan-Jalan Group</a></li>
+                    <li><h2  class="titleF">Company</h2></li>
+                    <li><a href="/about-group" class="footer-detail">About Jalan-Jalan Group</a></li>
+                    {{-- <li><a>About Jalan-Jalan Group</a></li> --}}
                 </ul>
             </div>
         </div>
