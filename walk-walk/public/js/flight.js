@@ -163,3 +163,24 @@ flightDst.addEventListener("input", (e) => {
 
     makeSuggestion(flightDst, flightDst.value.toLowerCase(), "flight")
 })
+
+// click event listener
+
+airlines = document.querySelectorAll(".opt-flight")
+prices = document.querySelectorAll(".opt-price")
+
+function addClickEvent(array) {
+    array.forEach((el)=>{
+        el.addEventListener("click", (e)=>{
+            if (el.firstElementChild.checked != true) {
+                el.firstElementChild.checked = true
+            } else {
+                el.firstElementChild.checked = false
+            }
+            document.forms["box-choice"].submit()
+        })
+    })
+}
+
+addClickEvent(airlines)
+addClickEvent(prices)

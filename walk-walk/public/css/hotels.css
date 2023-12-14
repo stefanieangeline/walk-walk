@@ -621,7 +621,8 @@ body {
     text-decoration: line-through;
 }
 
-.hotel-price button {
+.hotel-price a {
+    text-decoration: none;
     border: none;
     background-color: var(--strong-blue);
     color: var(--white);

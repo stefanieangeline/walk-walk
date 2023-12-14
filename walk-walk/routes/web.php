@@ -31,6 +31,8 @@ Route::get('/flights', [FlightController::class, 'index'])->name('flights');
 
 Route::get('/hotels', [HotelController::class, 'index'])->name('hotels');
 
+Route::get('/hotels/{id}', [HotelRoomController::class, 'index'])->name('hotel-room');
+
 // Route::get('/hotels/detail', [HotelController::class, 'detail'])->name('hotelsDetail');
 
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -47,8 +49,6 @@ Route::get('/help', [HelpController::class,'index'])->name('help');
 Route::get('/hotel-payment', [HotelPaymentController::class, 'index'])->name('hotel-payment');
 
 Route::get('/eticket', [EticketController::class,'index'])->name('e-ticket');
-
-Route::get('/hotel-room', [HotelRoomController::class, 'index'])->name('hotel-room');
 
 Route::get('/customer-hotel-detail', [CustomerHotelDetailController::class, 'index'])->name('customer-hotel-detail');
 

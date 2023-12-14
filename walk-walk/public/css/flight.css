@@ -301,6 +301,12 @@ body {
     align-items: center;
     font-family: roboto-cons-regular;
     color: #146C94;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.opt-flight:hover {
+    opacity: 0.7;
 }
 
 .opt-flight input{

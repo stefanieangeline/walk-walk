@@ -54,17 +54,16 @@
             <div class="header-upper-box">
                 <div class="right-box">
                     <div class="title-star">
-                        <p class="title-txt">Arunika Hotel and Spa</p>
+                        <p class="title-txt">{{$hotel->NameHotel}}</p>
                         <div class="hotel-rating-star">
-                                <img src="/assets/icon/star-gold.svg">
-                                <img src="/assets/icon/star-gold.svg">
-                                <img src="/assets/icon/star-gold.svg">
-                                <img src="/assets/icon/star-gold.svg">
+                            @for ($i=0; $i < $hotel->StarHotel; $i++)
+                            <img src="/assets/icon/star-gold.svg">
+                            @endfor
                         </div>
                     </div>
                     <div class="locate">
                         <img src="/assets/icon/location-blue.svg">
-                        <p class="loc-txt">Jl. Raya Tuban Lingkungan Griya No.2, Tuban, Kec. Kuta, Kabupaten, Badung Regency, 80361 Bali, Indonesia</p>
+                        <p class="loc-txt">{{$hotel->AddressHotel}}</p>
                     </div>
                 </div>
                 <div class="left-box">
@@ -99,7 +98,7 @@
             Relax at the full-service spa, where you can enjoy massages, body treatments, and facials. You're sure to appreciate the recreational amenities, including an outdoor pool, a sauna, and a fitness center. Additional features at this hotel include complimentary wireless Internet access, concierge services, and a hair salon. Guests can catch a ride to the beach or shopping on the complimentary shuttle.</p>
                 </div>
                 <div class="star-rate-box">
-                    <p class="the-rating">4.5</p>
+                    <p class="the-rating">{{$hotel->RatingHotel}}</p>
                     <p class="the-standard">/5</p>
                 </div>
             </div>
@@ -136,7 +135,7 @@
                                 <img src="/assets\icon\Arunika\Deluxe\2.jpg" class="rd-2">
                                 <img src="/assets\icon\Arunika\Deluxe\3.jpg" class="rd-2">
                             </div>
-                        </div>  
+                        </div>
                     </div>
                     <div class="line-blue"></div>
                     <div class="add-on">
@@ -230,10 +229,10 @@
                             <img src="/assets/icon/Arunika/review1.webp" class="img-desc">
                             <img src="/assets/icon/Arunika/review2.webp" class="img-desc">
                         </div>
-                    </div>      
+                    </div>
             </div>
 
-            
+
             <div class="rating-blue-line"></div>
 
             <div class="user-rates">
@@ -250,8 +249,8 @@
 
                     <div class="user-rates-desc">
                         <p class="desc-rate">The hotel is located close to the airport and would only recommend for a transit location. To be noted there is a mosque in very close proximity to the hotel and the this can be heard by some rooms. The room was clean and comfortable. The tv was clear with a good selection of channels. The staff were kind. The breakfast was ok without being great. Not too many choices although they do have an egg station like most hotels in bali. The sauna was undergoing maintenance and the pool was open however when we used it the water temperature was warm and there was loud explicit music playing on the rooftop level not very refreshing or relaxing. Overall an ok stay for a transit.</p>
-                        
-                    </div>      
+
+                    </div>
             </div>
 
 

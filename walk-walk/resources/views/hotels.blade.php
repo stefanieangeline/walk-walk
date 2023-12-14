@@ -90,7 +90,7 @@
                         <div class="sub-star"> <h4>3</h4> <img src="assets/icon/star-gold.svg"></div>
                     </div>
 
-                
+
                     <div class="choose-star" >
                         <input type="radio" id="star4" name="star" value="4" @if($star==4) checked="checked"@endif>
                         <div class="sub-star"> <h4>4</h4><img src="assets/icon/star-gold.svg"></div>
@@ -99,7 +99,7 @@
                     <div class="choose-star" >
                         <input type="radio" id="star5" name="star" value="5" @if($star==5) checked="checked"@endif>
                         <div class="sub-star"><h4>5</h4><img src="assets/icon/star-gold.svg"></div>
-                    </div>    
+                    </div>
                 </div>
             </div>
 
@@ -111,38 +111,38 @@
 
                     <div class="choose-review">
                         <input type="radio" id="review1" name="review" value="1" @if($review==1) checked="checked"@endif>
-                        <div class="sub-rating">      
+                        <div class="sub-rating">
                             <h4>&lt;3</h4>
                         </div>
                     </div>
-                   
+
                     <div class="choose-review">
                         <input type="radio" id="review2" name="review" value="2" @if($review==2) checked="checked"@endif>
-                        <div class="sub-rating">   
+                        <div class="sub-rating">
                             <h4>3+</h4>
                         </div>
                     </div>
 
                     <div class="choose-review">
                         <input type="radio" id="review3" name="review" value="3" @if($review==3) checked="checked"@endif>
-                        <div class="sub-rating">   
+                        <div class="sub-rating">
                             <h4>3,5+</h4>
                         </div>
                     </div>
 
                     <div class="choose-review">
                         <input type="radio" id="review4" name="review" value="4" @if($review==4) checked="checked"@endif>
-                        <div class="sub-rating"> 
+                        <div class="sub-rating">
                             <h4>4+</h4>
                         </div>
                     </div>
 
                     <div class="choose-review">
                         <input type="radio" id="review5" name="review" value="5" @if($review==5) checked="checked"@endif>
-                        <div class="sub-rating">   
+                        <div class="sub-rating">
                             <h4>4,5+</h4>
                         </div>
-                    </div>   
+                    </div>
 
                 </div>
             </div>
@@ -151,7 +151,6 @@
 
         <div class="right-box">
             @foreach($hotels as $hotel)
-            <form name="specific-hotel-form" action="{{ route('hotel-room') }}" method="get" id="hotel-info">
             <div class="hotel-detail">
                 <div class="right-left">
                     <img src="https://drive.google.com/uc?export=view&id=1jt8Rg0c4b5hp7X3-2Ib6osexfsijso2g" class="hotel-image">
@@ -220,10 +219,9 @@
                         <!-- <h4 class="discount-price">{{$hotel->PriceRoom}}</h4>
                         <h5 class="actual-price">Rp. 4200.000</h5> -->
                     </div>
-                    <button id="submit-hotel-room">Check Availability</button>
+                    <a href="{{route("hotel-room", $hotel->IDHotel)}}" id="submit-hotel-room">Check Availability</a>
                 </div>
             </div>
-            </form>
             @endforeach
         </div>
     </div>

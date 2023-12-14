@@ -55,19 +55,37 @@ review5 = document.getElementById("review5");
 
 
 searchHotel = document.getElementById("search-hotel");
-console.log(searchHotel)
-rangeArray = [ range1, range2, range3, searchHotel, star1, star2, star3, star4, star5, review1, review2, review3, review4, review5]
+searchHotel.addEventListener("click", (e)=>{
+    document.forms["search-hotel-form"].submit()
+})
 
-rangeArray.forEach(range => {
-    range.addEventListener("click", (e) => {
-        document.forms["search-hotel-form"].submit()
+// searchHotelRoom = document.getElementById("submit-hotel-room");
+// searchHotelRoom.addEventListener("click", (e) => {
+//     document.forms["specific-hotel-form"].submit();
+// });
+
+// click event listener
+
+reviews = document.querySelectorAll(".choose-review")
+stars = document.querySelectorAll(".choose-star")
+prices = document.querySelectorAll(".sub-price")
+
+function addClickEvent(array) {
+    array.forEach((el)=>{
+        el.addEventListener("click", (e)=>{
+            if (el.firstElementChild.checked != true) {
+                el.firstElementChild.checked = true
+            } else {
+                el.firstElementChild.checked = false
+            }
+            document.forms["search-hotel-form"].submit()
+        })
     })
-});
+}
 
-searchHotelRoom = document.getElementById("submit-hotel-room");
-searchHotelRoom.addEventListener("click", (e) => {
-    document.forms["specific-hotel-form"].submit();
-});
+addClickEvent(reviews)
+addClickEvent(stars)
+addClickEvent(prices)
 
 // get variable
 let countries = JSON.parse(sessionStorage.getItem("countries"))
