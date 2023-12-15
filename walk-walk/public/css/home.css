@@ -25,6 +25,7 @@
 }
 
 .slogan {
+    margin-top: 50px;
     text-align: center;
     font-family: roboto-cons-medium;
     font-size: 40px;
@@ -33,7 +34,11 @@
 }
 
 .main-container {
-    padding-top: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .select-box {

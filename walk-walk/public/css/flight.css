@@ -204,7 +204,7 @@ body {
     height: 40px;
 }
 .input_date{
-    width: 195px;
+    width: 100%;
     padding: 12px 10px;
     color: white;
     border: none;
