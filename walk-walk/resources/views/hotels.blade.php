@@ -219,7 +219,9 @@
                         <!-- <h4 class="discount-price">{{$hotel->PriceRoom}}</h4>
                         <h5 class="actual-price">Rp. 4200.000</h5> -->
                     </div>
-                    <a href="{{route("hotel-room", $hotel->IDHotel)}}" id="submit-hotel-room">Check Availability</a>
+                    <a href="{{ route("hotel-room", ['id' => $hotel->IDHotel, 'destination' => $dest, 'inDate' => $inDate, 'outDate' => $outDate, 'room' => $room, 'guest' => $guest]) }}" id="submit-hotel-room">Check Availability</a>
+
+                    <!-- <a href="{{route("hotel-room", $hotel->IDHotel)}}" id="submit-hotel-room">Check Availability</a> -->
                 </div>
             </div>
             @endforeach

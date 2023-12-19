@@ -8,6 +8,10 @@ body {
     background-color: var(--blue-base);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .background{
     width: 100vw;
     z-index: 1;
@@ -16,7 +20,7 @@ body {
 }
 
 .box-choice {
-    width: 90vw;
+    width: 84vw;
     background-color: var(--strong-blue);
     padding: 10px;
     border-radius: 20px;
@@ -248,7 +252,8 @@ body {
     background-color: #F6F7F7;
     /* background-color: blue; */
     border-radius: 45px 45px 0px 0px;
-    padding-top: 90px;
+    padding-top: 100px;
+    padding-bottom: 25px;
     /* padding-left: 109px;
     padding-right: 109px; */
     display: flex;
@@ -267,7 +272,10 @@ body {
     /* margin-left: -16px; */
     margin: 0px auto;
     margin-top: -15px;
-    padding: 40px;
+    padding-top: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
     display: flex;
     flex-direction: column;
 

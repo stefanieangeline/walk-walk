@@ -10,21 +10,22 @@
 <body>
     @include("shared.nav-bar-standard")
     <div class="background">
-    <div class="box-choice">
+        <form method="get" name="search-hotel-form">
+        <div class="box-choice">
             <div class="dest-box box-width">
                 <h2>Destination</h2>
-                <input type="text" placeholder="Search a place..." value="Bali">
+                <input type="text" placeholder="Search a place..." name="destination" id="hotel-destination" value="{{$dest}}">
             </div>
             <div class="check-in-out-box box-width">
                 <div class="in-box">
                     <h2>Check-in</h2>
-                    <input type="date">
+                    <input type="date" value="{{$inDate}}" name="inDate">
                 </div>
                 <div class="line-box">
                 </div>
                 <div class="out-box">
                     <h2>Check-out</h2>
-                    <input type="date">
+                    <input type="date" value="{{$outDate}}" name="outDate">
                 </div>
             </div>
             <div class="input-row drop-down-menu box-width">
@@ -36,11 +37,11 @@
                     <div class="drop-down-container" id="hotel-drop-down-container">
                         <div class="num-input">
                             <h4>Rooms</h4>
-                            <input type="number" min="1" id="rooms-input" value="1">
+                            <input type="number" min="1" id="rooms-input" name="room" value="{{$room}}">
                         </div>
                         <div class="num-input">
                             <h4>Guests</h4>
-                            <input type="number" min="1" id="guests-input" value="2">
+                            <input type="number" min="1" id="guests-input" name="guest" value="{{$guest}}">
                         </div>
                     </div>
                 </div>
@@ -66,19 +67,18 @@
                         <p class="loc-txt">{{$hotel->AddressHotel}}</p>
                     </div>
                 </div>
-                <div class="left-box">
+                <!-- <div class="left-box">
                     <p class="hotel-price">Rp 325.000</p>
                     <div class="select-room-box">
                         <p class="select-room-txt">SELECT ROOMS</p>
                     </div>
-                </div>
-
+                </div> -->
             </div>
+
             <div class="pics-box">
                 <img src="/assets/icon/Arunika/1.webp" class="big-pic">
                 <!-- <div class="big-pic"></div> -->
                 <div class="pics">
-
                     <div class="up-pics">
                         <img src="/assets/icon/Arunika/2.webp" class="up-pic-one">
                         <img src="/assets/icon/Arunika/3.webp" class="up-pic-one">
@@ -91,6 +91,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="bottom-box">
                 <div class="desc-box">
                     <p class="desc-title">Description</p>
@@ -115,9 +116,11 @@
                 <p class="amount-types">4 room types</p>
                 <p class="info">Price do not include taxes & fees</p>
             </div>
+
+            @foreach($roomTypes as $roomType)
             <div class="room-type-box">
                 <div class="top-box-type">
-                    <p class="type-name">Deluxe Room</p>
+                    <p class="type-name">{{ $roomType -> TypeRoom }}</p>
                     <div class="star-rate-box-type">
                         <p class="the-rating">4.5</p>
                         <p class="the-standard">/5</p>
@@ -184,9 +187,14 @@
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
 
-        <div class="guest-rating-review">
+
+
+
+
+        <!-- <div class="guest-rating-review">
             <p class="grr-text">Guest's Rating & Review</p>
             <div class="review-summary">
                 <img src="/assets/icon/rating-star-blue.png" class="rating-star-img">
@@ -289,7 +297,7 @@
                     <h4>Indoor Swimming Pool</h4>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
     </div>
