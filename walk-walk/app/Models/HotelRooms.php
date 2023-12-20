@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class HotelRooms extends Model
 {
     use HasFactory;
+
+     public function facilities()
+    {
+        return $this->hasMany(RoomFacilityDetails::class, 'IDHotel', 'IDHotel');
+    }
 }

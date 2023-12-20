@@ -16,8 +16,9 @@ class HotelRoomController extends Controller
         $guest = request()->get("guest");
 
         $hotel = Hotel::query()->where('IDHotel', $id)->first();
-
-        $roomTypes = HotelRooms::where('IDHotel', $id)->get();
+        // $roomTypes = HotelRooms::where('IDHotel', $id)->get();
+        $roomTypes = HotelRooms::with('facilities')->where('IDHotel', $id)->get();
+        $totalRoomTypes = $roomTypes->count();
 
         return view('hotel-room', [
             'dest'=> $destination,
@@ -26,7 +27,8 @@ class HotelRoomController extends Controller
             'room'=>$room,
             'guest'=>$guest,
             'hotel'=>$hotel,
-            'roomTypes' => $roomTypes
+            'roomTypes' => $roomTypes,
+            'totalRoomTypes' => $totalRoomTypes
             // "hotel" => Hotel::query()->where('IDHotel', $id)->first()
         ]);
     }

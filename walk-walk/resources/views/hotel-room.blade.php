@@ -111,21 +111,27 @@
             <p class="header-room">Service & Aminities</p>
         </div>
 
+        @php
+            $sortedRoomTypes = $roomTypes->sortBy('PriceRoom');
+        @endphp
+
         <div class="room-types-box">
             <div class="header-types-box">
-                <p class="amount-types">4 room types</p>
+                <p class="amount-types">{{ $totalRoomTypes }} Room Types</p>
                 <p class="info">Price do not include taxes & fees</p>
             </div>
 
-            @foreach($roomTypes as $roomType)
+            @foreach($sortedRoomTypes as $roomType)
             <div class="room-type-box">
                 <div class="top-box-type">
                     <p class="type-name">{{ $roomType -> TypeRoom }}</p>
                     <div class="star-rate-box-type">
-                        <p class="the-rating">4.5</p>
-                        <p class="the-standard">/5</p>
+                        <p class="q-available">{{$roomType-> QuantityRoom}} rooms left</p>
+                        <!-- <p class="the-rating">4.5</p>
+                        <p class="the-standard">/5</p> -->
                     </div>
                 </div>
+
                 <div class="bottom-box-type">
                     <div class="room-detail">
                         <div class="pic-room-detail">
@@ -140,18 +146,28 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="line-blue"></div>
+
                     <div class="add-on">
                         <div class="room-facil">
                             <div class="bed-type">
                                 <img src="/assets\icon\queen-bed-blue.svg" class="bt-icon">
                                 <p class="bt-text">1 king bed</p>
                             </div>
+
                             <div class="facil-box">
                                 <img src="/assets/icon/house-area-blue.svg" class="facil-icon">
-                                <p class="facil-text">25m<sup>2</sup></p>
+                                <p class="facil-text">{{ $roomType -> WideRoom }}m<sup>2</sup></p>
                             </div>
-                            <div class="facil-box">
+
+                            @foreach($roomType->facilities as $facility)
+                                <div class="facil-box">
+                                    <img src="/assets/icon/heroicons_tv.png" class="facil-icon">
+                                    <p class="facil-text">{{ $facility-> NameFacilityRoom }}</p>
+                                </div>
+                            @endforeach
+                            <!-- <div class="facil-box">
                                 <img src="/assets\icon\heroicons_tv.png" class="facil-icon">
                                 <p class="facil-text">Flat Screen TV</p>
                             </div>
@@ -162,30 +178,37 @@
                             <div class="facil-box">
                                 <img src="/assets\icon\tabler_air-conditioning.png" class="facil-icon">
                                 <p class="facil-text">Air conditioning</p>
-                            </div>
+                            </div> -->
                         </div>
+
                         <!-- <p class="add-on-txt">Add on(s)</p> -->
-                        <div class="adds-box">
+                        <!-- <div class="adds-box">
                             <img src="/assets/icon/SpoonFork.svg" class="adds-icon">
                             <p class="adds-txt">Include Breakfast</p>
                         </div>
                         <div class="adds-box">
                             <img src="/assets/icon/wifi.svg" class="adds-icon">
                             <p class="adds-txt">Free Wi-Fi</p>
-                        </div>
+                        </div> -->
                     </div>
+
                     <div class="line-blue"></div>
+
                     <div class="person">
                         <img src="/assets/icon/guest.svg" class="person-icon">
-                        <p class="person-txt">2</p>
+                        <p class="person-txt">{{$roomType -> CapacityRoom}}</p>
                     </div>
+
                     <div class="line-blue"></div>
+
                     <div class="price">
-                        <p class="big-price">Rp 325.000</p>
-                        <p class="tax-text">After tax Rp 423.076 per room</p>
+                        <p class="big-price">Rp {{ $roomType -> PriceRoom }}.000</p>
+                        <p class="tax-text">After Tax Rp.{{$roomType -> PriceRoom * 1.2}}.000</p>
                         <p class="reserve-button">Reserve</p>
                     </div>
+
                 </div>
+
             </div>
             @endforeach
         </div>

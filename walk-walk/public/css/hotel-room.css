@@ -309,6 +309,7 @@ body {
     width: 50vw ;
     height: 10vh;
     /* background-color:mediumaquamarine; */
+    margin-bottom: 2px;
     margin-top: 3px;
     display: flex;
     flex-direction: row;
@@ -341,14 +342,15 @@ body {
 
 .locate img{
     height: 25px;
+    margin-right: 4px;
 }
 
 .loc-txt{
     font-family: roboto-cons-regular;
     color: var(--shade-blue);
-    font-size: 15px;
+    font-size: 18px;
     padding-left: 3px;
-    padding-top: 3px;
+    padding-top: 2px;
 }
 
 .left-box{
@@ -561,7 +563,7 @@ body {
 
 .header-types-box{
     width: 30vw;
-    height: 10vh;
+    height: 9vh;
     /* background-color: mediumorchid; */
 }
 
@@ -576,6 +578,10 @@ body {
     color: var(--light-blue);
     font-size: 15px;
     margin-top: 5px;
+}
+
+.q-available{
+    color: white;
 }
 
 .room-type-box{
@@ -595,12 +601,12 @@ body {
 .type-name{
     font-family: roboto-cons-bold;
     color: var(--shade-blue);
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .top-box-type{
     width: calc(100% - 40px);
-    margin: 10px 20px;
+    margin: 15px 10px 10px 10px;
     /* background-color: fuchsia; */
     display: flex;
     flex-direction: row;
@@ -621,7 +627,7 @@ body {
     /* height: 77vh; */
     /* margin-top: 5px;
     margin-left: 8px; */
-    margin: 10px 0px;
+    /* margin: 10px 0px; */
     border-radius: 10px;
     background-color: var(--light-grey);
     display: flex;
@@ -782,6 +788,7 @@ body {
     width: 32vw;
     /* height: 67vh; */
     margin-top: 7px;
+    margin-bottom: 15px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -793,17 +800,22 @@ body {
 .big-price{
     font-family: roboto-cons-bold;
     color: var(--shade-blue);
-    font-size: 25px;
+    font-size: 28px;
     /* background-color: var(--shade-blue);
     padding: 15px 25px; */
     /* border-radius: 15px; */
 }
 
 .tax-text{
-    font-family: roboto-cons-regular;
+    /* font-family: roboto-cons-regular;
     padding-top: 1px;
     padding-bottom: 5px;
-    color: var(--grey);
+    color: var(--grey); */
+    color: var(--another-blue);
+    font-family: roboto-cons-regular;
+    margin-bottom: 8px;
+    font-size: 15px;
+    margin-top: 2px;
 }
 
 .reserve-button{
