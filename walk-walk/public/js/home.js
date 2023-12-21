@@ -139,20 +139,13 @@ const carouselChildren = [...carousel.children];
 let cardPerView = Math.round(carousel.offsetWidth/firstCardWidth);
 
 //insert copies of the last few cards to beginning of carousel for infinite scroll
-carouselChildren.slice(-cardPerView).reverse().forEach(card => {
-    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
-});
-
-//insert copies of the last few cards to beginning of carousel for infinite scroll
-carouselChildren.slice(0, cardPerView).forEach(card => {
-    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
-});
+// carouselChildren.slice(-cardPerView).reverse().forEach(card => {
+//     carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+// });
 
 //add event listener buat btn
 arrowBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        //check if the listener is working
-        // console.log(btn.id);
         carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth
     })
 })

@@ -53,7 +53,7 @@
 
         <div class="row-2">
             <div class="title">
-                <p>WHY CHOOSE JALAN JALAN ?</p>
+                <p>Why Choose jalan-jalan?</p>
             </div>
             <div class="title-1">
                 <p>

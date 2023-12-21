@@ -136,19 +136,23 @@
                 <div class="wrapper">
                     <i id="left" class="fa-solid fa-chevron-left arrow"></i>
                     <ul class="carousel">
+                        @foreach ($recommendedHotels as $hotel)
                         <li class="card">
                             <div class="img-card">
                                 <img src="/assets/images/hotel1.jpg" alt="img-hotel">
                             </div>
                             <div class="hotel-info">
                                 <div class="top-hotel-info">
-                                    <p class="hotel-name">Sunway Hotel</p>
+                                    <p class="hotel-name">{{$hotel->NameHotel}}</p>
                                     <div class="mid-hotel-info">
                                         <div class="star">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
+                                            @for ($i = 1; $i <= 5; $i++)
+                                                @if ($i <= $hotel->StarHotel)
+                                                <i class="fa-solid fa-star"></i>
+                                                @else  
+                                                <i class="fa-regular fa-star"></i>
+                                                @endif
+                                            @endfor
                                         </div>
                                         <div class="dots"><i class="fa-solid fa-circle"></i></div>
                                         <div class="rating">
@@ -156,7 +160,7 @@
                                                 <img src="assets/icon/rating-star-blue.png" alt="rating-star">
                                             </div>
                                             <div class="rating-info">
-                                                <p class="rating-num">4/5</p>
+                                                <p class="rating-num">{{$hotel->RatingHotel}}/5</p>
                                                 <p class="rating-quantity">(10)</p>
                                             </div>
                                         </div>
@@ -164,138 +168,11 @@
                                 </div>
                                 <div class="price">
                                     <span>Start from</span>
-                                    <p>Rp. 300.000</p>
+                                    <p>Rp. {{$hotel->PriceRoom}}</p>
                                 </div>
                             </div>
                         </li>
-                        <li class="card">
-                            <div class="img-card">
-                                <img src="/assets/images/hotel2.jpg" alt="img-hotel">
-                            </div>
-                            <div class="hotel-info">
-                                <div class="top-hotel-info">
-                                    <p class="hotel-name">Sunway Hotel</p>
-                                    <div class="mid-hotel-info">
-                                        <div class="star">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                        <div class="dots"><i class="fa-solid fa-circle"></i></div>
-                                        <div class="rating">
-                                            <div class="rating-img">
-                                                <img src="assets/icon/rating-star-blue.png" alt="rating-star">
-                                            </div>
-                                            <div class="rating-info">
-                                                <p class="rating-num">4/5</p>
-                                                <p class="rating-quantity">(10)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="price">
-                                    <span>Start from</span>
-                                    <p>Rp. 300.000</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="card">
-                            <div class="img-card">
-                                <img src="/assets/images/hotel5.jpg" alt="img-hotel">
-                            </div>
-                            <div class="hotel-info">
-                                <div class="top-hotel-info">
-                                    <p class="hotel-name">Sunway Hotel</p>
-                                    <div class="mid-hotel-info">
-                                        <div class="star">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                        <div class="dots"><i class="fa-solid fa-circle"></i></div>
-                                        <div class="rating">
-                                            <div class="rating-img">
-                                                <img src="assets/icon/rating-star-blue.png" alt="rating-star">
-                                            </div>
-                                            <div class="rating-info">
-                                                <p class="rating-num">4/5</p>
-                                                <p class="rating-quantity">(10)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="price">
-                                    <span>Start from</span>
-                                    <p>Rp. 300.000</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="card">
-                            <div class="img-card">
-                                <img src="/assets/images/hotel3.jpg" alt="img-hotel">
-                            </div>
-                            <div class="hotel-info">
-                                <div class="top-hotel-info">
-                                    <p class="hotel-name">Sunway Hotel</p>
-                                    <div class="mid-hotel-info">
-                                        <div class="star">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                        <div class="dots"><i class="fa-solid fa-circle"></i></div>
-                                        <div class="rating">
-                                            <div class="rating-img">
-                                                <img src="assets/icon/rating-star-blue.png" alt="rating-star">
-                                            </div>
-                                            <div class="rating-info">
-                                                <p class="rating-num">4/5</p>
-                                                <p class="rating-quantity">(10)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="price">
-                                    <span>Start from</span>
-                                    <p>Rp. 300.000</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="card">
-                            <div class="img-card">
-                                <img src="/assets/images/hotel4.jpg" alt="img-hotel">
-                            </div>
-                            <div class="hotel-info">
-                                <div class="top-hotel-info">
-                                    <p class="hotel-name">Sunway Hotel</p>
-                                    <div class="mid-hotel-info">
-                                        <div class="star">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                        <div class="dots"><i class="fa-solid fa-circle"></i></div>
-                                        <div class="rating">
-                                            <div class="rating-img">
-                                                <img src="assets/icon/rating-star-blue.png" alt="rating-star">
-                                            </div>
-                                            <div class="rating-info">
-                                                <p class="rating-num">4/5</p>
-                                                <p class="rating-quantity">(10)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="price">
-                                    <span>Start from</span>
-                                    <p>Rp. 300.000</p>
-                                </div>
-                            </div>
-                        </li>
+                        @endforeach
                     </ul>
                     <i id="right" class="fa-solid fa-chevron-right arrow"></i>
                 </div>
