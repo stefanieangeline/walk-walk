@@ -180,3 +180,33 @@ hotelDst.addEventListener("input", (e) => {
 
     makeSuggestion(hotelDst, hotelDst.value.toLowerCase(), "hotel")
 })
+
+function showContent(contentType) {
+    // Sembunyikan semua konten terlebih dahulu
+    document.getElementById("roomContent").style.display = "none";
+    document.getElementById("reviewsContent").style.display = "none";
+    document.getElementById("serviceContent").style.display = "none";
+
+    // Hapus kelas aktif dari semua elemen
+    document.querySelectorAll(".header-room").forEach(function (element) {
+        element.classList.remove("header-active");
+    });
+
+    // Tampilkan konten berdasarkan pilihan
+    if (contentType === "room") {
+        document.getElementById("roomContent").style.display = "block";
+    } else if (contentType === "reviews") {
+        document.getElementById("reviewsContent").style.display = "block";
+        // Tambahkan kelas aktif ke elemen yang dipilih
+        document
+            .querySelector('.header-room[data-content="' + contentType + '"]')
+            .classList.add("header-active");
+    } else if (contentType === "service") {
+        document.getElementById("serviceContent").style.display = "block";
+        // Tambahkan kelas aktif ke elemen yang dipilih
+        document
+            .querySelector('.header-room[data-content="' + contentType + '"]')
+            .classList.add("header-active");
+    }
+    // Tambahkan logika untuk jenis konten lainnya jika diperlukan
+}

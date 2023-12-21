@@ -106,16 +106,19 @@
         </div>
 
         <div class="header-detail">
-            <p class="header-room header-active">Room</p>
+            <p class="header-room header-active" onclick="showContent('room')" data-content="room">Room</p>
+            <p class="header-room" onclick="showContent('reviews')" data-content="reviews">Guest Reviews</p>
+            <p class="header-room" onclick="showContent('service')" data-content="service">Service & Aminities</p>
+            <!-- <p class="header-room header-active">Room</p>
             <p class="header-room">Guest Reviews</p>
-            <p class="header-room">Service & Aminities</p>
+            <p class="header-room">Service & Aminities</p> -->
         </div>
 
         @php
             $sortedRoomTypes = $roomTypes->sortBy('PriceRoom');
         @endphp
 
-        <div class="room-types-box">
+        <div id="roomContent" class="room-types-box">
             <div class="header-types-box">
                 <p class="amount-types">{{ $totalRoomTypes }} Room Types</p>
                 <p class="info">Price do not include taxes & fees</p>
@@ -217,7 +220,7 @@
 
 
 
-        <!-- <div class="guest-rating-review">
+        <div id="reviewsContent" class="guest-rating-review" style="display: none;"> 
             <p class="grr-text">Guest's Rating & Review</p>
             <div class="review-summary">
                 <img src="/assets/icon/rating-star-blue.png" class="rating-star-img">
@@ -288,7 +291,7 @@
 
         </div>
 
-        <div class="room-service-aminity">
+        <div id="serviceContent" class="room-service-aminity" style="display: none;">
             <div class="header-service">
                 <h2>Hotel Facilities</h2>
                 <p>Hotel guest must have permission to use the facilities
@@ -320,7 +323,7 @@
                     <h4>Indoor Swimming Pool</h4>
                 </div>
             </div>
-        </div> -->
+        </div>
 
 
     </div>
