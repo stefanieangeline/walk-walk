@@ -269,9 +269,7 @@
                     <div class="rating-blue-line"></div>
                 @endforeach
             </div>
-
-
-            
+       
             <!-- <div class="user-rates">
                     <div class="user-profile">
                         <img src="/assets/icon/Arunika/1.webp" class="dp-user">
@@ -290,8 +288,6 @@
                     </div>
             </div> -->
 
-
-
         </div>
 
         <div id="serviceContent" class="room-service-aminity" style="display: none;">
@@ -301,7 +297,14 @@
                 </p>
             </div>
             <div class="service-container">
+                @foreach ($hotelFacilities as $facilityHeader)
                 <div class="service-detail">
+                    <img src="/assets/icon/airplane-icon-blue.svg">
+                    <h4>{{$facilityHeader->NameFacility}}</h4>
+                    <!-- <h4>Indoor Swimming Pool</h4> -->
+                </div>
+                @endforeach
+                <!-- <div class="service-detail">
                     <img src="/assets/icon/airplane-icon-blue.svg">
                     <h4>Indoor Swimming Pool</h4>
                 </div>
@@ -320,11 +323,7 @@
                 <div class="service-detail">
                     <img src="/assets/icon/airplane-icon-blue.svg">
                     <h4>Indoor Swimming Pool</h4>
-                </div>
-                <div class="service-detail">
-                    <img src="/assets/icon/airplane-icon-blue.svg">
-                    <h4>Indoor Swimming Pool</h4>
-                </div>
+                </div> -->
             </div>
         </div>
 

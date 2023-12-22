@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hotel;
+use App\Models\HotelFacilityDetail;
+use App\Models\HotelFacilityHeader;
 use App\Models\HotelRooms;
 use App\Models\Review;
 use Illuminate\Http\Request;
@@ -31,6 +33,11 @@ class HotelRoomController extends Controller
         ->where('reviews.IDHotel', '=', $id)
         ->count();
 
+        $hotelFacilities = HotelFacilityHeader::query()
+        ->join('hotel_facility_details', 'Hotel_Facility_Headers.IDDetailFacilityHotel', '=', 'Hotel_Facility_Details.IDDetailFacilityHotel')
+        ->where('Hotel_Facility_Headers.IDHotel', '=', $id)
+        ->get();
+
         return view('hotel-room', [
             'dest'=> $destination,
             'inDate'=>$inDate,
@@ -41,7 +48,8 @@ class HotelRoomController extends Controller
             'roomTypes' => $roomTypes,
             'totalRoomTypes' => $totalRoomTypes,
             'reviews' => $reviews,
-            'reviewsCount' => $reviewsCount
+            'reviewsCount' => $reviewsCount,
+            'hotelFacilities'=>$hotelFacilities
             // "hotel" => Hotel::query()->where('IDHotel', $id)->first()
         ]);
     }
