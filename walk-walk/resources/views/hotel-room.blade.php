@@ -226,10 +226,10 @@
                 <img src="/assets/icon/rating-star-blue.png" class="rating-star-img">
                 <div class="rating-desc">
                     <div class="rating-numb">
-                        <p class="rate">4.5</p>
+                        <p class="rate">{{$hotel->RatingHotel}}</p>
                         <p class="standard">/5</p>
                     </div>
-                    <p class="many-users">From <b>100</b> verified guest reviews</p>
+                    <p class="many-users">From <b>{{$reviewsCount}}</b> verified guest reviews</p>
                 </div>
                 <div class="rate-division">
                     <div class="up-div">
@@ -246,30 +246,33 @@
             </div>
 
             <div class="user-rates">
+                @foreach($reviews as $review)
                     <div class="user-profile">
                         <img src="/assets/icon/Arunika/1.webp" class="dp-user">
                         <div class="user-info">
-                            <p class="username">Go Liang</p>
+                            <p class="username">{{$review->name}}</p>
                             <div class="rating-star">
-                                <p class="user-rating">4.5</p>
+                                <p class="user-rating">{{$review->Rating}}</p>
                                 <p class="user-standard">/5</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="user-rates-desc">
-                        <p class="desc-rate">Great location just near airport. Clean quiet big rooms. Good service event when I checked in late after midnight</p>
+                        <p class="desc-rate">{{$review->Description}}</p>
                         <div class="img-desc-div">
                             <img src="/assets/icon/Arunika/review1.webp" class="img-desc">
                             <img src="/assets/icon/Arunika/review2.webp" class="img-desc">
                         </div>
                     </div>
+
+                    <div class="rating-blue-line"></div>
+                @endforeach
             </div>
 
 
-            <div class="rating-blue-line"></div>
-
-            <div class="user-rates">
+            
+            <!-- <div class="user-rates">
                     <div class="user-profile">
                         <img src="/assets/icon/Arunika/1.webp" class="dp-user">
                         <div class="user-info">
@@ -285,7 +288,7 @@
                         <p class="desc-rate">The hotel is located close to the airport and would only recommend for a transit location. To be noted there is a mosque in very close proximity to the hotel and the this can be heard by some rooms. The room was clean and comfortable. The tv was clear with a good selection of channels. The staff were kind. The breakfast was ok without being great. Not too many choices although they do have an egg station like most hotels in bali. The sauna was undergoing maintenance and the pool was open however when we used it the water temperature was warm and there was loud explicit music playing on the rooftop level not very refreshing or relaxing. Overall an ok stay for a transit.</p>
 
                     </div>
-            </div>
+            </div> -->
 
 
 

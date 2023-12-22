@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Hotel;
 use App\Models\HotelRooms;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class HotelRoomController extends Controller
@@ -20,6 +21,16 @@ class HotelRoomController extends Controller
         $roomTypes = HotelRooms::with('facilities')->where('IDHotel', $id)->get();
         $totalRoomTypes = $roomTypes->count();
 
+        $reviews = Review::query()
+        ->join('Users', 'Users.id', '=', 'reviews.id')
+        ->where('reviews.IDHotel', '=', $id)
+        ->get();
+
+        $reviewsCount = Review::query()
+        ->join('Users', 'Users.id', '=', 'reviews.id')
+        ->where('reviews.IDHotel', '=', $id)
+        ->count();
+
         return view('hotel-room', [
             'dest'=> $destination,
             'inDate'=>$inDate,
@@ -28,7 +39,9 @@ class HotelRoomController extends Controller
             'guest'=>$guest,
             'hotel'=>$hotel,
             'roomTypes' => $roomTypes,
-            'totalRoomTypes' => $totalRoomTypes
+            'totalRoomTypes' => $totalRoomTypes,
+            'reviews' => $reviews,
+            'reviewsCount' => $reviewsCount
             // "hotel" => Hotel::query()->where('IDHotel', $id)->first()
         ]);
     }

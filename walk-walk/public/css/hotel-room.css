@@ -858,6 +858,7 @@ body {
     flex-direction: row;
     align-items: center;
     margin-top: 10px;
+    margin-bottom: 20px;
     /* padding-top: 10px;
     padding-bottom:  10px; */
 }
@@ -944,7 +945,7 @@ body {
     width: 97%;
     /* background-color: lightcoral; */
     margin-top: 10px;
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
 }
 
 .user-profile{
@@ -952,6 +953,7 @@ body {
     /* background-color: violet; */
     display: flex;
     flex-direction: row;
+    align-items: center;
     
 }
 
@@ -982,13 +984,13 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 1px 5px;
+    padding: 2px 5px;
 }
 
 .user-rating{
     font-family: roboto-cons-bold;
     color: white;
-    font-size: 13px;
+    font-size: 15px;
     /* padding-left: 10px;
     padding-top: 2px; */
 }
@@ -996,7 +998,7 @@ body {
 .user-standard{
     font-family: roboto-cons-bold;
     color: var(--grey);
-    font-size: 13px;
+    font-size: 15px;
     /* padding-top: 2px; */
 }
 
@@ -1007,7 +1009,7 @@ body {
 .desc-rate{
     font-family: roboto-cons-regular;
     color: var(--blue-cloudy);
-    font-size: 13px;
+    font-size: 17px;
 }
 
 .img-desc-div{
@@ -1027,6 +1029,8 @@ body {
 .rating-blue-line{
     width: 97%;
     height: 0.5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: var(--light-blue);
 }
 
