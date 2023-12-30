@@ -208,5 +208,48 @@ function showContent(contentType) {
             .querySelector('.header-room[data-content="' + contentType + '"]')
             .classList.add("header-active");
     }
-    // Tambahkan logika untuk jenis konten lainnya jika diperlukan
 }
+
+
+
+//sort review user
+document.addEventListener("DOMContentLoaded", function () {
+    const sortingButtons = document.querySelectorAll(".sorting-button");
+    const userProfiles = document.querySelectorAll(".user-profile");
+
+    sortingButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+            sortingButtons.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+
+            button.classList.add("active");
+
+            const selectedValue = button.getAttribute("data-sort");
+
+            userProfiles.forEach((profile) => {
+                 const rating = parseFloat(profile.getAttribute("data-rating"));
+                 const descriptionContainer = profile.nextElementSibling;
+                 const blueLine = profile.nextElementSibling.nextElementSibling;
+
+                if (
+                    selectedValue === "all" ||
+                    (selectedValue === "5star" && rating === 5) ||
+                    (selectedValue === "gt4star" && rating >= 4) ||
+                    (selectedValue === "gt3.5star" && rating >= 3.5) ||
+                    (selectedValue === "gt3star" && rating >= 3) ||
+                    (selectedValue === "lt3star" && rating < 3)
+                ) {
+                    profile.closest(".user-profile").style.display = "flex";
+                    descriptionContainer.style.display = "block";
+                    blueLine.style.display = "block";
+                } else {
+                    profile.closest(".user-profile").style.display = "none";
+                    descriptionContainer.style.display = "none";
+                    blueLine.style.display = "none";
+                }
+            });
+        });
+    });
+});

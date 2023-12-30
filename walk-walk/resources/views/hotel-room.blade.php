@@ -231,23 +231,24 @@
                     </div>
                     <p class="many-users">From <b>{{$reviewsCount}}</b> verified guest reviews</p>
                 </div>
+
                 <div class="rate-division">
                     <div class="up-div">
-                        <p class="button-division">All</p>
-                        <p class="button-division"> 5 star</p>
-                        <p class="button-division"> >4 star</p>
+                        <p class="button-division sorting-button active" data-sort="all" >All</p>
+                        <p class="button-division sorting-button" data-sort="5star"> 5 star</p>
+                        <p class="button-division sorting-button" data-sort="gt4star"> >4 star</p>
                     </div>
                     <div class="bottom-div">
-                        <p class="button-division"> >3.5 star </p>
-                        <p class="button-division"> > 3 star</p>
-                        <p class="button-division"> < 3 star</p>
+                        <p class="button-division sorting-button" data-sort="gt3.5star"> >3.5 star </p>
+                        <p class="button-division sorting-button" data-sort="gt3star"> > 3 star</p>
+                        <p class="button-division sorting-button" data-sort="lt3star"> < 3 star</p>
                     </div>
                 </div>
             </div>
 
             <div class="user-rates">
                 @foreach($reviews as $review)
-                    <div class="user-profile">
+                    <div class="user-profile"  data-rating="{{ $review->Rating }}">
                         <img src="/assets/icon/Arunika/1.webp" class="dp-user">
                         <div class="user-info">
                             <p class="username">{{$review->name}}</p>
