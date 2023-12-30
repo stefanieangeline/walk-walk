@@ -56,9 +56,15 @@ body {
 .dest-box input {
     background-color: transparent;
     border: none;
+    outline: none;
     font-family: roboto-cons-medium;
     font-size: 22px;
     color: var(--white);
+}
+
+::placeholder{
+    background-color: transparent;
+    color: white;
 }
 
 .check-in-out-box {
@@ -177,7 +183,7 @@ body {
 }
 
 .drop-down-container {
-    width: 100%;
+    width: 310px;
     position: absolute;
     background-color: var(--white);
     padding: 10px 25px;

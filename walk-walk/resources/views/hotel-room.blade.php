@@ -10,7 +10,7 @@
 <body>
     @include("shared.nav-bar-standard")
     <div class="background">
-        <form method="get" name="search-hotel-form">
+        <form method="get" action="{{ route('hotels') }}" name="search-hotel-form">
         <div class="box-choice">
             <div class="dest-box box-width">
                 <h2>Destination</h2>
@@ -47,7 +47,7 @@
                 </div>
                 <img src="/assets/icon/chevron-down.svg" class="input-icon chevron" id="hotel-drop-down-icon">
             </div>
-            <img src="/assets/icon/searchbutton.svg">
+            <img src="/assets/icon/searchbutton.svg" id="search-hotel">
         </div>
     </div>
     <div class="content_hotels">
@@ -234,13 +234,13 @@
                 <div class="rate-division">
                     <div class="up-div">
                         <p class="button-division">All</p>
-                        <p class="button-division"> 4.5 star (50)</p>
-                        <p class="button-division"> 4 star (35)</p>
+                        <p class="button-division"> 5 star</p>
+                        <p class="button-division"> >4 star</p>
                     </div>
                     <div class="bottom-div">
-                        <p class="button-division">> 3.5 star (10)</p>
-                        <p class="button-division"> > 3 star (4)</p>
-                        <p class="button-division">< 3 star (1)</p>
+                        <p class="button-division"> >3.5 star </p>
+                        <p class="button-division"> > 3 star</p>
+                        <p class="button-division"> < 3 star</p>
                     </div>
                 </div>
             </div>

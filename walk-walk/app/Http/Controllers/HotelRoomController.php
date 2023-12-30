@@ -20,7 +20,7 @@ class HotelRoomController extends Controller
 
         $hotel = Hotel::query()->where('IDHotel', $id)->first();
         // $roomTypes = HotelRooms::where('IDHotel', $id)->get();
-        $roomTypes = HotelRooms::with('facilities')->where('IDHotel', $id)->get();
+        $roomTypes = HotelRooms::with('facilities')->where('IDHotel', $id)->where('QuantityRoom', '>=', $room)->get();
         $totalRoomTypes = $roomTypes->count();
 
         $reviews = Review::query()
