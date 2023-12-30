@@ -195,6 +195,10 @@ function showContent(contentType) {
     // Tampilkan konten berdasarkan pilihan
     if (contentType === "room") {
         document.getElementById("roomContent").style.display = "block";
+         document
+             .querySelector('.header-room[data-content="' + contentType + '"]')
+             .classList.add("header-active");
+
     } else if (contentType === "reviews") {
         document.getElementById("reviewsContent").style.display = "block";
         // Tambahkan kelas aktif ke elemen yang dipilih

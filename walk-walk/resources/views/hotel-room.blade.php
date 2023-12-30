@@ -207,7 +207,8 @@
                     <div class="price">
                         <p class="big-price">Rp {{ $roomType -> PriceRoom }}.000</p>
                         <p class="tax-text">After Tax Rp.{{$roomType -> PriceRoom * 1.2}}.000</p>
-                        <p class="reserve-button">Reserve</p>
+                        <!-- <p class="reserve-button">Reserve</p> -->
+                        <a class="reserve-button" href="{{ route("customer-hotel-detail", ['id' => $hotel->IDHotel, 'inDate' => $inDate, 'outDate' => $outDate, 'room' => $room, 'name' => $hotel->NameHotel, 'star' => $hotel->StarHotel, 'type' => $roomType -> TypeRoom, 'capacity' => $roomType -> CapacityRoom, 'wide' => $roomType -> WideRoom, 'price'=> $roomType -> PriceRoom]) }}" > Reserve</a>
                     </div>
 
                 </div>

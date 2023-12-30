@@ -59,7 +59,7 @@
             </div>
             <div class="right-right">
                 <a href="/jalan-jalan/myaccount.php" class="nav-link">
-                    <img src="assets/icon/user.svg">
+                    <img src="/assets/icon/user.svg">
                 </a>
             </div>
         </div>
@@ -69,28 +69,31 @@
         <div class="left-content">
             <div class="left1">
                 <div class="hotel-pic">
-                    <img src="assets/icon/Arunika/Deluxe/1.jpg" alt="hotelroom">
+                    <img src="/assets/icon/Arunika/Deluxe/1.jpg" alt="hotelroom">
                 </div>
                 <div class="hotel-detail">
                     <div class="top-hotel-detail">
                         <div class="hotel-name">
-                            <p>Arunika Hotel and Spa</p>
+                            <p>{{ $nameHotel }}</p>
                         </div>
                         <div class="star">
+                            @for ($i=0; $i < $starHotel; $i++)
+                            <img src="/assets/icon/star-gold.svg">
+                            @endfor
+                            <!-- <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i> -->
                         </div>
                     </div>
                     <div class="mid-hotel-detail">
                         <div class="type-room">
-                            <p>Deluxe Room</p>
+                            <p>{{ $typeRoom }}</p>
                         </div>
                         <div class="type-room-detail">
                             <div class="room-capacity">
                                 <i class="fa-solid fa-person"></i>
-                                <p>2 Adults</p>
+                                <p>{{ $capacityRoom }} person</p>
                             </div>
                             <div class="bed-type">
                                 <i class="fa-solid fa-bed"></i>
@@ -98,18 +101,24 @@
                             </div>
                             <div class="room-area">
                                 <i class="fa-solid fa-ruler-vertical"></i>
-                                <p>30 m <sup>2</sup></p>
+                                <p>{{ $wideRoom }} m <sup>2</sup></p>
                             </div>
                         </div>
                     </div>
+                    @php
+                        $in = date('D, M j', strtotime($inDate));
+                        $out = date('D, M j', strtotime($outDate));
+
+                    @endphp
                     <div class="bottom-hotel-detail">
                         <div class="days-ordered">
                             <i class="fa-regular fa-calendar-days"></i>
-                            <p>Thu, Mar 2 - Tue, Mar 7</p>
+                            <!-- <p>Thu, Mar 2 - Tue, Mar 7</p> -->
+                            <p>{{ $in }} - {{ $out }}</p>
                         </div>
                         <div class="quantity-room-ordered">
                             <i class="fa-solid fa-door-closed"></i>
-                            <p>1 room</p>
+                            <p>{{$room}} room</p>
                         </div>
                     </div>
                 </div>
@@ -148,18 +157,24 @@
         </div>
 
         <div class="bigContainer-right">
+            @php
+                $timestampInDate = strtotime($inDate);
+                $timestampOutDate = strtotime($outDate);
+
+                $nightCount = ($timestampOutDate - $timestampInDate) / (60 * 60 * 24);
+            @endphp
             <div class="right-content">
                 <h2>Price Detail</h2>
                 <div class="person">
-                    <p>1 room x 1 night</p>
-                    <p>Rp. 325.000</p>
+                    <p>{{ $room }} room x {{ $nightCount }} night</p>
+                    <p>Rp. {{ $priceRoom * $nightCount }}.000</p>
                 </div>
                 <div class="fix-price">
                     <div class="total-tax">
                         <p>Taxes and Fees</p>
-                        <p>Rp. 77.343</p>
+                        <p>Rp. {{$priceRoom * $nightCount * 0.2}}.000</p>
                     </div>
-                    <div class="tax-detail">
+                    <!-- <div class="tax-detail">
                         {{-- <div class="vertical-line"></div> --}}
                         <div class="service">
                             <p>Service Fee</p>
@@ -169,12 +184,12 @@
                             <p>Tax</p>
                             <p>Rp. 38.683</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <hr class="garis-hor">
                 <div class="total-price">
                     <h2>Total Price</h2>
-                    <h2>Rp. 402.343</h2>
+                    <h2>Rp. {{ $priceRoom * $nightCount * 1.2}}.000</h2>
                 </div>   
             </div>
 
