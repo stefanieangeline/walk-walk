@@ -18,8 +18,11 @@ class FlightController extends Controller
     }
 
     public function payment() {
-        $name = request()->get("passengersName");
-        dd($name);
+        $names = request()->get("passengersName");
+        $genders = request()->get("passengersGender");
+        $DOBs= request()->get("passengersDOB");
+        $nationalities= request()->get("passengersNationality");
+        dd(explode (",", $names), explode (",", $genders), explode (",", $DOBs), explode (",", $nationalities));
         return view("payment-barcode");
     }
     public function passenger($id) {

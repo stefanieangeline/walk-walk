@@ -112,12 +112,12 @@
             <form method="POST" name="passenger-form" action="{{route("payment")}}" class="hidden">
             @csrf
             <input id="passengersName" name="passengersName" type="text" value="">
-            <input name="passengerGender" type="text" value="">
-            <input name="passengerDOB" type="text" value="">
-            <input name="passengerNationality" type="text" value="">
-            <input name="contactName" type="text" value="">
-            <input name="contactGender" type="text" value="">
-            <input name="contactDOB" type="text" value="">
+            <input id="passengersGender" name="passengersGender" type="text" value="">
+            <input id="passengersDOB"  name="passengersDOB" type="text" value="">
+            <input id="passengersNationality" name="passengersNationality" type="text" value="">
+            <input id="contactName" name="contactName" type="text" value="">
+            <input id="contactGender" name="contactGender" type="text" value="">
+            <input id="contactDOB" name="contactDOB" type="text" value="">
             </form>
             @for ($i = 1; $i <= $adult+$senior+$children; $i++)
             <div class="left2">
@@ -144,13 +144,13 @@
                     <div class="birth-section">
                             <h3>Date of Birth</h3>
                             <div class="input">
-                                <input type="date" class="InputBio" class="passengersDOB" >
+                                <input type="date" class="InputBio passengersDOB" >
                             </div>
                     </div>
                     <div class="nationality-section">
                             <h3>Nationality</h3>
                             <div class="input">
-                            <input type="text" class="InputBio" placeholder="ex: Indonesia" class="passengersNationality" >
+                            <input type="text" class="InputBio passengersNationality" placeholder="ex: Indonesia" >
                             </div>
                     </div>
                     <!-- <div class="row2">
@@ -177,19 +177,19 @@
                     <div class="name-section">
                         <h3>Name</h3>
                         <div class="input">
-                                <input type="text" name="Name" placeholder="ex: Stefanie" class="contactName" >
+                                <input type="text" name="Name" placeholder="ex: Stefanie" class="contactName" id="contactsName">
                         </div>
                     </div>
                     <div class="gender-section">
                             <h3>Gender</h3>
                             <div class="input">
-                            <input type="text" class="InputBio" placeholder="ex: Female" class="contactGender" >
+                            <input type="text" class="InputBio" placeholder="ex: Female" class="contactGender" id="contactsGender">
                             </div>
                     </div>
                     <div class="birth-section">
                             <h3>Date of Birth</h3>
                             <div class="input">
-                                <input type="date" class="InputBio" class="contactDOB" >
+                                <input type="date" class="InputBio" class="contactDOB" id="contactsDOB">
                             </div>
                     </div>
                     <!-- <div class="row1Form2">
