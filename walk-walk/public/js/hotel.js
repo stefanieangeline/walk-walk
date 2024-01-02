@@ -72,7 +72,10 @@ prices = document.querySelectorAll(".sub-price")
 
 function addClickEvent(array) {
     array.forEach((el)=>{
-        el.addEventListener("click", (e)=>{
+        el.firstElementChild.addEventListener("click", (e)=>{
+            document.forms["search-hotel-form"].submit()
+        })
+        el.lastElementChild.addEventListener("click", (e)=>{
             if (el.firstElementChild.checked != true) {
                 el.firstElementChild.checked = true
             } else {

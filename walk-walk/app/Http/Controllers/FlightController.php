@@ -17,9 +17,39 @@ class FlightController extends Controller
         return DB::table("schedules")->where("IDAirportSource", $IDAirportSrc)->where("IDAirportDestination", $IDAirportDst)->get();
     }
 
+    public function payment() {
+        $name = request()->get("passengersName");
+        dd($name);
+        return view("payment-barcode");
+    }
     public function passenger($id) {
+        $class = request()->get("class");
+        $depDate = request()->get("date");
+        $senior = request()->get('senior');
+        $adult = request()->get('adult');
+        $children = request()->get('children');
+        if ($class == null) {
+            $class = "economy";
+        }
 
-        return view("passanger-detail");
+        return view("passanger-detail", [
+            "schedule" =>
+            Schedule::query()
+            ->join("airports as a", "a.IDAirport", "=", "schedules.IDAirportSource")
+            ->join("airports as b", "b.IDAirport", "=", "schedules.IDAirportDestination")
+            ->join("cities as c", "c.IDCity", "=", "a.IDCity")
+            ->join("cities as d", "d.IDCity", "=", "b.IDCity")
+            ->join("schedule_details as sd", "sd.IDSchedule", "=", "schedules.IDSchedule")
+            ->where("schedules.IDSchedule", $id)
+            ->where("sd.Class", $class)
+            ->select("Price", "c.NameCity as srcCity", "d.NameCity as destCity", "a.CodeAirport as srcCode", "b.CodeAirport as destCode", "a.NameAirport as srcName", "b.NameAirport as destName", "IDAirline", DB::raw("CAST(DepartureTime AS TIME) as DepartureTime"), DB::raw("CAST(ArrivalTime AS TIME) as ArrivalTime"), "IDAirline", DB::raw("DATE_FORMAT(CAST(DepartureTime AS DATE), \"%M %d, %Y\") as dateFormat"))
+            ->first(),
+            "class" => $class,
+            "depDate" => $depDate,
+            "senior" => $senior,
+            "adult" => $adult,
+            "children" => $children,
+        ]);
     }
 
     public function index(){

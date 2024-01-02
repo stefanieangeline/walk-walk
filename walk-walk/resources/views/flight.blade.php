@@ -152,12 +152,6 @@
                 </form>
                 </div>
             </div>
-            {{-- @foreach ($schedules as $schedule)
-                {{ $schedule->FlightNumber}}
-                @foreach ($schedule->details() as $detail)
-                    {{ $detail->Price }}
-                @endforeach
-            @endforeach --}}
             @foreach ($schedules as $schedule)
             <div class="flight_detail">
                 <div class="airline_logo">
@@ -182,7 +176,7 @@
                     <p>Rp. {{$schedule->Price}}</p>
                 </div>
                 <div class="submit_flight">
-                    <a href="{{route("passenger", $schedule->IDSchedule)}}" class="flight_button">Select</a>
+                    <a href="{{route("passenger", ["id"=>$schedule->IDSchedule, "senior"=>$senior, "adult"=>$adult, "children"=>$children, "class"=>$class, "depDate"=>$depDate])}}" class="flight_button">Select</a>
                 </div>
             </div>
 

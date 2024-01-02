@@ -61,7 +61,7 @@ input:focus {
     color: var(--strong-blue);
     font-family: roboto-cons-bold;
   }
-  
+
   .circle_finish{
     position: absolute;
     top: -6px;
@@ -85,7 +85,7 @@ input:focus {
   .arrow1{
     color: white;
   }
-  
+
   .right-side {
     display: flex;
     justify-content: center;
@@ -484,4 +484,8 @@ input:focus {
   color: white;
   font-family: roboto-cons-bold;
 
+}
+
+.hidden {
+    display: none;
 }
