@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -9,7 +10,9 @@ class SigninController extends Controller
 {
     public function index () {
         
-        return view("signin");
+        return view("signin", [
+            "countries" => Country::all()
+        ]);
     }
 
     public function store ()  {
