@@ -28,9 +28,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class,'index'])->name('home');
 
 Route::get('/flights', [FlightController::class, 'index'])->name('flights');
-Route::get('/flights/{id}', [FlightController::class, 'passenger'])->name('passenger');
-Route::post('/flights/payment', [FlightController::class, 'payment'])->name('payment');
-Route::get('/flights/payment', [FlightController::class, 'payment'])->name('payment');
+Route::get('/flights/{id}', [FlightController::class, 'passenger'])->name('passenger')->middleware("auth");
+Route::post('/flights/payment', [FlightController::class, 'payment'])->name('payment')->middleware("auth");
+Route::post('/flights/payment/success', [FlightController::class, 'paymentSuccess'])->name('paymentSuccess')->middleware("auth");
 
 Route::get('/hotels', [HotelController::class, 'index'])->name('hotels');
 

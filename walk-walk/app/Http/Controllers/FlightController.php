@@ -7,7 +7,12 @@ use App\Models\Airport;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\Hotel;
+use App\Models\Passenger;
+use App\Models\PlanePayment;
+use App\Models\PlaneTicket;
+use App\Models\PlaneTicketDetail;
 use App\Models\Schedule;
+use Illuminate\Support\Facades\Auth;
 // use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,13 +22,55 @@ class FlightController extends Controller
         return DB::table("schedules")->where("IDAirportSource", $IDAirportSrc)->where("IDAirportDestination", $IDAirportDst)->get();
     }
 
+    public function paymentSuccess() {
+        $IDTicket = request()->get("IDTicket");
+
+        $newPayment = new PlanePayment();
+        $newPayment->IDPlaneTicket = $IDTicket;
+        $newPayment->id = Auth::user()->id;
+        $newPayment->save();
+
+        PlaneTicket::where("IDPlaneTicket", $IDTicket)->update(array("status"=>1));
+
+        return redirect()->route("home");
+    }
     public function payment() {
         $names = request()->get("passengersName");
         $genders = request()->get("passengersGender");
         $DOBs= request()->get("passengersDOB");
         $nationalities= request()->get("passengersNationality");
-        dd(explode (",", $names), explode (",", $genders), explode (",", $DOBs), explode (",", $nationalities));
-        return view("payment-barcode");
+        $price = request()->get("price");
+        $IDSchedule = request()->get("IDSchedule");
+
+        $names = explode (",", $names);
+        $genders = explode (",", $genders);
+        $DOBs = explode (",", $DOBs);
+        $nationalities = explode (",", $nationalities);
+
+        $newTicket = new PlaneTicket();
+        $newTicket->IDSchedule = $IDSchedule;
+        $newTicket->status = 0;
+        $newTicket->BookDate = date("Y-m-d");
+        $newTicket->save();
+
+        for ($i = 0; $i < count($names); $i++) {
+            $newPassenger = new Passenger();
+            $newPassenger->NamePassenger = $names[$i];
+            $newPassenger->GenderPassenger = $genders[$i];
+            $newPassenger->DOBPassenger = $DOBs[$i];
+            $newPassenger->NationalityPassenger = Country::where("NameCountry", $nationalities[$i])->select("IDCountry")->first()->IDCountry;
+            $newPassenger->save();
+
+            $newTicketDetail = new PlaneTicketDetail();
+            $newTicketDetail->IDPlaneTicket = $newTicket->id;
+            $newTicketDetail->IDPassenger = $newPassenger->id;
+            $newTicketDetail->save();
+        }
+
+        return view("payment-barcode", [
+            "price" => $price,
+            "ticket" => $newTicket->id
+        ]);
     }
     public function passenger($id) {
         $class = request()->get("class");
@@ -52,6 +99,8 @@ class FlightController extends Controller
             "senior" => $senior,
             "adult" => $adult,
             "children" => $children,
+            "id" => $id,
+            "countries" => Country::all()
         ]);
     }
 
@@ -73,6 +122,18 @@ class FlightController extends Controller
 
         if ($sel_airline == null) {
             $sel_airline = "";
+        }
+
+        if ($senior == null) {
+            $senior = 0;
+        }
+
+        if ($children == null) {
+            $children = 0;
+        }
+
+        if ($adult == null) {
+            $adult = 0;
         }
 
         if ($depDate == null) {

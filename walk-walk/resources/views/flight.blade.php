@@ -41,15 +41,15 @@
                         <div class="drop-down-container" id="flight-drop-down-container">
                             <div class="num-input">
                                 <h4>Senior</h4>
-                                <input name="senior" type="number" min="1" id="senior-input" value="{{$senior}}">
+                                <input name="senior" type="number" min="0" id="senior-input" value="{{$senior}}">
                             </div>
                             <div class="num-input">
                                 <h4>Adult</h4>
-                                <input name="adult" type="number" min="1" id="adult-input" value="{{$adult}}">
+                                <input name="adult" type="number" min="0" id="adult-input" value="{{$adult}}">
                             </div>
                             <div class="num-input">
                                 <h4>Children</h4>
-                                <input name="children" type="number" min="1" id="children-input" value="{{$children}}">
+                                <input name="children" type="number" min="0" id="children-input" value="{{$children}}">
                             </div>
                         </div>
                     </div>

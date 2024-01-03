@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/font-and-color.css">
     <link rel="stylesheet" href="/css/payment-barcode.css">
     <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
+    <script src="/js/payment.js" defer=""></script>
     <!-- <link rel="stylesheet" href="/css/nav-bar.css"> -->
 </head>
 <body>
@@ -64,7 +65,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="right-side">
             <div class="left-right">
                 <a href="/jalan-jalan/help.php" class="nav-link">Help</a>
@@ -80,21 +81,24 @@
     <div class="content">
         <div class="bg-content">
             <h2>Scan QR Code below to finish your payment</h2>
-            <img src="assets/icon/barcode.svg" alt="">
-            <h2>Rp.2.980.000</h2>
+            <img src="https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=123" id="qrCode" alt="">
+            <h2>Rp. {{$price}}</h2>
             <div class="input">
-                <input type="text" name="Gender" placeholder="Input Your OTP Code" required>
-                <a class="submit-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                <input type="text" name="Gender" placeholder="Input Your OTP Code" id="otp" required>
+                <p class="submit-btn" id="submitBtn"><i class="fa-solid fa-arrow-right"></i></p>
             </div>
         </div>
-        
-
     </div>
+
+    <form method="POST" action="{{route("paymentSuccess")}}" name="confirmPayment">
+        @csrf
+        <input name="IDTicket" value="{{$ticket}}">
+    </form>
     @include("shared.footer")
-    
 
 
-   
+
+
 
 </body>
 </html>

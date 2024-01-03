@@ -115,9 +115,8 @@
             <input id="passengersGender" name="passengersGender" type="text" value="">
             <input id="passengersDOB"  name="passengersDOB" type="text" value="">
             <input id="passengersNationality" name="passengersNationality" type="text" value="">
-            <input id="contactName" name="contactName" type="text" value="">
-            <input id="contactGender" name="contactGender" type="text" value="">
-            <input id="contactDOB" name="contactDOB" type="text" value="">
+            <input id="IDSchedule" name="IDSchedule" type="number" value="{{$id}}">
+            <input id="price" name="price" type="number" value="{{$schedule->Price*($adult+$senior+$children)*1.2}}">
             </form>
             @for ($i = 1; $i <= $adult+$senior+$children; $i++)
             <div class="left2">
@@ -171,7 +170,7 @@
             </div>
             @endfor
 
-            <div class="left3">
+            {{-- <div class="left3">
                 <h2>Contact Details</h2>
                 <div class="form2">
                     <div class="name-section">
@@ -207,7 +206,7 @@
                         </div>
                     </div> -->
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <div class="bigContainer-right">
@@ -275,9 +274,10 @@
     </div>
     @include("shared.footer")
 
+    <script>
+        countries = {!! json_encode($countries->toArray()) !!}
 
-
-
-
+        sessionStorage.setItem("countries", JSON.stringify(countries))
+    </script>
 </body>
 </html>
