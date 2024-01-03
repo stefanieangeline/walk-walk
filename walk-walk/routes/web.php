@@ -97,3 +97,7 @@ Route::get('/booking-detail', function(){
 });
 
 Route::get('/dummy', [UserController::class, 'dummy'])->name('dummy');
+
+Route::get('/hotel-cust-review', function(){
+    return view('hotel-cust-review');
+});
