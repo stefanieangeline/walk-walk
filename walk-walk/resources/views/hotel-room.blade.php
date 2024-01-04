@@ -166,7 +166,16 @@
 
                             @foreach($roomType->facilities as $facility)
                                 <div class="facil-box">
-                                    <img src="/assets/icon/heroicons_tv.png" class="facil-icon">
+                                    @if ($facility-> NameFacilityRoom == "Free Wi-Fi")
+                                    <img src="/assets/icon/icon-hotel-facilities/wifiShadeBlue.svg" class="facil-icon">
+                                    @endif
+                                    @if ($facility-> NameFacilityRoom == "Air Conditioning")
+                                    <img src="/assets/icon/icon-hotel-facilities/ACShadeBlue.svg" class="facil-icon">
+                                    @endif
+                                    @if ($facility-> NameFacilityRoom == "Mini Bar")
+                                    <img src="/assets/icon/icon-hotel-facilities/BarShadeBlue.svg" class="facil-icon">
+                                    @endif
+                                    <!-- <img src="/assets/icon/heroicons_tv.png" class="facil-icon"> -->
                                     <p class="facil-text">{{ $facility-> NameFacilityRoom }}</p>
                                 </div>
                             @endforeach
@@ -301,9 +310,162 @@
             <div class="service-container">
                 @foreach ($hotelFacilities as $facilityHeader)
                 <div class="service-detail">
-                    <img src="/assets/icon/airplane-icon-blue.svg">
+                    @if($facilityHeader->IDDetailFacilityHotel == 1)
+                        <img src="/assets/icon/icon-hotel-facilities/1Wifi.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 2)
+                        <img src="/assets/icon/icon-hotel-facilities/2&16Swimming.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 3)
+                        <img src="/assets/icon/icon-hotel-facilities/3Fitness.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 4)
+                        <img src="/assets/icon/icon-hotel-facilities/4Spa.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 5)
+                        <img src="/assets/icon/icon-hotel-facilities/5Resto.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 6)
+                        <img src="/assets/icon/icon-hotel-facilities/6Bar.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 7)
+                        <img src="/assets/icon/icon-hotel-facilities/724Hour.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 8)
+                        <img src="/assets/icon/icon-hotel-facilities/8RoomService.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 9)
+                        <img src="/assets/icon/icon-hotel-facilities/9AirportShuttle.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 10)
+                        <img src="/assets/icon/icon-hotel-facilities/10FreeParking.svg">
+                    @endif
+
+
+                    @if($facilityHeader->IDDetailFacilityHotel == 11)
+                        <img src="/assets/icon/icon-hotel-facilities/11Meeting.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 12)
+                        <img src="/assets/icon/icon-hotel-facilities/12Business.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 13)
+                        <img src="/assets/icon/icon-hotel-facilities/13NonSmoking.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 14)
+                        <img src="/assets/icon/icon-hotel-facilities/14Family.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 15)
+                        <img src="/assets/icon/icon-hotel-facilities/15PetFriendly.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 16)
+                        <img src="/assets/icon/icon-hotel-facilities/2&16Swimming.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 17)
+                        <img src="/assets/icon/icon-hotel-facilities/17AC.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 18)
+                        <img src="/assets/icon/icon-hotel-facilities/18Heater.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 19)
+                        <img src="/assets/icon/icon-hotel-facilities/19Garden.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 20)
+                        <img src="/assets/icon/icon-hotel-facilities/20&21Terrace.svg">
+                    @endif
+
+                    @if($facilityHeader->IDDetailFacilityHotel == 21)
+                        <img src="/assets/icon/icon-hotel-facilities/20&21Terrace.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 22)
+                        <img src="/assets/icon/icon-hotel-facilities/22Service.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 23)
+                        <img src="/assets/icon/icon-hotel-facilities/23&30CheckInOut.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 24)
+                        <img src="/assets/icon/icon-hotel-facilities/24Exchange.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 25)
+                        <img src="/assets/icon/icon-hotel-facilities/25TourDesk.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 26)
+                        <img src="/assets/icon/icon-hotel-facilities/26TicketService.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 27)
+                        <img src="/assets/icon/icon-hotel-facilities/27Luggage.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 28)
+                        <img src="/assets/icon/icon-hotel-facilities/28ATM.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 29)
+                        <img src="/assets/icon/icon-hotel-facilities/29Locker.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 30)
+                        <img src="/assets/icon/icon-hotel-facilities/23&30CheckInOut.svg">
+                    @endif
+
+                    @if($facilityHeader->IDDetailFacilityHotel == 31)
+                        <img src="/assets/icon/icon-hotel-facilities/31SharedLounge.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 32)
+                        <img src="/assets/icon/icon-hotel-facilities/32Library.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 33)
+                        <img src="/assets/icon/icon-hotel-facilities/33Chapel.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 34)
+                        <img src="/assets/icon/icon-hotel-facilities/34Gift.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 35)
+                        <img src="/assets/icon/icon-hotel-facilities/35Shops.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 36)
+                        <img src="/assets/icon/icon-hotel-facilities/36Salon.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 37)
+                        <img src="/assets/icon/icon-hotel-facilities/37Barber.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 38)
+                        <img src="/assets/icon/icon-hotel-facilities/38Smoking.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 39)
+                        <img src="/assets/icon/icon-hotel-facilities/39VIP.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 40)
+                        <img src="/assets/icon/icon-hotel-facilities/40Elevator.svg">
+                    @endif
+
+                    @if($facilityHeader->IDDetailFacilityHotel == 41)
+                        <img src="/assets/icon/icon-hotel-facilities/41DisbaleGuest.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 42)
+                        <img src="/assets/icon/icon-hotel-facilities/42WheelChair.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 43)
+                        <img src="/assets/icon/icon-hotel-facilities/43AllergyFree.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 44)
+                        <img src="/assets/icon/icon-hotel-facilities/44SoundProof.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 45)
+                        <img src="/assets/icon/icon-hotel-facilities/45Carpeted.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 46)
+                        <img src="/assets/icon/icon-hotel-facilities/46TileFLoor.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 47)
+                        <img src="/assets/icon/icon-hotel-facilities/47WoodenFLoor.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 48)
+                        <img src="/assets/icon/icon-hotel-facilities/48Iron.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 49)
+                        <img src="/assets/icon/icon-hotel-facilities/49Wardrobe.svg">
+                    @endif
+                    @if($facilityHeader->IDDetailFacilityHotel == 50)
+                        <img src="/assets/icon/icon-hotel-facilities/50Hypoallergrnic.svg">
+                    @endif
                     <h4>{{$facilityHeader->NameFacility}}</h4>
-                    <!-- <h4>Indoor Swimming Pool</h4> -->
                 </div>
                 @endforeach
                 <!-- <div class="service-detail">

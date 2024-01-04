@@ -610,6 +610,11 @@ body {
     font-size: 25px;
 }
 
+.q-available{
+    font-family: roboto-cons-regular;
+    color: white;
+}
+
 .top-box-type{
     width: calc(100% - 40px);
     margin: 15px 10px 10px 10px;
@@ -732,6 +737,7 @@ body {
     width: 19vw;
     /* height: 5vh; */
     /* background-color:red ; */
+    align-items: center;
     margin-top: 2px;
     display: flex;
     flex-direction: row;
