@@ -16,19 +16,38 @@
                 <h2>Destination</h2>
                 <input type="text" placeholder="Search a place..." name="destination" id="hotel-destination" value="{{$dest}}">
             </div>
-            <div class="check-in-out-box box-width">
+            <!-- <div class="check-in-out-box box-width">
                 <div class="in-box">
                     <h2>Check-in</h2>
-                    <input type="date" value="{{$inDate}}" name="inDate">
+                    <input type="date" value="{{$inDate}}" name="inDate" id="checkInDate">
                 </div>
                 <div class="line-box">
                 </div>
                 <div class="out-box">
                     <h2>Check-out</h2>
-                    <input type="date" value="{{$outDate}}" name="outDate">
+                    <input type="date" value="{{$outDate}}" name="outDate" id="checkOutDate">
+                </div>
+            </div> -->
+            <div class="check-in-out-box box-width">
+                <div class="check">
+                    <div class="in-box">
+                        <h2>Check-in</h2>
+                        <input type="date" value="{{$inDate}}" name="inDate" id="checkInDate">
+                    </div>
+                    <div class="line-box">
+                    </div>
+                    <div class="out-box">
+                        <h2>Check-out</h2>
+                        <input type="date" value="{{$outDate}}" name="outDate" id="checkOutDate">
+                    </div>
+                </div>
+
+                <div>
+                    <span id="checkoutWarning" style="color: red;"></span>
                 </div>
             </div>
-
+            
+            
             <div class="input-row drop-down-menu box-width">
                 <div class="drop-down-select">
                     <h4 class="room-guest-info">Rooms and Guests</h4>

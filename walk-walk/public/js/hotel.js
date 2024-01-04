@@ -38,86 +38,53 @@ guestQty.addEventListener("change", (e) => {
     refreshHotelDispInfo()
 })
 
-    document.addEventListener("DOMContentLoaded", function () {
-        var checkInInput = document.querySelector('input[name="inDate"]');
-        var checkOutInput = document.querySelector('input[name="outDate"]');
+document.addEventListener("DOMContentLoaded", function () {
+    var checkInInput = document.getElementById("checkInDate");
+    var checkOutInput = document.getElementById("checkOutDate");
+    var checkoutWarning = document.getElementById("checkoutWarning");
 
-        // Menetapkan event listener untuk input tanggal check-in
-        checkInInput.addEventListener("input", function () {
-            // Mendapatkan nilai tanggal check-in
-            var checkInDate = new Date(checkInInput.value);
+    checkInInput.addEventListener("input", function () {
+        var checkInDate = new Date(checkInInput.value);
+        var today = new Date();
+        console.log(checkInDate < today);
 
-            // Mendapatkan nilai tanggal check-out
-            var checkOutDate = new Date(checkOutInput.value);
+        var minCheckInDate = new Date(today);
+        minCheckInDate.setDate(today.getDate() - 1);
 
-            // Memastikan tanggal check-out setelah tanggal check-in
-            if (checkOutDate <= checkInDate) {
-                alert("Tanggal Check-out harus setelah Tanggal Check-in");
-                // Kosongkan nilai check-out
-                checkOutInput.value = "";
-            }
-        });
+        if (checkInDate < minCheckInDate) {
+            console.log("aa");
+            checkoutWarning.textContent =
+                "Tanggal Check-in tidak boleh kurang dari tanggal hari ini";
+            checkInInput.value = "";
+        } else {
+            checkoutWarning.textContent = "";
+        }
 
-        // Menetapkan event listener untuk input tanggal check-out
-        checkOutInput.addEventListener("input", function () {
-            // Mendapatkan nilai tanggal check-in
-            var checkInDate = new Date(checkInInput.value);
+        // var checkOut = new Date(checkOutInput.value);
 
-            // Mendapatkan nilai tanggal check-out
-            var checkOutDate = new Date(checkOutInput.value);
+        // if (checkOut <= checkInDate) {
+        //     checkoutWarning.textContent =
+        //         "Tanggal Check-out harus setelah Tanggal Check-in";
+        //     checkOutInput.value = "";
+        // } else {
+        //     checkoutWarning.textContent = "";
+        // }
+    });
 
-            // Memastikan tanggal check-out setelah tanggal check-in
-            if (checkOutDate <= checkInDate) {
-                alert("Tanggal Check-out harus setelah Tanggal Check-in");
-                // Kosongkan nilai check-out
-                checkOutInput.value = "";
-            }
-        });
+    checkOutInput.addEventListener("input", function () {
+        var checkInDate = new Date(checkInInput.value);
+        var checkOutDate = new Date(checkOutInput.value);
+
+        if (checkOutDate <= checkInDate) {
+            checkoutWarning.textContent =
+                "Tanggal Check-out harus setelah Tanggal Check-in";
+            checkOutInput.value = "";
+        } else {
+            checkoutWarning.textContent = "";
+        }
+    });
 });
-    
-    // document.addEventListener("DOMContentLoaded", function () {
-    //     var checkInInput = document.querySelector('input[name="inDate"]');
-    //     var checkOutInput = document.querySelector('input[name="outDate"]');
-    //     var checkoutWarning = document.getElementById("checkoutWarning");
 
-    //     // Menetapkan event listener untuk input tanggal check-in
-    //     checkInInput.addEventListener("input", function () {
-    //         // Mendapatkan nilai tanggal check-in
-    //         var checkInDate = new Date(checkInInput.value);
-
-    //         // Mendapatkan nilai tanggal check-out
-    //         var checkOutDate = new Date(checkOutInput.value);
-
-    //         // Memastikan tanggal check-out setelah tanggal check-in
-    //         if (checkOutDate <= checkInDate) {
-    //             checkoutWarning.textContent =
-    //                 "Tanggal Check-out harus setelah Tanggal Check-in";
-    //             // Kosongkan nilai check-out
-    //             checkOutInput.value = "";
-    //         } else {
-    //             checkoutWarning.textContent = ""; // Hapus pesan peringatan jika valid
-    //         }
-    //     });
-
-    //     // Menetapkan event listener untuk input tanggal check-out
-    //     checkOutInput.addEventListener("input", function () {
-    //         // Mendapatkan nilai tanggal check-in
-    //         var checkInDate = new Date(checkInInput.value);
-
-    //         // Mendapatkan nilai tanggal check-out
-    //         var checkOutDate = new Date(checkOutInput.value);
-
-    //         // Memastikan tanggal check-out setelah tanggal check-in
-    //         if (checkOutDate <= checkInDate) {
-    //             checkoutWarning.textContent =
-    //                 "Tanggal Check-out harus setelah Tanggal Check-in";
-    //             // Kosongkan nilai check-out
-    //             checkOutInput.value = "";
-    //         } else {
-    //             checkoutWarning.textContent = ""; // Hapus pesan peringatan jika valid
-    //         }
-    //     });
-    // });
 
 range1 = document.getElementById("range-1")
 range2 = document.getElementById("range-2")
