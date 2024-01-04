@@ -37,8 +37,8 @@
                     </div>
 
                     <div class="input-row">
-                        <input type="date" class="input-date" name="inDate">
-                        <input type="date" class="input-date" name="outDate">
+                        <input type="date" class="input-date" name="inDate" id="checkInDate">
+                        <input type="date" class="input-date" name="outDate" id="checkOutDate">
                     </div>
 
                     <div class="input-row drop-down-menu">
@@ -73,7 +73,7 @@
                             </select>
                         </div> -->
                         <div class="border-input">
-                            <input name="date" type="date" class="input-date">
+                            <input name="date" type="date" class="input-date" id="departure-date">
                         </div>
                         <div class="sub-input border-input">
                             <img src="assets/icon/chair-blue.svg">

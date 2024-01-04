@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (checkInDate < minCheckInDate) {
             console.log("aa");
             checkoutWarning.textContent =
-                "Tanggal Check-in tidak boleh kurang dari tanggal hari ini";
+                "Check-in date cannot be less than today";
             checkInInput.value = "";
         } else {
             checkoutWarning.textContent = "";
@@ -77,12 +77,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (checkOutDate <= checkInDate) {
             checkoutWarning.textContent =
-                "Tanggal Check-out harus setelah Tanggal Check-in";
+                "Check-Out date must be after the Check-In Date";
             checkOutInput.value = "";
         } else {
             checkoutWarning.textContent = "";
         }
     });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    var checkInInput = document.getElementById("checkInDate");
+    var checkOutInput = document.getElementById("checkOutDate");
+
+    document
+        .getElementById("submit-hotel-room")
+        .addEventListener("click", function (event) {
+            if (checkInInput.value === "" || checkOutInput.value === "") {
+                alert("Please fill in the Check-in and Check-out dates first.");
+                event.preventDefault(); // Mencegah pengiriman formulir jika tanggal belum diisi
+            }
+        });
 });
 
 

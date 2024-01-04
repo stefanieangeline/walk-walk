@@ -107,15 +107,82 @@ flightMode.addEventListener("click", (e) => {
     }
 })
 
-// action kalo search button dipencet
-searchBtn = document.getElementById("search-btn")
+//action kalo search button dipencet
+// searchBtn = document.getElementById("search-btn")
+// searchBtn.addEventListener("click", (e) => {
+//     if (activeContainer == flightDetailInfo) {
+//         document.forms["flight-form"].submit();
+//     } else if (activeContainer == hotelDetailInfo) {
+//         document.forms["hotel-form"].submit();
+//     }
+// })
+
+searchBtn = document.getElementById("search-btn");
 searchBtn.addEventListener("click", (e) => {
     if (activeContainer == flightDetailInfo) {
-        document.forms["flight-form"].submit();
+        // Logika validasi untuk formulir penerbangan
+        var srcInput = document.getElementById("flight-src");
+        var dstInput = document.getElementById("flight-dst");
+        var departureDateInput = document.getElementById("departure-date");
+
+        if (srcInput.value === "" ||departureDateInput.value === "" ||dstInput.value === "") {
+            alert("Please fill in all required fields for flight.");
+            e.preventDefault(); // Mencegah pengiriman formulir jika ada input yang belum diisi
+        } else {
+            // Validasi tanggal keberangkatan minimal dari hari ini
+            var today = new Date();
+            today.setHours(0, 0, 0, 0); // Mengatur waktu ke tengah malam hari ini
+
+            var departureDate = new Date(departureDateInput.value);
+
+            if (departureDate < today) {
+                alert("Departure date should be today or later.");
+                e.preventDefault(); // Mencegah pengiriman formulir jika tanggal tidak valid
+            } else if (
+                srcInput.value.trim().toLowerCase() ===
+                dstInput.value.trim().toLowerCase()
+            ) {
+                alert("Source and destination cannot be the same.");
+                e.preventDefault(); // Mencegah pengiriman formulir jika srcInput dan dstInput sama
+            } else {
+                document.forms["flight-form"].submit();
+            }
+        }
     } else if (activeContainer == hotelDetailInfo) {
-        document.forms["hotel-form"].submit();
+        var hotelDestinationInput =
+            document.getElementById("hotel-destination");
+        var checkInDateInput = document.getElementById("checkInDate");
+        var checkOutDateInput = document.getElementById("checkOutDate");
+
+        if (hotelDestinationInput.value === "" || checkInDateInput.value === "" || checkOutDateInput.value === "") {
+            alert("Please fill in all required fields for hotel.");
+            e.preventDefault(); // Mencegah pengiriman formulir jika ada input yang belum diisi
+        } else {
+            // Validasi tanggal check-in minimal dari hari ini
+            var today = new Date();
+            today.setHours(0, 0, 0, 0); // Mengatur waktu ke tengah malam hari ini
+
+            var checkInDate = new Date(checkInDateInput.value);
+
+            if (checkInDate < today) {
+                alert("Check-in date should be today or later.");
+                e.preventDefault(); // Mencegah pengiriman formulir jika tanggal tidak valid
+            } else {
+                // Validasi tanggal checkout harus setelah tanggal checkin
+                var checkOutDate = new Date(checkOutDateInput.value);
+
+                if (checkOutDate <= checkInDate) {
+                    alert("Check-out date should be after Check-in date.");
+                    e.preventDefault(); // Mencegah pengiriman formulir jika tanggal tidak valid
+                } else {
+                    document.forms["hotel-form"].submit();
+                }
+            }
+        }
     }
-})
+});
+
+
 
 // buat tuker tujuan sama keberangkatan di penerbangan
 switchBtn = document.getElementById("rotate-icon")
@@ -128,6 +195,7 @@ switchBtn.addEventListener("click", (e) => {
     flightSrc.value = flightDst.value
     flightDst.value = temp
 })
+
 
 //slider recommendation
 const carousel = document.querySelector(".carousel");
