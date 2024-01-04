@@ -1108,3 +1108,7 @@ body {
     font-size: 18px;
     margin-left: 10px;
 }
+
+#back-to-hotel {
+    cursor: pointer;
+}

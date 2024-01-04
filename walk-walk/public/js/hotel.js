@@ -113,46 +113,51 @@ review3 = document.getElementById("review3");
 review4 = document.getElementById("review4");
 review5 = document.getElementById("review5");
 
-// searchHotel = document.getElementById("search-hotel");
-// searchHotel.addEventListener("click", (e) => {
-//     document.forms["search-hotel-form"].submit()
-// })
-
 searchHotel = document.getElementById("search-hotel");
 searchHotel.addEventListener("click", (e) => {
-    // Mengambil nilai input
-    var destinationInput = document.getElementById("hotel-destination");
-    var checkInDateInput = document.getElementById("checkInDate");
-    var checkOutDateInput = document.getElementById("checkOutDate");
-    // Melakukan validasi
-    if (
-        destinationInput.value.trim() === "" ||
-        checkInDateInput.value === "" ||
-        checkOutDateInput.value === ""
-    ) {
-        // Menampilkan pesan kesalahan jika ada input yang kosong
-        alert("Please fill in all required fields.");
-        e.preventDefault(); // Mencegah pengiriman formulir jika ada input yang belum diisi
-    } else {
-        // Mengonversi nilai tanggal ke objek Date untuk membandingkannya
-        var checkInDate = new Date(checkInDateInput.value);
-        var checkOutDate = new Date(checkOutDateInput.value);
+    document.forms["search-hotel-form"].submit()
+})
 
-        // Melakukan validasi tanggal check-in harus lebih kecil dari tanggal check-out
-        if (checkInDate >= checkOutDate) {
-            alert("Check-in date should be before Check-out date.");
-            e.preventDefault(); // Mencegah pengiriman formulir jika tanggal tidak valid
-        } else {
-            // Mengirim formulir jika semua input sudah diisi dan tanggal valid
-            document.forms["search-hotel-form"].submit();
-        }
-    }
-});
+// searchHotel = document.getElementById("search-hotel");
+// searchHotel.addEventListener("click", (e) => {
+//     // Mengambil nilai input
+//     var destinationInput = document.getElementById("hotel-destination");
+//     var checkInDateInput = document.getElementById("checkInDate");
+//     var checkOutDateInput = document.getElementById("checkOutDate");
+//     // Melakukan validasi
+//     if (
+//         destinationInput.value.trim() === "" ||
+//         checkInDateInput.value === "" ||
+//         checkOutDateInput.value === ""
+//     ) {
+//         // Menampilkan pesan kesalahan jika ada input yang kosong
+//         alert("Please fill in all required fields.");
+//         e.preventDefault(); // Mencegah pengiriman formulir jika ada input yang belum diisi
+//     } else {
+//         // Mengonversi nilai tanggal ke objek Date untuk membandingkannya
+//         var checkInDate = new Date(checkInDateInput.value);
+//         var checkOutDate = new Date(checkOutDateInput.value);
 
-// searchHotelRoom = document.getElementById("submit-hotel-room");
-// searchHotelRoom.addEventListener("click", (e) => {
-//     document.forms["specific-hotel-form"].submit();
+//         // Melakukan validasi tanggal check-in harus lebih kecil dari tanggal check-out
+//         if (checkInDate >= checkOutDate) {
+//             alert("Check-in date should be before Check-out date.");
+//             e.preventDefault(); // Mencegah pengiriman formulir jika tanggal tidak valid
+//         } else {
+//             // Mengirim formulir jika semua input sudah diisi dan tanggal valid
+//             document.forms["search-hotel-form"].submit();
+//         }
+//     }
 // });
+
+// backToHotel = document.getElementById("back-to-hotel");
+// backToHotel.addEventListener("click", (e) => {
+//     document.forms["hotel-room-form"].submit();
+// });
+
+searchHotelRoom = document.getElementById("submit-hotel-room");
+searchHotelRoom.addEventListener("click", (e) => {
+    document.forms["specific-hotel-form"].submit();
+});
 
 // click event listener
 
