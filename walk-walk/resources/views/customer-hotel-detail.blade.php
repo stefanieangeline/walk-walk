@@ -174,33 +174,44 @@
 
             <div class="left2">
                 <h2>Guest Info</h2>
-                <h5><span>*</span> Guest names must match the valid ID which will be used at check-in</h5>
+                <h5> Guest information is the same as the user's account information</h5>
+
                 <div class="form">
                     <div class="name-section">
                         <h3>Full Name</h3>
                         <div class="input">
-                                <input type="text" name="Name" placeholder="ex: Stefanie" required>
+                            {{-- <input type="text" name="NameCustomer" placeholder="ex: Stefanie" required> --}}
+                            <h2>{{ Auth::User()->name }}</h2>
                         </div>
                     </div>
                     <div class="gender-section">
                             <h3>Email</h3>
                             <div class="input">
-                                <input type="Email" name="Email" placeholder="ex: stefanie@mail.com" required>
+                                {{-- <input type="Email" name="EmailCustomer" placeholder="ex: stefanie@mail.com" required> --}}
+                                <h2>{{ Auth::User()->email }}</h2>
                             </div>
                     </div>
                     <div class="birth-section">
                             <h3>Phone Number</h3>
                             <div class="input">
-                                <input type="text" class="InputBio" placeholder="ex: 08123458695" required>
+                                {{-- <input type="text" name="PhoneNumberCustomer" class="InputBio" placeholder="ex: 08123458695" required> --}}
+                                <h2>{{ Auth::User()->NoTelpUser }}</h2>
                             </div>
                     </div>
                     <div class="nationality-section">
                             <h3>Country / Region of residence</h3>
                             <div class="input">
-                            <input type="text" class="InputBio" placeholder="ex: Indonesia" required>
+                            {{-- <input type="text" name="" class="InputBio" placeholder="ex: Indonesia" required> --}}
+                            @foreach ($countries as $i)
+                                @if ($i->IDCountry == Auth::User()->NationalityUser)
+                                    <h2>{{ $i->NameCountry }}</h2>
+                                @endif
+                            @endforeach
                             </div>
                     </div>
+                    
                 </div>    
+
             </div>
         </div>
 
@@ -211,7 +222,8 @@
 
                 $nightCount = ($timestampOutDate - $timestampInDate) / (60 * 60 * 24);
             @endphp
-            <div class="right-content">
+            <div>
+                <div class="right-content">
                 <h2>Price Detail</h2>
                 <div class="person">
                     <p>{{ $room }} room x {{ $nightCount }} night</p>
@@ -240,11 +252,19 @@
                     <h2>Rp. {{ $priceRoom * $nightCount * 1.2}}.000</h2>
                 </div>   
             </div>
+            <form action="POST" class="description">
+                        <h3>Notes</h3>
+                        <div class="input white">
+                            <input type="text" placeholder="Please write your notes here...." name="description">
+                        </div>
+            </form>
+            </div>
+            
 
             <div class="next">
                 <div class="next-step">
                      <h3>Next</h3>
-                    <img src="assets/icon/nextButton.svg" alt="">
+                    <img src="/assets/icon/nextButton.svg" alt="">
                 </div>
             </div>
         </div>

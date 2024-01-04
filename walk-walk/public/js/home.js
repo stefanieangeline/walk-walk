@@ -311,8 +311,9 @@ flightSrc.addEventListener("input", (e) => {
     if (flightSrc.value == null || flightSrc.value == "") {
         clearSuggest()
         return
+        
     }
-
+    console.log("test flight")
     makeSuggestion(flightSrc, flightSrc.value.toLowerCase(), "flight")
 })
 

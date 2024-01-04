@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('TypeRoom');
             $table->foreign(['IDHotel','TypeRoom'])->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references(['IDHotel','TypeRoom'])->on('hotel_rooms');
             $table->foreignId('id')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('id')->on('users');
-            $table->foreignId('IDAddOns')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDAddOns')->on('add_ons');
+            // $table->foreignId('IDAddOns')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDAddOns')->on('add_ons');
+            $table->string('Description');
             $table->date('CheckInDate');
             $table->date('CheckOutDate');
             $table->boolean('Status');

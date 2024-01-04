@@ -3,6 +3,7 @@
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CustomerHotelDetailController;
 use App\Http\Controllers\EticketController;
+use App\Http\Controllers\FinalStepController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\HelpController;
 use App\Http\Controllers\HomeController;
@@ -26,6 +27,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class,'index'])->name('home');
+Route::get('/hotel-barcode', [FinalStepController::class,'index']);
 
 Route::get('/flights', [FlightController::class, 'index'])->name('flights');
 Route::get('/flights/{id}', [FlightController::class, 'passenger'])->name('passenger')->middleware("auth");
@@ -58,6 +60,7 @@ Route::get('/customer-hotel-detail/{id}', [CustomerHotelDetailController::class,
 Route::get('/payment-barcode', function(){
     return view('payment-barcode');
 });
+
 
 Route::get('/privacy-policy', function(){
     return view('privacy-policy');

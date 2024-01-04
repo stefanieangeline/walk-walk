@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use Illuminate\Http\Request;
 
 class CustomerHotelDetailController extends Controller
@@ -16,6 +17,8 @@ class CustomerHotelDetailController extends Controller
         $capacityRoom = request()->get("capacity");
         $wideRoom = request()->get("wide");
         $priceRoom = request()->get("price");
+        // $nationalityUser = Auth::User()->name;
+        $countries = Country::all();
 
         return view('customer-hotel-detail',[
             'inDate'=>$inDate,
@@ -26,7 +29,8 @@ class CustomerHotelDetailController extends Controller
             'typeRoom'=>$typeRoom,
             'capacityRoom'=>$capacityRoom,
             'wideRoom'=>$wideRoom,
-            'priceRoom'=>$priceRoom
+            'priceRoom'=>$priceRoom,
+            'countries'=>$countries
         ]);
     }
 }

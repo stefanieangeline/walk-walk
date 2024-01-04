@@ -30,7 +30,7 @@
                     </div>
                 </div>
 
-                <form name="hotel-form" action="{{ route('hotels') }}" method="get" class="detail-info show" id="hotel-detail-info">
+                <form name="hotel-form" action="{{ route('hotels') }}" method="get" class="detail-info show" id="hotel-detail-info" autocomplete="off">
                     <div class="input-row">
                         <input type="text" class="input-field" placeholder="Enter a destination or property" name="destination" id="hotel-destination">
                         <img src="assets/icon/search.svg" class="input-icon">
@@ -63,7 +63,7 @@
                     </div>
                 </form>
 
-                <form name="flight-form" action="{{ route('flights') }}" method="get" class="detail-info" id="flight-detail-info">
+                <form name="flight-form" action="{{ route('flights') }}" method="get" class="detail-info" id="flight-detail-info" autocomplete="off">
                     <div class="input-row left-align">
                         <!-- <div class="sub-input">
                             <img src="assets/icon/airplane-icon-blue.svg">
