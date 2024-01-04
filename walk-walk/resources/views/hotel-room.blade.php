@@ -156,7 +156,55 @@
                         <div class="room-facil">
                             <div class="bed-type">
                                 <img src="/assets\icon\queen-bed-blue.svg" class="bt-icon">
-                                <p class="bt-text">1 king bed</p>
+                                @if($roomType -> TypeRoom == "Standard Room")
+                                    <p class="bt-text">1 double bed</p>
+                                @endif
+                                @if($roomType -> TypeRoom == "Deluxe Room")
+                                    <p class="bt-text">1 double bed, 1 single bed</p>
+                                @endif
+                                @if($roomType -> TypeRoom == "Suite")
+                                    <p class="bt-text">2 double bed</p>
+                                @endif
+                                @if($roomType -> TypeRoom == "Double Room")
+                                    <p class="bt-text">2 single bed</p>
+                                @endif
+                                @if($roomType -> TypeRoom == "Executive Suite")
+                                    <p class="bt-text">2 double bed</p>
+                                @endif
+                                @if($roomType -> TypeRoom == "Single Room")
+                                    <p class="bt-text">1 single bed</p>
+                                @endif
+                                @if($roomType -> TypeRoom == "Family Room")
+                                    <p class="bt-text">2 double bed, 1 single bed</p>
+                                @endif
+                                @if($roomType -> TypeRoom == "Presidential Suite")
+                                    <p class="bt-text">2 king bed, 1 double bed</p>
+                                @endif
+                                @if($roomType -> TypeRoom == "King Suite")
+                                    <p class="bt-text">2 king bed</p>
+                                @endif
+                                @if($roomType -> TypeRoom == "Penthouse Suite")
+                                    <p class="bt-text">3 king bed</p>
+                                @endif
+                                @if($roomType -> TypeRoom == "Queen Room")
+                                    <p class="bt-text">1 king bed, 1 single bed</p>
+                                @endif
+                                @if($roomType -> TypeRoom == "Economy Room")
+                                    <p class="bt-text">1 double bed</p>
+                                @endif
+                                @if($roomType -> TypeRoom == "Luxury Room")
+                                    <p class="bt-text">1 king bed, 1 double bed</p>
+                                @endif
+                                @if($roomType -> TypeRoom == "Royal Suite")
+                                    <p class="bt-text">2 king bed</p>
+                                @endif
+                                @if($roomType -> TypeRoom == "Grand Suite")
+                                    <p class="bt-text">2 king bed, 1 single bed</p>
+                                @endif
+                                @if($roomType -> TypeRoom == "Superior Room")
+                                    <p class="bt-text">1 king bed, 1 single bed</p>
+                                @endif
+                                <!-- <p class="bt-text">1 king bed</p> -->
                             </div>
 
                             <div class="facil-box">

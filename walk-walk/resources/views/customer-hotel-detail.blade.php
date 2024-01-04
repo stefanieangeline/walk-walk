@@ -97,7 +97,55 @@
                             </div>
                             <div class="bed-type">
                                 <i class="fa-solid fa-bed"></i>
-                                <p>1 King Bed Size</p>
+                                @if($typeRoom == "Standard Room")
+                                    <p class="bt-text">1 double bed</p>
+                                @endif
+                                @if($typeRoom == "Deluxe Room")
+                                    <p class="bt-text">1 double bed, 1 single bed</p>
+                                @endif
+                                @if($typeRoom== "Suite")
+                                    <p class="bt-text">2 double bed</p>
+                                @endif
+                                @if($typeRoom == "Double Room")
+                                    <p class="bt-text">2 single bed</p>
+                                @endif
+                                @if($typeRoom == "Executive Suite")
+                                    <p class="bt-text">2 double bed</p>
+                                @endif
+                                @if($typeRoom == "Single Room")
+                                    <p class="bt-text">1 single bed</p>
+                                @endif
+                                @if($typeRoom == "Family Room")
+                                    <p class="bt-text">2 double bed, 1 single bed</p>
+                                @endif
+                                @if($typeRoom== "Presidential Suite")
+                                    <p class="bt-text">2 king bed, 1 double bed</p>
+                                @endif
+                                @if($typeRoom == "King Suite")
+                                    <p class="bt-text">2 king bed</p>
+                                @endif
+                                @if($typeRoom == "Penthouse Suite")
+                                    <p class="bt-text">3 king bed</p>
+                                @endif
+                                @if($typeRoom == "Queen Room")
+                                    <p class="bt-text">1 king bed, 1 single bed</p>
+                                @endif
+                                @if($typeRoom == "Economy Room")
+                                    <p class="bt-text">1 double bed</p>
+                                @endif
+                                @if($typeRoom == "Luxury Room")
+                                    <p class="bt-text">1 king bed, 1 double bed</p>
+                                @endif
+                                @if($typeRoom == "Royal Suite")
+                                    <p class="bt-text">2 king bed</p>
+                                @endif
+                                @if($typeRoom == "Grand Suite")
+                                    <p class="bt-text">2 king bed, 1 single bed</p>
+                                @endif
+                                @if($typeRoom == "Superior Room")
+                                    <p class="bt-text">1 king bed, 1 single bed</p>
+                                @endif
+                                <!-- <p>1 King Bed Size</p> -->
                             </div>
                             <div class="room-area">
                                 <i class="fa-solid fa-ruler-vertical"></i>
