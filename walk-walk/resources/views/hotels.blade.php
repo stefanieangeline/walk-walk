@@ -153,10 +153,15 @@
             @foreach($hotels as $hotel)
             <div class="hotel-detail">
                 <div class="right-left">
-                    <img src="https://drive.google.com/uc?export=view&id=1jt8Rg0c4b5hp7X3-2Ib6osexfsijso2g" class="hotel-image">
+                    @php
+                        // Membuat nama file gambar berdasarkan nama hotel
+                        $imageName = str_replace(' ', '_', $hotel->NameHotel) . '.svg';
+                    @endphp
+                    <!-- <img src="https://drive.google.com/uc?export=view&id=1jt8Rg0c4b5hp7X3-2Ib6osexfsijso2g" class="hotel-image"> -->
+                    <img src="{{ asset("/assets/hotels/{$imageName}") }}" class="hotel-image" alt="Hotel Image">
                     <div class="detail-info">
                         <div class="hotel-name-rating">
-                            <h2>{{$hotel -> NameHotel}}</h2>
+                        <h2>{{$hotel -> NameHotel}}</h2>
                             <div class="hotel-rating-star">
                                 @for($i = 0; $i < $hotel->StarHotel; $i++)
                                      <img src="assets/icon/star-gold.svg">
