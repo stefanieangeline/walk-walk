@@ -18,5 +18,159 @@ body {
     width: 100vw;
     z-index: 1;
     position: relative;
-    height: 160px;
+    height: 100px;
+}
+
+.content{
+    width: 100vw;
+    height: 140vh;
+    background-color: #F6F7F7;
+    border-radius: 45px 45px 0px 0px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hotel-image{
+    border-radius: 45px;
+    width: 50%;
+    height: 80vh;
+    z-index: 1;
+    position: relative;
+}
+
+.box-content{
+    width: 60vw;
+    height: 70vh;
+    background-color: white;
+    border-radius: 35px;
+    z-index: 2;
+    position: absolute;
+    margin-top: 300px ;
+    box-shadow: -1px 4px 7px var(--grey) ;
+}
+
+.hotel-desc{
+    width: 100%;
+    height: 25%;
+    /* background-color: magenta; */
+    padding-top: 20px;
+    padding-left: 25px;
+}
+
+.title-hotel{
+    font-family: roboto-cons-bold;
+    color: var(--shade-blue);
+    font-size: 25px;
+}
+
+.review-loc-hotel{
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    /* background-color: lavender; */
+}
+
+.review-hotel{
+    font-family: roboto-cons-regular;
+    color: var(--grey);
+    font-size: 19px;
+}
+
+.bullet{
+    background-color: var(--grey);
+    border-radius: 50px;
+    width: 5px;
+    height: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.loc-hotel{
+    font-family: roboto-cons-regular;
+    color: var(--shade-blue);
+    font-size: 19px;
+    margin-left: 10px;
+}
+
+.line{
+    background-color: var(--grey);
+    width: 93%;
+    height: 0.1vh;
+    margin-left: 25px;
+}
+
+.hotel-review{
+    width: 100%;
+    height: 18%;
+    /* background-color: magenta; */
+    padding-top: 10px;
+    padding-left: 25px;
+}
+
+.review-question{
+    font-family: roboto-cons-medium;
+    font-size: 18px;
+    color: var(--shade-blue);
+}
+
+.rating-with-star{
+    /* background-color: magenta; */
+    padding-top: 6px;
+    display: flex;
+    flex-direction: row;
+    /* padding-left: 25px; */
+}
+
+.rate-text{
+    font-family: roboto-cons-regular;
+    font-size: 17px;
+    color: var(--blue-base);
+}
+.star-box{
+    padding-left: 10px;
+    padding-top: 1.2px;
+    display: flex;
+    flex-direction: row;
+}
+.star{
+    width: 20px;
+    height: 17.8px;
+    padding-left: 2px;
+}
+
+.review-box{
+    background-color: var(--LIGHT-grey);
+    width: 93%;
+    height: 50%;
+    margin-left: 25px;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+.review-text{
+    font-family: roboto-cons-regular;
+    color: var(--light-grey);
+    font-size: 17px;
+}
+
+.submit-box{
+    z-index: 3;
+    background-color: var(--strong-blue);
+    border-radius: 15px;
+    margin-top: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6vh;
+    width: 12vw;
+}
+
+.submit-text{
+    font-family: roboto-cons-bold;
+    color: white
+    /* font-size: 17px; */
 }
