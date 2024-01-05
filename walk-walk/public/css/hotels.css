@@ -404,8 +404,8 @@ body {
     background-color: #F6F7F7;
     border-radius: 45px 45px 0px 0px;
     padding-top: 90px;
-    padding-left: 109px;
-    padding-right: 109px;
+    padding-left: 100px;
+    padding-right: 100px;
     padding-bottom: 25px;
     display: flex;
     flex-direction: row;
@@ -627,7 +627,7 @@ body {
     border: none;
     background-color: var(--strong-blue);
     color: var(--white);
-    padding: 10px 22px;
+    padding: 10px 10px;
     border-radius: 10px;
     font-family: roboto-cons-medium;
     font-size: 18px;
