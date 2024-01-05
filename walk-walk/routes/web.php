@@ -30,11 +30,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/hotel-barcode', [CustomerHotelDetailController::class,'payment'])->name('final-step');
 Route::get('/hotel-payment-success', [CustomerHotelDetailController::class,'success'])->name('hotel-payment-success');
+Route::get('/hotel-payment-create', [CustomerHotelDetailController::class,'paymentCreate'])->name('hotel-payment-create');
 
 Route::get('/flights', [FlightController::class, 'index'])->name('flights');
-Route::get('/flights/{id}', [FlightController::class, 'passenger'])->name('passenger')->middleware("auth");
-Route::post('/flights/payment', [FlightController::class, 'payment'])->name('payment')->middleware("auth");
+Route::get('/flights/payment', [FlightController::class, 'barcode'])->name('payment')->middleware("auth");
+Route::post('/flights/payment/create', [FlightController::class, 'paymentCreate'])->name('paymentCreate')->middleware("auth");
 Route::post('/flights/payment/success', [FlightController::class, 'paymentSuccess'])->name('paymentSuccess')->middleware("auth");
+Route::get('/flights/{id}', [FlightController::class, 'passenger'])->name('passenger')->middleware("auth");
 
 Route::get('/hotels', [HotelController::class, 'index'])->name('hotels');
 
@@ -90,9 +92,6 @@ Route::get('/nav-barB', function(){
 });
 
 //sementara
-Route::get('/flight-payment', function(){
-    return view('flight-payment');
-});
 
 Route::get('/history', function(){
     return view('history');

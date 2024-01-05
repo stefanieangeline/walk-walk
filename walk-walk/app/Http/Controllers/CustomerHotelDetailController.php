@@ -39,6 +39,17 @@ class CustomerHotelDetailController extends Controller
         ]);
     }
     public function payment(){
+        $price = request()->get('price');
+        $id = request()->get('id');
+
+        return view('final-step', [
+            "price" => $price,
+            "id" => $id
+        ]);
+
+    }
+
+    public function paymentCreate() {
         $IDHotel = request()->get('idHotel');
         // dd($IDHotel);
         $TypeRoom = request()->get('typeRoom');
@@ -65,11 +76,10 @@ class CustomerHotelDetailController extends Controller
         $price = request()->get('PriceRoom');
         // dd($order->id);
 
-        return view('final-step', [
+        return redirect()->route("final-step", [
             "price" => $price,
             "id" => $order->id
         ]);
-
     }
     public function success(){
         $IDOrder = request()->get('id');

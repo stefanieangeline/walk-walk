@@ -254,7 +254,7 @@
                 </div>   
             </div>
             {{-- @dd($typeRoom) --}}
-            <form method="GET" action="{{ route("final-step",['idHotel'=>$idHotel,'inDate' => $inDate, 'outDate' => $outDate,'type'=>$typeRoom,'inDate'=>$in,'outDate'=>$out]) }}"class="description">
+            <form method="GET" action="{{ route("hotel-payment-create",['idHotel'=>$idHotel,'inDate' => $inDate, 'outDate' => $outDate,'type'=>$typeRoom,'inDate'=>$in,'outDate'=>$out]) }}"class="description">
                         <h3>Notes</h3>
                         <div class="input white">
                             <input type="text" placeholder="Please write your notes here...." name="description" >

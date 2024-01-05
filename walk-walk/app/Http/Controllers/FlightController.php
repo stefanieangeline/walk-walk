@@ -34,7 +34,17 @@ class FlightController extends Controller
 
         return redirect()->route("home");
     }
-    public function payment() {
+    public function barcode() {
+        $price = request()->get("price");
+        $ticket = request()->get("ticket");
+
+        return view("payment-barcode", [
+            "price" => $price,
+            "ticket" => $ticket
+        ]);
+    }
+
+    public function paymentCreate() {
         $names = request()->get("passengersName");
         $genders = request()->get("passengersGender");
         $DOBs= request()->get("passengersDOB");
@@ -67,10 +77,11 @@ class FlightController extends Controller
             $newTicketDetail->save();
         }
 
-        return view("payment-barcode", [
+        // dd("tes");
+        return redirect()->route("payment", [
             "price" => $price,
-            "ticket" => $newTicket->id
-        ]);
+            "ticket" => $newTicket->id]
+        );
     }
     public function passenger($id) {
         $class = request()->get("class");

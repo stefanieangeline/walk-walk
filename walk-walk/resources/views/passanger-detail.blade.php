@@ -109,7 +109,7 @@
                 </div>
             </div>
 
-            <form method="POST" name="passenger-form" action="{{route("payment")}}" class="hidden">
+            <form method="POST" name="passenger-form" action="{{route("paymentCreate")}}" class="hidden">
             @csrf
             <input id="passengersName" name="passengersName" type="text" value="">
             <input id="passengersGender" name="passengersGender" type="text" value="">
