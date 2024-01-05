@@ -83,9 +83,14 @@ class CustomerHotelDetailController extends Controller
     }
     public function success(){
         $IDOrder = request()->get('id');
+        $price = request()->get('price');
+        // $dateAndTime = request()->get('dateAndTime');
+
         // dd($IDOrder);
         OrderedRoom::where("IDOrder", $IDOrder)->update(array("status"=>1));
+        $dateAndTime = OrderedRoom::where("IDOrder", $IDOrder)->first()->created_at;
 
-        return redirect()->route("home");
+
+        return view("home-payment", ["IDOrder" => $IDOrder]);
     }
 }
