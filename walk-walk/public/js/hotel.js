@@ -122,11 +122,15 @@ searchHotel.addEventListener("click", (e) => {
     var destinationInput = document.getElementById("hotel-destination");
     var checkInDateInput = document.getElementById("checkInDate");
     var checkOutDateInput = document.getElementById("checkOutDate");
+    var checkRoomInput = document.getElementById("rooms-input");
+    var checkGuestInput = document.getElementById("guests-input");
     // Melakukan validasi
     if (
         destinationInput.value.trim() === "" ||
         checkInDateInput.value === "" ||
-        checkOutDateInput.value === ""
+        checkOutDateInput.value === "" ||
+        checkRoomInput.value === "" ||
+        checkGuestInput.value === "" 
     ) {
         // Menampilkan pesan kesalahan jika ada input yang kosong
         alert("Please fill in all required fields.");
@@ -164,13 +168,15 @@ if (document.getElementById("submit-hotel-room") != null) {
     document.addEventListener("DOMContentLoaded", function () {
         var checkInInput = document.getElementById("checkInDate");
         var checkOutInput = document.getElementById("checkOutDate");
+        var checkRoomInput = document.getElementById("rooms-input");
+        var checkGuestInput = document.getElementById("guests-input");
 
         document
             .getElementById("submit-hotel-room")
             .addEventListener("click", function (event) {
-                if (checkInInput.value === "" || checkOutInput.value === "") {
+                if (checkInInput.value === "" || checkOutInput.value === "" || checkRoomInput.value ==="" || checkGuestInput.value==="") {
                     alert(
-                        "Please fill in the Check-in and Check-out dates first."
+                        "Please fill in the Check-in date,Check-out date, Room and Guest first."
                     );
                     event.preventDefault(); // Mencegah pengiriman formulir jika tanggal belum diisi
                 }

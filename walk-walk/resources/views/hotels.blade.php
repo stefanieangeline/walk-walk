@@ -60,7 +60,7 @@
                             <input type="number" min="1" id="rooms-input" name="room" value="{{$room}}">
                         </div>
                         <div class="num-input">
-                            <h4>Adults</h4>
+                            <h4>Guests</h4>
                             <input type="number" min="1" id="guests-input" name="guest" value="{{$guest}}">
                         </div>
                     </div>
