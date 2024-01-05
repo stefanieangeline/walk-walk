@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    {{-- {{ dd($idHotel) }} --}}
     <div class="bg-pd">
         <div class="left-side">
             <a href="#" class="left-a">
@@ -227,12 +228,12 @@
                 <h2>Price Detail</h2>
                 <div class="person">
                     <p>{{ $room }} room x {{ $nightCount }} night</p>
-                    <p>Rp. {{ $priceRoom * $nightCount }}.000</p>
+                    <p>Rp. {{ $priceRoom * $nightCount * $room }}.000</p>
                 </div>
                 <div class="fix-price">
                     <div class="total-tax">
                         <p>Taxes and Fees</p>
-                        <p>Rp. {{$priceRoom * $nightCount * 0.2}}.000</p>
+                        <p>Rp. {{$priceRoom * $nightCount * $room * 0.2}}.000</p>
                     </div>
                     <!-- <div class="tax-detail">
                         {{-- <div class="vertical-line"></div> --}}
@@ -249,24 +250,33 @@
                 <hr class="garis-hor">
                 <div class="total-price">
                     <h2>Total Price</h2>
-                    <h2>Rp. {{ $priceRoom * $nightCount * 1.2}}.000</h2>
+                    <h2>Rp. {{ $priceRoom * $nightCount * $room * 1.2}}.000</h2>
                 </div>   
             </div>
-            <form action="POST" class="description">
+            {{-- @dd($typeRoom) --}}
+            <form method="GET" action="{{ route("final-step",['idHotel'=>$idHotel,'inDate' => $inDate, 'outDate' => $outDate,'type'=>$typeRoom,'inDate'=>$in,'outDate'=>$out]) }}"class="description">
                         <h3>Notes</h3>
                         <div class="input white">
-                            <input type="text" placeholder="Please write your notes here...." name="description">
+                            <input type="text" placeholder="Please write your notes here...." name="description" >
                         </div>
+                        <input type="text" class="invisible" value="{{ $idHotel }}" name="idHotel">
+                        <input type="text" class="invisible" value="{{ $inDate }}" name="inDate">
+                        <input type="text" class="invisible" value="{{ $outDate }}" name="outDate">
+                        <input type="text" class="invisible" value="{{ $typeRoom }}" name="typeRoom">
+                        {{-- <input type="text" class="invisible" value="{{ $typeRoom }}" name="typeRoom"> --}}
+                        <input type="number" class="invisible" value="{{ $priceRoom * $nightCount * $room * 1.2}}" name="PriceRoom">
+
+                        <div class="next">
+    
+                            <input type="submit">
+                            <img src="/assets/icon/nextButton.svg" alt="">
+                        </a>
+                    </div>
             </form>
             </div>
             
 
-            <div class="next">
-                <div class="next-step">
-                     <h3>Next</h3>
-                    <img src="/assets/icon/nextButton.svg" alt="">
-                </div>
-            </div>
+            
         </div>
         
 

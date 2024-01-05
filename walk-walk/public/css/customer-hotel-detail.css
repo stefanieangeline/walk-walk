@@ -487,6 +487,9 @@
     flex-direction: row-reverse;
     width: 100%;
   }
+  .invisible{
+    display: none;
+  }
   .next-step{
     display: flex;
     flex-direction: row;

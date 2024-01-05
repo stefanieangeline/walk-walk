@@ -13,6 +13,7 @@ use App\Http\Controllers\HotelRoomController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SigninController;
 use App\Http\Controllers\UserController;
+use Illuminate\Routing\RouteRegistrar;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +28,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class,'index'])->name('home');
-Route::get('/hotel-barcode', [FinalStepController::class,'index']);
+Route::get('/hotel-barcode', [CustomerHotelDetailController::class,'payment'])->name('final-step');
+Route::get('/hotel-payment-success', [CustomerHotelDetailController::class,'success'])->name('hotel-payment-success');
 
 Route::get('/flights', [FlightController::class, 'index'])->name('flights');
 Route::get('/flights/{id}', [FlightController::class, 'passenger'])->name('passenger')->middleware("auth");
@@ -37,6 +39,7 @@ Route::post('/flights/payment/success', [FlightController::class, 'paymentSucces
 Route::get('/hotels', [HotelController::class, 'index'])->name('hotels');
 
 Route::get('/hotels/{id}', [HotelRoomController::class, 'index'])->name('hotel-room');
+// Route::get('final');
 
 // Route::get('/hotels/detail', [HotelController::class, 'detail'])->name('hotelsDetail');
 

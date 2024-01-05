@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Country;
+use App\Models\OrderedRoom;
+use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerHotelDetailController extends Controller
 {
@@ -17,10 +20,12 @@ class CustomerHotelDetailController extends Controller
         $capacityRoom = request()->get("capacity");
         $wideRoom = request()->get("wide");
         $priceRoom = request()->get("price");
+        $IDHotel = request()->get('idHotel');
         // $nationalityUser = Auth::User()->name;
         $countries = Country::all();
 
         return view('customer-hotel-detail',[
+            'idHotel'=>$IDHotel,
             'inDate'=>$inDate,
             'outDate'=>$outDate,
             'room'=>$room,
@@ -32,5 +37,45 @@ class CustomerHotelDetailController extends Controller
             'priceRoom'=>$priceRoom,
             'countries'=>$countries
         ]);
+    }
+    public function payment(){
+        $IDHotel = request()->get('idHotel');
+        // dd($IDHotel);
+        $TypeRoom = request()->get('typeRoom');
+        
+        $id = Auth::user()->id;
+        $Description = request()->get('description');
+        if($Description == null){
+            $Description = '-';
+        }
+        // dd($Description);  
+        $CheckInDate = request()->get('inDate');
+        $CheckOutDate = request()->get('outDate');
+        $Status = 0;
+
+        $order = new OrderedRoom();
+        $order->IDHotel = $IDHotel;
+        $order->TypeRoom = $TypeRoom;
+        $order->id = $id;
+        $order->Description = $Description;
+        $order->CheckInDate = $CheckInDate;
+        $order->CheckOutDate = $CheckOutDate;
+        $order->Status = $Status;
+        $order->save();
+        $price = request()->get('PriceRoom');
+        // dd($order->id);
+
+        return view('final-step', [
+            "price" => $price,
+            "id" => $order->id
+        ]);
+
+    }
+    public function success(){
+        $IDOrder = request()->get('id');
+        // dd($IDOrder);
+        OrderedRoom::where("IDOrder", $IDOrder)->update(array("status"=>1));
+
+        return redirect()->route("home");
     }
 }

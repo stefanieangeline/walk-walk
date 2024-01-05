@@ -95,6 +95,7 @@
             <div class="bottom-box">
                 <div class="desc-box">
                     <p class="desc-title">Description</p>
+                    {{-- <p>{{ $hotel->IDHotel }}</p> --}}
                     <p class="desc-txt">When you stay at Grand Sovereign Kuta Bali in Tuban, you'll be in the business district, within a 5-minute drive of Kuta Beach and Legian Beach. This 4-star hotel is 4.3 mi (6.9 km) from Seminyak Beach and 1.9 mi (3 km) from Waterbom Bali.
             Relax at the full-service spa, where you can enjoy massages, body treatments, and facials. You're sure to appreciate the recreational amenities, including an outdoor pool, a sauna, and a fitness center. Additional features at this hotel include complimentary wireless Internet access, concierge services, and a hair salon. Guests can catch a ride to the beach or shopping on the complimentary shuttle.</p>
                 </div>
@@ -265,7 +266,7 @@
                         <p class="big-price">Rp {{ $roomType -> PriceRoom }}.000</p>
                         <p class="tax-text">After Tax Rp.{{$roomType -> PriceRoom * 1.2}}.000</p>
                         <!-- <p class="reserve-button">Reserve</p> -->
-                        <a class="reserve-button" href="{{ route("customer-hotel-detail", ['id' => $hotel->IDHotel, 'inDate' => $inDate, 'outDate' => $outDate, 'room' => $room, 'name' => $hotel->NameHotel, 'star' => $hotel->StarHotel, 'type' => $roomType -> TypeRoom, 'capacity' => $roomType -> CapacityRoom, 'wide' => $roomType -> WideRoom, 'price'=> $roomType -> PriceRoom]) }}" > Reserve</a>
+                        <a class="reserve-button" href="{{ route("customer-hotel-detail", ['id' => $hotel->IDHotel, 'idHotel' => $hotel->IDHotel,'inDate' => $inDate, 'outDate' => $outDate, 'room' => $room, 'name' => $hotel->NameHotel, 'star' => $hotel->StarHotel, 'type' => $roomType -> TypeRoom, 'capacity' => $roomType -> CapacityRoom, 'wide' => $roomType -> WideRoom, 'price'=> $roomType -> PriceRoom]) }}" > Reserve</a>
                     </div>
 
                 </div>
