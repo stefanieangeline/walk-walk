@@ -71,7 +71,7 @@
             </div>
             <div class="right-right">
                 <a href="/jalan-jalan/myaccount.php" class="nav-link">
-                    <img src="assets/icon/user.svg">
+                    <img src="/assets/icon/user.svg">
                 </a>
             </div>
         </div>
@@ -266,7 +266,7 @@
             <div class="next">
                 <div class="next-step" id="next-step">
                      <h3>Next</h3>
-                    <img src="assets/icon/nextButton.svg" alt="">
+                    <img src="/assets/icon/nextButton.svg" alt="">
                 </div>
             </div>
         </div>

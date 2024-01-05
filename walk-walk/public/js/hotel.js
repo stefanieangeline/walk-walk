@@ -85,19 +85,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    var checkInInput = document.getElementById("checkInDate");
-    var checkOutInput = document.getElementById("checkOutDate");
+if (document.getElementById("submit-hotel-room") != null) {
+    document.addEventListener("DOMContentLoaded", function () {
+        var checkInInput = document.getElementById("checkInDate");
+        var checkOutInput = document.getElementById("checkOutDate");
 
-    document
-        .getElementById("submit-hotel-room")
-        .addEventListener("click", function (event) {
-            if (checkInInput.value === "" || checkOutInput.value === "") {
-                alert("Please fill in the Check-in and Check-out dates first.");
-                event.preventDefault(); // Mencegah pengiriman formulir jika tanggal belum diisi
-            }
-        });
-});
+        document
+            .getElementById("submit-hotel-room")
+            .addEventListener("click", function (event) {
+                if (checkInInput.value === "" || checkOutInput.value === "") {
+                    alert(
+                        "Please fill in the Check-in and Check-out dates first."
+                    );
+                    event.preventDefault(); // Mencegah pengiriman formulir jika tanggal belum diisi
+                }
+            });
+    });
+}
 
 range1 = document.getElementById("range-1")
 range2 = document.getElementById("range-2")
@@ -154,10 +158,13 @@ searchHotel.addEventListener("click", (e) => {
 //     document.forms["hotel-room-form"].submit();
 // });
 
+
 searchHotelRoom = document.getElementById("submit-hotel-room");
-searchHotelRoom.addEventListener("click", (e) => {
-    document.forms["specific-hotel-form"].submit();
-});
+if (searchHotelRoom != null) {
+    searchHotelRoom.addEventListener("click", (e) => {
+        document.forms["specific-hotel-form"].submit();
+    });
+}
 
 // click event listener
 

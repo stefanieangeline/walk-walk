@@ -58,7 +58,7 @@ Route::get('/hotel-payment', [HotelPaymentController::class, 'index'])->name('ho
 
 Route::get('/eticket', [EticketController::class,'index'])->name('e-ticket');
 
-Route::get('/customer-hotel-detail/{id}', [CustomerHotelDetailController::class, 'index'])->name('customer-hotel-detail');
+Route::get('/customer-hotel-detail/{id}', [CustomerHotelDetailController::class, 'index'])->name('customer-hotel-detail')->middleware("auth");
 
 Route::get('/payment-barcode', function(){
     return view('payment-barcode');
