@@ -107,3 +107,7 @@ Route::get('/dummy', [UserController::class, 'dummy'])->name('dummy');
 Route::get('/hotel-cust-review', function(){
     return view('hotel-cust-review');
 });
+
+Route::get('/airport-detail', function(){
+    return view('airport-detail');
+});
