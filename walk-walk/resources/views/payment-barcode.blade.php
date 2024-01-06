@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/font-and-color.css">
+    <link rel="stylesheet" href="/css/font-and-color.css">
     <link rel="stylesheet" href="/css/payment-barcode.css">
     <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/customer-hotel-detail.css">
+    <!-- <link rel="stylesheet" href="/css/customer-hotel-detail.css"> -->
     <script src="/js/payment.js" defer=""></script>
     <!-- <link rel="stylesheet" href="/css/nav-bar.css"> -->
 </head>
@@ -23,7 +23,7 @@
                 </div>
             </a>
         </div>
-        <div class="mid">
+        <!-- <div class="mid">
             <div class="step1">
                 <div class="info1">
                     <div class="circle">
@@ -52,6 +52,49 @@
                         <p>3</p>
                     </div>
                     <p class="info-info1" >Final Step</p>
+                </div>
+            </div>
+        </div> -->
+        <div class="mid">
+            <div class="step1">
+                <div class="info1">
+                    <div class="circle_finish">
+                        <p>1</p>
+                    </div>
+                    <p>Flight Selection</p>
+                </div>
+            </div>
+            <div class="arrow1">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="step2">
+                <div class="info1">
+                    <div class="circle_finish">
+                        <p>2</p>
+                    </div>
+                    <p>Passanger Details</p>
+                </div>
+            </div>
+            <div class="arrow1">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="step3">
+                <div class="info1">
+                    <div class="circle_finish">
+                        <p>3</p>
+                    </div>
+                    <p>Payment Detail</p>
+                </div>
+            </div>
+            <div class="arrow1">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="step4">
+                <div class="info1">
+                    <div class="circle">
+                        <p>4</p>
+                    </div>
+                    <p>E-Ticket</p>
                 </div>
             </div>
         </div>
