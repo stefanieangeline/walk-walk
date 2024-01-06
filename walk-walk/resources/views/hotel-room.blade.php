@@ -78,11 +78,17 @@
             <div class="pics-box">
                 <img src="/assets/icon/Arunika/1.webp" class="big-pic">
                 <!-- <div class="big-pic"></div> -->
+                <!-- @foreach ($hotelPhotos as $photo)
+                    <img src="{{ asset("assets/hotelRoom/{$hotelFolder}/" . basename($photo)) }}" alt="Hotel Photo">
+                @endforeach -->
                 <div class="pics">
                     <div class="up-pics">
-                        <img src="/assets/icon/Arunika/2.webp" class="up-pic-one">
+                        @foreach ($hotelPhotos as $photo)
+                    <img src="{{ asset("assets/hotelRoom/{$hotelFolder}/" . basename($photo)) }}" alt="Hotel Photo" class="up-pic-one">
+                @endforeach
+                        <!-- <img src="/assets/icon/Arunika/2.webp" class="up-pic-one">
                         <img src="/assets/icon/Arunika/3.webp" class="up-pic-one">
-                        <img src="/assets/icon/Arunika/4.webp" class="up-pic-one">
+                        <img src="/assets/icon/Arunika/4.webp" class="up-pic-one"> -->
                     </div>
                     <div class="down-pics">
                         <img src="/assets/icon/Arunika/5.webp" class="down-pic-one">

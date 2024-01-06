@@ -8,6 +8,9 @@ use App\Models\HotelFacilityHeader;
 use App\Models\HotelRooms;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
+
 
 class HotelRoomController extends Controller
 {
@@ -38,6 +41,9 @@ class HotelRoomController extends Controller
         ->where('Hotel_Facility_Headers.IDHotel', '=', $id)
         ->get();
 
+        $hotelFolder = str_replace('-', '_', Str::slug($hotel->NameHotel));
+        $hotelPhotos = File::files(public_path("assets/hotelRoom/{$hotelFolder}"));
+
         return view('hotel-room', [
             'dest'=> $destination,
             'inDate'=>$inDate,
@@ -49,7 +55,9 @@ class HotelRoomController extends Controller
             'totalRoomTypes' => $totalRoomTypes,
             'reviews' => $reviews,
             'reviewsCount' => $reviewsCount,
-            'hotelFacilities'=>$hotelFacilities
+            'hotelFacilities'=>$hotelFacilities,
+            'hotelFolder' => $hotelFolder,
+            'hotelPhotos' => $hotelPhotos
             // "hotel" => Hotel::query()->where('IDHotel', $id)->first()
         ]);
     }
