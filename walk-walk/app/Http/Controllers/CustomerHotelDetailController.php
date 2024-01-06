@@ -47,7 +47,7 @@ class CustomerHotelDetailController extends Controller
             "price" => $price,
             "id" => $id
         ]);
-
+        
     }
 
     public function paymentCreate() {
@@ -98,7 +98,7 @@ class CustomerHotelDetailController extends Controller
         $hotelName = OrderedRoom::where("IDOrder", $IDOrder)
                     ->join('hotels', 'ordered_rooms.IDHotel', '=', 'hotels.IDHotel')
                     ->value('hotels.NameHotel');
-                    
+
         $rooms = OrderedRoom::where("IDOrder", $IDOrder)->first()->RoomCount;
         return view("hotel-payment", ["IDOrder" => $IDOrder, "price" => $price, "duration" => $duration, "dateAndTime" => $dateAndTime, "hotelName" => $hotelName, "rooms" => $rooms]);
     }
