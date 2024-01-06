@@ -101,7 +101,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: column;   
+    flex-direction: column;
 }.text-1{
     color: white;
     font-family: roboto-cons-bold;
@@ -152,7 +152,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-.bottom-left button{
+.bottom-left a{
     border-radius: 10px;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
