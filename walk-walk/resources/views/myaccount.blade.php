@@ -92,7 +92,7 @@
                             <div class="nationality-section">
                                 <p>Nationality</p>
                                 <div class="input">
-                                    <input type="text" name="nationality" value="" disabled>
+                                    <input type="text" name="nationality" value="{{$country}}" disabled>
                                     <i class="fa-solid fa-flag"></i>
                                 </div>
                             </div>

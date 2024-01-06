@@ -53,13 +53,14 @@ class CustomerHotelDetailController extends Controller
         $IDHotel = request()->get('idHotel');
         // dd($IDHotel);
         $TypeRoom = request()->get('typeRoom');
-        
+        $RoomCount = request()->get('roomCount');
+
         $id = Auth::user()->id;
         $Description = request()->get('description');
         if($Description == null){
             $Description = '-';
         }
-        // dd($Description);  
+        // dd($Description);
         $CheckInDate = request()->get('inDate');
         $CheckOutDate = request()->get('outDate');
         $Status = 0;
@@ -72,6 +73,7 @@ class CustomerHotelDetailController extends Controller
         $order->CheckInDate = $CheckInDate;
         $order->CheckOutDate = $CheckOutDate;
         $order->Status = $Status;
+        $order->RoomCount = $RoomCount;
         $order->save();
         $price = request()->get('PriceRoom');
         // dd($order->id);
@@ -91,11 +93,11 @@ class CustomerHotelDetailController extends Controller
         $dateAndTime = OrderedRoom::where("IDOrder", $IDOrder)->first()->created_at;
         $hotelName = OrderedRoom::where("IDOrder", $IDOrder)
                     ->join('hotels', 'ordered_rooms.IDHotel', '=', 'hotels.IDHotel')
-                    ->select('hotels.name')
+                    ->select('hotels.NameHotel')
                     ->first();
-        
 
 
-        return view("home-payment", ["IDOrder" => $IDOrder]);
+
+        return view("hotel-payment", ["IDOrder" => $IDOrder]);
     }
 }
