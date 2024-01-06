@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Country;
+use Carbon\Carbon;
 use App\Models\OrderedRoom;
 use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
@@ -86,6 +87,9 @@ class CustomerHotelDetailController extends Controller
     public function success(){
         $IDOrder = request()->get('id');
         $price = request()->get('price');
+        $checkIn = Carbon::parse(OrderedRoom::where("IDOrder", $IDOrder)->first()->CheckInDate);
+        $checkOut = Carbon::parse(OrderedRoom::where("IDOrder", $IDOrder)->first()->CheckOutDate);
+        $duration = $checkOut->diffInDays($checkIn);
 
         // dd($IDOrder);
         OrderedRoom::where("IDOrder", $IDOrder)->update(array("status"=>1));
@@ -93,11 +97,9 @@ class CustomerHotelDetailController extends Controller
         $dateAndTime = OrderedRoom::where("IDOrder", $IDOrder)->first()->created_at;
         $hotelName = OrderedRoom::where("IDOrder", $IDOrder)
                     ->join('hotels', 'ordered_rooms.IDHotel', '=', 'hotels.IDHotel')
-                    ->select('hotels.NameHotel')
-                    ->first();
-
-
-
-        return view("hotel-payment", ["IDOrder" => $IDOrder]);
+                    ->value('hotels.NameHotel');
+                    
+        $rooms = OrderedRoom::where("IDOrder", $IDOrder)->first()->RoomCount;
+        return view("hotel-payment", ["IDOrder" => $IDOrder, "price" => $price, "duration" => $duration, "dateAndTime" => $dateAndTime, "hotelName" => $hotelName, "rooms" => $rooms]);
     }
 }
