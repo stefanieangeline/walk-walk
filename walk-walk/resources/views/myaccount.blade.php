@@ -22,7 +22,7 @@
                             <p class="push-right">My Account</p>
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="{{route('booking-detail')}}">
                         <div class="myorder">
                             <i class="fa-solid fa-receipt"></i>
                             <p class="push-right-1">My Order</p>
@@ -92,7 +92,7 @@
                             <div class="nationality-section">
                                 <p>Nationality</p>
                                 <div class="input">
-                                    <input type="text" name="nationality" value="" disabled>
+                                    <input type="text" name="nationality" value="{{$country}}" disabled>
                                     <i class="fa-solid fa-flag"></i>
                                 </div>
                             </div>

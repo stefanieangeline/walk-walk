@@ -30,7 +30,9 @@ class UserController extends Controller
     }
 
     public function index() {
-        return view("myaccount");
+        $user = Auth::user()->NationalityUser;
+        return view("myaccount",['country'=> Country::where('IDCountry', $user)->first()->NameCountry]);
+
     }
 
     /**

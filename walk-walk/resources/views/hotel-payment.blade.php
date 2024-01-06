@@ -34,7 +34,7 @@
                 <div class="content-box">
                     <h2 class="text-1">Booking Payment Succesfull</h2>
                     <h3 class="text-2">Your payment has been processed. Here are the details of this transaction:</h3>
-                    
+
                     <div class="mid">
                         <div class="detail">
                             <h3>Total Amount Paid</h3>
@@ -57,24 +57,24 @@
                             <h3>2 Room(s), 4 night(s)</h3>
                         </div>
                     </div>
-                    
+
 
                     <div class="bottom">
                         <div class="bottom-left">
                             <!-- <h4>Back To Main</h4> -->
-                            <button>Back To Main</button>
+                            <a href="{{route('home') }}">Back To Main</a>
                         </div>
                     </div>
 
                 </div>
-            </div> 
-        </div> 
+            </div>
+        </div>
     </div>
     @include("shared.footer")
 
 
 
-    
+
 
 </body>
 </html>

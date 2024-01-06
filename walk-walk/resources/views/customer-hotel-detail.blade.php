@@ -53,7 +53,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="right-side">
             <div class="left-right">
                 <a href="/jalan-jalan/help.php" class="nav-link">Help</a>
@@ -210,8 +210,8 @@
                             @endforeach
                             </div>
                     </div>
-                    
-                </div>    
+
+                </div>
 
             </div>
         </div>
@@ -251,7 +251,7 @@
                 <div class="total-price">
                     <h2>Total Price</h2>
                     <h2>Rp. {{ $priceRoom * $nightCount * $room * 1.2}}.000</h2>
-                </div>   
+                </div>
             </div>
             {{-- @dd($typeRoom) --}}
             <form method="GET" action="{{ route("hotel-payment-create",['idHotel'=>$idHotel,'inDate' => $inDate, 'outDate' => $outDate,'type'=>$typeRoom,'inDate'=>$in,'outDate'=>$out]) }}"class="description">
@@ -263,22 +263,24 @@
                         <input type="text" class="invisible" value="{{ $inDate }}" name="inDate">
                         <input type="text" class="invisible" value="{{ $outDate }}" name="outDate">
                         <input type="text" class="invisible" value="{{ $typeRoom }}" name="typeRoom">
+                        <input type="text" class="invisible" value="{{ $room }}" name="roomCount">
+
                         {{-- <input type="text" class="invisible" value="{{ $typeRoom }}" name="typeRoom"> --}}
                         <input type="number" class="invisible" value="{{ $priceRoom * $nightCount * $room * 1.2}}" name="PriceRoom">
 
                         <div class="next">
-    
+
                             <input type="submit">
                             <img src="/assets/icon/nextButton.svg" alt="">
                         </a>
                     </div>
             </form>
             </div>
-            
 
-            
+
+
         </div>
-        
+
 
     </div>
     @include("shared.footer")

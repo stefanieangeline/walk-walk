@@ -9,7 +9,7 @@ use App\Models\User;
 class SigninController extends Controller
 {
     public function index () {
-        
+
         return view("signin", [
             "countries" => Country::all()
         ]);
@@ -21,6 +21,7 @@ class SigninController extends Controller
             'phoneNumber' =>['required'],
             'email' => ['required', 'unique:users,email'],
             'password' => ['required'],
+            'nationality' => ['required']
 
         ]);
         $todayDate = date("Y-m-d");
@@ -32,10 +33,11 @@ class SigninController extends Controller
         $newUser->email = $validated['email'];
         $newUser->password = bcrypt($validated['password']);
         $newUser->NoTelpUser = $validated['phoneNumber'];
+        $newUser->NationalityUser = Country::where('NameCountry',$validated['nationality'])->first()->IDCountry;
 
         // dd($newUser);
         $newUser->save();
-        
+
 
 
 
