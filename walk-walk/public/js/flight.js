@@ -46,8 +46,56 @@ childrenQty.addEventListener("change", (e) => {
 
 // search button
 searchBtn = document.getElementById("search-button")
-searchBtn.addEventListener("click", (e)=>{
-    document.forms["box-choice"].submit()
+searchBtn.addEventListener("click", (e) => {
+    var seniorValue = document.getElementById("senior-input").value;
+    var adultValue = document.getElementById("adult-input").value;
+    var childrenValue = document.getElementById("children-input").value;
+    var source = document.getElementById("flight-src").value;
+    var dest = document.getElementById("flight-dst").value;
+    var date = document.getElementById("dateDep").value;
+
+    if (
+        seniorValue.trim() === "" ||
+        adultValue.trim() === "" ||
+        childrenValue.trim() === "" ||
+        !source || !dest || !date ||
+        source.trim() === "" || dest.trim() === "" || date.trim() === ""
+    ) {
+        // Display an alert or any other notification for the user
+        alert("Please fill in all required fields before submitting the form.");
+        // Prevent the form submission
+        e.preventDefault();
+    } else {
+        // Check if at least one of the passenger inputs is greater than 0
+        if (
+            seniorValue.trim() === "0" &&
+            adultValue.trim() === "0" &&
+            childrenValue.trim() === "0"
+        ) {
+            // Display an alert or any other notification for the user
+            alert("Please select at least one passenger.");
+            // Prevent the form submission
+            e.preventDefault();
+        } else {
+            // Check if the selected date is before today
+            // var selectedDate = new Date(date);
+            // var today = new Date();
+            // today.setHours(0, 0, 0, 0);
+            // if (selectedDate < today) {
+            //     // Display an alert or any other notification for the user
+            //     alert("Please select a date that is today or in the future.");
+            //     // Prevent the form submission
+            //     e.preventDefault();
+            // } else {
+            //     // Submit the form if all validations pass
+            //     document.forms["box-choice"].submit();
+            // }
+             document.forms["box-choice"].submit();
+        }
+        // document.forms["box-choice"].submit();
+    }
+
+    // document.forms["box-choice"].submit()
 })
 
 
@@ -184,3 +232,5 @@ function addClickEvent(array) {
 
 addClickEvent(airlines)
 addClickEvent(prices)
+
+

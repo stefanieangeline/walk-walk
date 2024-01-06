@@ -86,7 +86,7 @@
 
                 <div class="date">
                     <!-- <p class="text_date">March 2, 2023</p> -->
-                    <input class="input_date "type="date" name="date" value="{{$depDate}}">
+                    <input class="input_date "type="date" name="date" value="{{$depDate}}" id="dateDep">
                     <!-- <div class="vertical"></div>
                     <input class="input_date"type="date" name="arrivalDate"> -->
                 </div>
