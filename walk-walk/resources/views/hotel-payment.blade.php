@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Booking Confirmation</title>
     <link rel="stylesheet" href="/css/hotel-payment.css">
     <link rel="stylesheet" href="/css/font-and-color.css">
 </head>
@@ -14,7 +14,7 @@
                 <img src="/assets/icon/nextButton.svg" alt="">
             </div>
             <div class="navbar-title">
-                <h1>Booking Confirmation !</h1>
+                <h1>Booking Confirmation</h1>
             </div>
             <div class="navbar-right">
                 <a href="{{route("help")}}" class="nav-link">Help</a>
@@ -38,23 +38,23 @@
                     <div class="mid">
                         <div class="detail">
                             <h3>Total Amount Paid</h3>
-                            <h3>Rp.2.890.000</h3>
+                            <h3>{{$price}}</h3>
                         </div>
                         <div class="detail">
                             <h3>Transaction ID</h3>
-                            <h3>TR1290</h3>
+                            <h3>{{$IDOrder}}</h3>
                         </div>
                         <div class="detail">
                             <h3>Date & Time</h3>
-                            <h3>April 19, 2020 at 10:12 AM</h3>
+                            <h3>{{$dateAndTime}}</h3>
                         </div>
                         <div class="detail">
                             <h3>Properties</h3>
-                            <h3>Arunika hotel & spa</h3>
+                            <h3>{{$hotelName}}</h3>
                         </div>
                         <div class="detail">
                             <h3>Reservation</h3>
-                            <h3>2 Room(s), 4 night(s)</h3>
+                            <h3>{{$rooms}} Room(s), {{$duration}} night(s)</h3>
                         </div>
                     </div>
                     
