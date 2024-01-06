@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airport Details</title>
-    <link rel="stylesheet" href="/jalan-jalan/css/font-and-color.css">
-    <link rel="stylesheet" href="/jalan-jalan/css/airport-detail.css">
+    <link rel="stylesheet" href="\css\font-and-color.css">
+    <link rel="stylesheet" href="\css\airport-detail.css">
     <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
 </head>
 
@@ -31,30 +31,33 @@
         <div class="head-content">
             <div class="sort-airport">
                 <div class="icon-airport">
-                    <img src="/jalan-jalan/assets/icon/airport_icon.svg" alt="icon">
+                    <img src="/assets/icon/airport_icon.svg" class="i-airport">
                 </div>
+                <!-- <div class="airport-name">
+                    <p>Haneda Airport</p>
+                </div> -->
                 <div class="dropdown-airport">
                     <div class="select">
-                        <select id="standard-select">
-                            <option value="Option 1">Haneda Airport</option>
-                            <option value="Option 2">Leonardo Da Vinci International Airport</option>
-                        </select>
+                        <div>Leonardo Da Vinci International Airport</div>
+                        <!-- <option value="Option 2"></option> -->
                     </div>
                 </div>
             </div>
             <div class="sort-category">
                 <div class="icon-category">
-                    <img src="/jalan-jalan/assets/icon/sort.svg" alt="">
+                    <img src="/assets/icon/sort.svg" class="i-sort">
                 </div>
                 <div class="dropdown-category">
-                    <div class="select">
+                    <div class="select-tenant">
+                        <form action="GET">
                         <select id="standard-select">
-                            <option value="option 1">All</option>
-                            <option value="option 2">Shops <i class="fa-solid fa-shop"></i></option>
-                            <option value="option 3">Restaurants <i class="fa-solid fa-utensils"></i></option>
-                            <option value="option 4">Bank and Money Changer <i class="fa-solid fa-money-bill"></i></option>
-                            <option value="option 5">Pharmacy <i class="fa-solid fa-pills"></i></option>
+                            <option value="All">All</option>
+                            <option value="Retail">Shops <i class="fa-solid fa-shop"></i></option>
+                            <option value="Food & Beverage">Restaurants <i class="fa-solid fa-utensils"></i></option>
+                            <option value="Electronics">Electronics <i class="fa-solid fa-money-bill"></i></option>
+                            <option value="Health & Wellness">Health & Wellness <i class="fa-solid fa-pills"></i></option>
                         </select>
+                        </form>
                 </div>
                 </div>
             </div>
@@ -63,7 +66,7 @@
             <div class="all-tenant">
                 <div class="tenant tenant-1">
                     <div class="tenant-logo">
-                        <img src="/jalan-jalan/assets/logo/lotte-duty-free-logo.png" alt="logo1">
+                        <img src="/assets/logo/lotte-duty-free-logo.png" alt="logo1">
                     </div>
                     <hr class="line">
                     <div class="tenant-detail">
@@ -145,5 +148,5 @@
         </div>
     </div>
 </body>
-<script src="/jalan-jalan/js/dropdown.js"></script>
+@include("shared.footer")
 </html>
