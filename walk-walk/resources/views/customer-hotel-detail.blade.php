@@ -270,7 +270,7 @@
 
                         <div class="next">
 
-                            <input type="submit">
+                            <input class="bg-submit" type="submit" style="color: white;">
                             <img src="/assets/icon/nextButton.svg" alt="">
                         </a>
                     </div>

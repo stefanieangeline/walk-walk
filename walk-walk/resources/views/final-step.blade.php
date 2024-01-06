@@ -25,7 +25,7 @@
         <div class="mid">
             <div class="step1">
                 <div class="info1">
-                    <div class="circle">
+                    <div class="circle_finish">
                         <p>1</p>
                     </div>
                     <p class="info-info1">Your Selection</p>
@@ -36,7 +36,7 @@
             </div>
             <div class="step2">
                 <div class="info1">
-                    <div class="circle">
+                    <div class="circle_finish">
                         <p>2</p>
                     </div>
                     <p class="info-info1">Room and Payment Details</p>
@@ -47,7 +47,7 @@
             </div>
             <div class="step3">
                 <div class="info1">
-                    <div class="circle unfinished">
+                    <div class="circle_finish">
                         <p>3</p>
                     </div>
                     <p class="info-info1" >Final Step</p>
