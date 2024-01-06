@@ -100,7 +100,7 @@ Route::get('/history', function(){
 
 Route::get('/booking-detail', function(){
     return view('booking-detail');
-});
+})->name('booking-detail');
 
 Route::get('/dummy', [UserController::class, 'dummy'])->name('dummy');
 
