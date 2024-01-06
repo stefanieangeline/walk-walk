@@ -24,14 +24,47 @@ function mergeData(className, target) {
     target.value = result
 }
 
-nextBtn.addEventListener("click", (e)=>{
-    mergeData("passengersName", formName)
-    mergeData("passengersGender", formGender)
-    mergeData("passengersDOB", formDOB)
-    mergeData("passengersNationality", formNationality)
+// nextBtn.addEventListener("click", (e)=>{
+//     mergeData("passengersName", formName)
+//     mergeData("passengersGender", formGender)
+//     mergeData("passengersDOB", formDOB)
+//     mergeData("passengersNationality", formNationality)
 
-    document.forms["passenger-form"].submit()
-})
+//     document.forms["passenger-form"].submit()
+// })
+
+nextBtn.addEventListener("click", (e) => {
+    // Memanggil fungsi untuk menggabungkan data dari setiap penumpang
+    mergeData("passengersName", formName);
+    mergeData("passengersGender", formGender);
+    mergeData("passengersDOB", formDOB);
+    mergeData("passengersNationality", formNationality);
+
+    // Melakukan validasi sebelum mengirimkan formulir
+    if (!validatePassengerInputs()) {
+        // Jika validasi gagal, hentikan proses dan berikan pesan kesalahan
+        alert("Please fill in all passenger details.");
+        e.preventDefault();
+    } else {
+        // Jika validasi berhasil, kirim formulir
+        document.forms["passenger-form"].submit();
+    }
+});
+
+// Fungsi untuk melakukan validasi input penumpang
+function validatePassengerInputs() {
+    var inputs = document.querySelectorAll(".form .input input");
+    var isValid = true;
+
+    inputs.forEach(function (input) {
+        if (input.value.trim() === "") {
+            isValid = false;
+            return;
+        }
+    });
+
+    return isValid;
+}
 
 // suggestion
 let nationalities = document.querySelectorAll(".passengersNationality");
