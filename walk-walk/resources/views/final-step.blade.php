@@ -85,6 +85,7 @@
     <form method="GET" action="{{route("hotel-payment-success")}}" name="confirmPayment" class="invisible">
         @csrf
         <input name="id" value="{{$id}}">
+        <input name="price" value="{{$price}}">
     </form>
     @include("shared.footer")
 

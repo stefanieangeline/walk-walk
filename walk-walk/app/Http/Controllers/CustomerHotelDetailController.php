@@ -83,7 +83,7 @@ class CustomerHotelDetailController extends Controller
     }
     public function success(){
         $IDOrder = request()->get('id');
-        // $price = request()->get('PriceRoom');
+        $price = request()->get('price');
 
         // dd($IDOrder);
         OrderedRoom::where("IDOrder", $IDOrder)->update(array("status"=>1));
