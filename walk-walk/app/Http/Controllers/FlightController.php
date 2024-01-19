@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Carbon\Carbon;
 
 use App\Models\Airline;
 use App\Models\Airport;
@@ -32,8 +33,36 @@ class FlightController extends Controller
 
         PlaneTicket::where("IDPlaneTicket", $IDTicket)->update(array("status"=>1));
 
-        return redirect()->route("home");
+        return redirect()->route("paymentSuccessful");
     }
+
+    public function paymentSuccessful(){
+        $IDTicket = request()->get("IDTicket");
+        $TransactionID = PlaneTicket::where("IDPlaneTicket", $IDTicket)
+                        ->join ('plane_payment', 'plane_tickets.IDPlaneTicket', '=', 'plane_payment.IDPlanePayment')
+                        ->value ('plane_payment.IDPlanePayment');
+
+        $dateAndTime = PlaneTicket::where("IDPlaneTicket", $IDTicket)->first()->created_at;
+        $flightNumber = PlaneTicket::where("IDPlaneTicket", $IDTicket)
+                        ->join ('schedules', 'plane_tickets.IDSchedule', '=', 'schedules.IDSchedule')
+                        ->value ('schedules.FlightNumber');
+        $AirlineName = PlaneTicket::where("IDPlaneTicket", $IDTicket)
+                        ->join ('schedules', 'plane_tickets.IDSchedule', '=', 'schedules.IDSchedule')
+                        ->join ('airlines', 'schedules.IDAirline', '=', 'airlines.IDAirline')
+                        ->value ('airlines.NameAirline');
+        $AirportSource = PlaneTicket::where("IDPlaneTicket", $IDTicket)
+                        ->join ('schedules', 'plane_tickets.IDSchedule', '=', 'schedules.IDSchedule')
+                        ->join ('airports', 'schedules.IDAirportSource', '=', 'airports.IDAirport')
+                        ->value ('airports.CodeAirport');
+        $AirportDst = PlaneTicket::where("IDPlaneTicket", $IDTicket)
+                        ->join ('schedules', 'plane_tickets.IDSchedule', '=', 'schedules.IDSchedule')
+                        ->join ('airports', 'schedules.IDAirportDestination', '=', 'airports.IDAirport')
+                        ->value ('airports.CodeAirport');
+        // $checkOut = Carbon::parse(PlanePayment::where("IDOrder", $IDOrder)->first()->CheckOutDate);
+        // $duration = $checkOut->diffInDays($checkIn);
+    }
+
+
     public function barcode() {
         $price = request()->get("price");
         $ticket = request()->get("ticket");
