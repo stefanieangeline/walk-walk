@@ -38,6 +38,7 @@ class FlightController extends Controller
 
     public function paymentSuccessful(){
         $IDTicket = request()->get("IDTicket");
+        $price =  request()->get("price");
         $TransactionID = PlaneTicket::where("IDPlaneTicket", $IDTicket)
                         ->join ('plane_payment', 'plane_tickets.IDPlaneTicket', '=', 'plane_payment.IDPlanePayment')
                         ->value ('plane_payment.IDPlanePayment');
@@ -58,8 +59,8 @@ class FlightController extends Controller
                         ->join ('schedules', 'plane_tickets.IDSchedule', '=', 'schedules.IDSchedule')
                         ->join ('airports', 'schedules.IDAirportDestination', '=', 'airports.IDAirport')
                         ->value ('airports.CodeAirport');
-        // $checkOut = Carbon::parse(PlanePayment::where("IDOrder", $IDOrder)->first()->CheckOutDate);
-        // $duration = $checkOut->diffInDays($checkIn);
+        
+        return view("paymentSuccessful", ["price" => $price, "TransactionID" => $TransactionID, "dateAndTime" => $dateAndTime, "flightNumber" => $flightNumber, "AirlineName" => $AirlineName, "AirportSource" => $AirportSource, "AirportDst" => $AirportDst]);
     }
 
 

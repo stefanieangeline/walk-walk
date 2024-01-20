@@ -39,27 +39,27 @@
                     <div class="mid">
                         <div class="detail">
                             <h3>Total Amount Paid</h3>
-                            <h3>Rp.2.890.000</h3>
+                            <h3>{{$price}}</h3>
                         </div>
                         <div class="detail">
                             <h3>Transaction ID</h3>
-                            <h3>TR1290</h3>
+                            <h3>{{$TransactionID}}</h3>
                         </div>
                         <div class="detail">
                             <h3>Date & Time</h3>
-                            <h3>April 19, 2020 at 10:12 AM</h3>
+                            <h3>{{$dateAndTime}}</h3>
                         </div>
                         <div class="detail">
                             <h3>Flight Number</h3>
-                            <h3>F10</h3>
+                            <h3>{{$flightNumber}}</h3>
                         </div>
                         <div class="detail">
                             <h3>Airline</h3>
-                            <h3>Garuda Indonesia</h3>
+                            <h3>{{$AirlineName}}</h3>
                         </div>
                         <div class="detail">
                             <h3>Flight Journey</h3>
-                            <h3>JKT -> Bali</h3>
+                            <h3>{{$AirportSource}} -> {{$AirportDst}}</h3>
                         </div>
                     </div>
                     

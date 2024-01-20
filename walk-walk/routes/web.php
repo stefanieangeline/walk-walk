@@ -60,6 +60,7 @@ Route::get('/help', [HelpController::class,'index'])->name('help');
 
 Route::get('/hotel-payment', [HotelPaymentController::class, 'index'])->name('hotel-payment');
 
+
 Route::get('/eticket', [EticketController::class,'index'])->name('e-ticket');
 
 Route::get('/customer-hotel-detail/{id}', [CustomerHotelDetailController::class, 'index'])->name('customer-hotel-detail')->middleware("auth");
