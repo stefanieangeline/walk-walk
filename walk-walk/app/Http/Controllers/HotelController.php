@@ -40,6 +40,33 @@ class HotelController extends Controller
                         ->whereRaw('hotels.IDHotel = hr2.IDHotel');
                     });
                 })
+                ->when($range == 'low', function ($query) {
+                    return $query->orderBy('Hotel_rooms.PriceRoom', 'asc')->where('Hotel_rooms.PriceRoom', '<', 100);
+                })
+                ->when($range == 'mid', function ($query) {
+                    return $query->orderBy('Hotel_rooms.PriceRoom', 'asc')
+                                ->whereBetween('Hotel_rooms.PriceRoom', [120, 150]);
+                })
+                ->when($range == 'high', function ($query) {
+                    return $query->orderBy('Hotel_rooms.PriceRoom', 'desc')->where('Hotel_rooms.PriceRoom', '>', 150);
+                })
+                ->when($star, function ($query) use ($star) {
+                    return $query->where('Hotels.StarHotel', $star);
+                })
+                ->when($review, function ($query) use ($review) {
+                    // Menyesuaikan rentang review sesuai kebutuhan
+                    if ($review == 1) {
+                        return $query->where('hotels.RatingHotel', '<', 3);
+                    } elseif ($review == 2) {
+                        return $query->whereBetween('hotels.RatingHotel', [3, 3.5]);
+                    } elseif ($review == 3) {
+                        return $query->whereBetween('hotels.RatingHotel', [3.6, 4]);
+                    } elseif ($review == 4) {
+                        return $query->whereBetween('hotels.RatingHotel', [4.1, 4.5]);
+                    } elseif ($review == 5) {
+                        return $query->where('hotels.RatingHotel', '>', 4.5);
+                    }
+                })
                 ->get(),
                 'dest'=> $dest,
                 'inDate'=>$inDate,
