@@ -76,24 +76,31 @@
             </div>
 
             <div class="pics-box">
-                <img src="/assets/icon/Arunika/1.webp" class="big-pic">
+                <!-- <img src="/assets/icon/Arunika/1.webp" class="big-pic"> -->
+                <img src="{{ asset("assets/hotelRoom/{$hotelFolder}/" . basename($hotelPhotos[0])) }}" class="big-pic">
                 <!-- <div class="big-pic"></div> -->
                 <!-- @foreach ($hotelPhotos as $photo)
                     <img src="{{ asset("assets/hotelRoom/{$hotelFolder}/" . basename($photo)) }}" alt="Hotel Photo">
                 @endforeach -->
                 <div class="pics">
                     <div class="up-pics">
-                        @foreach ($hotelPhotos as $photo)
+                        @for ($i = 1; $i <= 3; $i++)
+                <img src="{{ asset("assets/hotelRoom/{$hotelFolder}/" . basename($hotelPhotos[$i])) }}" alt="Hotel Photo" class="up-pic-one">
+            @endfor
+                        <!-- @foreach ($hotelPhotos as $photo)
                     <img src="{{ asset("assets/hotelRoom/{$hotelFolder}/" . basename($photo)) }}" alt="Hotel Photo" class="up-pic-one">
-                @endforeach
+                @endforeach -->
                         <!-- <img src="/assets/icon/Arunika/2.webp" class="up-pic-one">
                         <img src="/assets/icon/Arunika/3.webp" class="up-pic-one">
                         <img src="/assets/icon/Arunika/4.webp" class="up-pic-one"> -->
                     </div>
                     <div class="down-pics">
-                        <img src="/assets/icon/Arunika/5.webp" class="down-pic-one">
+                        @for ($i = 4; $i <= 6; $i++)
+                <img src="{{ asset("assets/hotelRoom/{$hotelFolder}/" . basename($hotelPhotos[$i])) }}" alt="Hotel Photo" class="down-pic-one">
+            @endfor
+                        <!-- <img src="/assets/icon/Arunika/5.webp" class="down-pic-one">
                         <img src="/assets/icon/Arunika/6.webp" class="down-pic-one">
-                        <img src="/assets/icon/Arunika/7.webp" class="down-pic-one">
+                        <img src="/assets/icon/Arunika/7.webp" class="down-pic-one"> -->
                     </div>
                 </div>
             </div>
