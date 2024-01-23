@@ -12,7 +12,7 @@
 <body>
     @include("shared.nav-bar-home")
     <div class="opening">
-        <img class="background-image" src="https://drive.google.com/uc?export=view&id=1jt8Rg0c4b5hp7X3-2Ib6osexfsijso2g">
+        <img class="background-image" src="/assets/logo/bgHome.jpg">
         <div class="main-container">
             <div class="slogan-container">
                 <h2 class="slogan">Explore the world your way: your journey start with us</h2>
