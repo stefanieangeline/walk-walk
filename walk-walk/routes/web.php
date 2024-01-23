@@ -35,6 +35,7 @@ Route::get('/hotel-payment-create', [CustomerHotelDetailController::class,'payme
 
 Route::get('/flights', [FlightController::class, 'index'])->name('flights');
 Route::get('/flights/successful', [FlightController::class, 'paymentSuccessful'])->name('paymentSuccessful')->middleware("auth");
+Route::get('/flights/ticket', [FlightController::class, 'ticket'])->name('flightTicket')->middleware("auth");
 Route::get('/flights/payment', [FlightController::class, 'barcode'])->name('payment')->middleware("auth");
 Route::post('/flights/payment/create', [FlightController::class, 'paymentCreate'])->name('paymentCreate')->middleware("auth");
 Route::post('/flights/payment/success', [FlightController::class, 'paymentSuccess'])->name('paymentSuccess')->middleware("auth");

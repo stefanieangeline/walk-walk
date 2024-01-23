@@ -23,6 +23,27 @@ class FlightController extends Controller
         return DB::table("schedules")->where("IDAirportSource", $IDAirportSrc)->where("IDAirportDestination", $IDAirportDst)->get();
     }
 
+    public function ticket() {
+        $IDTicket = request()->get("IDTicket");
+        $date_format = "DATE_FORMAT(schedules.DepartureTime, \"%W, %d %M %Y\") as day";
+
+        $schedule = Schedule::join("plane_tickets", "plane_tickets.IDSchedule", "=", "schedules.IDSchedule")
+            ->join("airports as a", "schedules.IDAirportDestination", "=", "a.IDAirport")
+            ->join("airports as b", "schedules.IDAirportSource", "=", "b.IDAirport")
+            ->join("cities as c", "a.IDCity", "=", "c.IDCity")
+            ->join("cities as d", "b.IDCity", "=", "d.IDCity")
+            ->join("airlines", "airlines.IDAirline", "=", "schedules.IDAirline")
+            ->select("schedules.IDAirline", "FlightNumber", "a.NameAirport as AirportDest", "b.NameAirport as AirportSrc", "c.NameCity as cityDest", "d.NameCity as citySrc", DB::raw($date_format), DB::raw("CAST(schedules.DepartureTime as TIME) as DepartureTime"), DB::raw("CAST(schedules.ArrivalTime as TIME) as ArrivalTime"))
+            ->first();
+
+        $tickets = PlaneTicket::join("plane_ticket_details", "plane_ticket_details.IDPlaneTicket", "=", "plane_tickets.IDPlaneTicket")
+            ->join("passengers", "passengers.IDPassenger", "=", "plane_ticket_details.IDPassenger")
+            ->where("plane_ticket_details.IDPlaneTicket", $IDTicket)
+            ->get();
+
+        return view("e-ticket-page", ["schedule" => $schedule, "tickets" => $tickets]);
+    }
+
     public function paymentSuccess() {
         $IDTicket = request()->get("IDTicket");
 
@@ -51,7 +72,7 @@ class FlightController extends Controller
                         ->join("airlines", "airlines.IDAirline", "=", "schedules.IDAirline")
                         ->select("FlightNumber", "a.CodeAirport as AirportDestinationCode", "b.CodeAirport as AirportSourceCode", "c.NameCity as cityDest", "d.NameCity as citySrc", "airlines.NameAirline")
                         ->first();
-        return view("flight-payment", ["price" => $price, "TransactionID" => $TransactionID, "dateAndTime" => $dateAndTime, "schedule" => $schedule]);
+        return view("flight-payment", ["price" => $price, "TransactionID" => $TransactionID, "dateAndTime" => $dateAndTime, "schedule" => $schedule, "IDTicket" => $IDTicket]);
     }
 
 

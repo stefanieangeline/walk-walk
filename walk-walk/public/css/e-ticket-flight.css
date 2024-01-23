@@ -6,7 +6,7 @@
     --shade-blue: #146C94;
     --light-blue : #AFD3E2;
     --grey : #D7DCE6;
-    
+
 }
 
 * {
@@ -159,4 +159,8 @@
 
 .ticket-footer p{
   color: var(--shade-blue);
+}
+
+.airline-logo img{
+    height: 150px;
 }

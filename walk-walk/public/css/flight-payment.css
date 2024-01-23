@@ -11,8 +11,9 @@ body {
     background-color: var(--blue-base);
 }
 
-button:hover{
+a:hover{
     cursor: pointer;
+    text-decoration: none;
 }
 
 ::-webkit-scrollbar {
@@ -106,7 +107,7 @@ button:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: column;   
+    flex-direction: column;
 }.text-1{
     color: white;
     font-family: roboto-cons-bold;
@@ -144,7 +145,7 @@ button:hover{
     margin-top: 50px;
 }
 
-.bottom-left button{
+.bottom-left a{
     border-radius: 10px;
     font-size: 15px;
     padding: 10px 70px 10px 70px;
@@ -154,7 +155,7 @@ button:hover{
     font-family: roboto-cons-bold;
 }
 
-.bottom-right button{
+.bottom-right a{
     background-color: var(--another-blue);
     border-radius: 10px;
     padding: 10px 60px 10px 60px;
@@ -164,12 +165,12 @@ button:hover{
     font-family: roboto-cons-bold;
 }
 
-.bottom-left button:hover{
+.bottom-left a:hover{
     background-color: var(--white);
     color: var(--blue-base);
 }
 
-.bottom-right button:hover{
+.bottom-right a:hover{
     background-color: var(--white);
     color: var(--shade-blue);
 }
@@ -178,6 +179,6 @@ button:hover{
     background-color: var(--white);
 }
 
-.bottom-right button i {
+.bottom-right a i {
     margin-left: 10px;
 }

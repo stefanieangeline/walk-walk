@@ -23,30 +23,30 @@
             <div class="ticket-detail-header">
                 <div class="ticket-detail-header-left">
                     <div class="airline-logo">
-                        <img src="/assets/logo/LogoAirline1.png" alt="logoAirline">
+                        <img src="/assets/images/airline_logo/{{$schedule->IDAirline}}.jpg" alt="logoAirline">
                     </div>
                     <div class="date-and-dest">
                         <div class="date">
-                            <p>Thursday, 3 March 2023</p>
+                            <p>{{$schedule->day}}</p>
                         </div>
                         <div class="dest">
                             <div class="hours">
-                                <p>15.00</p>
+                                <p>{{$schedule->ArrivalTime}}</p>
                                 <br><br>
-                                <p>16.30</p>
+                                <p>{{$schedule->DepartureTime}}</p>
                             </div>
                             <div class="point-img">
                                 <img src="/assets/icon/flight-point.png" alt="point">
                             </div>
                             <div class="dest-airport">
                                 <div class="from">
-                                    <p id="city">Jakarta</p>
-                                    <p id="airport">Soekarno-Hatta International Airport</p>
+                                    <p id="city">{{$schedule->citySrc}}</p>
+                                    <p id="airport">{{$schedule->AirportSrc}}</p>
                                 </div>
                                 <br>
                                 <div class="to">
-                                <p id="city">Bali</p>
-                                <p id="airport">Ngurah Rai Airport </p>
+                                <p id="city">{{$schedule->cityDest}}</p>
+                                <p id="airport">{{$schedule->AirportDest}}</p>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="ticket-detail-header-right">
                     <p id="id-title">Booking ID</p>
-                    <p id="id">PP000001</p>
+                    <p id="id">{{$tickets[0]->IDPlaneTicket}}</p>
                 </div>
             </div>
             <hr class="line">
@@ -66,22 +66,24 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Title</th>
+                            <th>Gender</th>
                             <th>Name</th>
-                            <th>Ticket Type</th>
+                            <th>DOB</th>
                             <th>Baggage</th>
                             <th>Ticket Number</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @for ($i = 1; $i <= count($tickets); $i++)
                         <tr>
-                            <td>1.</td>
-                            <td>Mrs.</td>
-                            <td>Jesslyn Tanuwijaya</td>
-                            <td>Adult</td>
+                            <td>{{$i}}.</td>
+                            <td>{{$tickets[$i-1]->GenderPassenger}}</td>
+                            <td>{{$tickets[$i-1]->NamePassenger}}</td>
+                            <td>{{$tickets[$i-1]->DOBPassenger}}</td>
                             <td>20 kg</td>
-                            <td>PT000001</td>
+                            <td>{{$tickets[0]->IDPlaneTicket.$tickets[$i-1]->IDPassenger}}</td>
                         </tr>
+                        @endfor
                         <!-- lanjut kalo ada  -->
                     </tbody>
                 </table>

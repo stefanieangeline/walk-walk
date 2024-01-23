@@ -67,11 +67,11 @@
                     <div class="bottom">
                         <div class="bottom-left">
                             <!-- <h4>Back To Main</h4> -->
-                            <button>Back To Main</button>
+                            <a href="{{route("home")}}">Back To Main</a>
                         </div>
                         <div class="bottom-right">
                             <!-- <h4>See Airport Details</h4> -->
-                            <button class="btn-right">Check E-Ticket<i class="fa-solid fa-circle-info"></i></button>
+                            <a class="btn-right" href="{{route("flightTicket", ["IDTicket" => $IDTicket])}}">Check E-Ticket<i class="fa-solid fa-circle-info"></i></a>
                         </div>
                     </div>
 
