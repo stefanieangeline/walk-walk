@@ -151,6 +151,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: center;
 }
 .bottom-left a{
     border-radius: 10px;
@@ -158,12 +159,13 @@ body {
     padding-bottom: 0.5%;
     padding-left: 1%;
     padding-right: 1%;
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
     border: none;
     background-color: var(--strong-blue);
     color: white;
     font-size: 12pt;
     font-family: roboto-cons-bold;
+    align-items: center;
 }
 
