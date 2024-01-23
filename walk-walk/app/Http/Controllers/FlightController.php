@@ -33,34 +33,25 @@ class FlightController extends Controller
 
         PlaneTicket::where("IDPlaneTicket", $IDTicket)->update(array("status"=>1));
 
-        return redirect()->route("paymentSuccessful");
+        return redirect()->route("paymentSuccessful", ["IDTicket" => $IDTicket]);
     }
 
     public function paymentSuccessful(){
         $IDTicket = request()->get("IDTicket");
         $price =  request()->get("price");
-        $TransactionID = PlaneTicket::where("IDPlaneTicket", $IDTicket)
-                        ->join ('plane_payment', 'plane_tickets.IDPlaneTicket', '=', 'plane_payment.IDPlanePayment')
-                        ->value ('plane_payment.IDPlanePayment');
+        $TransactionID = PlanePayment::where("plane_payments.IDPlaneTicket", $IDTicket)
+                        ->first();
 
-        $dateAndTime = PlaneTicket::where("IDPlaneTicket", $IDTicket)->first()->created_at;
-        $flightNumber = PlaneTicket::where("IDPlaneTicket", $IDTicket)
-                        ->join ('schedules', 'plane_tickets.IDSchedule', '=', 'schedules.IDSchedule')
-                        ->value ('schedules.FlightNumber');
-        $AirlineName = PlaneTicket::where("IDPlaneTicket", $IDTicket)
-                        ->join ('schedules', 'plane_tickets.IDSchedule', '=', 'schedules.IDSchedule')
-                        ->join ('airlines', 'schedules.IDAirline', '=', 'airlines.IDAirline')
-                        ->value ('airlines.NameAirline');
-        $AirportSource = PlaneTicket::where("IDPlaneTicket", $IDTicket)
-                        ->join ('schedules', 'plane_tickets.IDSchedule', '=', 'schedules.IDSchedule')
-                        ->join ('airports', 'schedules.IDAirportSource', '=', 'airports.IDAirport')
-                        ->value ('airports.CodeAirport');
-        $AirportDst = PlaneTicket::where("IDPlaneTicket", $IDTicket)
-                        ->join ('schedules', 'plane_tickets.IDSchedule', '=', 'schedules.IDSchedule')
-                        ->join ('airports', 'schedules.IDAirportDestination', '=', 'airports.IDAirport')
-                        ->value ('airports.CodeAirport');
-        
-        return view("paymentSuccessful", ["price" => $price, "TransactionID" => $TransactionID, "dateAndTime" => $dateAndTime, "flightNumber" => $flightNumber, "AirlineName" => $AirlineName, "AirportSource" => $AirportSource, "AirportDst" => $AirportDst]);
+        $dateAndTime = PlaneTicket::where("IDPlaneTicket", $IDTicket)->first();
+        $schedule = Schedule::join("plane_tickets", "plane_tickets.IDSchedule", "=", "schedules.IDSchedule")
+                        ->join("airports as a", "schedules.IDAirportDestination", "=", "a.IDAirport")
+                        ->join("airports as b", "schedules.IDAirportSource", "=", "b.IDAirport")
+                        ->join("cities as c", "a.IDCity", "=", "c.IDCity")
+                        ->join("cities as d", "b.IDCity", "=", "d.IDCity")
+                        ->join("airlines", "airlines.IDAirline", "=", "schedules.IDAirline")
+                        ->select("FlightNumber", "a.CodeAirport as AirportDestinationCode", "b.CodeAirport as AirportSourceCode", "c.NameCity as cityDest", "d.NameCity as citySrc", "airlines.NameAirline")
+                        ->first();
+        return view("flight-payment", ["price" => $price, "TransactionID" => $TransactionID, "dateAndTime" => $dateAndTime, "schedule" => $schedule]);
     }
 
 

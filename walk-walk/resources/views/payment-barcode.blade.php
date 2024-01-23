@@ -98,7 +98,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="right-side">
             <div class="left-right">
                 <a href="/jalan-jalan/help.php" class="nav-link">Help</a>
@@ -111,7 +111,7 @@
         </div>
     </div>
 
-        
+
 
     <div class="content">
         <div class="bg-content">
