@@ -71,24 +71,6 @@ class UserController extends Controller
         return view("booking-detail", ["flights" => $flights, "orderedRooms" => $orderedRooms]);
     }
 
-    public function bookingDetailHotel(){
-        $IDUser = Auth::user()->id;
-        $bookingID = OrderedRoom::where("id", $IDUser)->first()->IDOrder;
-        $hotelName = OrderedRoom::where("id", $IDUser)
-                ->join("hotels", "hotels.IDHotel", "=", "ordered_rooms.IDHotel")
-                ->value("hotels.NameHotel");
-        
-        $checkInDate = Carbon::parse(OrderedRoom::where("id", $IDUser)->first()->CheckInDate);
-        $formattedDateCheckIn = $checkInDate->format('j F Y');
-        $checkOutDate = Carbon::parse(OrderedRoom::where("id", $IDUser)->first()->CheckOutDate);
-        $formattedDateCheckOut= $checkInDate->format('j F Y');
-                
-        $numNights = $checkOutDate->diffInDays($checkInDate);
-        // Get the number of nights as a string
-        $numNightsString = $numNights . ' night' . ($numNights > 1 ? 's' : '');
-        
-    }
-
     public function history() {
         $IDUser = Auth::user()->id;
 
@@ -106,6 +88,8 @@ class UserController extends Controller
             ->get();
 
         return view("history", ["flights" => $flights]);
+
+
     }
 
     /**
