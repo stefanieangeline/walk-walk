@@ -292,7 +292,7 @@
 
 
 
-        <div id="reviewsContent" class="guest-rating-review" style="display: none;"> 
+        <div id="reviewsContent" class="guest-rating-review" style="display: none;">
             <p class="grr-text">Guest's Rating & Review</p>
             <div class="review-summary">
                 <img src="/assets/icon/rating-star-blue.png" class="rating-star-img">
@@ -342,7 +342,7 @@
                     <div class="rating-blue-line"></div>
                 @endforeach
             </div>
-       
+
             <!-- <div class="user-rates">
                     <div class="user-profile">
                         <img src="/assets/icon/Arunika/1.webp" class="dp-user">
@@ -556,5 +556,16 @@
 
     </div>
     @include("shared.footer")
+    <script>
+        countries = {!! json_encode($countries->toArray()) !!}
+        cities = {!! json_encode($cities->toArray()) !!}
+        airports = {!! json_encode($airports->toArray()) !!}
+        hotel_list = {!! json_encode($hotel_list->toArray()) !!}
+
+        sessionStorage.setItem("countries", JSON.stringify(countries))
+        sessionStorage.setItem("cities", JSON.stringify(cities))
+        sessionStorage.setItem("airports", JSON.stringify(airports))
+        sessionStorage.setItem("hotels", JSON.stringify(hotel_list))
+    </script>
 </body>
 </html>
