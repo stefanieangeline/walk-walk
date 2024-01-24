@@ -184,6 +184,31 @@ if (document.getElementById("submit-hotel-room") != null) {
     });
 }
 
+function validateReservation() {
+    var checkInDate = document.getElementById("checkInDate").value;
+    var checkOutDate = document.getElementById("checkOutDate").value;
+    var guests = document.getElementById("guests-input").value;
+    var rooms = document.getElementById("rooms-input").value;
+
+    // Lakukan validasi
+    if (
+        checkInDate === "" ||
+        checkOutDate === "" ||
+        guests === "" ||
+        rooms === ""
+    ) {
+        alert(
+            "Please fill in all required fields (Check-in date, Check-out date, Guests, Rooms) before making a reservation."
+        );
+        return false;
+    }
+
+    // Tambahkan logika lain sesuai kebutuhan
+
+    // Jika semua validasi terpenuhi, lanjutkan ke halaman reservasi
+    return true;
+}
+
 // click event listener
 
 reviews = document.querySelectorAll(".choose-review")
