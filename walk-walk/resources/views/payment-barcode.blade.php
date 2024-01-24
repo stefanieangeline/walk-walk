@@ -14,14 +14,15 @@
 <body>
     <div class="bg-pd">
         <div class="left-side">
-            <a href="#" class="left-a">
+            <button class="back" onclick="history.back()" class="left-a">
                 <div class="left-left">
                     <i class="fa-solid fa-chevron-left"></i>
                 </div>
                 <div class="left-right">
-                    <p>Back</p>
+                    Back
+                    <!-- <p>Back</p> -->
                 </div>
-            </a>
+            </button>
         </div>
         <!-- <div class="mid">
             <div class="step1">
