@@ -16,7 +16,7 @@
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-left">
-                <!-- <a href="{{route("paymentSuccessful")}}"> -->
+                <!-- <a href={{route("paymentSuccessful")}}> -->
                     <i class="fa-solid fa-angle-left"></i>
                 <!-- </a> -->
             </div>
@@ -55,12 +55,12 @@
                 </div>
                 <div class="dropdown-category">
                     <div class="select-tenant">
-                        <select id="drop2">
-                            <option value="All">All</option>
-                            <option value="Retail">Shops <i class="fa-solid fa-shop"></i></option>
-                            <option value="Food & Beverage">Restaurants <i class="fa-solid fa-utensils"></i></option>
-                            <option value="Electronics">Electronics <i class="fa-solid fa-money-bill"></i></option>
-                            <option value="Health & Wellness">Health & Wellness <i class="fa-solid fa-pills"></i></option>
+                        <select id="drop2" name="Category">
+                            <option value="All" @if ($Category == "All") selected @endif>All</option> 
+                            <option value="Retail" @if ($Category == "Retail") selected @endif>Shops<i class="fa-solid fa-shop"></i></option>
+                            <option value="Food & Beverage" @if ($Category == "Food & Beverage") selected @endif>Restaurants <i class="fa-solid fa-utensils"></i></option>
+                            <option value="Electronics" @if ($Category == "Electronics") selected @endif>Electronics <i class="fa-solid fa-money-bill"></i></option>
+                            <option value="Health & Wellness" @if ($Category == "Health & Wellness") selected @endif>Health & Wellness <i class="fa-solid fa-pills"></i></option>
                         </select>
                         
                         </form>

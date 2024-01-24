@@ -13,6 +13,7 @@ class AirportDetailsController extends Controller
         
         $IDTicket = request()->get("IDTicket");
         $IDAirport = request()->get("IDAirport");
+        $Category = request()->get("CategoryTenants");
         
         $AirportDestination = Schedule::join("plane_tickets", "plane_tickets.IDSchedule", "=", "schedules.IDSchedule")
         ->join("airports", "schedules.IDAirportDestination", "=", "IDAirport")
@@ -44,7 +45,8 @@ class AirportDetailsController extends Controller
         "AirportDestination" => $AirportDestination,
         "TenantsAirport" => $TenantsAirport,
         "IDTicket" => $IDTicket,
-        'IDAirport'=> $IDAirport
+        'IDAirport'=> $IDAirport,
+        'Category' => $Category
         ]);
 
 

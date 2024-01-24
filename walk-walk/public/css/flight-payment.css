@@ -100,7 +100,7 @@ a:hover{
 .content-box{
     background-color: var(--blue-base);
     box-shadow: 30px 30px 0.2px 0px #0A4D78;;
-    border-radius: 45px 45px 0px 0px;
+    border-radius: 45px 45px 10px 10px;
     width: 65%;
     height: fit-content;
     padding-top: 65px;

@@ -8,11 +8,8 @@ function addClickEvent(el) {
     el.addEventListener("change", (e)=>{
         document.forms["dropdown-airport"].submit()
         // document.forms["IDTicket"].submit()
-        
-
     })
 }
-
 
 addClickEvent(drop2)
 addClickEvent(drop1)
