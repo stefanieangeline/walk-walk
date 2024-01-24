@@ -18,7 +18,6 @@
                 </div>
                 <div class="left-right">
                     Back
-                    <!-- <p>Back</p> -->
                 </div>
             </button>
             <!-- <a href="{{route('flights')}}" class="left-a">
