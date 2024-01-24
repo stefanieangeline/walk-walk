@@ -52,8 +52,7 @@
         </div>
 
         <hr class="line">
-        <p class="text-footer">Copyright © 2023 Jalan-Jalan and its related entities. All Rights Reserved. © 2023 Jalan-Jalan’s licensor entities.
-        All Rights Reserved.</p>
+        <p class="text-footer">Copyright © 2023 Jalan-Jalan and its related entities. All Rights Reserved. </p>
     </footer>
 </body>
 </html>

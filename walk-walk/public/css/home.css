@@ -431,6 +431,10 @@
     margin: 5px;
 }
 
+.card a{
+    text-decoration: none;
+}
+
 .star i{
     color: #FCB130;
 }
