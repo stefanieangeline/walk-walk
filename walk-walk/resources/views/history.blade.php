@@ -17,7 +17,7 @@
             <div class="content">
                 <div class="content-top">
                     <a href="{{route("account")}}">
-                        <div class="myaccount active">
+                        <div class="myaccount">
                             <i class="fa-solid fa-user active"></i>
                             <p class="push-right">My Account</p>
                         </div>
@@ -29,7 +29,7 @@
                         </div>
                     </a>
                     <a href="{{route('history')}}">
-                        <div class="history">
+                        <div class="history active">
                             <i class="fa-solid fa-clock-rotate-left"></i>
                             <p class="push-right">History</p>
                         </div>
