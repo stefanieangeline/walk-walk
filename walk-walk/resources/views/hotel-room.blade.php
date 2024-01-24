@@ -321,7 +321,7 @@
             <div class="user-rates">
                 @foreach($reviews as $review)
                     <div class="user-profile"  data-rating="{{ $review->Rating }}">
-                        <img src="/assets/icon/Arunika/1.webp" class="dp-user">
+                        <img src="/assets/icon/user.svg" class="dp-user">
                         <div class="user-info">
                             <p class="username">{{$review->name}}</p>
                             <div class="rating-star">
@@ -333,10 +333,10 @@
 
                     <div class="user-rates-desc">
                         <p class="desc-rate">{{$review->Description}}</p>
-                        <div class="img-desc-div">
+                        {{-- <div class="img-desc-div">
                             <img src="/assets/icon/Arunika/review1.webp" class="img-desc">
                             <img src="/assets/icon/Arunika/review2.webp" class="img-desc">
-                        </div>
+                        </div> --}}
                     </div>
 
                     <div class="rating-blue-line"></div>
