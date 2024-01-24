@@ -76,7 +76,9 @@
     </div>
 
     <div class="content">
+        @for ($i = 1; $i <= count($tickets); $i++)
         @include("shared.e-ticket-flight")
+        @endfor
     </div>
     @include("shared.footer")
 

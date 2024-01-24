@@ -78,18 +78,18 @@ searchBtn.addEventListener("click", (e) => {
             e.preventDefault();
         } else {
             // Check if the selected date is before today
-            // var selectedDate = new Date(date);
-            // var today = new Date();
-            // today.setHours(0, 0, 0, 0);
-            // if (selectedDate < today) {
-            //     // Display an alert or any other notification for the user
-            //     alert("Please select a date that is today or in the future.");
-            //     // Prevent the form submission
-            //     e.preventDefault();
-            // } else {
-            //     // Submit the form if all validations pass
-            //     document.forms["box-choice"].submit();
-            // }
+            var selectedDate = new Date(date);
+            var today = new Date();
+            today.setHours(0, 0, 0, 0);
+            if (selectedDate < today) {
+                // Display an alert or any other notification for the user
+                alert("Please select a date that is today or in the future.");
+                // Prevent the form submission
+                e.preventDefault();
+            } else {
+                // Submit the form if all validations pass
+                document.forms["box-choice"].submit();
+            }
              document.forms["box-choice"].submit();
         }
         // document.forms["box-choice"].submit();
