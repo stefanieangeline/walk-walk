@@ -279,7 +279,7 @@
                         <p class="big-price">Rp {{ $roomType -> PriceRoom }}.000</p>
                         <p class="tax-text">After Tax Rp.{{$roomType -> PriceRoom * 1.2}}.000</p>
                         <!-- <p class="reserve-button">Reserve</p> -->
-                        <a class="reserve-button" href="{{ route("customer-hotel-detail", ['id' => $hotel->IDHotel, 'idHotel' => $hotel->IDHotel,'inDate' => $inDate, 'outDate' => $outDate, 'room' => $room, 'name' => $hotel->NameHotel, 'star' => $hotel->StarHotel, 'type' => $roomType -> TypeRoom, 'capacity' => $roomType -> CapacityRoom, 'wide' => $roomType -> WideRoom, 'price'=> $roomType -> PriceRoom]) }}" > Reserve</a>
+                        <a class="reserve-button" href="{{ route("customer-hotel-detail", ['id' => $hotel->IDHotel, 'idHotel' => $hotel->IDHotel,'inDate' => $inDate, 'outDate' => $outDate, 'room' => $room, 'name' => $hotel->NameHotel, 'star' => $hotel->StarHotel, 'type' => $roomType -> TypeRoom, 'capacity' => $roomType -> CapacityRoom, 'wide' => $roomType -> WideRoom, 'price'=> $roomType -> PriceRoom]) }}" onclick="return validateReservation();" > Reserve</a>
                     </div>
 
                 </div>
@@ -292,7 +292,7 @@
 
 
 
-        <div id="reviewsContent" class="guest-rating-review" style="display: none;"> 
+        <div id="reviewsContent" class="guest-rating-review" style="display: none;">
             <p class="grr-text">Guest's Rating & Review</p>
             <div class="review-summary">
                 <img src="/assets/icon/rating-star-blue.png" class="rating-star-img">
@@ -321,7 +321,7 @@
             <div class="user-rates">
                 @foreach($reviews as $review)
                     <div class="user-profile"  data-rating="{{ $review->Rating }}">
-                        <img src="/assets/icon/Arunika/1.webp" class="dp-user">
+                        <img src="/assets/icon/user.svg" class="dp-user">
                         <div class="user-info">
                             <p class="username">{{$review->name}}</p>
                             <div class="rating-star">
@@ -333,16 +333,16 @@
 
                     <div class="user-rates-desc">
                         <p class="desc-rate">{{$review->Description}}</p>
-                        <div class="img-desc-div">
+                        {{-- <div class="img-desc-div">
                             <img src="/assets/icon/Arunika/review1.webp" class="img-desc">
                             <img src="/assets/icon/Arunika/review2.webp" class="img-desc">
-                        </div>
+                        </div> --}}
                     </div>
 
                     <div class="rating-blue-line"></div>
                 @endforeach
             </div>
-       
+
             <!-- <div class="user-rates">
                     <div class="user-profile">
                         <img src="/assets/icon/Arunika/1.webp" class="dp-user">
@@ -556,5 +556,16 @@
 
     </div>
     @include("shared.footer")
+    <script>
+        countries = {!! json_encode($countries->toArray()) !!}
+        cities = {!! json_encode($cities->toArray()) !!}
+        airports = {!! json_encode($airports->toArray()) !!}
+        hotel_list = {!! json_encode($hotel_list->toArray()) !!}
+
+        sessionStorage.setItem("countries", JSON.stringify(countries))
+        sessionStorage.setItem("cities", JSON.stringify(cities))
+        sessionStorage.setItem("airports", JSON.stringify(airports))
+        sessionStorage.setItem("hotels", JSON.stringify(hotel_list))
+    </script>
 </body>
 </html>

@@ -59,6 +59,8 @@ Route::get('/sign-in', [SigninController::class, 'index'])->name('sign-in');
 Route::post('/sign-in', [SigninController::class, 'store']);
 
 Route::get('/account', [UserController::class,'index'])->name('account')->middleware("auth");
+Route::get('/booking-detail', [UserController::class,'bookingDetail'])->name('booking-detail')->middleware("auth");
+Route::get('/history', [UserController::class,'history'])->name('history')->middleware("auth");
 
 Route::get('/help', [HelpController::class,'index'])->name('help');
 
@@ -99,14 +101,6 @@ Route::get('/nav-barB', function(){
 });
 
 //sementara
-
-Route::get('/history', function(){
-    return view('history');
-});
-
-Route::get('/booking-detail', function(){
-    return view('booking-detail');
-})->name('booking-detail');
 
 Route::get('/dummy', [UserController::class, 'dummy'])->name('dummy');
 

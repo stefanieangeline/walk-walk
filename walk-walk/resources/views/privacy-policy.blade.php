@@ -12,7 +12,7 @@
 <body>
     <div class="bg-pd">
         <div class="left-side">
-            <a href="#" class="left-a">
+            <a href="{{ route('home') }}" class="left-a">
                 <div class="left-left">
                     <i class="fa-solid fa-chevron-left"></i>
                 </div>

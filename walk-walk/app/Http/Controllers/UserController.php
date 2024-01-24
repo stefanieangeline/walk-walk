@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Country;
+use App\Models\PlanePayment;
+use App\Models\PlaneTicket;
+use App\Models\OrderedRoom;
+use App\Models\Schedule;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,6 +37,58 @@ class UserController extends Controller
     public function index() {
         $user = Auth::user()->NationalityUser;
         return view("myaccount",['country'=> Country::where('IDCountry', $user)->first()->NameCountry]);
+
+    }
+
+    public function bookingDetail() {
+        $IDUser = Auth::user()->id;
+
+        $flights = PlanePayment::where("id", $IDUser)
+            ->join("plane_tickets", "plane_tickets.IDPlaneTicket", "=", "plane_payments.IDPlaneTicket")
+            ->join("schedules", "schedules.IDSchedule", "=", "plane_tickets.IDSchedule")
+            ->join("airports as a", "schedules.IDAirportDestination", "=", "a.IDAirport")
+            ->join("airports as b", "schedules.IDAirportSource", "=", "b.IDAirport")
+            ->join("cities as c", "a.IDCity", "=", "c.IDCity")
+            ->join("cities as d", "b.IDCity", "=", "d.IDCity")
+            ->join("airlines", "airlines.IDAirline", "=", "schedules.IDAirline")
+            ->where("schedules.DepartureTime", ">=", DB::raw("now()"))
+            ->select("plane_tickets.IDPlaneTicket", "a.NameAirport as AirportDest", "b.NameAirport as AirportSrc", "a.CodeAirport as CodeDest", "b.CodeAirport as CodeSrc", "c.NameCity as CityDest", "d.NameCity as CitySrc", DB::raw("CONCAT(DATE_FORMAT(schedules.DepartureTime, \"%d %M %Y\"), \" \", CAST(schedules.DepartureTime as TIME)) as departureTime"), DB::raw("CONCAT(DATE_FORMAT(schedules.ArrivalTime, \"%d %M %Y\"), \" \", CAST(schedules.ArrivalTime as TIME)) as arrivalTime"))
+            ->distinct()
+            ->get();
+
+        $IDUser = Auth::user()->id;
+        $orderedRooms = OrderedRoom::where("id", $IDUser)
+                    ->join("hotels", "hotels.IDHotel", "=", "ordered_rooms.IDHotel")
+                    ->select("ordered_rooms.*", "hotels.NameHotel", 
+                                DB::raw("DATE_FORMAT(ordered_rooms.CheckInDate, '%d %M %Y') as CheckInDate"), 
+                                DB::raw("DATE_FORMAT(ordered_rooms.CheckOutDate, '%d %M %Y') as CheckOutDate"),
+                                DB::raw("DATEDIFF(ordered_rooms.CheckOutDate, ordered_rooms.CheckInDate) as NumberOfNights")
+                            )
+                    ->distinct()
+                    ->get();
+  
+
+        return view("booking-detail", ["flights" => $flights, "orderedRooms" => $orderedRooms]);
+    }
+
+    public function history() {
+        $IDUser = Auth::user()->id;
+
+        $flights = PlanePayment::where("id", $IDUser)
+            ->join("plane_tickets", "plane_tickets.IDPlaneTicket", "=", "plane_payments.IDPlaneTicket")
+            ->join("schedules", "schedules.IDSchedule", "=", "plane_tickets.IDSchedule")
+            ->join("airports as a", "schedules.IDAirportDestination", "=", "a.IDAirport")
+            ->join("airports as b", "schedules.IDAirportSource", "=", "b.IDAirport")
+            ->join("cities as c", "a.IDCity", "=", "c.IDCity")
+            ->join("cities as d", "b.IDCity", "=", "d.IDCity")
+            ->join("airlines", "airlines.IDAirline", "=", "schedules.IDAirline")
+            ->where("schedules.DepartureTime", "<", DB::raw("now()"))
+            ->select("plane_tickets.IDPlaneTicket", "a.NameAirport as AirportDest", "b.NameAirport as AirportSrc", "a.CodeAirport as CodeDest", "b.CodeAirport as CodeSrc", "c.NameCity as CityDest", "d.NameCity as CitySrc", DB::raw("CONCAT(DATE_FORMAT(schedules.DepartureTime, \"%d %M %Y\"), \" \", CAST(schedules.DepartureTime as TIME)) as departureTime"), DB::raw("CONCAT(DATE_FORMAT(schedules.ArrivalTime, \"%d %M %Y\"), \" \", CAST(schedules.ArrivalTime as TIME)) as arrivalTime"))
+            ->distinct()
+            ->get();
+
+        return view("history", ["flights" => $flights]);
+
 
     }
 

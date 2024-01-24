@@ -138,12 +138,19 @@
                     <ul class="carousel">
                         @foreach ($recommendedHotels as $hotel)
                         <li class="card">
+                            <a href="{{ route("hotel-room", ['id' => $hotel->IDHotel, 'room' => 1, 'guest' => 1, 'destination' => $hotel->NameHotel]) }}">
                             <div class="img-card">
-                                <img src="/assets/images/hotel1.jpg" alt="img-hotel">
+                                @php
+                                    $imageName = str_replace(' ', '_', $hotel->NameHotel) . '.svg';
+                                @endphp
+                                <img src="{{ asset("/assets/hotels/{$imageName}") }}" class="hotel-image" alt="Hotel Image">
+                                
+                                <!-- <img src="/assets/images/hotel1.jpg" alt="img-hotel"> -->
                             </div>
                             <div class="hotel-info">
                                 <div class="top-hotel-info">
                                     <p class="hotel-name">{{$hotel->NameHotel}}</p>
+                                   
                                     <div class="mid-hotel-info">
                                         <div class="star">
                                             @for ($i = 1; $i <= 5; $i++)
@@ -171,6 +178,7 @@
                                     <p>Rp. {{$hotel->PriceRoom}}</p>
                                 </div>
                             </div>
+                            </a>
                         </li>
                         @endforeach
                     </ul>
