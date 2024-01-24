@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Country;
 use App\Models\PlanePayment;
 use App\Models\PlaneTicket;
+use App\Models\OrderedRoom;
 use App\Models\Schedule;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
@@ -54,7 +56,19 @@ class UserController extends Controller
             ->distinct()
             ->get();
 
-        return view("booking-detail", ["flights" => $flights]);
+        $IDUser = Auth::user()->id;
+        $orderedRooms = OrderedRoom::where("id", $IDUser)
+                    ->join("hotels", "hotels.IDHotel", "=", "ordered_rooms.IDHotel")
+                    ->select("ordered_rooms.*", "hotels.NameHotel", 
+                                DB::raw("DATE_FORMAT(ordered_rooms.CheckInDate, '%d %M %Y') as CheckInDate"), 
+                                DB::raw("DATE_FORMAT(ordered_rooms.CheckOutDate, '%d %M %Y') as CheckOutDate"),
+                                DB::raw("DATEDIFF(ordered_rooms.CheckOutDate, ordered_rooms.CheckInDate) as NumberOfNights")
+                            )
+                    ->distinct()
+                    ->get();
+  
+
+        return view("booking-detail", ["flights" => $flights, "orderedRooms" => $orderedRooms]);
     }
 
     public function history() {
@@ -74,6 +88,8 @@ class UserController extends Controller
             ->get();
 
         return view("history", ["flights" => $flights]);
+
+
     }
 
     /**

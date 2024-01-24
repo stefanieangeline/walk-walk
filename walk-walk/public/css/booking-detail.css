@@ -1,15 +1,15 @@
 :root {
     --white: #ffffff;
-    --blue-base: #19A7CE;
-    --strong-blue: #0064D2;
-    --light-grey: #F6F7F7;
-    --shade-blue: #146C94;
-    --light-blue : #AFD3E2;
-    --grey : #D7DCE6;
+    --blue-base: #19a7ce;
+    --strong-blue: #0064d2;
+    --light-grey: #f6f7f7;
+    --shade-blue: #146c94;
+    --light-blue: #afd3e2;
+    --grey: #d7dce6;
     --grey-dark: #63666c;
-    --other-blue: #0090FF;
+    --other-blue: #0090ff;
     --near-black: #1d1e1f;
-    --another-blue: #0A4D78;
+    --another-blue: #0a4d78;
 }
 
 * {
@@ -19,15 +19,15 @@
     font-family: roboto-cons-medium;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-.history-page{
+.history-page {
     display: flex;
 }
 
-.logo{
+.logo {
     background-color: var(--shade-blue);
     width: 20vw;
     height: auto;
@@ -37,34 +37,33 @@ a{
     padding-bottom: 50px;
 }
 
-.side-bar-left{
+.side-bar-left {
     height: 100vh; /* Full-height: remove this if you want "auto" height */ /* Set the width of the sidebar */
     width: 20vw;
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
     background-color: var(--shade-blue);
-    overflow-x: hidden; 
-    overflow-y: hidden; 
+    overflow-x: hidden;
+    overflow-y: hidden;
     padding-top: 20px;
     position: relative;
     position: fixed;
 }
 
-
-.content{
+.content {
     display: flex;
     flex-direction: column;
     background-color: var(--white);
     height: 100vh;
 }
 
-.content-top{
+.content-top {
     display: flex;
     flex-direction: column;
 }
 
-.content-buttom{
+.content-buttom {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,28 +73,31 @@ a{
     left: 100px;
 }
 
-.content-buttom a{
+.content-buttom a {
     color: var(--shade-blue);
 }
 
-.content-buttom a:hover{
+.content-buttom a:hover {
     color: var(--blue-base);
 }
 
-.fa-solid{
+.fa-solid {
     font-size: 20px;
     text-align: center;
     margin-right: 20px;
     color: var(--shade-blue);
 }
 
-.myaccount p, .myorder p, .history p{
+.myaccount p,
+.myorder p,
+.history p {
     font-size: 20px;
     color: var(--shade-blue);
 }
 
-
-.myaccount, .myorder, .history{
+.myaccount,
+.myorder,
+.history {
     display: flex;
     margin-top: 20px;
     padding-top: 10px;
@@ -105,70 +107,72 @@ a{
     width: 20vw;
 }
 
-.myaccount:hover, .myorder:hover, .history:hover{
+.myaccount:hover,
+.myorder:hover,
+.history:hover {
     cursor: pointer;
 }
 
-
-.active, .active p{
+.active,
+.active p {
     background-color: var(--shade-blue);
     color: white;
 }
 
-.active i{
+.active i {
     color: white;
 }
 
-.fa-user{
+.fa-user {
     margin-left: 2px;
     font-size: 20px;
     background-color: transparent;
     color: var(--shade-blue);
 }
 
-.fa-receipt{
+.fa-receipt {
     margin-left: 3px;
     font-size: 20px;
 }
 
-.push-right{
+.push-right {
     padding-left: 3px;
 }
 
-.push-right-1{
+.push-right-1 {
     padding-left: 4px;
 }
 
 /* sisi sebelah kanan */
-.main{
+.main {
     width: 80vw;
     margin-left: 20vw;
-    background-color:var(--blue-base);
+    background-color: var(--blue-base);
     display: flex;
-    justify-content: center;
     flex-direction: column;
     gap: 50px;
     align-items: center;
+    min-height: 100vh;
 }
 
-.main-header{
+.main-header {
     width: 50vw;
     text-align: left;
     margin-top: 50px;
 }
 
-.main-header p{
+.main-header p {
     font-size: 40px;
     color: var(--white);
 }
 
-.all-history{
+.all-history {
     display: flex;
     flex-direction: column;
 }
 
 /* bagian kartu*/
-.card{
+.card {
     width: 50vw;
     height: fit-content;
     background-color: var(--white);
@@ -177,13 +181,14 @@ a{
     margin-bottom: 50px;
 }
 
-.card-header, .card-footer{
+.card-header,
+.card-footer {
     text-align: left;
     display: flex;
     justify-content: space-between;
 }
 
-.card-header p{
+.card-header p {
     margin-top: 20px;
     margin-bottom: 20px;
     color: var(--shade-blue);
@@ -193,19 +198,19 @@ a{
     margin-right: 50px;
 }
 
-.card-header span{
+.card-header span {
     font-size: 15px;
     color: var(--blue-base);
 }
 
-.shadow-line{
+.shadow-line {
     border: 1px solid var(--blue-base);
     border-bottom: 0.011px solid var(--light-blue);
     opacity: 0.5;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-.card-body{
+.card-body {
     margin-left: 50px;
     margin-top: 30px;
     display: flex;
@@ -213,57 +218,57 @@ a{
     gap: 20px;
 }
 
-.head-card-body{
+.head-card-body {
     display: flex;
 }
 
-.header-left-card-body{
+.header-left-card-body {
     color: var(--shade-blue);
     font-size: 20px;
 }
 
-.content-left-card-body{
+.content-left-card-body {
     color: var(--shade-blue);
     font-size: 15px;
 }
 
-.middle-card-body{
+.middle-card-body {
     display: flex;
     flex-direction: column;
 }
 
-.desc-middle-card-body{
+.desc-middle-card-body {
     color: var(--shade-blue);
 }
 
-.bottom-card-body{
+.bottom-card-body {
     display: flex;
     gap: 50px;
     margin-bottom: 20px;
 }
 
-.left-part{
+.left-part {
     display: flex;
     gap: 50px;
 }
 
-.icon i{
+.icon i {
     color: var(--shade-blue);
     font-size: 30px;
 }
 
-.info p{
-    color:var(--shade-blue) ;
+.info p {
+    color: var(--shade-blue);
     font-size: 25px;
 }
 
-.right-part{
+.right-part {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.btn-right-part{
+.btn-right-part {
     padding: 5px 10px 5px 10px;
     border-radius: 10px;
     font-size: 15px;
@@ -271,114 +276,126 @@ a{
     color: var(--white);
     border: none;
     margin-right: 10px;
-    
 }
 
-.btn-right-part i{
+.btn-right-part i {
     color: var(--white);
     font-size: 15px;
     margin-left: 5px;
 }
 
-.btn-right-part:hover{
+.btn-right-part:hover {
     cursor: pointer;
     background-color: var(--white);
     color: var(--shade-blue);
     border: 1px solid var(--shade-blue);
 }
 
-.btn-right-part:hover i{
+.btn-right-part:hover i {
     color: var(--shade-blue);
 }
 
-
 @media (max-width: 1000px) {
-    .content i{
+    .content i {
         display: none;
     }
 }
 
-@media (max-width: 900px){
-    .logo-img{
+@media (max-width: 900px) {
+    .logo-img {
         width: 80%;
     }
 
-    .activated-responsive{
+    .activated-responsive {
         flex-direction: column;
     }
 }
 
-@media (max-width: 800px){
-    .myaccount, .myorder, .history{
+@media (max-width: 800px) {
+    .myaccount,
+    .myorder,
+    .history {
         padding-left: 10px;
     }
 
-    .card-footer p, .card-header p, .card-footer a{
+    .card-footer p,
+    .card-header p,
+    .card-footer a {
         font-size: 20px;
     }
 
-    .main-header p{
+    .main-header p {
         font-size: 30px;
     }
 
-    .info p, .icon i{
+    .info p,
+    .icon i {
         font-size: 20px;
     }
 
-    .card-header span{
+    .card-header span {
         font-size: 10px;
         color: var(--blue-base);
     }
 
-    .left-part, .bottom-card-body{
+    .left-part,
+    .bottom-card-body {
         flex-direction: column;
     }
 }
 
-@media (max-width: 650px){
-    .card-footer p, .card-header p, .card-footer a{
+@media (max-width: 650px) {
+    .card-footer p,
+    .card-header p,
+    .card-footer a {
         font-size: 15px;
     }
 
-    .myaccount p, .myorder p, .history p{
+    .myaccount p,
+    .myorder p,
+    .history p {
         font-size: 15px;
     }
 
-    .main-header p{
+    .main-header p {
         font-size: 25px;
     }
 
-    .info p, .icon i{
+    .info p,
+    .icon i {
         font-size: 15px;
     }
 
-    .header-left-card-body{
+    .header-left-card-body {
         font-size: 15px;
     }
-
 }
 
-@media (max-width:550px){
-    .card-header, .card-footer{
+@media (max-width: 550px) {
+    .card-header,
+    .card-footer {
         display: flex;
         flex-direction: column;
     }
 
-    .card-footer a{
+    .card-footer a {
         margin-left: 50px;
     }
 }
 
-@media (max-width: 450px){
-    .card-header p, .card-body, .card-footer p, .card-footer a{
+@media (max-width: 450px) {
+    .card-header p,
+    .card-body,
+    .card-footer p,
+    .card-footer a {
         margin-left: 20px;
     }
 
-    .content i{
+    .content i {
         display: block;
     }
 
-    .content p{
+    .content p {
         display: none;
     }
 }
