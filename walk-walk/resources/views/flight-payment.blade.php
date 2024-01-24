@@ -11,8 +11,15 @@
 <body>
     <div class="big-container">
         <div class="navbar-container">
-            <div class="img-left">
-                <img src="assets/icon/nextButton.svg" alt="">
+            <div class="left-side">
+                <a href="{{ route('home')}}" class="left-a">
+                    <div class="left-left">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                    <div class="left-right">
+                        <p>Back to Main</p>
+                    </div>
+                </a>
             </div>
             <div class="navbar-title">
                 <h1>Booking Confirmation</h1>
@@ -67,7 +74,7 @@
                     <div class="bottom">
                         <div class="bottom-left">
                             <!-- <h4>Back To Main</h4> -->
-                            <a href="{{route("home")}}">Back To Main</a>
+                            <a href="{{route("airportDetails", ["IDTicket" => $IDTicket])}}">View Airport Tenants</a>
                         </div>
                         <div class="bottom-right">
                             <!-- <h4>See Airport Details</h4> -->

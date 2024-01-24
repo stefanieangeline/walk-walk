@@ -181,7 +181,7 @@
             </div>
 
             @endforeach
-            {{-- @foreach ($schedules as $schedule)
+            <!-- {{-- @foreach ($schedules as $schedule)
             <div class="flight_detail">
                 <div class="airline_logo">
                     <img src="assets/icon/jetstar.svg" alt="">
@@ -208,7 +208,7 @@
                     <input type="submit" class="flight_button" value="Select">
                 </div>
             </div>
-            @endforeach --}}
+            @endforeach --}} -->
         </div>
     </div>
     @include("shared.footer")

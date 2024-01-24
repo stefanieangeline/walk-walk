@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Airport;
+use App\Models\City;
+use App\Models\Country;
 use App\Models\Hotel;
 use App\Models\HotelFacilityDetail;
 use App\Models\HotelFacilityHeader;
@@ -57,7 +60,11 @@ class HotelRoomController extends Controller
             'reviewsCount' => $reviewsCount,
             'hotelFacilities'=>$hotelFacilities,
             'hotelFolder' => $hotelFolder,
-            'hotelPhotos' => $hotelPhotos
+            'hotelPhotos' => $hotelPhotos,
+            "countries" => Country::all(),
+            "airports" => Airport::all(),
+            "cities" => City::all(),
+            "hotel_list" => Hotel::all()
             // "hotel" => Hotel::query()->where('IDHotel', $id)->first()
         ]);
     }

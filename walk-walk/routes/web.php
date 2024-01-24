@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\AirportDetailsController;
 use App\Http\Controllers\CustomerHotelDetailController;
 use App\Http\Controllers\EticketController;
 use App\Http\Controllers\FinalStepController;
@@ -33,6 +34,7 @@ Route::get('/hotel-payment-success', [CustomerHotelDetailController::class,'succ
 Route::get('/hotel-payment-create', [CustomerHotelDetailController::class,'paymentCreate'])->name('hotel-payment-create');
 
 
+
 Route::get('/flights', [FlightController::class, 'index'])->name('flights');
 Route::get('/flights/successful', [FlightController::class, 'paymentSuccessful'])->name('paymentSuccessful')->middleware("auth");
 Route::get('/flights/ticket', [FlightController::class, 'ticket'])->name('flightTicket')->middleware("auth");
@@ -40,6 +42,7 @@ Route::get('/flights/payment', [FlightController::class, 'barcode'])->name('paym
 Route::post('/flights/payment/create', [FlightController::class, 'paymentCreate'])->name('paymentCreate')->middleware("auth");
 Route::post('/flights/payment/success', [FlightController::class, 'paymentSuccess'])->name('paymentSuccess')->middleware("auth");
 Route::get('/flights/{id}', [FlightController::class, 'passenger'])->name('passenger')->middleware("auth");
+Route::get('/airport-detail', [AirportDetailsController::class,'index'])->name('airportDetails');
 
 Route::get('/hotels', [HotelController::class, 'index'])->name('hotels');
 
@@ -105,6 +108,3 @@ Route::get('/hotel-cust-review', function(){
     return view('hotel-cust-review');
 });
 
-Route::get('/airport-detail', function(){
-    return view('airport-detail');
-});
