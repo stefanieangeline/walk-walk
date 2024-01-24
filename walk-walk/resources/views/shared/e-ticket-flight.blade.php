@@ -65,7 +65,6 @@
                 <table class="styled-table">
                     <thead>
                         <tr>
-                            <th>No</th>
                             <th>Gender</th>
                             <th>Name</th>
                             <th>DOB</th>
@@ -74,16 +73,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for ($i = 1; $i <= count($tickets); $i++)
                         <tr>
-                            <td>{{$i}}.</td>
                             <td>{{$tickets[$i-1]->GenderPassenger}}</td>
                             <td>{{$tickets[$i-1]->NamePassenger}}</td>
                             <td>{{$tickets[$i-1]->DOBPassenger}}</td>
                             <td>20 kg</td>
                             <td>{{$tickets[0]->IDPlaneTicket.$tickets[$i-1]->IDPassenger}}</td>
                         </tr>
-                        @endfor
                         <!-- lanjut kalo ada  -->
                     </tbody>
                 </table>
