@@ -45,9 +45,10 @@
                 <p>Booking Details</p>
             </div>
             <div class="all-history">
+                @foreach ($orderedRooms as $orderedRoom)
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-header-left"><p>Booking ID: 10273719 <br><span> Booked and Payable by Jalan - Jalan</span></p></div>
+                        <div class="card-header-left"><p>Booking ID: {{ $orderedRoom->IDOrder }}<br><span> Booked and Payable by Jalan - Jalan</span></p></div>
                         <div class="card-header-right"><p> <i class="fa-solid fa-check"></i> Active</p></div>
                     </div>
                     <hr class="shadow-line">
@@ -58,7 +59,7 @@
                                 <i class="fa-solid fa-hotel"></i>
                             </div>
                             <div class="info">
-                                <p>Grand Aston Hotel - Sentul</p>
+                                <p>{{ $orderedRoom->NameHotel }}</p>
                             </div>
                         </div>
                         <div class="bottom-card-body">
@@ -66,7 +67,7 @@
                                 <p class="header-left-card-body">
                                     Check - In
                                 </p>
-                                <p class="content-left-card-body">6 Oct 2023</p>
+                                <p class="content-left-card-body">{{ $orderedRoom->CheckInDate }}</p>
                                 <p class="content-left-card-body">13:00</p>
                             </div>
                             <div class="middle-card-body">
@@ -74,19 +75,20 @@
                                     <i class="fa-solid fa-moon"></i>
                                 </div>
                                 <div class="desc-middle-card-body">
-                                    <p>4 night(s)</p>
+                                    <p>{{ $orderedRoom->NumberOfNights }} night(s)</p>
                                 </div>
                             </div>
                             <div class="right-card-body">
                                 <p class="header-left-card-body">
                                     Check - Out
                                 </p>
-                                <p class="content-left-card-body">10 Oct 2023</p>
+                                <p class="content-left-card-body">{{ $orderedRoom->CheckOutDate }}</p>
                                 <p class="content-left-card-body">12:00</p>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endforeach
                 @foreach ($flights as $flight)
                 <div class="card">
                     <div class="card-header">

@@ -19,7 +19,6 @@ input:focus {
   outline: none;
 }
 
-
 .bg-pd {
   display: flex;
   /* flex-direction: row-reverse; */
@@ -38,12 +37,32 @@ input:focus {
     margin-right: 2%;
   }
 
-  .left-a{
+.back:hover{
+  cursor: pointer;
+}
+
+  /* .left-a{
     display: flex;
     font-size: 20px;
     font-weight: bold;
     color: var(--white);
     gap: 10px;
+  } */
+
+  .left-left{
+    margin-right: 5px;
+  }
+
+  .back{
+    font-family: roboto-cons-regular;
+    display: flex;
+    flex-direction: row;
+    background: none;
+    align-items: center;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--white);
   }
 
   .mid {
@@ -485,6 +504,9 @@ input:focus {
   color: white;
   font-family: roboto-cons-bold;
 
+}
+.next-step:hover{
+  cursor: pointer;
 }
 
 .hidden {

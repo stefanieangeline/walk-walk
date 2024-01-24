@@ -64,7 +64,7 @@ input:focus {
   .info1 p{
       font-family: roboto-cons-bold;
   }
-  
+
   .circle_finish{
     position: absolute;
     top: -6px;
@@ -88,7 +88,7 @@ input:focus {
   .arrow1{
     color: white;
   }
-  
+
   .right-side {
     display: flex;
     justify-content: center;
@@ -111,4 +111,5 @@ input:focus {
   align-items: center;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }

@@ -22,7 +22,8 @@
   width: 85%;
   height: auto;
   border-radius: 10px;
-  background-color: var(--strong-blue)
+  background-color: var(--strong-blue);
+  margin: 20px 0px;
 }
 
 .header-ticket {
