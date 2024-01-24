@@ -30,13 +30,16 @@ a:hover{
     flex-direction: row;
     justify-content: space-between;
 }
-.img-left{
+
+.left-a{
     display: flex;
-    align-items: center;
-    text-align: center;
-    width: 14%;
-    visibility: hidden;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: roboto-cons-bold;
+    color: var(--white);
+    gap: 10px;
 }
+
 .navbar-title{
     display: flex;
     align-items: center;

@@ -119,6 +119,9 @@ a {
   width: 40px;
   height: 40px;
 }
+.hidden{
+  display: none;
+}
 select, .select {
   width: 100%;
   border-radius: 20px;
@@ -127,15 +130,14 @@ select, .select {
   font-size: 1.25rem;
   cursor: pointer;
   line-height: 1.1;
-  background-color: var(--grey);
+  background-color: var(--white);
   color: var(--strong-blue);
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
 }
 
-
-/* option:checked:hover {
+option:checked:hover {
   background-color: var(--white);
-} */
+}
 
 .all-tenant {
   display: flex;
@@ -146,7 +148,7 @@ select, .select {
   justify-content: center;
 }
 
-.tenant {
+.tenants {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -154,6 +156,17 @@ select, .select {
   background-color: var(--white);
   border-radius: 20px;
   padding: 20px;
+  width: 20%;
+  height: auto;
+}
+
+.tenant-logo{
+  max-width: 100%;
+}
+
+.logo-img{
+  width: 90%;
+  height: auto;
 }
 
 .line {
@@ -166,6 +179,7 @@ select, .select {
 
 .tenant-name {
   color: var(--shade-blue);
+  /* background-color: khak/i; */
 }
 
 .tenant-category {
