@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Country;
 use App\Models\PlanePayment;
 use App\Models\PlaneTicket;
+use App\Models\OrderedRoom;
 use App\Models\Schedule;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
@@ -54,7 +56,37 @@ class UserController extends Controller
             ->distinct()
             ->get();
 
-        return view("booking-detail", ["flights" => $flights]);
+        $IDUser = Auth::user()->id;
+        $orderedRooms = OrderedRoom::where("id", $IDUser)
+                    ->join("hotels", "hotels.IDHotel", "=", "ordered_rooms.IDHotel")
+                    ->select("ordered_rooms.*", "hotels.NameHotel", 
+                                DB::raw("DATE_FORMAT(ordered_rooms.CheckInDate, '%d %M %Y') as CheckInDate"), 
+                                DB::raw("DATE_FORMAT(ordered_rooms.CheckOutDate, '%d %M %Y') as CheckOutDate"),
+                                DB::raw("DATEDIFF(ordered_rooms.CheckOutDate, ordered_rooms.CheckInDate) as NumberOfNights")
+                            )
+                    ->distinct()
+                    ->get();
+  
+
+        return view("booking-detail", ["flights" => $flights, "orderedRooms" => $orderedRooms]);
+    }
+
+    public function bookingDetailHotel(){
+        $IDUser = Auth::user()->id;
+        $bookingID = OrderedRoom::where("id", $IDUser)->first()->IDOrder;
+        $hotelName = OrderedRoom::where("id", $IDUser)
+                ->join("hotels", "hotels.IDHotel", "=", "ordered_rooms.IDHotel")
+                ->value("hotels.NameHotel");
+        
+        $checkInDate = Carbon::parse(OrderedRoom::where("id", $IDUser)->first()->CheckInDate);
+        $formattedDateCheckIn = $checkInDate->format('j F Y');
+        $checkOutDate = Carbon::parse(OrderedRoom::where("id", $IDUser)->first()->CheckOutDate);
+        $formattedDateCheckOut= $checkInDate->format('j F Y');
+                
+        $numNights = $checkOutDate->diffInDays($checkInDate);
+        // Get the number of nights as a string
+        $numNightsString = $numNights . ' night' . ($numNights > 1 ? 's' : '');
+        
     }
 
     public function history() {
