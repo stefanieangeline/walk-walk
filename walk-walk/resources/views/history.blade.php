@@ -63,13 +63,14 @@
                     <hr class="shadow-line">
                     <div class="card-footer">
                         <p>Purchase Successful <i class="fa-solid fa-check"></i></p>
-                        <a href="#">See Details</a>
+                        {{-- <a href="#">Review</a> --}}
                     </div>
                 </div>
                 @endforeach
+                @foreach ($orderedRooms as $orderedRoom)
                 <div class="card">
                     <div class="card-header">
-                        <p>Booking ID: 10273719</p>
+                        <p>Booking ID: {{ $orderedRoom->IDOrder }}</p>
                         <p>Rp. 5.000.000</p>
                     </div>
                     <hr class="shadow-line">
@@ -78,35 +79,16 @@
                         <i class="fa-solid fa-hotel"></i>
                         </div>
                         <div class="info">
-                            <p>Grand Aston Hotel - Sentul</p>
+                            <p>{{ $orderedRoom->NameHotel }}</p>
                         </div>
                     </div>
                     <hr class="shadow-line">
                     <div class="card-footer">
                         <p>Purchase Successful <i class="fa-solid fa-check"></i></p>
-                        <a href="#">See Details</a>
+                        <a href="#">Review</a>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                        <p>Booking ID: 10273719</p>
-                        <p>Rp. 5.000.000</p>
-                    </div>
-                    <hr class="shadow-line">
-                    <div class="card-body">
-                        <div class="icon">
-                            <i class="fa-solid fa-plane"></i>
-                        </div>
-                        <div class="info">
-                            <p>Jakarta - Bali</p>
-                        </div>
-                    </div>
-                    <hr class="shadow-line">
-                    <div class="card-footer">
-                        <p>Purchase Successful <i class="fa-solid fa-check"></i></p>
-                        <a href="#">See Details</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

@@ -149,6 +149,7 @@ a{
     flex-direction: column;
     gap: 50px;
     align-items: center;
+    min-height: 100vh;
 }
 
 .main-header{

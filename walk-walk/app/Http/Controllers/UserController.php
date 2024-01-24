@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Country;
+use App\Models\Hotel;
 use App\Models\PlanePayment;
 use App\Models\PlaneTicket;
 use App\Models\OrderedRoom;
@@ -56,9 +57,9 @@ class UserController extends Controller
             ->distinct()
             ->get();
 
-        $IDUser = Auth::user()->id;
         $orderedRooms = OrderedRoom::where("id", $IDUser)
                     ->join("hotels", "hotels.IDHotel", "=", "ordered_rooms.IDHotel")
+                    ->where("ordered_rooms.CheckOutDate", ">=", DB::raw("now()"))
                     ->select("ordered_rooms.*", "hotels.NameHotel", 
                                 DB::raw("DATE_FORMAT(ordered_rooms.CheckInDate, '%d %M %Y') as CheckInDate"), 
                                 DB::raw("DATE_FORMAT(ordered_rooms.CheckOutDate, '%d %M %Y') as CheckOutDate"),
@@ -86,8 +87,18 @@ class UserController extends Controller
             ->select("plane_tickets.IDPlaneTicket", "a.NameAirport as AirportDest", "b.NameAirport as AirportSrc", "a.CodeAirport as CodeDest", "b.CodeAirport as CodeSrc", "c.NameCity as CityDest", "d.NameCity as CitySrc", DB::raw("CONCAT(DATE_FORMAT(schedules.DepartureTime, \"%d %M %Y\"), \" \", CAST(schedules.DepartureTime as TIME)) as departureTime"), DB::raw("CONCAT(DATE_FORMAT(schedules.ArrivalTime, \"%d %M %Y\"), \" \", CAST(schedules.ArrivalTime as TIME)) as arrivalTime"))
             ->distinct()
             ->get();
+        $orderedRooms = OrderedRoom::where("id", $IDUser)
+            ->join("hotels", "hotels.IDHotel", "=", "ordered_rooms.IDHotel")
+            ->where("ordered_rooms.CheckOutDate", "<=", DB::raw("now()"))
+            ->select("ordered_rooms.*", "hotels.NameHotel", 
+                        DB::raw("DATE_FORMAT(ordered_rooms.CheckInDate, '%d %M %Y') as CheckInDate"), 
+                        DB::raw("DATE_FORMAT(ordered_rooms.CheckOutDate, '%d %M %Y') as CheckOutDate"),
+                        DB::raw("DATEDIFF(ordered_rooms.CheckOutDate, ordered_rooms.CheckInDate) as NumberOfNights")
+                    )
+            ->distinct()
+            ->get();
 
-        return view("history", ["flights" => $flights]);
+        return view("history", ["flights" => $flights, "orderedRooms" => $orderedRooms]);
 
 
     }
