@@ -93,6 +93,7 @@ class FlightController extends Controller
         $nationalities= request()->get("passengersNationality");
         $price = request()->get("price");
         $IDSchedule = request()->get("IDSchedule");
+        $class = request()->get("class");
 
         $names = explode (",", $names);
         $genders = explode (",", $genders);
@@ -116,6 +117,7 @@ class FlightController extends Controller
             $newTicketDetail = new PlaneTicketDetail();
             $newTicketDetail->IDPlaneTicket = $newTicket->id;
             $newTicketDetail->IDPassenger = $newPassenger->id;
+            $newTicketDetail->Class = $class;
             $newTicketDetail->save();
         }
 

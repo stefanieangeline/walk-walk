@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('plane_ticket_details', function (Blueprint $table) {
             $table->foreignId('IDPlaneTicket')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDPlaneTicket')->on('plane_tickets');
             $table->foreignId('IDPassenger')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->references('IDPassenger')->on('passengers');
+            $table->string('Class');
             $table->primary(['IDPlaneTicket','IDPassenger']);
             $table->timestamps();
         });

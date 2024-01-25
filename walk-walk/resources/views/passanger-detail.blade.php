@@ -116,7 +116,6 @@
                     </div>
                 </div>
             </div>
-
             <form method="POST" name="passenger-form" action="{{route("paymentCreate")}}" class="hidden">
             @csrf
             <input id="passengersName" name="passengersName" type="text" value="">
@@ -124,6 +123,7 @@
             <input id="passengersDOB"  name="passengersDOB" type="text" value="">
             <input id="passengersNationality" name="passengersNationality" type="text" value="">
             <input id="IDSchedule" name="IDSchedule" type="number" value="{{$id}}">
+            <input id="class" name="class" type="text" value="{{$class}}">
             <input id="price" name="price" type="number" value="{{$schedule->Price*($adult+$senior+$children)*1.2}}">
             </form>
             @for ($i = 1; $i <= $adult+$senior+$children; $i++)

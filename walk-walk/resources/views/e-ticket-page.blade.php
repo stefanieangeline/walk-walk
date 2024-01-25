@@ -68,7 +68,7 @@
                 <a href="/jalan-jalan/help.php" class="nav-link">Help</a>
             </div>
             <div class="right-right">
-                <a href="/jalan-jalan/myaccount.php" class="nav-link">
+                <a href="{{route("account")}}" class="nav-link">
                     <img src="/assets/icon/user.svg">
                 </a>
             </div>
@@ -77,7 +77,7 @@
 
     <div class="content">
         @for ($i = 1; $i <= count($tickets); $i++)
-        @include("shared.e-ticket-flight")
+                @include("shared.e-ticket-flight")
         @endfor
     </div>
     @include("shared.footer")

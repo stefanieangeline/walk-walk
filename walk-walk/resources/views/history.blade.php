@@ -11,9 +11,9 @@
 <body>
     <div class="history-page">
         <div class="side-bar-left">
-            <div class="logo">
+            <a class="logo" href="{{route("home")}}">
                 <img class ="logo-img" src="assets/logo/jalan-jalan.svg" alt="logo">
-            </div>
+            </a>
             <div class="content">
                 <div class="content-top">
                     <a href="{{route("account")}}">
@@ -46,10 +46,11 @@
             </div>
             <div class="all-history">
                 @foreach ($flights as $flight)
+                @if ($flight->c1 == $flight->c2)
                 <div class="card">
                     <div class="card-header">
                         <div class="card-header-left"><p>Booking ID: {{$flight->IDPlaneTicket}}</p></div>
-                        <div class="card-header-right"><p>Rp. 5.000.000</p></div>
+                        <div class="card-header-right"><p>{{$flight->c1}}</p></div>
                     </div>
                     <hr class="shadow-line">
                     <div class="card-body">
@@ -66,6 +67,7 @@
                         {{-- <a href="#">Review</a> --}}
                     </div>
                 </div>
+                @endif
                 @endforeach
                 @foreach ($orderedRooms as $orderedRoom)
                 <div class="card">

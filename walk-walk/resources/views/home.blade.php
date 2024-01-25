@@ -106,15 +106,15 @@
                             <div class="drop-down-container" id="flight-drop-down-container">
                                 <div class="num-input-flight">
                                     <h4>Senior</h4>
-                                    <input name="senior" type="number" min="1" id="senior-input" value="1">
+                                    <input name="senior" type="number" min="0" id="senior-input" value="1">
                                 </div>
                                 <div class="num-input-flight">
                                     <h4>Adult</h4>
-                                    <input name="adult" type="number" min="1" id="adult-input" value="1">
+                                    <input name="adult" type="number" min="0" id="adult-input" value="1">
                                 </div>
                                 <div class="num-input-flight">
                                     <h4>Children</h4>
-                                    <input name="children" type="number" min="1" id="children-input" value="1">
+                                    <input name="children" type="number" min="0" id="children-input" value="1">
                                 </div>
                             </div>
                         </div>
@@ -144,19 +144,19 @@
                                     $imageName = str_replace(' ', '_', $hotel->NameHotel) . '.svg';
                                 @endphp
                                 <img src="{{ asset("/assets/hotels/{$imageName}") }}" class="hotel-image" alt="Hotel Image">
-                                
+
                                 <!-- <img src="/assets/images/hotel1.jpg" alt="img-hotel"> -->
                             </div>
                             <div class="hotel-info">
                                 <div class="top-hotel-info">
                                     <p class="hotel-name">{{$hotel->NameHotel}}</p>
-                                   
+
                                     <div class="mid-hotel-info">
                                         <div class="star">
                                             @for ($i = 1; $i <= 5; $i++)
                                                 @if ($i <= $hotel->StarHotel)
                                                 <i class="fa-solid fa-star"></i>
-                                                @else  
+                                                @else
                                                 <i class="fa-regular fa-star"></i>
                                                 @endif
                                             @endfor
