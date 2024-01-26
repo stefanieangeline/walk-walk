@@ -9,6 +9,7 @@ use App\Models\Hotel;
 use App\Models\HotelFacilityDetail;
 use App\Models\HotelFacilityHeader;
 use App\Models\HotelRooms;
+use App\Models\OrderedRoom;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -64,7 +65,8 @@ class HotelRoomController extends Controller
             "countries" => Country::all(),
             "airports" => Airport::all(),
             "cities" => City::all(),
-            "hotel_list" => Hotel::all()
+            "hotel_list" => Hotel::all(),
+            "orderedRooms" => OrderedRoom::all()
             // "hotel" => Hotel::query()->where('IDHotel', $id)->first()
         ]);
     }
