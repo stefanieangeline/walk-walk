@@ -126,7 +126,6 @@ searchHotel.addEventListener("click", (e) => {
     var checkGuestInput = document.getElementById("guests-input");
     // Melakukan validasi
     if (
-        destinationInput.value.trim() === "" ||
         checkInDateInput.value === "" ||
         checkOutDateInput.value === "" ||
         checkRoomInput.value === "" ||

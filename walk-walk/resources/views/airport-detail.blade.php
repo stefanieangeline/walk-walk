@@ -16,8 +16,16 @@
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-left">
+                <button class="back" onclick="history.back()" class="left-a">
+                    <div class="left-left">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                    <div class="left-right">
+                        Back
+                    </div>
+                </button>
                 <!-- <a href={{route("paymentSuccessful")}}> -->
-                    <i class="fa-solid fa-angle-left"></i>
+                    <!-- <i class="fa-solid fa-angle-left"></i> -->
                 <!-- </a> -->
             </div>
             <div class="navbar-middle">
