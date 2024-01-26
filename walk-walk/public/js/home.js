@@ -124,29 +124,44 @@ searchBtn.addEventListener("click", (e) => {
         var srcInput = document.getElementById("flight-src");
         var dstInput = document.getElementById("flight-dst");
         var departureDateInput = document.getElementById("departure-date");
+        var seniorValue = document.getElementById("senior-input").value;
+        var adultValue = document.getElementById("adult-input").value;
+        var childrenValue = document.getElementById("children-input").value;
 
         if (srcInput.value === "" ||departureDateInput.value === "" ||dstInput.value === "") {
             alert("Please fill in all required fields for flight.");
             e.preventDefault(); // Mencegah pengiriman formulir jika ada input yang belum diisi
         } else {
-            // Validasi tanggal keberangkatan minimal dari hari ini
-            var today = new Date();
-            today.setHours(0, 0, 0, 0); // Mengatur waktu ke tengah malam hari ini
-
-            var departureDate = new Date(departureDateInput.value);
-
-            if (departureDate < today) {
-                alert("Departure date should be today or later.");
-                e.preventDefault(); // Mencegah pengiriman formulir jika tanggal tidak valid
-            } else if (
-                srcInput.value.trim().toLowerCase() ===
-                dstInput.value.trim().toLowerCase()
+            if (
+                seniorValue.trim() === "0" &&
+                adultValue.trim() === "0" &&
+                childrenValue.trim() === "0"
             ) {
-                alert("Source and destination cannot be the same.");
-                e.preventDefault(); // Mencegah pengiriman formulir jika srcInput dan dstInput sama
+                // Display an alert or any other notification for the user
+                alert("Please select at least one passenger.");
+                // Prevent the form submission
+                e.preventDefault();
             } else {
-                document.forms["flight-form"].submit();
+                // Validasi tanggal keberangkatan minimal dari hari ini
+                var today = new Date();
+                today.setHours(0, 0, 0, 0); // Mengatur waktu ke tengah malam hari ini
+
+                var departureDate = new Date(departureDateInput.value);
+
+                if (departureDate < today) {
+                    alert("Departure date should be today or later.");
+                    e.preventDefault(); // Mencegah pengiriman formulir jika tanggal tidak valid
+                } else if (
+                    srcInput.value.trim().toLowerCase() ===
+                    dstInput.value.trim().toLowerCase()
+                ) {
+                    alert("Source and destination cannot be the same.");
+                    e.preventDefault(); // Mencegah pengiriman formulir jika srcInput dan dstInput sama
+                } else {
+                    document.forms["flight-form"].submit();
+                }
             }
+            
         }
     } else if (activeContainer == hotelDetailInfo) {
         var hotelDestinationInput =
