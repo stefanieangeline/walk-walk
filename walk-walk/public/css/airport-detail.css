@@ -55,11 +55,32 @@ a {
   padding-bottom: 20px;
 }
 
-.navbar-left i {
+/* .navbar-left i {
   font-size: 40px;
   color: var(--white);
   margin-left:30px;
-}
+} */
+
+  .back:hover{
+    cursor: pointer;
+  }
+
+  .left-left{
+    margin-right: 5px;
+  }
+
+  .back{
+    margin-left:20px;
+    font-family: roboto-cons-regular;
+    display: flex;
+    flex-direction: row;
+    background: none;
+    align-items: center;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--white);
+  }
 
 .navbar-right {
   display: flex;
@@ -93,7 +114,7 @@ a {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
   padding-top: 20px;
 }
 
@@ -145,6 +166,7 @@ option:checked:hover {
   flex-wrap: wrap;
   margin-left: 30px;
   margin-right: 30px;
+  margin-bottom: 30px;
   gap: 20px;
   justify-content: center;
 }

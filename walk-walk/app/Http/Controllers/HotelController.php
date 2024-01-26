@@ -6,6 +6,7 @@ use App\Models\Airport;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\Hotel;
+use App\Models\OrderedRoom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -79,7 +80,8 @@ class HotelController extends Controller
                 "countries" => Country::all(),
                 "airports" => Airport::all(),
                 "cities" => City::all(),
-                "hotel_list" => Hotel::all()
+                "hotel_list" => Hotel::all(),
+                "orderedRooms" => OrderedRoom::all()
             ]);
         }
 
@@ -182,7 +184,9 @@ class HotelController extends Controller
             "countries" => Country::all(),
             "airports" => Airport::all(),
             "cities" => City::all(),
-            "hotel_list" => Hotel::all()
+            "hotel_list" => Hotel::all(),
+            "orderedRooms" => OrderedRoom::all()
+            
         ]);
     }
 

@@ -138,11 +138,28 @@
                 <p class="info">Price do not include taxes & fees</p>
             </div>
 
+            {{-- @dd($orderedRooms) --}}
+
             @foreach($sortedRoomTypes as $roomType)
             <div class="room-type-box">
                 <div class="top-box-type">
                     <p class="type-name">{{ $roomType -> TypeRoom }}</p>
                     <div class="star-rate-box-type">
+                        {{-- @dd($orderedRooms) --}}
+                        
+                        <div class="hidden">
+                        @foreach($orderedRooms as $order)
+                        @if(($inDate < $order->CheckOutDate and $outDate > $order->CheckInDate) and $roomType -> TypeRoom == $order->TypeRoom)
+                        {{ $order->CheckOutDate < $outDate  }}
+                            {{ $roomType->QuantityRoom = $roomType->QuantityRoom - $order->RoomCount }}
+                            {{-- @dd("mantap") --}}
+                        @endif
+                        @endforeach
+                        @if($roomType->QuantityRoom < 0)
+                        {{ $roomType->QuantityRoom = 0 }}
+                        @endif
+                        </div>
+
                         <p class="q-available">{{$roomType-> QuantityRoom}} rooms left</p>
                         <!-- <p class="the-rating">4.5</p>
                         <p class="the-standard">/5</p> -->
@@ -279,7 +296,11 @@
                         <p class="big-price">Rp {{ $roomType -> PriceRoom }}.000</p>
                         <p class="tax-text">After Tax Rp.{{$roomType -> PriceRoom * 1.2}}.000</p>
                         <!-- <p class="reserve-button">Reserve</p> -->
+                        @if($roomType-> QuantityRoom>0)
                         <a class="reserve-button" href="{{ route("customer-hotel-detail", ['id' => $hotel->IDHotel, 'idHotel' => $hotel->IDHotel,'inDate' => $inDate, 'outDate' => $outDate, 'room' => $room, 'name' => $hotel->NameHotel, 'star' => $hotel->StarHotel, 'type' => $roomType -> TypeRoom, 'capacity' => $roomType -> CapacityRoom, 'wide' => $roomType -> WideRoom, 'price'=> $roomType -> PriceRoom]) }}" onclick="return validateReservation();" > Reserve</a>
+                        @else
+                        <p class="reserve-button">Room Not Available</p>
+                        @endif
                     </div>
 
                 </div>

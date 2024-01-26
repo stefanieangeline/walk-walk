@@ -32,10 +32,17 @@ class AirportDetailsController extends Controller
         ->first();
         // dd($AirportDestination->IDAirportDestination);
 
+        if (!$IDAirport) {
+            $IDAirport = $AirportSource->IDAirportSource; // atau $AirportDestination->IDAirportDestination;
+        }
+
+
         $TenantsAirport = AirportTenantsDetails::join("airport_tenants_headers", "airport_tenants_headers.IDTenants","=","airport_tenants_details.IDTenants")
         ->where("airport_tenants_headers.IDAirport","=", $IDAirport)
         ->get()
         ;
+
+        
         // dd($TenantsAirportSource);
         
         // dd($TenantsAirport   Destination);

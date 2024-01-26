@@ -31,6 +31,7 @@ a:hover{
     justify-content: space-between;
 }
 
+
 .left-a{
     display: flex;
     font-size: 20px;
@@ -38,6 +39,7 @@ a:hover{
     font-family: roboto-cons-bold;
     color: var(--white);
     gap: 10px;
+    margin-left: 20px;
 }
 
 .navbar-title{
