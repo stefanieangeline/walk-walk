@@ -90,7 +90,7 @@
                         <hr class="shadow-line">
                         <div class="card-footer">
                             <p>Purchase Successful <i class="fa-solid fa-check"></i></p>
-                            <a href="#">Review</a>
+                            <a href="{{ route("review",["order" => $orderedRoom->IDOrder]) }}">Review</a>
                         </div>
                     </div>
                     @endforeach

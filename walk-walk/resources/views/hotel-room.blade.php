@@ -146,7 +146,6 @@
                     <p class="type-name">{{ $roomType -> TypeRoom }}</p>
                     <div class="star-rate-box-type">
                         {{-- @dd($orderedRooms) --}}
-                        
                         <div class="hidden">
                         @foreach($orderedRooms as $order)
                         @if(($inDate < $order->CheckOutDate and $outDate > $order->CheckInDate) and $roomType -> TypeRoom == $order->TypeRoom)
@@ -159,7 +158,6 @@
                         {{ $roomType->QuantityRoom = 0 }}
                         @endif
                         </div>
-
                         <p class="q-available">{{$roomType-> QuantityRoom}} rooms left</p>
                         <!-- <p class="the-rating">4.5</p>
                         <p class="the-standard">/5</p> -->
