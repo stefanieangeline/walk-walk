@@ -100,7 +100,28 @@ a:hover{
     }
 }
 
-@media only screen and (max-width: 570px){
+@media (max-width: 850px){
+    .footer{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logoFooter{
+        text-align: center;
+    }
+}
+
+@media (max-width: 800px) {
+    .footer-right{
+        flex-direction: column;
+    }
+
+    .logoFooter{
+        text-align: start;
+    }
+}
+
+@media (max-width: 570px){
     .logoFooter img{
         width: 100px;
     }
