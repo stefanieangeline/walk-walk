@@ -12,6 +12,7 @@ use App\Http\Controllers\HotelController;
 use App\Http\Controllers\HotelPaymentController;
 use App\Http\Controllers\HotelRoomController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SigninController;
 use App\Http\Controllers\UserController;
 use Illuminate\Routing\RouteRegistrar;
@@ -70,7 +71,7 @@ Route::get('/hotel-payment', [HotelPaymentController::class, 'index'])->name('ho
 Route::get('/eticket', [EticketController::class,'index'])->name('e-ticket');
 
 Route::get('/customer-hotel-detail/{id}', [CustomerHotelDetailController::class, 'index'])->name('customer-hotel-detail')->middleware("auth");
-
+Route::get('/hotel-cust-review',[ReviewController::class,'index'])->name('review');
 Route::get('/payment-barcode', function(){
     return view('payment-barcode');
 });
@@ -104,7 +105,5 @@ Route::get('/nav-barB', function(){
 
 Route::get('/dummy', [UserController::class, 'dummy'])->name('dummy');
 
-Route::get('/hotel-cust-review', function(){
-    return view('hotel-cust-review');
-});
+
 
