@@ -11,19 +11,19 @@
 <body>
     <div class="history-page">
         <div class="side-bar-left">
-            <div class="logo">
+            <a class="logo" href="{{route("home")}}">
                 <img class ="logo-img" src="assets/logo/jalan-jalan.svg" alt="logo">
-            </div>
+            </a>
             <div class="content">
                 <div class="content-top">
                     <a href="{{route("account")}}">
-                        <div class="myaccount active">
+                        <div class="myaccount">
                             <i class="fa-solid fa-user active"></i>
                             <p class="push-right">My Account</p>
                         </div>
                     </a>
                     <a href="{{route('booking-detail')}}">
-                        <div class="myorder">
+                        <div class="myorder active">
                             <i class="fa-solid fa-receipt"></i>
                             <p class="push-right-1">My Order</p>
                         </div>
@@ -45,96 +45,100 @@
                 <p>Booking Details</p>
             </div>
             <div class="all-history">
-                @foreach ($orderedRooms as $orderedRoom)
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-header-left"><p>Booking ID: {{ $orderedRoom->IDOrder }}<br><span> Booked and Payable by Jalan - Jalan</span></p></div>
-                        <div class="card-header-right"><p> <i class="fa-solid fa-check"></i> Active</p></div>
-                    </div>
-                    <hr class="shadow-line">
-                    <!-- ini kalo booking hotel -->
-                    <div class="card-body">
-                        <div class="head-card-body">
-                            <div class="icon">
-                                <i class="fa-solid fa-hotel"></i>
-                            </div>
-                            <div class="info">
-                                <p>{{ $orderedRoom->NameHotel }}</p>
-                            </div>
+                @if (!$orderedRooms->count() && !$flights->count())
+                    <p class="no-bookings">No bookings available.</p>
+                @else
+                    @foreach ($orderedRooms as $orderedRoom)
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-header-left"><p>Booking ID: {{ $orderedRoom->IDOrder }}<br><span> Booked and Payable by Jalan - Jalan</span></p></div>
+                            <div class="card-header-right"><p> <i class="fa-solid fa-check"></i> Active</p></div>
                         </div>
-                        <div class="bottom-card-body">
-                            <div class="left-card-body">
-                                <p class="header-left-card-body">
-                                    Check - In
-                                </p>
-                                <p class="content-left-card-body">{{ $orderedRoom->CheckInDate }}</p>
-                                <p class="content-left-card-body">13:00</p>
-                            </div>
-                            <div class="middle-card-body">
-                                <div class="icon-middle-card-body">
-                                    <i class="fa-solid fa-moon"></i>
+                        <hr class="shadow-line">
+                        <!-- ini kalo booking hotel -->
+                        <div class="card-body">
+                            <div class="head-card-body">
+                                <div class="icon">
+                                    <i class="fa-solid fa-hotel"></i>
                                 </div>
-                                <div class="desc-middle-card-body">
-                                    <p>{{ $orderedRoom->NumberOfNights }} night(s)</p>
+                                <div class="info">
+                                    <p>{{ $orderedRoom->NameHotel }}</p>
                                 </div>
                             </div>
-                            <div class="right-card-body">
-                                <p class="header-left-card-body">
-                                    Check - Out
-                                </p>
-                                <p class="content-left-card-body">{{ $orderedRoom->CheckOutDate }}</p>
-                                <p class="content-left-card-body">12:00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-                @foreach ($flights as $flight)
-                <div class="card">
-                    <div class="card-header">
-                        <p>Booking ID: {{$flight->IDPlaneTicket}} <br><span> Booked and Payable by Jalan - Jalan</span></p>
-                        <p> <i class="fa-solid fa-check"></i> Active</p>
-                    </div>
-                    <hr class="shadow-line">
-                    <div class="card-body">
-                        <div class="head-card-body">
-                            <div class="icon">
-                                <i class="fa-solid fa-plane fa-rotate-by" style="--fa-rotate-angle: -45deg;"></i>
-                            </div>
-                            <div class="info">
-                                <p>{{$flight->CitySrc}} ({{$flight->CodeSrc}}) - {{$flight->CityDest}} ({{$flight->CodeDest}})</p>
-                            </div>
-                        </div>
-                        <div class="bottom-card-body activated-responsive">
-                            <div class="left-part">
+                            <div class="bottom-card-body">
                                 <div class="left-card-body">
                                     <p class="header-left-card-body">
-                                        From
+                                        Check - In
                                     </p>
-                                    <p class="content-left-card-body">{{$flight->AirportSrc}}</p>
-                                    <p class="content-left-card-body">{{$flight->departureTime}}</p>
+                                    <p class="content-left-card-body">{{ $orderedRoom->CheckInDate }}</p>
+                                    <p class="content-left-card-body">13:00</p>
                                 </div>
                                 <div class="middle-card-body">
                                     <div class="icon-middle-card-body">
-                                        <i class="fa-solid fa-plane-arrival"></i>
+                                        <i class="fa-solid fa-moon"></i>
+                                    </div>
+                                    <div class="desc-middle-card-body">
+                                        <p>{{ $orderedRoom->NumberOfNights }} night(s)</p>
                                     </div>
                                 </div>
                                 <div class="right-card-body">
                                     <p class="header-left-card-body">
-                                        To
+                                        Check - Out
                                     </p>
-                                    <p class="content-left-card-body">{{$flight->AirportDest}}</p>
-                                    <p class="content-left-card-body">{{$flight->arrivalTime}}</p>
+                                    <p class="content-left-card-body">{{ $orderedRoom->CheckOutDate }}</p>
+                                    <p class="content-left-card-body">12:00</p>
                                 </div>
-                            </div>
-                            <div class="right-part">
-                                <button class="btn-right-part">Airport Details <i class="fa-solid fa-circle-info"></i></button>
-                                <button class="btn-right-part">Check E-Ticket <i class="fa-solid fa-circle-info"></i></button>
                             </div>
                         </div>
                     </div>
-                </div>
-                @endforeach
+                    @endforeach
+                    @foreach ($flights as $flight)
+                    <div class="card">
+                        <div class="card-header">
+                            <p>Booking ID: {{$flight->IDPlaneTicket}} <br><span> Booked and Payable by Jalan - Jalan</span></p>
+                            <p> <i class="fa-solid fa-check"></i> Active</p>
+                        </div>
+                        <hr class="shadow-line">
+                        <div class="card-body">
+                            <div class="head-card-body">
+                                <div class="icon">
+                                    <i class="fa-solid fa-plane fa-rotate-by" style="--fa-rotate-angle: -45deg;"></i>
+                                </div>
+                                <div class="info">
+                                    <p>{{$flight->CitySrc}} ({{$flight->CodeSrc}}) - {{$flight->CityDest}} ({{$flight->CodeDest}})</p>
+                                </div>
+                            </div>
+                            <div class="bottom-card-body activated-responsive">
+                                <div class="left-part">
+                                    <div class="left-card-body">
+                                        <p class="header-left-card-body">
+                                            From
+                                        </p>
+                                        <p class="content-left-card-body">{{$flight->AirportSrc}}</p>
+                                        <p class="content-left-card-body">{{$flight->departureTime}}</p>
+                                    </div>
+                                    <div class="middle-card-body">
+                                        <div class="icon-middle-card-body">
+                                            <i class="fa-solid fa-plane-arrival"></i>
+                                        </div>
+                                    </div>
+                                    <div class="right-card-body">
+                                        <p class="header-left-card-body">
+                                            To
+                                        </p>
+                                        <p class="content-left-card-body">{{$flight->AirportDest}}</p>
+                                        <p class="content-left-card-body">{{$flight->arrivalTime}}</p>
+                                    </div>
+                                </div>
+                                <div class="right-part">
+                                    <button class="btn-right-part">Airport Details <i class="fa-solid fa-circle-info"></i></button>
+                                    <button class="btn-right-part">Check E-Ticket <i class="fa-solid fa-circle-info"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>

@@ -45,52 +45,56 @@
                 <p>Booking History</p>
             </div>
             <div class="all-history">
-                @foreach ($flights as $flight)
-                @if ($flight->c1 == $flight->c2)
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-header-left"><p>Booking ID: {{$flight->IDPlaneTicket}}</p></div>
-                        <div class="card-header-right"><p>{{$flight->c1}}</p></div>
-                    </div>
-                    <hr class="shadow-line">
-                    <div class="card-body">
-                        <div class="icon">
-                            <i class="fa-solid fa-plane"></i>
+                @if (!$orderedRooms->count() && !$flights->count())
+                    <p class="no-bookings">No history available.</p>
+                @else
+                    @foreach ($flights as $flight)
+                    @if ($flight->c1 == $flight->c2)
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-header-left"><p>Booking ID: {{$flight->IDPlaneTicket}}</p></div>
+                            <div class="card-header-right"><p>{{$flight->c1}}</p></div>
                         </div>
-                        <div class="info">
-                            <p>{{$flight->AirportSrc}} - {{$flight->AirportDest}}</p>
+                        <hr class="shadow-line">
+                        <div class="card-body">
+                            <div class="icon">
+                                <i class="fa-solid fa-plane"></i>
+                            </div>
+                            <div class="info">
+                                <p>{{$flight->AirportSrc}} - {{$flight->AirportDest}}</p>
+                            </div>
+                        </div>
+                        <hr class="shadow-line">
+                        <div class="card-footer">
+                            <p>Purchase Successful <i class="fa-solid fa-check"></i></p>
+                            {{-- <a href="#">Review</a> --}}
                         </div>
                     </div>
-                    <hr class="shadow-line">
-                    <div class="card-footer">
-                        <p>Purchase Successful <i class="fa-solid fa-check"></i></p>
-                        {{-- <a href="#">Review</a> --}}
+                    @endif
+                    @endforeach
+                    @foreach ($orderedRooms as $orderedRoom)
+                    <div class="card">
+                        <div class="card-header">
+                            <p>Booking ID: {{ $orderedRoom->IDOrder }}</p>
+                            <p> {{$orderedRoom->RoomCount }} Room(s)</p>
+                        </div>
+                        <hr class="shadow-line">
+                        <div class="card-body">
+                            <div class="icon">
+                            <i class="fa-solid fa-hotel"></i>
+                            </div>
+                            <div class="info">
+                                <p>{{ $orderedRoom->NameHotel }}</p>
+                            </div>
+                        </div>
+                        <hr class="shadow-line">
+                        <div class="card-footer">
+                            <p>Purchase Successful <i class="fa-solid fa-check"></i></p>
+                            <a href="#">Review</a>
+                        </div>
                     </div>
-                </div>
+                    @endforeach
                 @endif
-                @endforeach
-                @foreach ($orderedRooms as $orderedRoom)
-                <div class="card">
-                    <div class="card-header">
-                        <p>Booking ID: {{ $orderedRoom->IDOrder }}</p>
-                        <p> {{$orderedRoom->RoomCount }} Room(s)</p>
-                    </div>
-                    <hr class="shadow-line">
-                    <div class="card-body">
-                        <div class="icon">
-                        <i class="fa-solid fa-hotel"></i>
-                        </div>
-                        <div class="info">
-                            <p>{{ $orderedRoom->NameHotel }}</p>
-                        </div>
-                    </div>
-                    <hr class="shadow-line">
-                    <div class="card-footer">
-                        <p>Purchase Successful <i class="fa-solid fa-check"></i></p>
-                        <a href="#">Review</a>
-                    </div>
-                </div>
-                @endforeach
             </div>
         </div>
     </div>

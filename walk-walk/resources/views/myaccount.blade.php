@@ -11,9 +11,9 @@
 <body>
     <div class="my-account-page">
         <div class="side-bar-left">
-            <div class="logo">
+            <a class="logo" href="{{route("home")}}">
                 <img class ="logo-img" src="assets/logo/jalan-jalan.svg" alt="logo">
-            </div>
+            </a>
             <div class="content">
                 <div class="content-top">
                     <a href="{{route("account")}}">

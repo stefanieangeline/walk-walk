@@ -68,7 +68,6 @@ class UserController extends Controller
                     ->distinct()
                     ->get();
 
-
         return view("booking-detail", ["flights" => $flights, "orderedRooms" => $orderedRooms]);
     }
 
@@ -99,7 +98,9 @@ class UserController extends Controller
                     )
             ->distinct()
             ->get();
-
+        
+        
+        // dd($orderedRooms, $flights);
         return view("history", ["flights" => $flights, "orderedRooms" => $orderedRooms]);
 
 
