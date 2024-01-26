@@ -55,28 +55,29 @@
                         <option value="{{$AirportDestination->IDAirportDestination}}" @if ($IDAirport == $AirportDestination->IDAirportDestination) selected="selected" @endif> {{$AirportDestination -> NameAirport}}</option>
                     </select>
                     <input type="text" value="{{$IDTicket}}" class="hidden" name="IDTicket">
-                    
+
             </div>
             <div class="sort-category">
                 <div class="icon-category">
                     <img src="/assets/icon/sort.svg" class="i-sort">
                 </div>
+
                 <div class="dropdown-category">
                     <div class="select-tenant">
                         <select id="drop2" name="Category">
-                            <option value="All" @if ($Category == "All") selected @endif>All</option> 
-                            <option value="Retail" @if ($Category == "Retail") selected @endif>Shops<i class="fa-solid fa-shop"></i></option>
-                            <option value="Food & Beverage" @if ($Category == "Food & Beverage") selected @endif>Restaurants <i class="fa-solid fa-utensils"></i></option>
-                            <option value="Electronics" @if ($Category == "Electronics") selected @endif>Electronics <i class="fa-solid fa-money-bill"></i></option>
-                            <option value="Health & Wellness" @if ($Category == "Health & Wellness") selected @endif>Health & Wellness <i class="fa-solid fa-pills"></i></option>
+                            <option value="All" @if ($Category == "All") selected="selected" @endif>All</option>
+                            <option value="Retail" @if ($Category == "Retail") selected="selected" @endif>Shops<i class="fa-solid fa-shop"></i></option>
+                            <option value="Food & Beverage" @if ($Category == "Food & Beverage") selected="selected" @endif>Restaurants <i class="fa-solid fa-utensils"></i></option>
+                            <option value="Electronics" @if ($Category == "Electronics") selected="selected" @endif>Electronics <i class="fa-solid fa-money-bill"></i></option>
+                            <option value="Health & Wellness" @if ($Category == "Health & Wellness") selected="selected" @endif>Health & Wellness <i class="fa-solid fa-pills"></i></option>
                         </select>
-                        
+
                         </form>
                 </div>
                 </div>
             </div>
         </div>
-        
+
         <div class="body-content">
             <div class="all-tenant">
                 @foreach($TenantsAirport as $tenants)
@@ -91,7 +92,7 @@
                     </div>
                 </div>
                 @endforeach
-               
+
             </div>
         </div>
     </div>
