@@ -556,7 +556,8 @@ body {
     flex-direction: row;
     align-items: center;
     margin: 13px 0px;
-    width: 190px;
+    width: 210px;
+    justify-content: space-between;
     border-radius: 20px;
     background-color: var(--white);
     color: var(--strong-blue);
@@ -594,7 +595,7 @@ body {
 
 
 .num-input {
-    width: 160px;
+    width: 175px;
     /* margin-left: 2%; */
     display: flex;
     flex-direction: row;
@@ -614,7 +615,7 @@ body {
     font-size: 13px;
     color: var(--strong-blue);
     font-weight: lighter;
-    width: 30px;
+    width: 35px;
     /* padding: 10px; */
 }
 

@@ -86,11 +86,17 @@ searchBtn.addEventListener("click", (e) => {
                 alert("Please select a date that is today or in the future.");
                 // Prevent the form submission
                 e.preventDefault();
+            } else if (
+                source.trim().toLowerCase() ===
+                dest.trim().toLowerCase()
+            ) {
+                alert("Source and destination cannot be the same.");
+                e.preventDefault(); // Mencegah pengiriman formulir jika srcInput dan dstInput sama
             } else {
                 // Submit the form if all validations pass
                 document.forms["box-choice"].submit();
             }
-             document.forms["box-choice"].submit();
+            //  document.forms["box-choice"].submit();
         }
         // document.forms["box-choice"].submit();
     }

@@ -14,7 +14,7 @@
         <div class="box-choice">
             <div class="dest-box box-width">
                 <h2>Destination</h2>
-                <input type="text" placeholder="Search a place..." name="destination" id="hotel-destination" value="{{$dest}}">
+                <input type="text" placeholder="Search a place..." name="destination" id="hotel-destination" value="@if ($dest == "") {{$hotel->NameHotel}} @else {{$dest}} @endif ">
             </div>
             <div class="check-in-out-box box-width">
                 <div class="in-box">
