@@ -40,7 +40,7 @@
             </div>
             <div class="content">
                 <div class="content-box">
-                    <h2 class="text-1">Ticket Payment Succesfull</h2>
+                    <h2 class="text-1">Ticket Payment Successful</h2>
                     <h3 class="text-2">Your payment has been processed. Here are the details of this transaction:</h3>
 
                     <div class="mid">
