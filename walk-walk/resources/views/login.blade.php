@@ -28,10 +28,15 @@
             <form method="POST" name="login" class="form_sign_input">
             @csrf
                 {{-- <p>Email</p> --}}
-                <input name="email" type="email" placeholder="Email">
+                <input name="email" type="email" placeholder="Email" class="email">
                 {{-- <p>Password</p> --}}
-                <input name="password" type="password" placeholder="Password">
-                <input name="submit" type="submit" value="Log In" id="register">
+                <input name="password" type="password" placeholder="Password" class="password">
+                <div class="error-message">
+                    @if(session('loginError'))
+                        {{ session('loginError') }}
+                    @endif
+                </div>
+                <input name="submit" type="submit" value="Log In" id="register" class="logIn">
             </form>
         </div>
     
