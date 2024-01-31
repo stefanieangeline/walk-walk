@@ -167,14 +167,28 @@
                 <div class="bottom-box-type">
                     <div class="room-detail">
                         <div class="pic-room-detail">
-                            <img src="/assets/icon/Arunika/Deluxe/1.jpg" class="rd-1">
+                            @php
+                                // Menggunakan slug untuk membuat folder yang valid
+                                $roomFolder = str_replace('-', '_', Str::slug($roomType->TypeRoom));
+                                // Mendapatkan foto-foto tipe kamar
+                                $roomPhotos = File::files(public_path("assets/roomType/{$roomFolder}"));
+                            @endphp
+
+                            <img src="{{ asset("assets/roomType/{$roomFolder}/" . basename($roomPhotos[0])) }}" class="rd-1">
+                            <!-- <img src="/assets/icon/Arunika/Deluxe/1.jpg" class="rd-1"> -->
                             <div class="bottom-pics">
-                                <img src="/assets\icon\Arunika\Deluxe\2.jpg" class="rd-2">
-                                <img src="/assets\icon\Arunika\Deluxe\3.jpg" class="rd-2">
+                                @for ($i = 1; $i <= 2; $i++)
+                                    <img src="{{ asset("assets/roomType/{$roomFolder}/" . basename($roomPhotos[$i])) }}" class="rd-2">
+                                @endfor
+                                <!-- <img src="/assets\icon\Arunika\Deluxe\2.jpg" class="rd-2">
+                                <img src="/assets\icon\Arunika\Deluxe\3.jpg" class="rd-2"> -->
                             </div>
                             <div class="bottom-pics">
-                                <img src="/assets\icon\Arunika\Deluxe\2.jpg" class="rd-2">
-                                <img src="/assets\icon\Arunika\Deluxe\3.jpg" class="rd-2">
+                                @for ($i = 3; $i <= 4; $i++)
+                                    <img src="{{ asset("assets/roomType/{$roomFolder}/" . basename($roomPhotos[$i])) }}" class="rd-2">
+                                @endfor
+                                <!-- <img src="/assets\icon\Arunika\Deluxe\2.jpg" class="rd-2">
+                                <img src="/assets\icon\Arunika\Deluxe\3.jpg" class="rd-2"> -->
                             </div>
                         </div>
                     </div>
