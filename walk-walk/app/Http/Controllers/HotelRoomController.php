@@ -48,22 +48,22 @@ class HotelRoomController extends Controller
         $hotelFolder = str_replace('-', '_', Str::slug($hotel->NameHotel));
         $hotelPhotos = File::files(public_path("assets/hotelRoom/{$hotelFolder}"));
 
-        $roomPhotos = [];
-        foreach ($roomTypePhotos as $roomTypePhoto) {
-            // if (strpos($roomTypePhoto->TypeRoom, ' ') !== false) {
-            //     // Jika ada spasi, kita ubah namanya untuk mendapatkan folder yang valid
-            //     $roomFolder = str_replace('-', '_', Str::slug($roomTypePhoto->TypeRoom));
-            // } else {
-            //     // Jika tidak ada spasi, kita gunakan nama tipe kamar langsung
-            //     $roomFolder = $roomTypePhoto->TypeRoom;
-            // }
-            // $roomPhotos = File::files(public_path("assets/roomType/{$roomFolder}"));
+        // $roomPhotos = [];
+        // foreach ($roomTypePhotos as $roomTypePhoto) {
+        //     // if (strpos($roomTypePhoto->TypeRoom, ' ') !== false) {
+        //     //     // Jika ada spasi, kita ubah namanya untuk mendapatkan folder yang valid
+        //     //     $roomFolder = str_replace('-', '_', Str::slug($roomTypePhoto->TypeRoom));
+        //     // } else {
+        //     //     // Jika tidak ada spasi, kita gunakan nama tipe kamar langsung
+        //     //     $roomFolder = $roomTypePhoto->TypeRoom;
+        //     // }
+        //     // $roomPhotos = File::files(public_path("assets/roomType/{$roomFolder}"));
 
-            //Menggunakan slug untuk membuat folder yang valid
-            $roomFolder = str_replace('-', '_', Str::slug($roomTypePhoto->TypeRoom));
-            //Mendapatkan foto-foto tipe kamar
-            $roomPhotos[$roomTypePhoto->TypeRoom] = File::files(public_path("assets/roomType/{$roomFolder}"));
-        }
+        //     //Menggunakan slug untuk membuat folder yang valid
+        //     $roomFolder = str_replace('-', '_', Str::slug($roomTypePhoto->TypeRoom));
+        //     //Mendapatkan foto-foto tipe kamar
+        //     $roomPhotos[$roomTypePhoto->TypeRoom] = File::files(public_path("assets/roomType/{$roomFolder}"));
+        // }
         // $roomFolder = str_replace('-', '_', Str::slug($roomTypePhoto->TypeRoom));
         // $roomPhotos = File::files(public_path("assets/roomType/{$roomFolder}"));
 
@@ -83,9 +83,9 @@ class HotelRoomController extends Controller
             'hotelFacilities'=>$hotelFacilities,
             'hotelFolder' => $hotelFolder,
             'hotelPhotos' => $hotelPhotos,
-            'roomTypePhoto' => $roomTypePhoto,
-            'roomFolder' => $roomFolder,
-            'roomPhotos' => $roomPhotos,            
+            // 'roomTypePhoto' => $roomTypePhoto,
+            // 'roomFolder' => $roomFolder,
+            // 'roomPhotos' => $roomPhotos,            
             "countries" => Country::all(),
             "airports" => Airport::all(),
             "cities" => City::all(),
