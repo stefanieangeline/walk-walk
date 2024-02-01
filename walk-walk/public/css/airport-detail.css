@@ -171,6 +171,13 @@ option:checked:hover {
   justify-content: center;
 }
 
+.no-tenants{
+  font-family: roboto-cons-bold;
+  color: var(--grey);
+  padding: 10%;
+  font-size: 1.5rem;
+}
+
 .tenants {
   display: flex;
   justify-content: center;

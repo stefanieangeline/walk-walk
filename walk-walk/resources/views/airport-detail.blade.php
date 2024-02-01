@@ -80,6 +80,7 @@
 
         <div class="body-content">
             <div class="all-tenant">
+                @if(count($TenantsAirport)>0)
                 @foreach($TenantsAirport as $tenants)
                 <div class="tenants">
                     <div class="tenant-logo">
@@ -92,7 +93,9 @@
                     </div>
                 </div>
                 @endforeach
-
+                @else
+                <p class="no-tenants">No Tenants Available</p>
+                @endif
             </div>
         </div>
     </div>
