@@ -1,8 +1,9 @@
-// function buat mempermudah nambah class ato remove class
+// function buat mempermudah nambah class, variabel element adalah element html nya dan className adalah nama class yang akan diberi
 function addClassList(element, className) {
     element.classList.add(className)
 }
 
+// function buat mempermudah remove class, variabel element adalah element html nya dan className adalah nama class yang akan dibuang
 function remClassList(element, className) {
     element.classList.remove(className)
 }
@@ -11,6 +12,7 @@ function remClassList(element, className) {
 hotelDropBtn = document.getElementById("hotel-drop-down-icon")
 hotelDropContainer = document.getElementById("hotel-drop-down-container")
 
+// function untuk membuat icon dropdown di hotel rotate ketika di click
 hotelDropBtn.addEventListener("click", (e) => {
     if (!hotelDropContainer.classList.contains("show")) {
         addClassList(hotelDropContainer, "show")
@@ -25,6 +27,7 @@ hotelDropBtn.addEventListener("click", (e) => {
 flightDropBtn = document.getElementById("flight-drop-down-icon")
 flightDropContainer = document.getElementById("flight-drop-down-container")
 
+// function untuk membuat icon dropdown di flight rotate ketika di click
 flightDropBtn.addEventListener("click", (e) => {
     if (!flightDropContainer.classList.contains("show")) {
         addClassList(flightDropContainer, "show")
@@ -41,14 +44,17 @@ guestQty = document.getElementById("guests-input")
 hotelDispInfo = document.getElementById("hotel-display-info")
 refreshHotelDispInfo()
 
+// function untuk mengupdate tampilan dengan data yang terbaru
 function refreshHotelDispInfo() {
     hotelDispInfo.innerHTML = roomQty.value + " room, " + guestQty.value +" guests"
 }
 
+// ketika ada perubahan value di jumlah kamar akan refresh info
 roomQty.addEventListener("change", (e) => {
     refreshHotelDispInfo()
 })
 
+// ketika ada perubahan value di jumlah pengunjung akan refresh info
 guestQty.addEventListener("change", (e) => {
     refreshHotelDispInfo()
 })
@@ -60,18 +66,22 @@ childrenQty = document.getElementById("children-input")
 flightDispInfo = document.getElementById("flight-display-info")
 refreshflightDispInfo()
 
+// menampilkan info jumlah senior, adult, children di flightDispInfo
 function refreshflightDispInfo() {
     flightDispInfo.innerHTML = seniorQty.value + " senior, " +adultQty.value + " adult, " + childrenQty.value +" children"
 }
 
+// ketika ada perubahan value di jumlah penumpang senior akan refresh info
 seniorQty.addEventListener("change", (e) => {
     refreshflightDispInfo();
 });
 
+// ketika ada perubahan value di jumlah penumpang dewasa akan refresh info
 adultQty.addEventListener("change", (e) => {
     refreshflightDispInfo()
 })
 
+// ketika ada perubahan value di jumlah penumpang anak-anak akan refresh info
 childrenQty.addEventListener("change", (e) => {
     refreshflightDispInfo()
 })
@@ -81,10 +91,13 @@ hotelMode = document.getElementById("hotel-mode")
 flightMode = document.getElementById("flight-mode")
 hotelDetailInfo = document.getElementById("hotel-detail-info")
 flightDetailInfo = document.getElementById("flight-detail-info")
+
+// set deafult value pada saat web mau diload
 addClassList(hotelMode, "selected")
 activeMode = hotelMode
 activeContainer = hotelDetailInfo
 
+// mengubah tampilan ketika hotel di click
 hotelMode.addEventListener("click", (e) => {
     if (!hotelMode.classList.contains("selected") && !hotelDetailInfo.classList.contains("show")) {
         addClassList(hotelMode, "selected")
@@ -96,6 +109,7 @@ hotelMode.addEventListener("click", (e) => {
     }
 })
 
+// mengubah tampilan ketika flight di click
 flightMode.addEventListener("click", (e) => {
     if (!flightMode.classList.contains("selected") && !flightDetailInfo.classList.contains("show")) {
         addClassList(flightMode, "selected")
@@ -117,8 +131,10 @@ flightMode.addEventListener("click", (e) => {
 //     }
 // })
 
+// ketika tombol search diclick akan melakukan pencarian sesuai kategori yang sedang aktif
 searchBtn = document.getElementById("search-btn");
 searchBtn.addEventListener("click", (e) => {
+    // jika sedang di kategori flight
     if (activeContainer == flightDetailInfo) {
         // Logika validasi untuk formulir penerbangan
         var srcInput = document.getElementById("flight-src");
@@ -163,6 +179,7 @@ searchBtn.addEventListener("click", (e) => {
             }
             
         }
+    // jika sedang di kategori hotel
     } else if (activeContainer == hotelDetailInfo) {
         var hotelDestinationInput =
             document.getElementById("hotel-destination");
@@ -205,6 +222,7 @@ flightSrc = document.getElementById("flight-src")
 flightDst = document.getElementById("flight-dst")
 hotelDst = document.getElementById("hotel-destination")
 
+// mengubah value source dan destination di flight ketika diclick
 switchBtn.addEventListener("click", (e) => {
     temp = flightSrc.value
     flightSrc.value = flightDst.value
