@@ -37,6 +37,11 @@ a {
     padding-bottom: 50px;
 }
 
+.logo:hover{
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
 .side-bar-left {
     height: 100vh; /* Full-height: remove this if you want "auto" height */ /* Set the width of the sidebar */
     width: 20vw;
