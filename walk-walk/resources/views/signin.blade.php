@@ -25,9 +25,29 @@
         <p class="create_account">Welcome!</p>
         <p class='opacity'>Start your journey here</p>
         <input name="email" type="email" placeholder="Email (xxx@xx.com)" id="email">
+        <div class="error-message">
+            @error('email')
+                <span class="error">{{ $message }}</span>
+            @enderror
+        </div>
         <input name="phoneNumber" type="text" placeholder="Mobile Number" id="mobilenumber">
+        <div class="error-message">
+            @error('phoneNumber')
+                <span class="error">{{ $message }}</span>
+            @enderror
+        </div>
         <input name="name" type="text" placeholder="Full Name" id="fullname">
+        <div class="error-message">
+            @error('name')
+                <span class="error">{{ $message }}</span>
+            @enderror
+        </div>
         <input name="password" type="password" placeholder="Password (length must be more than 8)" id="password">
+        <div class="error-message">
+            @error('password')
+                <span class="error">{{ $message }}</span>
+            @enderror 
+        </div>
         <div class="nationality_container">
             <input name="nationality" type="text" placeholder="Nationality" id="nationality" class="nationality_class">
         </div>

@@ -16,6 +16,10 @@ class AirportDetailsController extends Controller
         $Category = request()->get("Category");
         $TenantsAirport = null;
 
+        if ($Category == null || $Category == "") {
+            $Category = "All";
+        }
+
         $AirportDestination = Schedule::join("plane_tickets", "plane_tickets.IDSchedule", "=", "schedules.IDSchedule")
         ->join("airports", "schedules.IDAirportDestination", "=", "IDAirport")
         ->select('IDAirportDestination','NameAirport')

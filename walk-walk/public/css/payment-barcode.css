@@ -128,7 +128,7 @@ input:focus {
   border-radius: 45px 45px 0px 0px;
   padding-left: 80px;
   padding-right: 80px;
-  padding-top: 60px;
+  padding-top: 20px;
   padding-bottom: 60px;
   width: 100%;
   height: fit-content;
@@ -147,7 +147,7 @@ input:focus {
     width: 100%;
     height: fit-content;
     border-radius: 20px;
-    padding : 35px;
+    padding : 30px;
 }
 .bg-content h2{
     display: flex;
@@ -157,9 +157,9 @@ input:focus {
     font-family: roboto-cons-bold;
 }
 .bg-content img{
-    width: 50%;
-    height: 50%;
-    margin-top: 2%;
+    width: 30%;
+    height: 30%;
+    /* margin-top: -2%; */
 }
 .input{
     width: 100%;
