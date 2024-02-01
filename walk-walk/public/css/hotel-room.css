@@ -936,7 +936,7 @@ body {
     font-family: roboto-cons-medium;
     font-size: 16px;
     color: white;
-    background-color: var(--blue-base);
+    background-color: var(--other-blue);
     border-radius: 5px;
     border-color: var(--another-blue);
     border-style: solid;
@@ -952,9 +952,13 @@ body {
 }
 
 .sorting-button.active {
-    border: 2px solid #000;
+    border: 1px solid #000;
     background-color: var(--strong-blue);
     color: #fff;
+}
+
+.sorting-button:hover{
+    background-color: var(--strong-blue);
 }
 
 .bottom-div{

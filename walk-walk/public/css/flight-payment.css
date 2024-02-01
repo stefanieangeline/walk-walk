@@ -102,7 +102,7 @@ a:hover{
 .content-box{
     background-color: var(--blue-base);
     box-shadow: 30px 30px 0.2px 0px #0A4D78;;
-    border-radius: 45px 45px 10px 10px;
+    border-radius: 45px;
     width: 65%;
     height: fit-content;
     padding-top: 65px;
@@ -122,7 +122,7 @@ a:hover{
     margin-top: 1%;
     color: white;
     opacity: 80%;
-    font-family: roboto-cons-regular;
+    font-family: roboto-cons-light;
 }
 
 .mid{

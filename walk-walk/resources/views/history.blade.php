@@ -11,7 +11,7 @@
 <body>
     <div class="history-page">
         <div class="side-bar-left">
-            <a class="logo" href="{{route("home")}}">
+            <a href="{{route("home")}}" class="logo">
                 <img class ="logo-img" src="assets/logo/jalan-jalan.svg" alt="logo">
             </a>
             <div class="content">
