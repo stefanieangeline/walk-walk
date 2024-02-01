@@ -229,7 +229,7 @@ function addClickEvent(array) {
             if (el.firstElementChild.checked != true) {
                 el.firstElementChild.checked = true
             } else {
-                el.firstElementChild.checked = false
+                
             }
             document.forms["box-choice"].submit()
         })
