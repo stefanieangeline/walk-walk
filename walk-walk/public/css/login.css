@@ -212,9 +212,10 @@ input:active{
     height: 13%;
     align-items: flex-start;
     font-size: 15px;
-    color: #DC2526;
+    color: #FFC436;
     display: flex;
     justify-content: flex-start;
     margin-top: 2px;
     margin-bottom: 2px;
+    font-family: "roboto-cons-regular";
 }
