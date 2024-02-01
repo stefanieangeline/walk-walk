@@ -36,7 +36,10 @@
                     </a>
                 </div>
                 <div class="content-buttom">
-                    <a href="#">Sign Out</a>
+                    <form action="{{route("logout")}}" method="POST">
+                        @csrf
+                        <button type="submit" class= "btn-submit">Sign Out</button>
+                    </form>
                 </div>
             </div>
         </div>
