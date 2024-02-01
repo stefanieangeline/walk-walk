@@ -37,6 +37,11 @@ a {
     padding-bottom: 50px;
 }
 
+.logo:hover{
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
 .side-bar-left {
     height: 100vh; /* Full-height: remove this if you want "auto" height */ /* Set the width of the sidebar */
     width: 20vw;
@@ -72,6 +77,19 @@ a {
     bottom: 40px;
     left: 100px;
 }
+
+.btn-submit{
+    color: var(--shade-blue);
+    background-color: transparent;
+    border: 0px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.content-bottom button:hover{
+    color: var(--blue-base);
+}
+
 
 .content-buttom a {
     color: var(--shade-blue);

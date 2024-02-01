@@ -23,6 +23,11 @@ a{
     padding-bottom: 50px;
 }
 
+.logo:hover{
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
 .side-bar-left{
     height: 100vh;
     width: 20vw;

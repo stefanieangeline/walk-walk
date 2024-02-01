@@ -115,7 +115,9 @@ body {
     font-size: 18px;
     color: var(--shade-blue);
 }
-
+.hidden{
+    display: none;
+}
 .rating-with-star{
     /* background-color: magenta; */
     padding-top: 6px;
@@ -123,6 +125,10 @@ body {
     flex-direction: row;
     /* padding-left: 25px; */
 }
+.rating{
+    margin-left: 1%;
+}
+
 
 .rate-text{
     font-family: roboto-cons-regular;

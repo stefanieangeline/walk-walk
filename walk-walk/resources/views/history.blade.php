@@ -11,7 +11,7 @@
 <body>
     <div class="history-page">
         <div class="side-bar-left">
-            <a class="logo" href="{{route("home")}}">
+            <a href="{{route("home")}}" class="logo">
                 <img class ="logo-img" src="assets/logo/jalan-jalan.svg" alt="logo">
             </a>
             <div class="content">
@@ -36,7 +36,10 @@
                     </a>
                 </div>
                 <div class="content-buttom">
-                    <a href="#">Sign Out</a>
+                    <form action="{{route("logout")}}" method="POST">
+                        @csrf
+                        <button type="submit" class= "btn-submit">Sign Out</button>
+                    </form>
                 </div>
             </div>
         </div>
