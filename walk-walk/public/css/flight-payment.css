@@ -31,6 +31,11 @@ a:hover{
     justify-content: space-between;
 }
 
+.left-side:hover{
+cursor: pointer;
+  opacity: 60%;
+  transition: 0.5s;
+}
 
 .left-a{
     display: flex;

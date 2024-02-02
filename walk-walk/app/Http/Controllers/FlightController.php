@@ -19,14 +19,12 @@ use Illuminate\Support\Facades\DB;
 
 class FlightController extends Controller
 {
-    public function minPriceAll($IDAirportSrc, $IDAirportDst) {
-        return DB::table("schedules")->where("IDAirportSource", $IDAirportSrc)->where("IDAirportDestination", $IDAirportDst)->get();
-    }
-
     public function ticket() {
+        // set variable and raw query
         $IDTicket = request()->get("IDTicket");
         $date_format = "DATE_FORMAT(schedules.DepartureTime, \"%W, %d %M %Y\") as day";
 
+        // get schedules
         $schedule = Schedule::join("plane_tickets", "plane_tickets.IDSchedule", "=", "schedules.IDSchedule")
             ->join("airports as a", "schedules.IDAirportDestination", "=", "a.IDAirport")
             ->join("airports as b", "schedules.IDAirportSource", "=", "b.IDAirport")
@@ -36,34 +34,46 @@ class FlightController extends Controller
             ->select("schedules.IDAirline", "FlightNumber", "a.NameAirport as AirportDest", "b.NameAirport as AirportSrc", "c.NameCity as cityDest", "d.NameCity as citySrc", DB::raw($date_format), DB::raw("CAST(schedules.DepartureTime as TIME) as DepartureTime"), DB::raw("CAST(schedules.ArrivalTime as TIME) as ArrivalTime"))
             ->first();
 
+        // get tickets
         $tickets = PlaneTicket::join("plane_ticket_details", "plane_ticket_details.IDPlaneTicket", "=", "plane_tickets.IDPlaneTicket")
             ->join("passengers", "passengers.IDPassenger", "=", "plane_ticket_details.IDPassenger")
             ->where("plane_ticket_details.IDPlaneTicket", $IDTicket)
             ->get();
 
+        // return page and its variable
         return view("e-ticket-page", ["schedule" => $schedule, "tickets" => $tickets]);
     }
 
     public function paymentSuccess() {
+        // set variable
         $IDTicket = request()->get("IDTicket");
 
+        // make new payment with user id
         $newPayment = new PlanePayment();
         $newPayment->IDPlaneTicket = $IDTicket;
         $newPayment->id = Auth::user()->id;
         $newPayment->save();
 
+        // set status payment to true
         PlaneTicket::where("IDPlaneTicket", $IDTicket)->update(array("status"=>1));
 
+        // return page and its variable
         return redirect()->route("paymentSuccessful", ["IDTicket" => $IDTicket]);
     }
 
     public function paymentSuccessful(){
+        // set variable
         $IDTicket = request()->get("IDTicket");
         $price =  request()->get("price");
+
+        // get transaction from ID ticket
         $TransactionID = PlanePayment::where("plane_payments.IDPlaneTicket", $IDTicket)
                         ->first();
 
+        // get date and time of booked ticket
         $dateAndTime = PlaneTicket::where("IDPlaneTicket", $IDTicket)->first();
+
+        // get schedules
         $schedule = Schedule::join("plane_tickets", "plane_tickets.IDSchedule", "=", "schedules.IDSchedule")
                         ->join("airports as a", "schedules.IDAirportDestination", "=", "a.IDAirport")
                         ->join("airports as b", "schedules.IDAirportSource", "=", "b.IDAirport")
@@ -72,11 +82,13 @@ class FlightController extends Controller
                         ->join("airlines", "airlines.IDAirline", "=", "schedules.IDAirline")
                         ->select("FlightNumber", "a.CodeAirport as AirportDestinationCode", "b.CodeAirport as AirportSourceCode", "c.NameCity as cityDest", "d.NameCity as citySrc", "airlines.NameAirline")
                         ->first();
+
+        // return page and its variable
         return view("flight-payment", ["price" => $price, "TransactionID" => $TransactionID, "dateAndTime" => $dateAndTime, "schedule" => $schedule, "IDTicket" => $IDTicket]);
     }
 
-
     public function barcode() {
+        // get variable
         $price = request()->get("price");
         $ticket = request()->get("ticket");
 
@@ -87,6 +99,7 @@ class FlightController extends Controller
     }
 
     public function paymentCreate() {
+        // get variable
         $names = request()->get("passengersName");
         $genders = request()->get("passengersGender");
         $DOBs= request()->get("passengersDOB");
@@ -95,17 +108,20 @@ class FlightController extends Controller
         $IDSchedule = request()->get("IDSchedule");
         $class = request()->get("class");
 
+        // split string into array
         $names = explode (",", $names);
         $genders = explode (",", $genders);
         $DOBs = explode (",", $DOBs);
         $nationalities = explode (",", $nationalities);
 
+        // make new ticket
         $newTicket = new PlaneTicket();
         $newTicket->IDSchedule = $IDSchedule;
         $newTicket->status = 0;
         $newTicket->BookDate = date("Y-m-d");
         $newTicket->save();
 
+        // make every passenger and ticket detail
         for ($i = 0; $i < count($names); $i++) {
             $newPassenger = new Passenger();
             $newPassenger->NamePassenger = $names[$i];
@@ -121,22 +137,26 @@ class FlightController extends Controller
             $newTicketDetail->save();
         }
 
-        // dd("tes");
+        // return page and its variable
         return redirect()->route("payment", [
             "price" => $price,
             "ticket" => $newTicket->id]
         );
     }
     public function passenger($id) {
+        // get variable
         $class = request()->get("class");
         $depDate = request()->get("date");
         $senior = request()->get('senior');
         $adult = request()->get('adult');
         $children = request()->get('children');
+
+        // if class null then set value economy
         if ($class == null) {
             $class = "economy";
         }
 
+        // return page and its value
         return view("passanger-detail", [
             "schedule" =>
             Schedule::query()
@@ -160,6 +180,7 @@ class FlightController extends Controller
     }
 
     public function index(){
+        // get variable
         $class = request()->get("class");
         $source = request()->get("source");
         $dest = request()->get("destination");
@@ -171,6 +192,7 @@ class FlightController extends Controller
         $range = request()->get('range');
         $sort = request()->get('sort');
 
+        // if some variable null then will get set default value
         if ($class == null) {
             $class = "economy";
         }
@@ -195,10 +217,12 @@ class FlightController extends Controller
             $depDate = date("Y-m-d");
         }
 
+        // raw query
         $addOneDay = "DATE_ADD(\"".$depDate."\", INTERVAL 1 DAY)";
         $queryarrivaltime = "CAST(schedules.ArrivalTime as time) as ArrivalTime";
         $querydeparturetime = "CAST(schedules.DepartureTime as time) as DepartureTime";
 
+        // if source and destination empty then will return this query
         if ($source != "" && $dest != "") {
             $IDsource = City::query()->where("nameCity", "like", "%".$source."%")->select("IDCity")->get()->toArray();
             $IDdest = City::query()->where("nameCity", "like","%".$dest."%")->select("IDCity")->get()->toArray();
@@ -318,6 +342,7 @@ class FlightController extends Controller
                 "range" => $range,
                 "sort" => $sort
             ]);
+        // if source and destination get filled
         } else {
             return view('flight',[
                 'schedules' => Schedule::query()

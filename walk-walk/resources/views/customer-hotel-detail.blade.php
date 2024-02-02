@@ -64,10 +64,10 @@
 
         <div class="right-side">
             <div class="left-right">
-                <a href="/jalan-jalan/help.php" class="nav-link">Help</a>
+                <a href="{{route("help")}}" class="nav-link">Help</a>
             </div>
             <div class="right-right">
-                <a href="/jalan-jalan/myaccount.php" class="nav-link">
+                <a href="{{route("account")}}" class="nav-link">
                     <img src="/assets/icon/user.svg">
                 </a>
             </div>

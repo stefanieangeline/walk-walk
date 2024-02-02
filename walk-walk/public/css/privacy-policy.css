@@ -34,12 +34,31 @@ input:focus {
     font-family: roboto-cons-regular;
     margin-right: 2%;
   }
-  .left-a{
+  /* .left-a{
     display: flex;
     font-size: 20px;
     font-weight: bold;
     color: var(--white);
     gap: 10px;
+  } */
+      .left-left{
+    margin-right: 5px;
+  }
+  .back:hover{
+  cursor: pointer;
+  opacity: 60%;
+  transition: 0.5s;
+}
+  .back{
+    font-family: roboto-cons-regular;
+    display: flex;
+    flex-direction: row;
+    background: none;
+    align-items: center;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--white);
   }
   .mid {
     display: flex;
