@@ -12,7 +12,8 @@
     <div class="background">
     </div>
     <div class="content">
-        <form method="post" name="form" action="{{ route('finishReview') }}">
+        <form method="post" name="form" action="{{ route('finishReview') }}" class="form-container">
+        @csrf
         <img src="\assets\images\hotel1.jpg" class="hotel-image">
         <div class="box-content">
             <div class="hotel-desc">
@@ -39,7 +40,7 @@
             </div>
             <div class="review-box">
                 <textarea name="Description" type="textarea" placeholder="Write Your Review" class="review-input" cols="1" rows="5" resize="none"></textarea>
-                <input name="Rating" type="number" class="hidden" id="rating">
+                <input name="Rating" type="number" class="hidden" id="rating" value="">
                 <input type="text" name="IDOrder" value="{{ $order }}" class="hidden">
             </div>
         </div>

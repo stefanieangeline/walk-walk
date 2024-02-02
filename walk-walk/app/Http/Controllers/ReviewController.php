@@ -38,18 +38,25 @@ class ReviewController extends Controller
         ]);
     }
     public function finish(){
-        $IDOrder = request()->get("IDOrder");
+        $order = request()->get("IDOrder");
+        // dd("masuk");
+        // dd($order);
+        $order = json_decode($order);
         $id = Auth::user()->id;
         $Rating = request()->get('Rating');
+        // dd($Rating);
         $Description = request()->get('Description');
-        $IDHotel = OrderedRoom::where($IDOrder,"ordered_rooms.IDOrder")->select('IDHotel');
+        // dd($order->IDHotel);
+        $IDHotel = $order->IDHotel;
+        
+
         $newReview = new Review();
         $newReview->IDHotel = $IDHotel;
         $newReview->id = $id;
         $newReview->Rating = $Rating;
         $newReview->Description = $Description;
         $newReview->save();
-        return view('home');
+        return redirect()->route("home");
     }
 
 }
