@@ -340,13 +340,13 @@
                 <div class="rate-division">
                     <div class="up-div">
                         <p class="button-division sorting-button active" data-sort="all" >All</p>
-                        <p class="button-division sorting-button" data-sort="5star"> 5 star</p>
-                        <p class="button-division sorting-button" data-sort="gt4star"> >4 star</p>
+                        <p class="button-division sorting-button" data-sort="5star"> 5 stars</p>
+                        <p class="button-division sorting-button" data-sort="gt4star"> 4 stars</p>
                     </div>
                     <div class="bottom-div">
-                        <p class="button-division sorting-button" data-sort="gt3.5star"> >3.5 star </p>
-                        <p class="button-division sorting-button" data-sort="gt3star"> > 3 star</p>
-                        <p class="button-division sorting-button" data-sort="lt3star"> < 3 star</p>
+                        <p class="button-division sorting-button" data-sort="gt3.5star"> 3 stars </p>
+                        <p class="button-division sorting-button" data-sort="gt3star"> 2 stars</p>
+                        <p class="button-division sorting-button" data-sort="lt3star"> 1 star</p>
                     </div>
                 </div>
             </div>

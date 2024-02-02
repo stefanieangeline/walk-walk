@@ -63,6 +63,8 @@ a {
 
   .back:hover{
     cursor: pointer;
+    opacity: 60%;
+    transition: 0.5s;
   }
 
   .left-left{

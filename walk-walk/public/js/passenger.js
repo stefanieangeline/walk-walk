@@ -1,3 +1,4 @@
+// set variable and get variable from html
 pName = ""
 pGender = ""
 pDOB = ""
@@ -8,6 +9,7 @@ formDOB = document.getElementById("passengersDOB")
 formNationality = document.getElementById("passengersNationality")
 nextBtn = document.getElementById("next-step")
 
+// to merge every passengers data become single string
 function mergeData(className, target) {
     array = document.querySelectorAll("." + className)
     let first = true
@@ -34,13 +36,13 @@ function mergeData(className, target) {
 // })
 
 nextBtn.addEventListener("click", (e) => {
-    // Memanggil fungsi untuk menggabungkan data dari setiap penumpang
+    // call function to merge every passenger data
     mergeData("passengersName", formName);
     mergeData("passengersGender", formGender);
     mergeData("passengersDOB", formDOB);
     mergeData("passengersNationality", formNationality);
 
-    // Melakukan validasi sebelum mengirimkan formulir
+    // to validate form input
     if (!validatePassengerInputs()) {
         // Jika validasi gagal, hentikan proses dan berikan pesan kesalahan
         alert("Please fill in all passenger details.");
@@ -51,7 +53,52 @@ nextBtn.addEventListener("click", (e) => {
     }
 });
 
-// Fungsi untuk melakukan validasi input penumpang
+function validateNameAndGender() {
+    // Mengambil nilai nama, gender, dan tanggal lahir dari setiap penumpang
+    var names = document.getElementsByClassName("passengersName");
+    var genders = document.getElementsByClassName("passengersGender");
+    var dobs = document.getElementsByClassName("passengersDOB");
+
+    for (var i = 0; i < names.length; i++) {
+        var nameValue = names[i].value.trim();
+        var genderValue = genders[i].value.trim().toLowerCase();
+        var dobValue = new Date(dobs[i].value); // Mengubah nilai tanggal lahir menjadi objek Date
+
+        // Validasi Nama (hanya alphabet)
+        if (!/^[a-zA-Z\s]+$/.test(nameValue)) {
+            return (
+                "Name for passenger " +
+                (i + 1) +
+                " should only contain alphabets and spaces."
+            );
+        }
+
+        // Validasi Gender (hanya Male atau Female)
+        if (genderValue !== "male" && genderValue !== "female") {
+            return (
+                "Gender for passenger " +
+                (i + 1) +
+                " should be either 'Male' or 'Female'."
+            );
+        }
+
+        // Validasi Tanggal Lahir (harus sebelum hari ini)
+        var today = new Date();
+        today.setHours(0, 0, 0, 0); // Menetapkan jam ke 00:00:00.000 untuk membandingkan hanya tanggal
+
+        if (dobValue >= today) {
+            return (
+                "Date of Birth for passenger " +
+                (i + 1) +
+                " should be before today."
+            );
+        }
+    }
+
+    return true;
+}
+
+// fucntion to valide passengers input
 function validatePassengerInputs() {
     var inputs = document.querySelectorAll(".form .input input");
     var isValid = true;
@@ -66,12 +113,13 @@ function validatePassengerInputs() {
     return isValid;
 }
 
-// suggestion
+// to show suggestion drop down
 let nationalities = document.querySelectorAll(".passengersNationality");
 let countries = JSON.parse(sessionStorage.getItem("countries"));
 let suggestTemp = null;
 sessionStorage.clear();
 
+// function to build suggestion element
 function makeSuggestion(parent, input, type) {
     clearSuggest();
     let container = createEl("div", "search-suggestion");
@@ -94,6 +142,7 @@ function makeSuggestion(parent, input, type) {
     }
 }
 
+// to embed suggestion
 nationalities.forEach(nationality => {
     nationality.addEventListener("input", (e) => {
         if (nationality.value == null || nationality.value == "") {
@@ -105,12 +154,14 @@ nationalities.forEach(nationality => {
     });
 })
 
+// to clear suggestion that has been made
 function clearSuggest() {
     if (suggestTemp != null) {
         suggestTemp.remove();
     }
 }
 
+// function to create html element
 function createEl(elementName, className) {
     let temp = document.createElement(elementName);
     temp.classList.add(className);

@@ -9,6 +9,7 @@ use App\Models\HotelRooms;
 use App\Models\OrderedRoom;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class ReviewController extends Controller
@@ -35,6 +36,27 @@ class ReviewController extends Controller
             'city'=>$city,
             'country'=>$country
         ]);
+    }
+    public function finish(){
+        $order = request()->get("IDOrder");
+        // dd("masuk");
+        // dd($order);
+        $order = json_decode($order);
+        $id = Auth::user()->id;
+        $Rating = request()->get('Rating');
+        // dd($Rating);
+        $Description = request()->get('Description');
+        // dd($order->IDHotel);
+        $IDHotel = $order->IDHotel;
+        
+
+        $newReview = new Review();
+        $newReview->IDHotel = $IDHotel;
+        $newReview->id = $id;
+        $newReview->Rating = $Rating;
+        $newReview->Description = $Description;
+        $newReview->save();
+        return redirect()->route("home");
     }
 
 }

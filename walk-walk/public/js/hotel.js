@@ -387,10 +387,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (
                     selectedValue === "all" ||
                     (selectedValue === "5star" && rating === 5) ||
-                    (selectedValue === "gt4star" && rating >= 4) ||
-                    (selectedValue === "gt3.5star" && rating >= 3.5) ||
-                    (selectedValue === "gt3star" && rating >= 3) ||
-                    (selectedValue === "lt3star" && rating < 3)
+                    (selectedValue === "gt4star" && rating === 4) ||
+                    (selectedValue === "gt3.5star" && rating === 3) ||
+                    (selectedValue === "gt3star" && rating === 2) ||
+                    (selectedValue === "lt3star" && rating === 1)
                 ) {
                     profile.closest(".user-profile").style.display = "flex";
                     descriptionContainer.style.display = "block";
