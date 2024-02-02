@@ -72,6 +72,7 @@ Route::get('/eticket', [EticketController::class,'index'])->name('e-ticket');
 
 Route::get('/customer-hotel-detail/{id}', [CustomerHotelDetailController::class, 'index'])->name('customer-hotel-detail')->middleware("auth");
 Route::get('/hotel-cust-review',[ReviewController::class,'index'])->name('review');
+Route::post('/hotel-cust-review',[ReviewController::class,'finish'])->name('reviewFinish');
 Route::get('/payment-barcode', function(){
     return view('payment-barcode');
 });
