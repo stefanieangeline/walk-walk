@@ -11,14 +11,22 @@
 <body>
     <div class="bg-pd">
         <div class="left-side">
-            <a href="{{ route('home') }}" class="left-a">
+            <button class="back" onclick="history.back()" class="left-a">
+                <div class="left-left">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+                <div class="left-right">
+                    Back
+                </div>
+            </button>
+            <!-- <a href="{{ route('home') }}" class="left-a">
                 <div class="left-left">
                     <i class="fa-solid fa-chevron-left"></i>
                 </div>
                 <div class="left-right">
                     <p>Back</p>
                 </div>
-            </a>
+            </a> -->
         </div>
         <div class="mid">
             <img src="/assets/logo/jalan-jalan.svg" alt="">

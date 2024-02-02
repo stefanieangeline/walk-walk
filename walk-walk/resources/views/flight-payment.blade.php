@@ -25,8 +25,8 @@
                 <h1>Booking Confirmation</h1>
             </div>
             <div class="navbar-right">
-                <a href="/jalan-jalan/help.php" class="nav-link">Help</a>
-                <a href="/jalan-jalan/myaccount.php" class="nav-link">
+                <a href="{{route("help")}}" class="nav-link">Help</a>
+                <a href="{{route("account")}}" class="nav-link">
                 <img src="/assets/icon/user.svg">
                 </a>
             </div>
