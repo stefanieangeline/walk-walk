@@ -1,14 +1,15 @@
-// function buat mempermudah nambah class ato remove class
+// make easier to add class name into element html
 function addClassList(element, className) {
     element.classList.add(className)
 }
 
+// make easier to remove class name into element html
 function remClassList(element, className) {
     element.classList.remove(className)
 }
 
 
-// buat nandain kita lagi di page mana
+// to mark current page
 navLinks = document.querySelectorAll(".nav-link")
 currWindow = window.location.pathname
 currWindowFile = currWindow.split("/")
@@ -37,7 +38,7 @@ document.addEventListener("scroll", (e) => {
     }
 })
 
-
+// change register button color when scroll
 const ButtonRegister = document.querySelector(".register");
 document.addEventListener("scroll", (e) => {
     if (window.scrollY > 0) {

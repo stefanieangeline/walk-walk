@@ -3,12 +3,13 @@
 // 	window.location.href = "home.php"
 // }
 
-// suggestion
+// to make suggestion
 let nationality = document.getElementById("nationality");
 let countries = JSON.parse(sessionStorage.getItem("countries"));
 let suggestTemp = null;
 sessionStorage.clear();
 
+// function to make suggestion parent: the place to put, input: the value, type: hotel or flight
 function makeSuggestion(parent, input, type) {
     clearSuggest();
     let container = createEl("div", "search-suggestion");
@@ -39,16 +40,22 @@ nationality.addEventListener("input", (e) => {
 
     makeSuggestion(nationality, nationality.value.toLowerCase(), "flight");
 });
+
+// to clear suggestion element
 function clearSuggest() {
     if (suggestTemp != null) {
         suggestTemp.remove();
     }
 }
+
+// to create HTML element
 function createEl(elementName, className) {
     let temp = document.createElement(elementName);
     temp.classList.add(className);
     return temp;
 }
+
+// to clear input
 function clearInput() {
     nationality.value = "";
 }
