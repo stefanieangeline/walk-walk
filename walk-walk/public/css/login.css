@@ -51,9 +51,9 @@
 }
 .slogan{
     width: 100%;
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 10%;
-    text-shadow: 5px 5px 5px black;
+    text-shadow: 2px 2px 2px var(--near-black);
     z-index: 1;
     color: var(--white);
     text-align: center;
@@ -107,7 +107,7 @@
     /* padding: 3%; */
     font-size: 1.1rem;
     background : transparent;
-    border : 3px solid #ffff;
+    border : 2px solid #ffff;
     border-radius: 15px;
     color: white;
     
@@ -115,18 +115,19 @@
 .form_sign_container input:focus{
     outline: none;
 }
-input:focus{
 
-    color: white;
-    border : 4px solid #ffff;
-    
-  
-    
+.logIn{
+    margin-top: 2%;
 }
+input:focus{
+    color: white;
+    border : 3px solid #ffff;   
+}
+
 input:active{
     /* background-color: white; */
     color: white;
-    border : 4px solid #ffff;
+    border : 3px solid #ffff;
 
 }
 ::placeholder{
@@ -159,8 +160,9 @@ input:active{
 .log_in_button{
     font-size: 0.8rem;
     /* position: absolute; */
-    color: var(--light-grey);
+    color: var(--light-blue);
     font-family: 'roboto-cons-light';
+    margin-top: 5px;
     
     /* bottom: 0; */
     /* top: 95%; */
@@ -178,6 +180,7 @@ input:active{
     /* left: 70.7%; */
     font-family: roboto-cons-bold;
     text-decoration: none;
+    margin-top: 5px;
 }
 .log_in_button_click:hover{
     /* color: #0064D2; */
@@ -192,6 +195,7 @@ input:active{
     /* background-color: blue; */
     /* justify-self: flex-end; */
     gap: 0.3%;
+
 }
 /* .divider-login{
     background-color: white;
@@ -211,11 +215,11 @@ input:active{
     width: 85%;
     height: 13%;
     align-items: flex-start;
-    font-size: 15px;
+    font-size: 13px;
     color: #FFC436;
     display: flex;
     justify-content: flex-start;
-    margin-top: 2px;
+    margin-top: 3px;
     margin-bottom: 2px;
     font-family: "roboto-cons-regular";
 }
