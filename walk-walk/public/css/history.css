@@ -166,7 +166,6 @@ a{
     margin-left: 20vw;
     background-color:var(--blue-base);
     display: flex;
-    justify-content: center;
     flex-direction: column;
     gap: 50px;
     align-items: center;
