@@ -55,7 +55,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-header-left"><p>Booking ID: {{ $orderedRoom->IDOrder }}<br><span> Booked and Payable by Jalan - Jalan</span></p></div>
-                            <div class="card-header-right"><p> <i class="fa-solid fa-check"></i> Active</p></div>
+                            <div class="card-header-right"><p><i class="fa-solid fa-check"></i>Active</p></div>
                         </div>
                         <hr class="shadow-line">
                         <!-- ini kalo booking hotel -->

@@ -14,7 +14,7 @@ a{
 }
 
 .logo{
-    background-color: var(--shade-blue);
+    background-color: var(--another-blue);
     width: 20vw;
     height: auto;
     display: flex;
@@ -34,7 +34,7 @@ a{
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: var(--shade-blue);
+    background-color: var(--another-blue);
     overflow-x: hidden;
     overflow-y: hidden;
     padding-top: 20px;
@@ -63,7 +63,7 @@ a{
 }
 
 .content-bottom button{
-    color: var(--shade-blue);
+    color: var(--another-blue);
     background-color: transparent;
     border: 0px;
     font-size: 20px;
@@ -72,18 +72,20 @@ a{
 
 .content-bottom button:hover{
     color: var(--blue-base);
+    /* opacity: 70%; */
+    transition: 0.2s;
 }
 
 .fa-solid{
     font-size: 20px;
     text-align: center;
     margin-right: 20px;
-    color: var(--shade-blue);
+    color: var(--another-blue);
 }
 
 .myaccount p, .myorder p, .history p{
     font-size: 20px;
-    color: var(--shade-blue);
+    color: var(--another-blue);
 }
 
 
@@ -92,7 +94,7 @@ a{
     margin-top: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 65px;
+    padding-left: 20px;
     margin-right: 20px;
     width: 20vw;
 }
@@ -103,7 +105,7 @@ a{
 
 
 .active, .active p{
-    background-color: var(--shade-blue);
+    background-color: var(--another-blue);
     color: var(--white);
 }
 

@@ -78,8 +78,8 @@
                     @foreach ($orderedRooms as $orderedRoom)
                     <div class="card">
                         <div class="card-header">
-                            <p>Booking ID: {{ $orderedRoom->IDOrder }}</p>
-                            <p> {{$orderedRoom->RoomCount }} Room(s)</p>
+                            <div class="card-header-left"><p>Booking ID: {{ $orderedRoom->IDOrder }}</p></div>
+                            <div class="card-header-right"><p> {{$orderedRoom->RoomCount }} Room(s)</p></div>
                         </div>
                         <hr class="shadow-line">
                         <div class="card-body">

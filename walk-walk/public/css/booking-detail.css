@@ -28,7 +28,7 @@ a {
 }
 
 .logo {
-    background-color: var(--shade-blue);
+    background-color: var(--another-blue);
     width: 20vw;
     height: auto;
     display: flex;
@@ -48,7 +48,7 @@ a {
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: var(--shade-blue);
+    background-color: var(--another-blue);
     overflow-x: hidden;
     overflow-y: hidden;
     padding-top: 20px;
@@ -79,11 +79,16 @@ a {
 }
 
 .btn-submit{
-    color: var(--shade-blue);
+    color: var(--another-blue);
     background-color: transparent;
     border: 0px;
     font-size: 20px;
     cursor: pointer;
+}
+
+.btn-submit:hover{
+    color: var(--blue-base);
+    transition: 0.2s;   
 }
 
 .content-bottom button:hover{
@@ -103,14 +108,14 @@ a {
     font-size: 20px;
     text-align: center;
     margin-right: 20px;
-    color: var(--shade-blue);
+    color: var(--another-blue);
 }
 
 .myaccount p,
 .myorder p,
 .history p {
     font-size: 20px;
-    color: var(--shade-blue);
+    color: var(--another-blue);
 }
 
 .myaccount,
@@ -120,7 +125,7 @@ a {
     margin-top: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 65px;
+    padding-left: 20px;
     margin-right: 20px;
     width: 20vw;
 }
@@ -133,7 +138,7 @@ a {
 
 .active,
 .active p {
-    background-color: var(--shade-blue);
+    background-color: var(--another-blue);
     color: white;
 }
 
@@ -145,7 +150,7 @@ a {
     margin-left: 2px;
     font-size: 20px;
     background-color: transparent;
-    color: var(--shade-blue);
+    color: var(--another-blue);
 }
 
 .fa-receipt {
@@ -168,8 +173,9 @@ a {
     background-color: var(--blue-base);
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    align-items: center;
+    gap: 7vh;
+    align-items:flex-start;
+    padding-left: 5vw;
     min-height: 100vh;
 }
 
@@ -177,6 +183,7 @@ a {
     width: 50vw;
     text-align: left;
     margin-top: 50px;
+    /* background-color: #0064d2; */
 }
 
 .main-header p {
@@ -200,12 +207,12 @@ a {
 
 /* bagian kartu*/
 .card {
-    width: 50vw;
+    width: 70vw;
     height: fit-content;
     background-color: var(--white);
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .card-header,
@@ -215,34 +222,46 @@ a {
     justify-content: space-between;
 }
 
-.card-header p {
+.card-header-left {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: var(--shade-blue);
     font-size: 25px;
-    font-weight: normal;
-    margin-left: 50px;
+    /* font-weight: normal; */
+    margin-left: 30px;
     margin-right: 50px;
 }
+
+.card-header-right{
+    margin-top: 20px;
+    margin-right: 20px;
+    color: var(--shade-blue);
+    font-size: 25px;
+    /* gap: 0; */
+}
+
+
 
 .card-header span {
     font-size: 15px;
     color: var(--blue-base);
+    font-family: roboto-cons-regular;
+    /* margin-top: 0px; */
 }
 
 .shadow-line {
     border: 1px solid var(--blue-base);
     border-bottom: 0.011px solid var(--light-blue);
     opacity: 0.5;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
 }
 
 .card-body {
-    margin-left: 50px;
-    margin-top: 30px;
+    margin-left: 30px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
 }
 
 .head-card-body {
@@ -271,7 +290,7 @@ a {
 .bottom-card-body {
     display: flex;
     gap: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .left-part {
