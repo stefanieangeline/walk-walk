@@ -18,7 +18,7 @@
             <a href="{{route("hotels")}}" class="nav-link active">Hotels</a>
             <a href="{{route("flights")}}" class="nav-link">Flights</a>
             @auth
-                <a href="{{route("home")}}" class="nav-link">History</a>
+                <a href="{{route("history")}}" class="nav-link">History</a>
             @endauth
         </div>
         <div class="right-side">

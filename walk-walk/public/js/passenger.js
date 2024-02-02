@@ -26,6 +26,15 @@ function mergeData(className, target) {
     target.value = result
 }
 
+// nextBtn.addEventListener("click", (e)=>{
+//     mergeData("passengersName", formName)
+//     mergeData("passengersGender", formGender)
+//     mergeData("passengersDOB", formDOB)
+//     mergeData("passengersNationality", formNationality)
+
+//     document.forms["passenger-form"].submit()
+// })
+
 nextBtn.addEventListener("click", (e) => {
     // call function to merge every passenger data
     mergeData("passengersName", formName);
@@ -39,10 +48,55 @@ nextBtn.addEventListener("click", (e) => {
         alert("Please fill in all passenger details.");
         e.preventDefault();
     } else {
-        // if success then form will get submited
+        // Jika validasi berhasil, kirim formulir
         document.forms["passenger-form"].submit();
     }
 });
+
+function validateNameAndGender() {
+    // Mengambil nilai nama, gender, dan tanggal lahir dari setiap penumpang
+    var names = document.getElementsByClassName("passengersName");
+    var genders = document.getElementsByClassName("passengersGender");
+    var dobs = document.getElementsByClassName("passengersDOB");
+
+    for (var i = 0; i < names.length; i++) {
+        var nameValue = names[i].value.trim();
+        var genderValue = genders[i].value.trim().toLowerCase();
+        var dobValue = new Date(dobs[i].value); // Mengubah nilai tanggal lahir menjadi objek Date
+
+        // Validasi Nama (hanya alphabet)
+        if (!/^[a-zA-Z\s]+$/.test(nameValue)) {
+            return (
+                "Name for passenger " +
+                (i + 1) +
+                " should only contain alphabets and spaces."
+            );
+        }
+
+        // Validasi Gender (hanya Male atau Female)
+        if (genderValue !== "male" && genderValue !== "female") {
+            return (
+                "Gender for passenger " +
+                (i + 1) +
+                " should be either 'Male' or 'Female'."
+            );
+        }
+
+        // Validasi Tanggal Lahir (harus sebelum hari ini)
+        var today = new Date();
+        today.setHours(0, 0, 0, 0); // Menetapkan jam ke 00:00:00.000 untuk membandingkan hanya tanggal
+
+        if (dobValue >= today) {
+            return (
+                "Date of Birth for passenger " +
+                (i + 1) +
+                " should be before today."
+            );
+        }
+    }
+
+    return true;
+}
 
 // fucntion to valide passengers input
 function validatePassengerInputs() {
