@@ -1,18 +1,18 @@
-// function buat mempermudah nambah class, variabel element adalah element html nya dan className adalah nama class yang akan diberi
+// make easier to add class name into element html
 function addClassList(element, className) {
     element.classList.add(className)
 }
 
-// function buat mempermudah remove class, variabel element adalah element html nya dan className adalah nama class yang akan dibuang
+// make easier to remove class name from element html
 function remClassList(element, className) {
     element.classList.remove(className)
 }
 
-// munculin opsi buat ubah-ubah jumlah kamar sama tamunya
+// to show option to change passengers and rooms value
 hotelDropBtn = document.getElementById("hotel-drop-down-icon")
 hotelDropContainer = document.getElementById("hotel-drop-down-container")
 
-// function untuk membuat icon dropdown di hotel rotate ketika di click
+// event listener to make drop down icon in hotel rotate when clicked
 hotelDropBtn.addEventListener("click", (e) => {
     if (!hotelDropContainer.classList.contains("show")) {
         addClassList(hotelDropContainer, "show")
@@ -23,11 +23,11 @@ hotelDropBtn.addEventListener("click", (e) => {
     }
 })
 
-// munculin opsi buat ubah-ubah penumpang dewasa sama anak
+// to show option to change adult, senior and children value
 flightDropBtn = document.getElementById("flight-drop-down-icon")
 flightDropContainer = document.getElementById("flight-drop-down-container")
 
-// function untuk membuat icon dropdown di flight rotate ketika di click
+// event listener to make drop down icon in flight rotate when clicked
 flightDropBtn.addEventListener("click", (e) => {
     if (!flightDropContainer.classList.contains("show")) {
         addClassList(flightDropContainer, "show")
@@ -38,66 +38,66 @@ flightDropBtn.addEventListener("click", (e) => {
     }
 })
 
-// menerima input perubahan jumlah kamar atau tamu
+// receive input to change rooms and guests value
 roomQty = document.getElementById("rooms-input")
 guestQty = document.getElementById("guests-input")
 hotelDispInfo = document.getElementById("hotel-display-info")
 refreshHotelDispInfo()
 
-// function untuk mengupdate tampilan dengan data yang terbaru
+// function to update and refresh hotel display info
 function refreshHotelDispInfo() {
     hotelDispInfo.innerHTML = roomQty.value + " room, " + guestQty.value +" guests"
 }
 
-// ketika ada perubahan value di jumlah kamar akan refresh info
+// when there's changes value then will refresh the display
 roomQty.addEventListener("change", (e) => {
     refreshHotelDispInfo()
 })
 
-// ketika ada perubahan value di jumlah pengunjung akan refresh info
+// when there's changes value then will refresh the display
 guestQty.addEventListener("change", (e) => {
     refreshHotelDispInfo()
 })
 
-// menerima input perubahan jumlah penumpang dewasa atau anak-anak
+// receive input when there's changes value
 seniorQty = document.getElementById("senior-input")
 adultQty = document.getElementById("adult-input")
 childrenQty = document.getElementById("children-input")
 flightDispInfo = document.getElementById("flight-display-info")
 refreshflightDispInfo()
 
-// menampilkan info jumlah senior, adult, children di flightDispInfo
+// display info in senior, adult, children
 function refreshflightDispInfo() {
     flightDispInfo.innerHTML = seniorQty.value + " senior, " +adultQty.value + " adult, " + childrenQty.value +" children"
 }
 
-// ketika ada perubahan value di jumlah penumpang senior akan refresh info
+// when there's changes value then will refresh the display
 seniorQty.addEventListener("change", (e) => {
     refreshflightDispInfo();
 });
 
-// ketika ada perubahan value di jumlah penumpang dewasa akan refresh info
+// when there's changes value then will refresh the display
 adultQty.addEventListener("change", (e) => {
     refreshflightDispInfo()
 })
 
-// ketika ada perubahan value di jumlah penumpang anak-anak akan refresh info
+// when there's changes value then will refresh the display
 childrenQty.addEventListener("change", (e) => {
     refreshflightDispInfo()
 })
 
-// munculin opsi buat pilih hotel ato pilih penerbangan
+// show option to choose flight or hotel
 hotelMode = document.getElementById("hotel-mode")
 flightMode = document.getElementById("flight-mode")
 hotelDetailInfo = document.getElementById("hotel-detail-info")
 flightDetailInfo = document.getElementById("flight-detail-info")
 
-// set deafult value pada saat web mau diload
+// set default value on load page
 addClassList(hotelMode, "selected")
 activeMode = hotelMode
 activeContainer = hotelDetailInfo
 
-// mengubah tampilan ketika hotel di click
+// change hotel mode when get clicked
 hotelMode.addEventListener("click", (e) => {
     if (!hotelMode.classList.contains("selected") && !hotelDetailInfo.classList.contains("show")) {
         addClassList(hotelMode, "selected")
@@ -109,7 +109,7 @@ hotelMode.addEventListener("click", (e) => {
     }
 })
 
-// mengubah tampilan ketika flight di click
+// change flight mode when get clicked
 flightMode.addEventListener("click", (e) => {
     if (!flightMode.classList.contains("selected") && !flightDetailInfo.classList.contains("show")) {
         addClassList(flightMode, "selected")
@@ -131,10 +131,10 @@ flightMode.addEventListener("click", (e) => {
 //     }
 // })
 
-// ketika tombol search diclick akan melakukan pencarian sesuai kategori yang sedang aktif
+// when submit btn get clicked it will run the form
 searchBtn = document.getElementById("search-btn");
 searchBtn.addEventListener("click", (e) => {
-    // jika sedang di kategori flight
+    // while in flight category
     if (activeContainer == flightDetailInfo) {
         // Logika validasi untuk formulir penerbangan
         var srcInput = document.getElementById("flight-src");
@@ -177,9 +177,9 @@ searchBtn.addEventListener("click", (e) => {
                     document.forms["flight-form"].submit();
                 }
             }
-            
+
         }
-    // jika sedang di kategori hotel
+    // while in hotel category
     } else if (activeContainer == hotelDetailInfo) {
         var hotelDestinationInput =
             document.getElementById("hotel-destination");
@@ -215,14 +215,12 @@ searchBtn.addEventListener("click", (e) => {
 });
 
 
-
-// buat tuker tujuan sama keberangkatan di penerbangan
 switchBtn = document.getElementById("rotate-icon")
 flightSrc = document.getElementById("flight-src")
 flightDst = document.getElementById("flight-dst")
 hotelDst = document.getElementById("hotel-destination")
 
-// mengubah value source dan destination di flight ketika diclick
+// to switch source and destination in flight
 switchBtn.addEventListener("click", (e) => {
     temp = flightSrc.value
     flightSrc.value = flightDst.value
@@ -344,7 +342,7 @@ flightSrc.addEventListener("input", (e) => {
     if (flightSrc.value == null || flightSrc.value == "") {
         clearSuggest()
         return
-        
+
     }
     console.log("test flight")
     makeSuggestion(flightSrc, flightSrc.value.toLowerCase(), "flight")
