@@ -14,8 +14,8 @@
         <div class="footer">
             <div class="logoFooter">
                 <img src="/assets/logo/jalan-jalan.svg" alt="">
-                <li><a>Contact us on :</a></li>
-                <li><a>Email: jalan-jalan@gmail.com</a></li>
+                <li>Contact us on :</li>
+                <li>Email: jalan-jalan@gmail.com</li>
             </div>
 
             <div class="footer-right">
@@ -32,7 +32,7 @@
                 <ul class="footer-Destinations">
                     <li><h2  class="titleF">Destinations</h2></li>
                     <li><a>Countries</a></li>
-                    <li><a>Cities</a></li>
+                    <li><a href="/cities">Cities</a></li>
                 </ul>
 
                 <ul class="footer-Products">

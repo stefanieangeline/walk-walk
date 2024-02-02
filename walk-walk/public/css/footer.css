@@ -7,6 +7,8 @@
 
 a{
     cursor: pointer;
+    color: var(--white);
+    text-decoration: none;
 }
 
 a:hover{

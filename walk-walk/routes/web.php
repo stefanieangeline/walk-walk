@@ -1,10 +1,8 @@
 <?php
 
-use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AirportDetailsController;
 use App\Http\Controllers\CustomerHotelDetailController;
 use App\Http\Controllers\EticketController;
-use App\Http\Controllers\FinalStepController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\HelpController;
 use App\Http\Controllers\HomeController;
@@ -15,7 +13,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SigninController;
 use App\Http\Controllers\UserController;
-use Illuminate\Routing\RouteRegistrar;
+use App\Http\Controllers\CitiesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -72,6 +70,7 @@ Route::get('/eticket', [EticketController::class,'index'])->name('e-ticket');
 
 Route::get('/customer-hotel-detail/{id}', [CustomerHotelDetailController::class, 'index'])->name('customer-hotel-detail')->middleware("auth");
 Route::get('/hotel-cust-review',[ReviewController::class,'index'])->name('review');
+Route::get('/cities', [CitiesController::class, 'index'])->name('cities');
 Route::get('/payment-barcode', function(){
     return view('payment-barcode');
 });
