@@ -12,7 +12,7 @@
     <div class="background">
     </div>
     <div class="content">
-        <form method="get" name="form" action="{{ route('finishReview') }}"></form>
+        <form method="post" name="form" action="{{ route('finishReview') }}">
         <img src="\assets\images\hotel1.jpg" class="hotel-image">
         <div class="box-content">
             <div class="hotel-desc">
@@ -40,7 +40,7 @@
             <div class="review-box">
                 <textarea name="Description" type="textarea" placeholder="Write Your Review" class="review-input" cols="1" rows="5" resize="none"></textarea>
                 <input name="Rating" type="number" class="hidden" id="rating">
-                <input type="text" name="IDOrder" value="{{ $order }}">
+                <input type="text" name="IDOrder" value="{{ $order }}" class="hidden">
             </div>
         </div>
         <div class="submit-box" id="submit">
