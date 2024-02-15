@@ -60,21 +60,20 @@ Route::get('/account', [UserController::class,'index'])->name('account')->middle
 Route::get('/booking-detail', [UserController::class,'bookingDetail'])->name('booking-detail')->middleware("auth");
 Route::get('/history', [UserController::class,'history'])->name('history')->middleware("auth");
 
-Route::get('/help', [HelpController::class,'index'])->name('help');
-
 Route::get('/hotel-payment', [HotelPaymentController::class, 'index'])->name('hotel-payment');
-
-
-Route::get('/eticket', [EticketController::class,'index'])->name('e-ticket');
 
 Route::get('/customer-hotel-detail/{id}', [CustomerHotelDetailController::class, 'index'])->name('customer-hotel-detail')->middleware("auth");
 Route::get('/hotel-cust-review',[ReviewController::class,'index'])->name('review');
 Route::get('/countries-and-cities', [CountriesAndCitiesController::class, 'index'])->name('countries-and-cities');
 Route::post('/hotel-cust-review',[ReviewController::class,'finish'])->name('finishReview');
+
 Route::get('/payment-barcode', function(){
     return view('payment-barcode');
 });
 
+Route::get('/help', function(){
+    return view('help');
+});
 
 Route::get('/privacy-policy', function(){
     return view('privacy-policy');
@@ -99,10 +98,3 @@ Route::get('/nav-bar', function(){
 Route::get('/nav-barB', function(){
     return view('shared.nav-bar-home-before');
 });
-
-//sementara
-
-Route::get('/dummy', [UserController::class, 'dummy'])->name('dummy');
-
-
-
