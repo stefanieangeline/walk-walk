@@ -13,7 +13,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SigninController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\CitiesController;
+use App\Http\Controllers\CountriesAndCitiesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -70,7 +70,7 @@ Route::get('/eticket', [EticketController::class,'index'])->name('e-ticket');
 
 Route::get('/customer-hotel-detail/{id}', [CustomerHotelDetailController::class, 'index'])->name('customer-hotel-detail')->middleware("auth");
 Route::get('/hotel-cust-review',[ReviewController::class,'index'])->name('review');
-Route::get('/cities', [CitiesController::class, 'index'])->name('cities');
+Route::get('/countries-and-cities', [CountriesAndCitiesController::class, 'index'])->name('countries-and-cities');
 Route::post('/hotel-cust-review',[ReviewController::class,'finish'])->name('finishReview');
 Route::get('/payment-barcode', function(){
     return view('payment-barcode');

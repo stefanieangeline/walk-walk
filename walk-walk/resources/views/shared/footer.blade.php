@@ -31,8 +31,7 @@
 
                 <ul class="footer-Destinations">
                     <li><h2  class="titleF">Destinations</h2></li>
-                    <li><a>Countries</a></li>
-                    <li><a href="/cities">Cities</a></li>
+                    <li><a href="/countries-and-cities">Countries & Cities</a></li>
                 </ul>
 
                 <ul class="footer-Products">

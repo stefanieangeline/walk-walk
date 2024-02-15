@@ -13,18 +13,29 @@ class HomeController extends Controller
 {
 
     public function index() {
-        $recommendedHotels = DB::table('hotels')
-            ->join('hotel_rooms', 'hotels.IDHotel', '=', 'hotel_rooms.IDHotel')
-            ->select('hotels.*', 'hotel_rooms.PriceRoom')
-            ->orderByRaw('(5 - StarHotel) * 0.7 + (min(hotel_rooms.PriceRoom) over() - hotel_rooms.PriceRoom) * 0.3 + (RatingHotel - 1) / 5 - 1 * 0.2 DESC')
-            ->take(10)
-            ->get();
+        // $recommendedHotels = DB::table('hotels')
+        //     ->join('hotel_rooms', 'hotels.IDHotel', '=', 'hotel_rooms.IDHotel')
+        //     ->select('hotels.*', 'hotel_rooms.PriceRoom')
+        //     ->orderByRaw('(5 - StarHotel) * 0.7 + (min(hotel_rooms.PriceRoom) over() - hotel_rooms.PriceRoom) * 0.3 + (RatingHotel - 1) / 5 - 1 * 0.2 DESC')
+        //     ->take(10)
+        //     ->get();
 
         return view("home", [
             "countries" => Country::all(),
             "airports" => Airport::all(),
             "cities" => City::all(),
             "hotels" => Hotel::all()
-        ], compact('recommendedHotels'));
+        ]);
+    }
+
+    public function getRecommendedHotels(){
+        $recommendedHotels = DB::table('hotels')
+        ->join('hotel_rooms', 'hotels.IDHotel', '=', 'hotel_rooms.IDHotel')
+        ->select('hotels.*', 'hotel_rooms.PriceRoom')
+        ->orderByRaw('(5 - StarHotel) * 0.7 + (min(hotel_rooms.PriceRoom) over() - hotel_rooms.PriceRoom) * 0.3 + (RatingHotel - 1) / 5 - 1 * 0.2 DESC')
+        ->take(10)
+        ->get();
+
+        return $recommendedHotels;
     }
 }

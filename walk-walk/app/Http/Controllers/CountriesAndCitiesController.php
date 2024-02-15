@@ -6,7 +6,7 @@ use App\Models\Country;
 use App\Models\City;
 use Illuminate\Http\Request;
 
-class CitiesController extends Controller
+class CountriesAndCitiesController extends Controller
 {
     public function index()
     {
@@ -21,6 +21,6 @@ class CitiesController extends Controller
         }
 
         // Pass the grouped data to the view
-        return view('cities', compact('countries', 'groupedCities'));
+        return view('countries-and-cities', compact('countries', 'groupedCities'));
     }
 }
