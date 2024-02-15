@@ -28,25 +28,6 @@
                     <input type="date" value="{{$outDate}}" name="outDate" id="checkOutDate">
                 </div>
             </div>
-            <!-- <div class="check-in-out-box box-width">
-                <div class="check">
-                    <div class="in-box">
-                        <h2>Check-in</h2>
-                        <input type="date" value="{{$inDate}}" name="inDate" id="checkInDate">
-                    </div>
-                    <div class="line-box">
-                    </div>
-                    <div class="out-box">
-                        <h2>Check-out</h2>
-                        <input type="date" value="{{$outDate}}" name="outDate" id="checkOutDate">
-                    </div>
-                </div>
-
-                <div>
-                    <span id="checkoutWarning" style="color: red;"></span>
-                </div>
-            </div> -->
-            
             
             <div class="input-row drop-down-menu box-width">
                 <div class="drop-down-select">
@@ -176,7 +157,6 @@
                         // Membuat nama file gambar berdasarkan nama hotel
                         $imageName = str_replace(' ', '_', $hotel->NameHotel) . '.svg';
                     @endphp
-                    <!-- <img src="https://drive.google.com/uc?export=view&id=1jt8Rg0c4b5hp7X3-2Ib6osexfsijso2g" class="hotel-image"> -->
                     <img src="{{ asset("/assets/hotels/{$imageName}") }}" class="hotel-image" alt="Hotel Image">
                     <div class="detail-info">
                         <div class="hotel-name-rating">
@@ -185,9 +165,6 @@
                                 @for($i = 0; $i < $hotel->StarHotel; $i++)
                                      <img src="assets/icon/star-gold.svg">
                                 @endfor
-                                <!-- <img src="assets/icon/star-gold.svg">
-                                <img src="assets/icon/star-gold.svg">
-                                <img src="assets/icon/star-gold.svg"> -->
                             </div>
                         </div>
                         <div class="hotel-rating-review">
@@ -204,9 +181,6 @@
                                 <img src="assets/icon/location-blue.svg">
                                 <h4>{{$hotel->NameCity}}</h4>
                             </div>
-                            <!-- <div class="hotel-dist">
-                                <h4>2km to center</h4>
-                            </div> -->
                         </div>
                         <div class="hotel-facility">
                             @php
@@ -216,36 +190,15 @@
                             @foreach ($facilities as $facility)
                                 <span class="facility-item">{{ trim($facility ) }}</span>
                             @endforeach
-                            <!-- <h4>{{$hotel->FacilityHotel}}</h4> -->
-                            <!-- <h4>Parking</h4>
-                            <h4>Free pool access</h4> -->
                         </div>
-                        <!-- <div class="hotel-room">
-                            <h3 class="room-type">Premier Room</h3>
-                            <div class="bed-type">
-                                <div class="room-area">
-                                    <img src="assets/icon/queen-bed-blue.svg">
-                                    <h4>King bed</h4>
-                                </div>
-                                <div class="room-area">
-                                    <img src="assets/icon/house-area-blue.svg">
-                                    <h4>30m<sup>2</sup></h4>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
                 <div class="hotel-price">
-                    <!-- <h4 class="price-detail">Rp.{{ $hotel->PriceRoom }}.000</h4> -->
                     <div class="price-detail1">
                         <h4 class="price-detail">Rp.{{ $hotel->PriceRoom }}.000</h4>
                         <h5>After Tax Rp.{{$hotel->PriceRoom * 1.2}}.000</h5>
-                        <!-- <h4 class="discount-price">{{$hotel->PriceRoom}}</h4>
-                        <h5 class="actual-price">Rp. 4200.000</h5> -->
                     </div>
                     <a href="{{ route("hotel-room", ['id' => $hotel->IDHotel, 'destination' => $dest, 'inDate' => $inDate, 'outDate' => $outDate, 'room' => $room, 'guest' => $guest]) }}" id="submit-hotel-room">Check Availability</a>
-
-                    <!-- <a href="{{route("hotel-room", $hotel->IDHotel)}}" id="submit-hotel-room">Check Availability</a> -->
                 </div>
             </div>
             @endforeach

@@ -17,6 +17,7 @@ class LoginController extends Controller
         return view("login");
     }
 
+    //logs out the authenticated user, invalidates the current session, regenerates the session, and redirects the user to the "home" route.
     public function logout () {
         auth()->logout();
 
@@ -26,6 +27,7 @@ class LoginController extends Controller
         return redirect()->route("home");
     }
 
+    //attempts to authenticate a user based on provided email and password, regenerates the session, stores user information in a session variable upon success, and redirects to the home page; otherwise, it redirects to the login page with an error message.
     public function authenticate (Request $request) : RedirectResponse
     {
         $validated = $request->validate([
@@ -33,10 +35,8 @@ class LoginController extends Controller
             'password' => ['required'],
 
         ]);
-        // dd($validated);
 
         $input = $request->all();
-        // dd($request->all());
         $input['password'] = bcrypt($input['password']);
         $user = User::where('email', $input['email'])->first();
         if (Auth::attempt($validated)) {

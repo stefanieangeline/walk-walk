@@ -8,10 +8,7 @@ use Illuminate\Http\Request;
 
 class FinalStepController extends Controller
 {
-    //
-    public function index(){
-        
-        
+    public function index(){       
         return view('final-step');
     }
 }

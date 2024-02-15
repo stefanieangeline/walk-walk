@@ -9,20 +9,18 @@ use App\Models\User;
 class SigninController extends Controller
 {
     public function index () {
-
         return view("signin", [
             "countries" => Country::all()
         ]);
     }
 
+    //validates and stores a new user's information in the database, ensuring specific requirements for each field
     public function store ()  {
         $validated = request()->validate([
             'name' => 'required|alpha',
             'phoneNumber' =>['required', 'numeric'],
             'email' => ['required', 'unique:users,email', 'email', 'regex:/@gmail\.com$/i'],
             'password' => 'required|min:8',
-            // 'email' => ['required', 'unique:users,email'],
-            // 'password' => ['required'],
             'nationality' => ['required']
 
         ], [
@@ -34,7 +32,6 @@ class SigninController extends Controller
         
         $todayDate = date("Y-m-d");
         $newUser = new User();
-        // $newUser =
         $newUser->DOBUser = $todayDate;
         $newUser->NationalityUser = 1;
         $newUser->name = $validated['name'];
@@ -43,11 +40,7 @@ class SigninController extends Controller
         $newUser->NoTelpUser = $validated['phoneNumber'];
         $newUser->NationalityUser = Country::where('NameCountry',$validated['nationality'])->first()->IDCountry;
 
-        // dd($newUser);
         $newUser->save();
-
-
-
 
         return redirect()->route("login")->with("success","");
     }

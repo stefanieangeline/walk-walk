@@ -19,6 +19,7 @@ use Illuminate\Support\Str;
 class HotelRoomController extends Controller
 {
     public function index($id){
+        //set variable
         $destination = request()->get('destination');
         $inDate = request()->get("inDate");
         $outDate = request()->get("outDate");
@@ -26,25 +27,28 @@ class HotelRoomController extends Controller
         $guest = request()->get("guest");
 
         $hotel = Hotel::query()->where('IDHotel', $id)->first();
-        $roomTypePhotos = HotelRooms::where('IDHotel', $id)->get();
         $roomTypes = HotelRooms::with('facilities')->where('IDHotel', $id)->where('QuantityRoom', '>=', $room)->get();
         $totalRoomTypes = $roomTypes->count();
 
+        // retrieves reviews for a specific hotel identified by $id
         $reviews = Review::query()
         ->join('Users', 'Users.id', '=', 'reviews.id')
         ->where('reviews.IDHotel', '=', $id)
         ->get();
 
+        // calculates the count of reviews for a specific hotel identified by $id
         $reviewsCount = Review::query()
         ->join('Users', 'Users.id', '=', 'reviews.id')
         ->where('reviews.IDHotel', '=', $id)
         ->count();
 
+        // retrieves hotel facilities for a specific hotel identified by $id
         $hotelFacilities = HotelFacilityHeader::query()
         ->join('hotel_facility_details', 'Hotel_Facility_Headers.IDDetailFacilityHotel', '=', 'Hotel_Facility_Details.IDDetailFacilityHotel')
         ->where('Hotel_Facility_Headers.IDHotel', '=', $id)
         ->get();
 
+        // creates a valid folder name ($hotelFolder) for a hotel based on its name by replacing hyphens with underscores and using a slug. Then, it fetches all files in the directory corresponding to the hotel room photos.
         $hotelFolder = str_replace('-', '_', Str::slug($hotel->NameHotel));
         $hotelPhotos = File::files(public_path("assets/hotelRoom/{$hotelFolder}"));
 
@@ -67,8 +71,7 @@ class HotelRoomController extends Controller
         // $roomFolder = str_replace('-', '_', Str::slug($roomTypePhoto->TypeRoom));
         // $roomPhotos = File::files(public_path("assets/roomType/{$roomFolder}"));
 
-
-
+        //return view and its variable
         return view('hotel-room', [
             'dest'=> $destination,
             'inDate'=>$inDate,
@@ -82,16 +85,12 @@ class HotelRoomController extends Controller
             'reviewsCount' => $reviewsCount,
             'hotelFacilities'=>$hotelFacilities,
             'hotelFolder' => $hotelFolder,
-            'hotelPhotos' => $hotelPhotos,
-            // 'roomTypePhoto' => $roomTypePhoto,
-            // 'roomFolder' => $roomFolder,
-            // 'roomPhotos' => $roomPhotos,            
+            'hotelPhotos' => $hotelPhotos,         
             "countries" => Country::all(),
             "airports" => Airport::all(),
             "cities" => City::all(),
             "hotel_list" => Hotel::all(),
             "orderedRooms" => OrderedRoom::all()
-            // "hotel" => Hotel::query()->where('IDHotel', $id)->first()
         ]);
     }
 }

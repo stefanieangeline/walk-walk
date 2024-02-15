@@ -44,17 +44,15 @@ nextBtn.addEventListener("click", (e) => {
 
     // to validate form input
     if (!validatePassengerInputs()) {
-        // Jika validasi gagal, hentikan proses dan berikan pesan kesalahan
         alert("Please fill in all passenger details.");
         e.preventDefault();
     } else {
-        // Jika validasi berhasil, kirim formulir
         document.forms["passenger-form"].submit();
     }
 });
 
 function validateNameAndGender() {
-    // Mengambil nilai nama, gender, dan tanggal lahir dari setiap penumpang
+    // Retrieve the name, gender and date of birth of each passenger
     var names = document.getElementsByClassName("passengersName");
     var genders = document.getElementsByClassName("passengersGender");
     var dobs = document.getElementsByClassName("passengersDOB");
@@ -62,9 +60,9 @@ function validateNameAndGender() {
     for (var i = 0; i < names.length; i++) {
         var nameValue = names[i].value.trim();
         var genderValue = genders[i].value.trim().toLowerCase();
-        var dobValue = new Date(dobs[i].value); // Mengubah nilai tanggal lahir menjadi objek Date
+        var dobValue = new Date(dobs[i].value); //Convert the date of birth value into a Date object
 
-        // Validasi Nama (hanya alphabet)
+        // validate name
         if (!/^[a-zA-Z\s]+$/.test(nameValue)) {
             return (
                 "Name for passenger " +
@@ -82,9 +80,9 @@ function validateNameAndGender() {
             );
         }
 
-        // Validasi Tanggal Lahir (harus sebelum hari ini)
+        // Validasi birth 
         var today = new Date();
-        today.setHours(0, 0, 0, 0); // Menetapkan jam ke 00:00:00.000 untuk membandingkan hanya tanggal
+        today.setHours(0, 0, 0, 0); 
 
         if (dobValue >= today) {
             return (

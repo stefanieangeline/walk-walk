@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
-
+    //fetches and displays recommended hotels based on a weighted scoring algorithm considering star rating, price, and user rating.
     public function index() {
         // $recommendedHotels = DB::table('hotels')
         //     ->join('hotel_rooms', 'hotels.IDHotel', '=', 'hotel_rooms.IDHotel')
