@@ -68,7 +68,7 @@
                                     <p>{{ $orderedRoom->NameHotel }}</p>
                                 </div>
                             </div>
-                            <div class="bottom-card-body">
+                            <div class="bottom-card-body normal">
                                 <div class="left-card-body">
                                     <p class="header-left-card-body">
                                         Check - In
@@ -98,8 +98,8 @@
                     @foreach ($flights as $flight)
                     <div class="card">
                         <div class="card-header">
-                            <p>Booking ID: {{$flight->IDPlaneTicket}} <br><span> Booked and Payable by Jalan - Jalan</span></p>
-                            <p> <i class="fa-solid fa-check"></i> Active</p>
+                            <div class="card-header-left"><p>Booking ID: {{$flight->IDPlaneTicket}} <br><span> Booked and Payable by Jalan - Jalan</span></p></div>
+                            <div class="card-header-right"><p> <i class="fa-solid fa-check"></i> Active</p></div>
                         </div>
                         <hr class="shadow-line">
                         <div class="card-body">
@@ -134,8 +134,8 @@
                                     </div>
                                 </div>
                                 <div class="right-part">
-                                    <button class="btn-right-part">Airport Details <i class="fa-solid fa-circle-info"></i></button>
-                                    <button class="btn-right-part">Check E-Ticket <i class="fa-solid fa-circle-info"></i></button>
+                                    <a href="{{route("airportDetails", ["IDTicket"=>$flight->IDPlaneTicket])}}" class="btn-right-part">Airport Details <i class="fa-solid fa-circle-info"></i></a>
+                                    <a href="{{route("flightTicket", ["IDTicket"=>$flight->IDPlaneTicket])}}" class="btn-right-part">Check E-Ticket <i class="fa-solid fa-circle-info"></i></a>
                                 </div>
                             </div>
                         </div>
