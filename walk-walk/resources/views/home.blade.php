@@ -1,3 +1,8 @@
+@php
+    use App\Http\Controllers\HomeController;
+    $recommended = new HomeController();
+    $recommendedHotels = $recommended->getRecommendedHotels();
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -40,17 +40,17 @@
 
     <div class="content">
         <div class="title">
-            <p>Cities</p>
+            <p>Countries & Cities</p>
         </div>
         <div class="all-content">
             <div class="country">
-                <p>Top Cities in United States</p>
+                <p>United States</p>
                 <div class="cities">
                     <p>San Francisco</p>
                 </div>
             </div>
             <div class="country">
-                <p>Top Cities in Japan</p>
+                <p>Japan</p>
                 <div class="cities">
                     <div><p>Tokyo</p></div>
                     <div><p>Tokyo</p></div>
@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="country">
-                <p>Top Cities in Japan</p>
+                <p>Japan</p>
                 <div class="cities">
                     <div><p>Tokyo</p></div>
                     <div><p>Tokyo</p></div>
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="country">
-                <p>Top Cities in Japan</p>
+                <p>Japan</p>
                 <div class="cities">
                     <div><p>Tokyo</p></div>
                     <div><p>Tokyo</p></div>
