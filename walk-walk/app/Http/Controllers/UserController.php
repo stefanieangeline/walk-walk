@@ -100,8 +100,8 @@ class UserController extends Controller
                     )
             ->distinct()
             ->get();
-        
-        
+
+
         return view("history", ["flights" => $flights, "orderedRooms" => $orderedRooms]);
     }
 
