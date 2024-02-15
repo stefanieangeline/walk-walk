@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 
 class ReviewController extends Controller
 {
-    //
+    // retrieves order details, associated hotel, room, and related information such as review count, city, and country, and renders a view for customer reviews.
     public function index(){
         $IDOrder = request()->get('order');
         $order = OrderedRoom::where("IDOrder",$IDOrder)->first();
@@ -25,9 +25,6 @@ class ReviewController extends Controller
         $city = City::where("IDCity",$hotel->IDCity)->first();
         $country = Country::where("IDCountry",$city->IDCountry)->first();
     
-
-
-        // dd($reviewCount);
         return view('hotel-cust-review',[
             "order" => $order,
             'hotel' => $hotel,
@@ -37,16 +34,14 @@ class ReviewController extends Controller
             'country'=>$country
         ]);
     }
+
+    //processes and stores a new customer review for a hotel based on the provided parameters and redirects the user to the home page.
     public function finish(){
         $order = request()->get("IDOrder");
-        // dd("masuk");
-        // dd($order);
         $order = json_decode($order);
         $id = Auth::user()->id;
         $Rating = request()->get('Rating');
-        // dd($Rating);
         $Description = request()->get('Description');
-        // dd($order->IDHotel);
         $IDHotel = $order->IDHotel;
         
 

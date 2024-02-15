@@ -33,7 +33,6 @@ Route::get('/hotel-payment-success', [CustomerHotelDetailController::class,'succ
 Route::get('/hotel-payment-create', [CustomerHotelDetailController::class,'paymentCreate'])->name('hotel-payment-create');
 
 
-
 Route::get('/flights', [FlightController::class, 'index'])->name('flights');
 Route::get('/flights/successful', [FlightController::class, 'paymentSuccessful'])->name('paymentSuccessful')->middleware("auth");
 Route::get('/flights/ticket', [FlightController::class, 'ticket'])->name('flightTicket')->middleware("auth");

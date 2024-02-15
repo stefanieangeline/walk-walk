@@ -35,12 +35,13 @@ class UserController extends Controller
         return redirect()->route("home");
     }
 
+    //retrieves the user's nationality from the authenticated user's information and passes the corresponding country name to the "myaccount" view
     public function index() {
         $user = Auth::user()->NationalityUser;
         return view("myaccount",['country'=> Country::where('IDCountry', $user)->first()->NameCountry]);
-
     }
 
+    //retrieves flight and hotel booking details for the currently authenticated user, considering future departure dates and check-out dates. The data includes flight and hotel information such as airports, cities, departure/arrival times, hotel names, check-in/out dates, and the number of nights. This information is then passed to the "booking-detail" view.
     public function bookingDetail() {
         $IDUser = Auth::user()->id;
 
@@ -71,6 +72,7 @@ class UserController extends Controller
         return view("booking-detail", ["flights" => $flights, "orderedRooms" => $orderedRooms]);
     }
 
+    // fetches the historical flight and hotel booking details for the currently authenticated user, considering past departure dates and check-out dates. The data includes information such as airports, cities, departure/arrival times, hotel names, check-in/out dates, the number of nights, and ticket classes. This information is then passed to the "history" view for display.
     public function history() {
         $IDUser = Auth::user()->id;
 
@@ -100,10 +102,7 @@ class UserController extends Controller
             ->get();
         
         
-        // dd($orderedRooms, $flights);
         return view("history", ["flights" => $flights, "orderedRooms" => $orderedRooms]);
-
-
     }
 
     /**
