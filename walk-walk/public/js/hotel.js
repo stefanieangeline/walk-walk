@@ -1,7 +1,9 @@
+// function adds a specified CSS class (className) to a given HTML element (element).
 function addClassList(element, className) {
     element.classList.add(className)
 }
 
+//removes a specified CSS class (className) from a given HTML element (element).
 function remClassList(element, className) {
     element.classList.remove(className)
 }
@@ -26,14 +28,17 @@ guestQty = document.getElementById("guests-input")
 hotelDispInfo = document.getElementById("hotel-display-info")
 refreshHotelDispInfo()
 
+//updates and displays the hotel information based on the selected number of rooms and guests.
 function refreshHotelDispInfo() {
     hotelDispInfo.innerHTML = roomQty.value + " room, " + guestQty.value +" guests"
 }
 
+// when the number of rooms is changed, it calls the refreshHotelDispInfo function to update and display the hotel information.
 roomQty.addEventListener("change", (e) => {
     refreshHotelDispInfo()
 })
 
+//when the number of guests changes, the refreshHotelDispInfo function is called to update and display the hotel information.
 guestQty.addEventListener("change", (e) => {
     refreshHotelDispInfo()
 })
@@ -71,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+//assigns specific HTML elements with IDs to corresponding variables for later reference or manipulation.
 range1 = document.getElementById("range-1")
 range2 = document.getElementById("range-2")
 range3 = document.getElementById("range-3")
@@ -166,6 +172,7 @@ function validateReservation() {
     return true;
 }
 
+//selects multiple elements from the HTML document
 reviews = document.querySelectorAll(".choose-review")
 stars = document.querySelectorAll(".choose-star")
 prices = document.querySelectorAll(".sub-price")
@@ -201,6 +208,7 @@ sessionStorage.clear()
 // search suggestion flight
 hotelDst = document.getElementById("hotel-destination")
 
+// creates a new HTML element with the specified element name and class name
 function createEl(elementName, className) {
     let temp = document.createElement(elementName)
     temp.classList.add(className)
@@ -209,7 +217,6 @@ function createEl(elementName, className) {
 
 //default suggets value
 let suggestTemp = null
-
 
 // to clear suggestion that has been displayed
 function clearSuggest() {
@@ -272,7 +279,6 @@ function makeSuggestion(parent, input, type) {
             }
         })
     }
-
 
     if (container.children.length != 0) {
         suggestTemp = container

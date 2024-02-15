@@ -102,12 +102,8 @@ searchBtn.addEventListener("click", (e) => {
                 // Submit the form if all validations pass
                 document.forms["box-choice"].submit();
             }
-            //  document.forms["box-choice"].submit();
         }
-        // document.forms["box-choice"].submit();
     }
-
-    // document.forms["box-choice"].submit()
 })
 
 
