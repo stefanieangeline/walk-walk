@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 class HotelController extends Controller
 {
     public function index() {
+        //set variable
         $dest = request()->get("destination");
         $inDate = request()->get("inDate");
         $outDate = request()->get("outDate");
@@ -21,13 +22,8 @@ class HotelController extends Controller
         $range = request()->get("range");
         $star = request()->get("star");
         $review = request()->get("review");
-        $queryStarRating = "CAST(hotels.StarHotel as IN)";
 
-        if (strtotime($outDate) <= strtotime($inDate)) {
-            // Jika outDate kurang dari atau sama dengan inDate, kembalikan ke halaman sebelumnya
-            // return redirect()->back()->withInput()->withErrors(['outDate' => 'Tanggal check-out harus setelah tanggal check-in.']);
-        }
-
+        //return all hotel with optional filters for price range, star rating, and user reviews.
         if ($dest == null || $inDate == null || $outDate == null || $room == null || $guest == null) {
             return view("hotels", [
                 'hotels' => Hotel::query()
@@ -41,6 +37,7 @@ class HotelController extends Controller
                         ->whereRaw('hotels.IDHotel = hr2.IDHotel');
                     });
                 })
+                //sort price range filtering based on the value of $range, ordering hotel rooms in ascending order accordingly.
                 ->when($range == 'low', function ($query) {
                     return $query->orderBy('Hotel_rooms.PriceRoom', 'asc')->where('Hotel_rooms.PriceRoom', '<', 100);
                 })
@@ -51,11 +48,12 @@ class HotelController extends Controller
                 ->when($range == 'high', function ($query) {
                     return $query->orderBy('Hotel_rooms.PriceRoom', 'desc')->where('Hotel_rooms.PriceRoom', '>', 150);
                 })
+                //sort star hotel filtering based on the value of $star.
                 ->when($star, function ($query) use ($star) {
                     return $query->where('Hotels.StarHotel', $star);
                 })
+                //sort rating hotel filtering based on the value of $review.
                 ->when($review, function ($query) use ($review) {
-                    // Menyesuaikan rentang review sesuai kebutuhan
                     if ($review == 1) {
                         return $query->where('hotels.RatingHotel', '<', 3);
                     } elseif ($review == 2) {
@@ -85,6 +83,7 @@ class HotelController extends Controller
             ]);
         }
 
+        //return hotel search with dynamic filters for destination, price range, star rating, and user reviews.
         $query = Hotel::query()
         ->join('Cities','Cities.IDCity','=','Hotels.IDCity')
         ->join('Countries','Cities.IDCountry','=','Countries.IDCountry')
@@ -94,7 +93,7 @@ class HotelController extends Controller
                 ->orWhere('Hotels.NameHotel', 'like', '%'. $dest . '%')
                 ->orWhere('Countries.NameCountry', 'like', '%' . $dest . '%');
         })
-
+        //sort price range filtering based on the value of $range, ordering hotel rooms in ascending order accordingly.
         ->when($range == null, function ($query) use ($room) {
             $query->where(function ($subquery) use ($room) {
                 $subquery->whereIn('Hotel_rooms.PriceRoom', function ($subquery) use ($room) {
@@ -138,6 +137,7 @@ class HotelController extends Controller
                 });
             });
         })
+        //sort star hotel filtering based on the value of $star.
         ->when($star == 1, function ($subquery) use ($room) {
                 $subquery->where('hotels.StarHotel', '=', 1);
         })
@@ -153,6 +153,7 @@ class HotelController extends Controller
         ->when($star == 5, function ($subquery) use ($room) {
                 $subquery->where('hotels.StarHotel', '=', 5);
         })
+        //sort rating hotel filtering based on the value of $review.
         ->when($review == 1, function ($subquery) use ($room) {
                 $subquery->where('hotels.RatingHotel', '<', 3);
         })
@@ -189,8 +190,4 @@ class HotelController extends Controller
             
         ]);
     }
-
-    // public function detail() {
-    //     return view("hotel-room");
-    // }
 }

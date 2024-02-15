@@ -6,7 +6,7 @@ function remClassList(element, className) {
     element.classList.remove(className)
 }
 
-// munculin opsi buat ubah-ubah jumlah kamar sama tamunya
+// appear the option to change the number of rooms and guests
 hotelDropBtn = document.getElementById("hotel-drop-down-icon")
 hotelDropContainer = document.getElementById("hotel-drop-down-container")
 
@@ -20,7 +20,7 @@ hotelDropBtn.addEventListener("click", (e) => {
     }
 })
 
-// menerima input perubahan jumlah kamar atau tamu
+// accept input for changes in the number of rooms or guests
 roomQty = document.getElementById("rooms-input")
 guestQty = document.getElementById("guests-input")
 hotelDispInfo = document.getElementById("hotel-display-info")
@@ -38,6 +38,7 @@ guestQty.addEventListener("change", (e) => {
     refreshHotelDispInfo()
 })
 
+//sets up event listeners for check-in and check-out date inputs, providing user warnings and preventing invalid input
 document.addEventListener("DOMContentLoaded", function () {
     var checkInInput = document.getElementById("checkInDate");
     var checkOutInput = document.getElementById("checkOutDate");
@@ -56,25 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
             checkInInput.value = "";
             e.preventDefault(); // Prevent default behavior
         }
-
-        // if (checkInDate < minCheckInDate) {
-        //     console.log("aa");
-        //     checkoutWarning.textContent =
-        //         "Check-in date cannot be less than today";
-        //     checkInInput.value = "";
-        // } else {
-        //     checkoutWarning.textContent = "";
-        // }
-
-        // var checkOut = new Date(checkOutInput.value);
-
-        // if (checkOut <= checkInDate) {
-        //     checkoutWarning.textContent =
-        //         "Tanggal Check-out harus setelah Tanggal Check-in";
-        //     checkOutInput.value = "";
-        // } else {
-        //     checkoutWarning.textContent = "";
-        // }
     });
 
     checkOutInput.addEventListener("input", function () {
@@ -86,14 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
             checkOutInput.value = "";
             e.preventDefault(); // Prevent default behavior
         }
-
-        // if (checkOutDate <= checkInDate) {
-        //     checkoutWarning.textContent =
-        //         "Check-Out date must be after the Check-In Date";
-        //     checkOutInput.value = "";
-        // } else {
-        //     checkoutWarning.textContent = "";
-        // }
     });
 });
 
@@ -111,51 +85,41 @@ review3 = document.getElementById("review3");
 review4 = document.getElementById("review4");
 review5 = document.getElementById("review5");
 
-// searchHotel = document.getElementById("search-hotel");
-// searchHotel.addEventListener("click", (e) => {
-//     document.forms["search-hotel-form"].submit()
-// })
-
+//validation on hotel search and room submission
 searchHotel = document.getElementById("search-hotel");
 searchHotel.addEventListener("click", (e) => {
-    // Mengambil nilai input
+    // takes input values
     var destinationInput = document.getElementById("hotel-destination");
     var checkInDateInput = document.getElementById("checkInDate");
     var checkOutDateInput = document.getElementById("checkOutDate");
     var checkRoomInput = document.getElementById("rooms-input");
     var checkGuestInput = document.getElementById("guests-input");
-    // Melakukan validasi
     if (
         checkInDateInput.value === "" ||
         checkOutDateInput.value === "" ||
         checkRoomInput.value === "" ||
-        checkGuestInput.value === "" 
+        checkGuestInput.value === ""
     ) {
-        // Menampilkan pesan kesalahan jika ada input yang kosong
+        // Displays an error message if any input is empty
         alert("Please fill in all required fields.");
-        e.preventDefault(); // Mencegah pengiriman formulir jika ada input yang belum diisi
+        e.preventDefault(); 
     } else {
-        // Mengonversi nilai tanggal ke objek Date untuk membandingkannya
+        // Converts date values ​​to Date objects to compare them
         var checkInDate = new Date(checkInDateInput.value);
         var checkOutDate = new Date(checkOutDateInput.value);
 
-        // Melakukan validasi tanggal check-in harus lebih kecil dari tanggal check-out
+        // Validate that the check-in date must be less than the check-out date
         if (checkInDate >= checkOutDate) {
             alert("Check-in date should be before Check-out date.");
             e.preventDefault(); // Mencegah pengiriman formulir jika tanggal tidak valid
         } else {
-            // Mengirim formulir jika semua input sudah diisi dan tanggal valid
+            // Submit the form if all inputs have been filled in and the date is valid
             document.forms["search-hotel-form"].submit();
         }
     }
 });
 
-// backToHotel = document.getElementById("back-to-hotel");
-// backToHotel.addEventListener("click", (e) => {
-//     document.forms["hotel-room-form"].submit();
-// });
-
-
+//submitting a specific hotel room form when the corresponding button is clicked
 searchHotelRoom = document.getElementById("submit-hotel-room");
 if (searchHotelRoom != null) {
     searchHotelRoom.addEventListener("click", (e) => {
@@ -163,6 +127,7 @@ if (searchHotelRoom != null) {
     });
 }
 
+// validating input fields before submitting a specific hotel room form
 if (document.getElementById("submit-hotel-room") != null) {
     document.addEventListener("DOMContentLoaded", function () {
         var checkInInput = document.getElementById("checkInDate");
@@ -183,37 +148,29 @@ if (document.getElementById("submit-hotel-room") != null) {
     });
 }
 
+//validating reservation form input fields before submission
 function validateReservation() {
     var checkInDate = document.getElementById("checkInDate").value;
     var checkOutDate = document.getElementById("checkOutDate").value;
     var guests = document.getElementById("guests-input").value;
     var rooms = document.getElementById("rooms-input").value;
-
-    // Lakukan validasi
     if (
         checkInDate === "" ||
         checkOutDate === "" ||
         guests === "" ||
         rooms === ""
     ) {
-        alert(
-            "Please fill in all required fields (Check-in date, Check-out date, Guests, Rooms) before making a reservation."
-        );
+        alert("Please fill in all required fields (Check-in date, Check-out date, Guests, Rooms) before making a reservation.");
         return false;
     }
-
-    // Tambahkan logika lain sesuai kebutuhan
-
-    // Jika semua validasi terpenuhi, lanjutkan ke halaman reservasi
     return true;
 }
-
-// click event listener
 
 reviews = document.querySelectorAll(".choose-review")
 stars = document.querySelectorAll(".choose-star")
 prices = document.querySelectorAll(".sub-price")
 
+//assigns click event listeners to elements in an array, enabling form submission and checkbox toggling for a hotel search.
 function addClickEvent(array) {
     array.forEach((el)=>{
         el.firstElementChild.addEventListener("click", (e)=>{
@@ -258,6 +215,7 @@ function clearSuggest() {
     }
 }
 
+//search suggestions based on user input for countries, cities, airports, or hotels, creating clickable elements that, when selected, populate the parent input field and clear the suggestions.
 function makeSuggestion(parent, input, type) {
     clearSuggest()
     let container = createEl("div", "search-suggestion")
@@ -319,27 +277,25 @@ function makeSuggestion(parent, input, type) {
     }
 }
 
+//input changes on the "hotelDst" input field, clears suggestions if the input is null or empty, and triggers a suggestion function ("makeSuggestion") with the lowercase value of the input.
 hotelDst.addEventListener("input", (e) => {
     if (hotelDst.value == null || hotelDst.value == "") {
         clearSuggest()
         return
     }
-
     makeSuggestion(hotelDst, hotelDst.value.toLowerCase(), "hotel")
 })
 
+//visibility of content sections (room, reviews, service) and adds an "active" class to the selected section's header in a dynamic content display.
 function showContent(contentType) {
-    // Sembunyikan semua konten terlebih dahulu
     document.getElementById("roomContent").style.display = "none";
     document.getElementById("reviewsContent").style.display = "none";
     document.getElementById("serviceContent").style.display = "none";
 
-    // Hapus kelas aktif dari semua elemen
     document.querySelectorAll(".header-room").forEach(function (element) {
         element.classList.remove("header-active");
     });
 
-    // Tampilkan konten berdasarkan pilihan
     if (contentType === "room") {
         document.getElementById("roomContent").style.display = "block";
          document
@@ -348,20 +304,16 @@ function showContent(contentType) {
 
     } else if (contentType === "reviews") {
         document.getElementById("reviewsContent").style.display = "block";
-        // Tambahkan kelas aktif ke elemen yang dipilih
         document
             .querySelector('.header-room[data-content="' + contentType + '"]')
             .classList.add("header-active");
     } else if (contentType === "service") {
         document.getElementById("serviceContent").style.display = "block";
-        // Tambahkan kelas aktif ke elemen yang dipilih
         document
             .querySelector('.header-room[data-content="' + contentType + '"]')
             .classList.add("header-active");
     }
 }
-
-
 
 //sort review user
 document.addEventListener("DOMContentLoaded", function () {
