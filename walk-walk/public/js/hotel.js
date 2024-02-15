@@ -142,7 +142,7 @@ if (document.getElementById("submit-hotel-room") != null) {
                     alert(
                         "Please fill in the Check-in date,Check-out date, Room and Guest first."
                     );
-                    event.preventDefault(); // Mencegah pengiriman formulir jika tanggal belum diisi
+                    event.preventDefault(); 
                 }
             });
     });
@@ -207,8 +207,11 @@ function createEl(elementName, className) {
     return temp
 }
 
+//default suggets value
 let suggestTemp = null
 
+
+// to clear suggestion that has been displayed
 function clearSuggest() {
     if (suggestTemp != null) {
         suggestTemp.remove()

@@ -263,8 +263,10 @@ function createEl(elementName, className) {
     return temp
 }
 
+// default suggest value
 let suggestTemp = null
 
+// to clear suggestion that has been displayed
 function clearSuggest() {
     if (suggestTemp != null) {
         suggestTemp.remove()
@@ -277,6 +279,7 @@ function clearInput() {
     hotelDst.value = ""
 }
 
+// function to make suggestion parent: the place to put, input: the value, type: hotel or flight
 function makeSuggestion(parent, input, type) {
     clearSuggest()
     let container = createEl("div", "search-suggestion")
@@ -338,6 +341,7 @@ function makeSuggestion(parent, input, type) {
     }
 }
 
+// to prevent making suggestion when input is empty
 flightSrc.addEventListener("input", (e) => {
     if (flightSrc.value == null || flightSrc.value == "") {
         clearSuggest()
@@ -348,6 +352,7 @@ flightSrc.addEventListener("input", (e) => {
     makeSuggestion(flightSrc, flightSrc.value.toLowerCase(), "flight")
 })
 
+// to prevent making suggestion when input is empty
 flightDst.addEventListener("input", (e) => {
     if (flightDst.value == null || flightDst.value == "") {
         clearSuggest()
