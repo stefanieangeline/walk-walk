@@ -66,6 +66,7 @@ class HotelController extends Controller
                         return $query->where('hotels.RatingHotel', '>', 4.5);
                     }
                 })
+                // ->orderBy('hotel_rooms.PriceRoom', 'asc')
                 ->get(),
                 'dest'=> $dest,
                 'inDate'=>$inDate,
