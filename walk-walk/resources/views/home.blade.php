@@ -180,7 +180,7 @@
                                 </div>
                                 <div class="price">
                                     <span>Start from</span>
-                                    <p>Rp. {{$hotel->PriceRoom}}</p>
+                                    <p>Rp.{{number_format($hotel->PriceRoom,0, ',', '.')}}</p>
                                 </div>
                             </div>
                             </a>

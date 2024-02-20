@@ -39,14 +39,14 @@ class HotelController extends Controller
                 })
                 //sort price range filtering based on the value of $range, ordering hotel rooms in ascending order accordingly.
                 ->when($range == 'low', function ($query) {
-                    return $query->orderBy('Hotel_rooms.PriceRoom', 'asc')->where('Hotel_rooms.PriceRoom', '<', 100);
+                    return $query->orderBy('Hotel_rooms.PriceRoom', 'asc')->where('Hotel_rooms.PriceRoom', '<', 1000000);
                 })
                 ->when($range == 'mid', function ($query) {
                     return $query->orderBy('Hotel_rooms.PriceRoom', 'asc')
-                                ->whereBetween('Hotel_rooms.PriceRoom', [120, 150]);
+                                ->whereBetween('Hotel_rooms.PriceRoom', [1000000, 2500000]);
                 })
                 ->when($range == 'high', function ($query) {
-                    return $query->orderBy('Hotel_rooms.PriceRoom', 'desc')->where('Hotel_rooms.PriceRoom', '>', 150);
+                    return $query->orderBy('Hotel_rooms.PriceRoom', 'desc')->where('Hotel_rooms.PriceRoom', '>', 2500000);
                 })
                 //sort star hotel filtering based on the value of $star.
                 ->when($star, function ($query) use ($star) {
@@ -66,6 +66,7 @@ class HotelController extends Controller
                         return $query->where('hotels.RatingHotel', '>', 4.5);
                     }
                 })
+                // ->orderBy('hotel_rooms.PriceRoom', 'asc')
                 ->get(),
                 'dest'=> $dest,
                 'inDate'=>$inDate,

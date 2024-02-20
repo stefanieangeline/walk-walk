@@ -38,7 +38,7 @@
                     <div class="mid">
                         <div class="detail">
                             <h3>Total Amount Paid</h3>
-                            <h3>{{$price}}</h3>
+                            <h3>Rp.{{number_format($price,0, ',', '.')}}</h3>
                         </div>
                         <div class="detail">
                             <h3>Transaction ID</h3>

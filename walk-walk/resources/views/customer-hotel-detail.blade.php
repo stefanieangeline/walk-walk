@@ -236,12 +236,12 @@
                 <h2>Price Detail</h2>
                 <div class="person">
                     <p>{{ $room }} room x {{ $nightCount }} night</p>
-                    <p>Rp. {{ $priceRoom * $nightCount * $room }}.000</p>
+                    <p>Rp. {{ number_format($priceRoom * $nightCount * $room, 0, ',', '.') }}</p>
                 </div>
                 <div class="fix-price">
                     <div class="total-tax">
                         <p>Taxes and Fees</p>
-                        <p>Rp. {{$priceRoom * $nightCount * $room * 0.2}}.000</p>
+                        <p>Rp. {{number_format($priceRoom * $nightCount * $room * 0.2, 0, ',', '.')}}</p>
                     </div>
                     <!-- <div class="tax-detail">
                         {{-- <div class="vertical-line"></div> --}}
@@ -258,7 +258,7 @@
                 <hr class="garis-hor">
                 <div class="total-price">
                     <h2>Total Price</h2>
-                    <h2>Rp. {{ $priceRoom * $nightCount * $room * 1.2}}.000</h2>
+                    <h2>Rp. {{ number_format($priceRoom * $nightCount * $room * 1.2, 0, ',', '.')}}</h2>
                 </div>
             </div>
             {{-- @dd($typeRoom) --}}

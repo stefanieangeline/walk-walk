@@ -73,7 +73,7 @@ Route::get('/payment-barcode', function(){
 
 Route::get('/help', function(){
     return view('help');
-});
+})->name("help");
 
 Route::get('/privacy-policy', function(){
     return view('privacy-policy');
