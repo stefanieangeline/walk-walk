@@ -305,8 +305,8 @@
                     <div class="line-blue"></div>
 
                     <div class="price">
-                        <p class="big-price">Rp {{ $roomType -> PriceRoom }}.000</p>
-                        <p class="tax-text">After Tax Rp.{{$roomType -> PriceRoom * 1.2}}.000</p>
+                        <p class="big-price">Rp {{ number_format($roomType -> PriceRoom, 0, ',', '.') }}</p>
+                        <p class="tax-text">After Tax Rp.{{ number_format($roomType -> PriceRoom * 1.2, 0, ',', '.') }}</p>
                         <!-- <p class="reserve-button">Reserve</p> -->
                         @if($roomType-> QuantityRoom>0)
                         <a class="reserve-button" href="{{ route("customer-hotel-detail", ['id' => $hotel->IDHotel, 'idHotel' => $hotel->IDHotel,'inDate' => $inDate, 'outDate' => $outDate, 'room' => $room, 'name' => $hotel->NameHotel, 'star' => $hotel->StarHotel, 'type' => $roomType -> TypeRoom, 'capacity' => $roomType -> CapacityRoom, 'wide' => $roomType -> WideRoom, 'price'=> $roomType -> PriceRoom]) }}" onclick="return validateReservation();" > Reserve</a>
