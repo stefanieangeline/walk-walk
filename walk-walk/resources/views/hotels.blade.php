@@ -195,8 +195,9 @@
                 </div>
                 <div class="hotel-price">
                     <div class="price-detail1">
-                        <h4 class="price-detail">Rp.{{ $hotel->PriceRoom }}.000</h4>
-                        <h5>After Tax Rp.{{$hotel->PriceRoom * 1.2}}.000</h5>
+                        <!-- <h4 class="price-detail">Rp.{{ $hotel->PriceRoom }}.000</h4> -->
+                        <h4 class="price-detail">Rp.{{ number_format($hotel->PriceRoom, 0, ',', '.') }}</h4>
+                        <h5>After Tax Rp.{{ number_format($hotel->PriceRoom * 1.2, 0, ',', '.') }} </h5>
                     </div>
                     <a href="{{ route("hotel-room", ['id' => $hotel->IDHotel, 'destination' => $dest, 'inDate' => $inDate, 'outDate' => $outDate, 'room' => $room, 'guest' => $guest]) }}" id="submit-hotel-room">Check Availability</a>
                 </div>
