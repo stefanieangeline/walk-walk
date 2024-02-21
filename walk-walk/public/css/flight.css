@@ -667,3 +667,20 @@ body {
 .rotate180deg {
     transform: rotate(-180deg);
 }
+
+.clear-btn {
+    margin-top: 25px;
+    border: none;
+    height: 40px;
+    border-radius: 7px;
+    font-size: 18px;
+    font-family: roboto-cons-bold;
+    background-color: var(--strong-blue);
+    color: var(--white);
+    transition: 0.3s ease-in-out;
+}
+
+.clear-btn:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}

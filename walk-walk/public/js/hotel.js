@@ -108,7 +108,7 @@ searchHotel.addEventListener("click", (e) => {
     ) {
         // Displays an error message if any input is empty
         alert("Please fill in all required fields.");
-        e.preventDefault(); 
+        e.preventDefault();
     } else {
         // Converts date values ​​to Date objects to compare them
         var checkInDate = new Date(checkInDateInput.value);
@@ -148,7 +148,7 @@ if (document.getElementById("submit-hotel-room") != null) {
                     alert(
                         "Please fill in the Check-in date,Check-out date, Room and Guest first."
                     );
-                    event.preventDefault(); 
+                    event.preventDefault();
                 }
             });
     });
@@ -365,3 +365,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// clear filter button
+clearBtn = document.getElementById("clear-btn")
+
+function unchecked(array) {
+    array.forEach((el)=>{
+        el.firstElementChild.checked = false
+    })
+}
+
+clearBtn.addEventListener("click", (e)=>{
+    unchecked(reviews)
+    unchecked(stars)
+    unchecked(prices)
+    document.forms["box-choice"].submit()
+})

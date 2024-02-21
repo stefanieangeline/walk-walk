@@ -124,7 +124,7 @@
             <div class="opt-price">
                     <input type="radio" class="button" name="range" value="high" @if ($range == "high") checked="checked"@endif><p> > Rp.2.500.000,00</p>
             </div>
-
+            <button class="clear-btn" id="clear-btn">Clear</button>
         </div>
 
         <div class="right-box">

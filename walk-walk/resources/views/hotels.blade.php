@@ -28,7 +28,7 @@
                     <input type="date" value="{{$outDate}}" name="outDate" id="checkOutDate">
                 </div>
             </div>
-            
+
             <div class="input-row drop-down-menu box-width">
                 <div class="drop-down-select">
                     <h4 class="room-guest-info">Rooms and Guests</h4>
@@ -143,9 +143,10 @@
                             <h4>4,5+</h4>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
+            <button class="clear-btn" id="clear-btn">Clear</button>
         </div>
         </form>
 

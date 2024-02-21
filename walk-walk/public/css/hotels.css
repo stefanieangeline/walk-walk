@@ -624,3 +624,20 @@ body {
 #search-hotel {
     cursor: pointer;
 }
+
+.clear-btn {
+    margin: 10px 0px;
+    border: none;
+    height: 40px;
+    border-radius: 7px;
+    font-size: 18px;
+    font-family: roboto-cons-bold;
+    background-color: var(--strong-blue);
+    color: var(--white);
+    transition: 0.3s ease-in-out;
+}
+
+.clear-btn:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}

@@ -235,7 +235,7 @@ function addClickEvent(array) {
             if (el.firstElementChild.checked != true) {
                 el.firstElementChild.checked = true
             } else {
-                
+
             }
             document.forms["box-choice"].submit()
         })
@@ -245,7 +245,20 @@ function addClickEvent(array) {
 addClickEvent(airlines)
 addClickEvent(prices)
 
+// clear filter button
+clearBtn = document.getElementById("clear-btn")
 
+function unchecked(array) {
+    array.forEach((el)=>{
+        el.firstElementChild.checked = false
+    })
+}
+
+clearBtn.addEventListener("click", (e)=>{
+    unchecked(airlines)
+    unchecked(prices)
+    document.forms["box-choice"].submit()
+})
 
 
 
