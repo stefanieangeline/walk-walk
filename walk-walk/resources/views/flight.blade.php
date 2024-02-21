@@ -60,9 +60,7 @@
 
                     <select name="class" class="seat-opt">
                         <option class="option-edit" @if($class == "Economy") selected @endif>Economy</option>
-                        <option class="option-edit" @if($class == "Economy Premium") selected @endif>Economy Premium</option>
                         <option class="option-edit" @if($class == "Business") selected @endif>Business</option>
-                        <option class="option-edit" @if($class == "First Class") selected @endif>First Class</option>
 
                     </select>
                 </div>

@@ -31,6 +31,7 @@ class FlightController extends Controller
             ->join("cities as c", "a.IDCity", "=", "c.IDCity")
             ->join("cities as d", "b.IDCity", "=", "d.IDCity")
             ->join("airlines", "airlines.IDAirline", "=", "schedules.IDAirline")
+            ->where("plane_tickets.IDPlaneTicket", $IDTicket)
             ->select("schedules.IDAirline", "FlightNumber", "a.NameAirport as AirportDest", "b.NameAirport as AirportSrc", "c.NameCity as cityDest", "d.NameCity as citySrc", DB::raw($date_format), DB::raw("CAST(schedules.DepartureTime as TIME) as DepartureTime"), DB::raw("CAST(schedules.ArrivalTime as TIME) as ArrivalTime"))
             ->first();
 
@@ -39,7 +40,7 @@ class FlightController extends Controller
             ->join("passengers", "passengers.IDPassenger", "=", "plane_ticket_details.IDPassenger")
             ->where("plane_ticket_details.IDPlaneTicket", $IDTicket)
             ->get();
-
+            
         // return page and its variable
         return view("e-ticket-page", ["schedule" => $schedule, "tickets" => $tickets]);
     }
