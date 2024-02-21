@@ -331,7 +331,7 @@
                 <img src="/assets/icon/rating-star-blue.png" class="rating-star-img">
                 <div class="rating-desc">
                     <div class="rating-numb">
-                        <p class="rate">{{$hotel->RatingHotel}}</p>
+                        <p class="rate">{{($hotel->RatingHotel + $averageRating)/2}}</p>
                         <p class="standard">/5</p>
                     </div>
                     <p class="many-users">From <b>{{$reviewsCount}}</b> verified guest reviews</p>
