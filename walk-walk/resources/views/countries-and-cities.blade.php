@@ -43,39 +43,20 @@
             <p>Countries & Cities</p>
         </div>
         <div class="all-content">
-            <div class="country">
-                <p>United States</p>
-                <div class="cities">
-                    <p>San Francisco</p>
-                </div>
-            </div>
-            <div class="country">
-                <p>Japan</p>
-                <div class="cities">
-                    <div><p>Tokyo</p></div>
-                    <div><p>Tokyo</p></div>
-                    <div><p>Tokyo</p></div>
-                </div>
-            </div>
-            <div class="country">
-                <p>Japan</p>
-                <div class="cities">
-                    <div><p>Tokyo</p></div>
-                    <div><p>Tokyo</p></div>
-                    <div><p>Tokyo</p></div>
-                </div>
-            </div>
-            <div class="country">
-                <p>Japan</p>
-                <div class="cities">
-                    <div><p>Tokyo</p></div>
-                    <div><p>Tokyo</p></div>
-                    <div><p>Tokyo</p></div>
-                </div>
+        @foreach ($countries as $country)
+        <div class="country">
+            <p>{{ $country->NameCountry }}</p>  
+            <div class="cities">
+                @foreach ($groupedCities[$country->IDCountry] as $city)
+                    <div>
+                        <p>{{ $city->NameCity }}</p>
+                    </div> 
+                @endforeach
             </div>
         </div>
+        @endforeach
+        </div>
     </div>
-
     @include("shared.footer")
 </body>
 </html>
