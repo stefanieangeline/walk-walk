@@ -53,20 +53,27 @@
     <div class="content_hotels">
         <div class="hotel-preview-box">
             <div class="header-upper-box">
-                <div class="right-box">
-                    <div class="title-star">
-                        <p class="title-txt">{{$hotel->NameHotel}}</p>
-                        <div class="hotel-rating-star">
-                            @for ($i=0; $i < $hotel->StarHotel; $i++)
-                            <img src="/assets/icon/star-gold.svg">
-                            @endfor
+                <div class="toppp">
+                    <div class="right-box">
+                        <div class="title-star">
+                            <p class="title-txt">{{$hotel->NameHotel}}</p>
+                            <div class="hotel-rating-star">
+                                @for ($i=0; $i < $hotel->StarHotel; $i++)
+                                <img src="/assets/icon/star-gold.svg">
+                                @endfor
+                            </div>
+                        </div>
+                        <div class="locate">
+                            <img src="/assets/icon/location-blue.svg">
+                            <p class="loc-txt">{{$hotel->AddressHotel}}</p>
                         </div>
                     </div>
-                    <div class="locate">
-                        <img src="/assets/icon/location-blue.svg">
-                        <p class="loc-txt">{{$hotel->AddressHotel}}</p>
+                    <div class="star-rate-box">
+                        <p class="the-rating">{{$hotel->RatingHotel}}</p>
+                        <p class="the-standard">/5</p>
                     </div>
                 </div>
+                
                 <!-- <div class="left-box">
                     <p class="hotel-price">Rp 325.000</p>
                     <div class="select-room-box">
@@ -105,7 +112,7 @@
                 </div>
             </div>
 
-            <div class="bottom-box">
+            <!-- <div class="bottom-box">
                 <div class="desc-box">
                     <p class="desc-title">Description</p>
                     {{-- <p>{{ $hotel->IDHotel }}</p> --}}
@@ -116,7 +123,7 @@
                     <p class="the-rating">{{$hotel->RatingHotel}}</p>
                     <p class="the-standard">/5</p>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="header-detail">
@@ -331,7 +338,7 @@
                 <img src="/assets/icon/rating-star-blue.png" class="rating-star-img">
                 <div class="rating-desc">
                     <div class="rating-numb">
-                        <p class="rate">{{($hotel->RatingHotel + $averageRating)/2}}</p>
+                        <p class="rate">{{$hotel->RatingHotel}}</p>
                         <p class="standard">/5</p>
                     </div>
                     <p class="many-users">From <b>{{$reviewsCount}}</b> verified guest reviews</p>

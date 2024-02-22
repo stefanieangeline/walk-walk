@@ -20,7 +20,7 @@
         <p class="slogan">Explore the world your way: <br> your journey start with us</p>
 
        </div>
-       <form method="POST" class="form_sign">
+       <form method="POST" class="form_sign" name="register_form">
         @csrf
         <p class="create_account">Welcome!</p>
         <p class='opacity'>Start your journey here</p>
@@ -46,12 +46,12 @@
         <div class="error-message">
             @error('password')
                 <span class="error">{{ $message }}</span>
-            @enderror 
+            @enderror
         </div>
         <div class="nationality_container">
             <input name="nationality" type="text" placeholder="Nationality" id="nationality" class="nationality_class">
         </div>
-        <input type="submit" value="Register" id="register">
+        <h4 id="register">Register</h4>
 
         <div class="sign-in">
             <b class="log_in_button">Already have an account? </b>
@@ -59,7 +59,7 @@
 
         </div>
         </form>
-        
+
 
 
     </div>

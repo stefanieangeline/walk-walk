@@ -304,11 +304,17 @@ body {
     flex-direction: row;
 }
 
+.toppp{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 .right-box{
-    width: 60vw;
-    height: 11.5vh;
+    width: 76.5vw;
+    height: 13vh;
     /* background-color: lightsalmon; */
-    margin-top: 5px;
+    /* margin-top: 5px; */
     margin-left: 5px;
     border-radius: 22px;
     display: flex;
@@ -509,7 +515,7 @@ body {
 }
 
 .star-rate-box{
-    /* height: 5vh; */
+    height: 9vh;
     /* width: 4.8vw; */
     /* margin-left: 33px;
     margin-top: 45px; */
@@ -525,7 +531,7 @@ body {
 .the-rating{
     font-family: roboto-cons-bold;
     color: white;
-    font-size: 19px;
+    font-size: 22px;
     /* padding-left: 10px;
     padding-top: 2px; */
 }
@@ -533,7 +539,7 @@ body {
 .the-standard{
     font-family: roboto-cons-bold;
     color: var(--grey);
-    font-size: 19px;
+    font-size: 22px;
     /* padding-top: 2px; */
 }
 

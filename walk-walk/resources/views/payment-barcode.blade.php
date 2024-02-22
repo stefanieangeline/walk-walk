@@ -117,7 +117,7 @@
         <div class="bg-content">
             <h2>Scan QR Code below to finish your payment</h2>
             <img src="https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=123" id="qrCode" alt="">
-            <h2>Rp. {{$price}}</h2>
+            <h2>Rp. {{number_format($price,0,',','.')}}</h2>
             <div class="input">
                 <input type="text" name="Gender" placeholder="Input Your OTP Code" id="otp" required>
                 <p class="submit-btn" id="submitBtn"><i class="fa-solid fa-arrow-right"></i></p>

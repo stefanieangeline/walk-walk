@@ -9,12 +9,18 @@ formDOB = document.getElementById("passengersDOB")
 formNationality = document.getElementById("passengersNationality")
 nextBtn = document.getElementById("next-step")
 
+valid = true
+
 // to merge every passengers data become single string
-function mergeData(className, target) {
+function mergeData(className, target, type) {
     array = document.querySelectorAll("." + className)
+
     let first = true
     let result = ""
     array.forEach(el => {
+        if (type == "nationality") {
+            validateNationality(el.value)
+        }
         if (first) {
             result = result.concat(el.value)
             first = false
@@ -37,19 +43,37 @@ function mergeData(className, target) {
 
 nextBtn.addEventListener("click", (e) => {
     // call function to merge every passenger data
-    mergeData("passengersName", formName);
-    mergeData("passengersGender", formGender);
-    mergeData("passengersDOB", formDOB);
-    mergeData("passengersNationality", formNationality);
+    valid = true
+    mergeData("passengersName", formName, "name");
+    mergeData("passengersGender", formGender, "gender");
+    mergeData("passengersDOB", formDOB, "dob");
+    mergeData("passengersNationality", formNationality, "nationality");
 
+    console.log(valid)
     // to validate form input
-    if (!validatePassengerInputs()) {
+    if (!validatePassengerInputs() || !valid) {
         alert("Please fill in all passenger details.");
         e.preventDefault();
     } else {
+
         document.forms["passenger-form"].submit();
     }
 });
+
+// check user nationalities
+function validateNationality(countryVal) {
+    count = 0;
+    countries.forEach(country => {
+        console.log(countryVal + country.NameCountry)
+        if (countryVal == country.NameCountry) {
+            count++;
+        }
+    });
+    if(count == 0){
+        valid = false
+    }
+
+}
 
 function validateNameAndGender() {
     // Retrieve the name, gender and date of birth of each passenger
@@ -80,9 +104,9 @@ function validateNameAndGender() {
             );
         }
 
-        // Validasi birth 
+        // Validasi birth
         var today = new Date();
-        today.setHours(0, 0, 0, 0); 
+        today.setHours(0, 0, 0, 0);
 
         if (dobValue >= today) {
             return (
