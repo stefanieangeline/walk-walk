@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="shortcut icon" href="/assets/logo/logo-icon.svg" type="image/svg">
     <link rel="stylesheet" href="/css/font-and-color.css">
     <link rel="stylesheet" href="/css/about-group.css">
     <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
@@ -33,7 +34,7 @@
             <img src="assets/logo/jalan-jalan.svg" alt="">
             <p>.Group</p>
         </div>
-        
+
         <div class="right-side">
             <div class="left-right">
                 <a href="/jalan-jalan/help.php" class="nav-link">Help</a>
@@ -98,7 +99,7 @@
                 </div>
             </div>
         </div>
-      
+
     </div>
 
     @include("shared.footer")

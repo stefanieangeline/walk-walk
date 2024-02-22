@@ -111,7 +111,7 @@
                             <div class="drop-down-container" id="flight-drop-down-container">
                                 <div class="num-input-flight">
                                     <h4>Senior</h4>
-                                    <input name="senior" type="number" min="0" id="senior-input" value="1">
+                                    <input name="senior" type="number" min="0" id="senior-input" value="0">
                                 </div>
                                 <div class="num-input-flight">
                                     <h4>Adult</h4>
@@ -119,7 +119,7 @@
                                 </div>
                                 <div class="num-input-flight">
                                     <h4>Children</h4>
-                                    <input name="children" type="number" min="0" id="children-input" value="1">
+                                    <input name="children" type="number" min="0" id="children-input" value="0">
                                 </div>
                             </div>
                         </div>

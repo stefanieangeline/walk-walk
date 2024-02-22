@@ -168,7 +168,7 @@ class FlightController extends Controller
             ->join("schedule_details as sd", "sd.IDSchedule", "=", "schedules.IDSchedule")
             ->where("schedules.IDSchedule", $id)
             ->where("sd.Class", $class)
-            ->select("Price", "c.NameCity as srcCity", "d.NameCity as destCity", "a.CodeAirport as srcCode", "b.CodeAirport as destCode", "a.NameAirport as srcName", "b.NameAirport as destName", "IDAirline", DB::raw("CAST(DepartureTime AS TIME) as DepartureTime"), DB::raw("CAST(ArrivalTime AS TIME) as ArrivalTime"), "IDAirline", DB::raw("DATE_FORMAT(CAST(DepartureTime AS DATE), \"%M %d, %Y\") as dateFormat"))
+            ->select("sd.Baggage as baggage", "Price", "c.NameCity as srcCity", "d.NameCity as destCity", "a.CodeAirport as srcCode", "b.CodeAirport as destCode", "a.NameAirport as srcName", "b.NameAirport as destName", "IDAirline", DB::raw("CAST(DepartureTime AS TIME) as DepartureTime"), DB::raw("CAST(ArrivalTime AS TIME) as ArrivalTime"), "IDAirline", DB::raw("DATE_FORMAT(CAST(DepartureTime AS DATE), \"%M %d, %Y\") as dateFormat"))
             ->first(),
             "class" => $class,
             "depDate" => $depDate,

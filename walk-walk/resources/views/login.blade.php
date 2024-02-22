@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/logo/logo-icon.svg" type="image/svg">
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="/css/font-and-color.css">
     <title>Log In</title>
@@ -39,14 +40,14 @@
                 <input name="submit" type="submit" value="Log In" id="register" class="logIn">
             </form>
         </div>
-    
+
         <div class="sign-in">
             <b class="log_in_button">Don't have an account? </b>
             <a href="{{route('sign-in')}}" class="log_in_button_click">Sign Up</a>
 
         </div>
-        
-    </div>   
+
+    </div>
     </div>
 </body>
 </html>

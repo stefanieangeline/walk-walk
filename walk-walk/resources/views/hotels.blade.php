@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/hotels.css">
+    <link rel="shortcut icon" href="/assets/logo/logo-icon.svg" type="image/svg">
     <script src="/js/hotel.js" defer=""></script>
     <title>Hotels</title>
 </head>
@@ -155,7 +156,7 @@
                 <p class="no-booking">Sorry, No Hotels Available !</p>
             @else
             @foreach($hotels as $hotel)
-            
+
             <div class="hotel-detail">
                 <div class="right-left">
                     @php

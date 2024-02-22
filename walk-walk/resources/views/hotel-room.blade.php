@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/hotel-room.css">
+    <link rel="shortcut icon" href="/assets/logo/logo-icon.svg" type="image/svg">
     <script src="/js/hotel.js" defer=""></script>
     <title>Hotel's Room</title>
 </head>
@@ -73,7 +74,7 @@
                         <p class="the-standard">/5</p>
                     </div>
                 </div>
-                
+
                 <!-- <div class="left-box">
                     <p class="hotel-price">Rp 325.000</p>
                     <div class="select-room-box">

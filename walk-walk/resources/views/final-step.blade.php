@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="shortcut icon" href="/assets/logo/logo-icon.svg" type="image/svg">
     <link rel="stylesheet" href="css/font-and-color.css">
     <link rel="stylesheet" href="/css/payment-barcode.css">
     <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
@@ -62,7 +63,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="right-side">
             <div class="left-right">
                 <a href="{{route("help")}}" class="nav-link">Help</a>
@@ -75,7 +76,7 @@
         </div>
     </div>
 
-        
+
     </div>
 
     <div class="content">

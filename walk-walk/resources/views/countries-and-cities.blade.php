@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cities</title>
+    <link rel="shortcut icon" href="/assets/logo/logo-icon.svg" type="image/svg">
     <link rel="stylesheet" href="/css/cities.css">
     <link rel="stylesheet" href="/css/font-and-color.css">
     <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
@@ -25,7 +26,7 @@
             <img src="assets/logo/jalan-jalan.svg" alt="">
             <p>.Group</p>
         </div>
-        
+
         <div class="right-side">
             <div class="left-right">
                 <a href="/jalan-jalan/help.php" class="nav-link">Help</a>
@@ -45,12 +46,12 @@
         <div class="all-content">
         @foreach ($countries as $country)
         <div class="country">
-            <p>{{ $country->NameCountry }}</p>  
+            <p>{{ $country->NameCountry }}</p>
             <div class="cities">
                 @foreach ($groupedCities[$country->IDCountry] as $city)
                     <div>
                         <p>{{ $city->NameCity }}</p>
-                    </div> 
+                    </div>
                 @endforeach
             </div>
         </div>
