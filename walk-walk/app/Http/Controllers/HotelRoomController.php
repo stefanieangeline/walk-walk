@@ -36,7 +36,7 @@ class HotelRoomController extends Controller
         ->where('reviews.IDHotel', '=', $id)
         ->get();
 
-        $averageRating = Review::where('IDHotel', $id)->avg('Rating');
+        // $averageRating = Review::where('IDHotel', $id)->avg('Rating');
 
         // calculates the count of reviews for a specific hotel identified by $id
         $reviewsCount = Review::query()
@@ -85,7 +85,6 @@ class HotelRoomController extends Controller
             'totalRoomTypes' => $totalRoomTypes,
             'reviews' => $reviews,
             'reviewsCount' => $reviewsCount,
-            'averageRating' => $averageRating,
             'hotelFacilities'=>$hotelFacilities,
             'hotelFolder' => $hotelFolder,
             'hotelPhotos' => $hotelPhotos,         
