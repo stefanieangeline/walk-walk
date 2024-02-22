@@ -845,6 +845,18 @@ body {
     text-decoration: none;
 }
 
+.reserve-button1{
+    font-family: roboto-cons-bold;
+    color:var(--another-blue);
+    opacity: 0.4;
+    font-size: 20px;
+    background-color: grey;
+    padding: 10px 30px;
+    margin-bottom: 5px;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
 
 /* =================== GUEST RATING & REVIEW =================== */
 .guest-rating-review {

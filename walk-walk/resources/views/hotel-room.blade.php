@@ -311,7 +311,7 @@
                         @if($roomType-> QuantityRoom>0)
                         <a class="reserve-button" href="{{ route("customer-hotel-detail", ['id' => $hotel->IDHotel, 'idHotel' => $hotel->IDHotel,'inDate' => $inDate, 'outDate' => $outDate, 'room' => $room, 'name' => $hotel->NameHotel, 'star' => $hotel->StarHotel, 'type' => $roomType -> TypeRoom, 'capacity' => $roomType -> CapacityRoom, 'wide' => $roomType -> WideRoom, 'price'=> $roomType -> PriceRoom]) }}" onclick="return validateReservation();" > Reserve</a>
                         @else
-                        <p class="reserve-button">Room Not Available</p>
+                        <p class="reserve-button1">Room Not Available</p>
                         @endif
                     </div>
 
