@@ -60,3 +60,21 @@ function clearInput() {
     nationality.value = "";
 }
 
+// check user nationalities
+function validateNationality() {
+    exist = false
+    nationality = document.getElementById("nationality");
+    countries.forEach(country => {
+        if (nationality.value == country.NameCountry) {
+            exist = true
+            document.forms["register_form"].submit()
+        }
+    });
+    if (!exist) {
+        alert("country doesn't exist in our database!")
+    }
+}
+
+let registerBtn = document.getElementById("register")
+
+registerBtn.addEventListener("click", (e)=>validateNationality())

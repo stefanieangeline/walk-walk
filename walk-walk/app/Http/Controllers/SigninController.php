@@ -17,7 +17,7 @@ class SigninController extends Controller
     //validates and stores a new user's information in the database, ensuring specific requirements for each field
     public function store ()  {
         $validated = request()->validate([
-            'name' => 'required|alpha',
+            'name' => 'required|regex:/^[a-zA-Z\s]+$/',
             'phoneNumber' =>['required', 'numeric'],
             'email' => ['required', 'unique:users,email', 'email', 'regex:/@gmail\.com$/i'],
             'password' => 'required|min:8',
@@ -29,7 +29,7 @@ class SigninController extends Controller
             'phoneNumber.numeric' => 'Phone number should only contain digits',
             'name.alpha' => 'Full name should only contain alphabetic characters',
         ]);
-        
+
         $todayDate = date("Y-m-d");
         $newUser = new User();
         $newUser->DOBUser = $todayDate;

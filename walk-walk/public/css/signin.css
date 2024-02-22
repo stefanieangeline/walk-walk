@@ -23,7 +23,7 @@
     display: flex;
     z-index: 10;
     opacity: 1;
-   
+
 
 }
 /* /jalan-jalan/assets/logo/jalan-jalan.svg */
@@ -32,7 +32,7 @@
     /* background-image: url("https://drive.google.com/uc?export=view&id=1jPbHmzgPwXno9lg2lngldOWChWTrjcww"); */
     /* background-color: black; */
     /* background-position: right; */
-    
+
     height: 100%;
     width: 50%;
     display: flex;
@@ -41,8 +41,8 @@
     /* display: flex; */
     justify-content: space-between;
     /* align-items: flex-end; */
-    
-    
+
+
 }
 .picture{
     height: 100%;
@@ -155,9 +155,9 @@ input:focus{
 
     color: white;
     border : 3px solid #ffff;
-    
-  
-    
+
+
+
 }
 input:active{
     /* background-color: white; */
@@ -197,7 +197,7 @@ input:active{
     /* position: absolute; */
     color: var(--light-blue);
     font-family: 'roboto-cons-light';
-    
+
     /* bottom: 0; */
     /* top: 95%; */
     /* left: 59%; */
@@ -254,7 +254,7 @@ input:active{
 .click_anywhere{
     font-size: smaller;
     color: white;
-    
+
     opacity: 0.5;
 }
 .sign-in{
@@ -297,4 +297,13 @@ input:active{
 .sub-suggest:hover {
      z-index: 1010;
     background-color: var(--grey);
+}
+
+#register {
+    width: 80%;
+    height: 10%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

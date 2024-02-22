@@ -40,7 +40,7 @@ class FlightController extends Controller
             ->join("passengers", "passengers.IDPassenger", "=", "plane_ticket_details.IDPassenger")
             ->where("plane_ticket_details.IDPlaneTicket", $IDTicket)
             ->get();
-            
+
         // return page and its variable
         return view("e-ticket-page", ["schedule" => $schedule, "tickets" => $tickets]);
     }
@@ -229,13 +229,13 @@ class FlightController extends Controller
             $finalIDsource = [];
             $finalIDdest = [];
 
-            $countrySrc = Country::query()->where("NameCountry", $source)->select("NameCountry")->first();
-            $citySrc = City::query()->where("NameCity", $source)->select("NameCity")->first();
-            $airportSrc = Airport::query()->where("NameAirport", $source)->select("IDAirport")->first();
+            $countrySrc = Country::query()->where("NameCountry", "like", "%".$source."%")->select("NameCountry")->first();
+            $citySrc = City::query()->where("NameCity", "like", "%".$source."%")->select("NameCity")->first();
+            $airportSrc = Airport::query()->where("NameAirport","like", "%".$source."%")->select("IDAirport")->first();
 
-            $countryDst = Country::query()->where("NameCountry", $dest)->select("NameCountry")->first();
-            $cityDst = City::query()->where("NameCity", $dest)->select("NameCity")->first();
-            $airportDst = Airport::query()->where("NameAirport", $dest)->select("IDAirport")->first();
+            $countryDst = Country::query()->where("NameCountry", "like", "%".$dest."%")->select("NameCountry")->first();
+            $cityDst = City::query()->where("NameCity", "like", "%".$dest."%")->select("NameCity")->first();
+            $airportDst = Airport::query()->where("NameAirport", "like", "%".$dest."%")->select("IDAirport")->first();
 
             if ($countrySrc != null) {
                 $IDsource = Airport::query()
@@ -260,7 +260,7 @@ class FlightController extends Controller
                 foreach ($IDsource as $i) {
                     array_push($finalIDsource, $i["IDAirport"]);
                 }
-            } else {
+            } else if ($airportSrc != null) {
                 array_push($finalIDsource, $airportSrc["IDAirport"]);
             }
 
@@ -287,7 +287,7 @@ class FlightController extends Controller
                 foreach ($IDdest as $i) {
                     array_push($finalIDdest, $i["IDAirport"]);
                 }
-            } else {
+            } else if ($airportDst != null) {
                 array_push($finalIDdest, $airportDst["IDAirport"]);
             }
 
