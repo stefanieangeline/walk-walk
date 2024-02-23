@@ -173,7 +173,7 @@
                                 <h5>/5</h5>
                             </div>
                             <div class="hotel-review">
-                                <h4>100 reviews</h4>
+                                <h4>{{$hotel->totalReviews}} Review</h4>
                             </div>
                         </div>
                         <div class="hotel-place">

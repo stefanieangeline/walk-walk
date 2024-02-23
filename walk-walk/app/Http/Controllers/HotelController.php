@@ -25,16 +25,15 @@ class HotelController extends Controller
 
         //return all hotel with optional filters for price range, star rating, and user reviews.
         if ($dest == null || $inDate == null || $outDate == null || $room == null || $guest == null) {
-            return view("hotels", [
-                'hotels' => Hotel::query()
+            $hotels = Hotel::query()
                 ->join('Cities','Cities.IDCity','=','Hotels.IDCity')
                 ->join('Countries','Cities.IDCountry','=','Countries.IDCountry')
                 ->join('Hotel_rooms', 'Hotels.IDHotel','=','Hotel_rooms.IDHotel')
-                ->where(function ($subquery){
-                $subquery->whereIn('Hotel_rooms.PriceRoom', function ($subquery) {
-                    $subquery->select(DB::raw('MIN(hr2.PriceRoom)'))
-                        ->from('hotel_rooms as hr2')
-                        ->whereRaw('hotels.IDHotel = hr2.IDHotel');
+                ->where(function ($subquery) {
+                    $subquery->whereIn('Hotel_rooms.PriceRoom', function ($subquery) {
+                        $subquery->select(DB::raw('MIN(hr2.PriceRoom)'))
+                            ->from('hotel_rooms as hr2')
+                            ->whereRaw('hotels.IDHotel = hr2.IDHotel');
                     });
                 })
                 //sort price range filtering based on the value of $range, ordering hotel rooms in ascending order accordingly.
@@ -66,8 +65,17 @@ class HotelController extends Controller
                         return $query->where('hotels.RatingHotel', '>', 4.5);
                     }
                 })
-                // ->orderBy('hotel_rooms.PriceRoom', 'asc')
-                ->get(),
+                ->get();
+
+            //count review for every hotel
+            foreach ($hotels as $hotel) {
+                $totalReviews = $hotel->reviews->count(); 
+
+                $hotel->totalReviews = $totalReviews;
+            }
+
+            return view("hotels", [
+                'hotels' => $hotels,
                 'dest'=> $dest,
                 'inDate'=>$inDate,
                 'outDate'=>$outDate,
@@ -172,6 +180,12 @@ class HotelController extends Controller
         });
 
         $hotels = $query->orderBy('hotel_rooms.PriceRoom', 'asc')->get();
+
+        foreach ($hotels as $hotel) {
+            $totalReviews = $hotel->reviews->count(); // Menggunakan relasi langsung
+
+            $hotel->totalReviews = $totalReviews;
+        }
 
         return view("hotels", [
             'hotels' => $hotels,
