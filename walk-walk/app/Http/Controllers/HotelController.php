@@ -7,6 +7,7 @@ use App\Models\City;
 use App\Models\Country;
 use App\Models\Hotel;
 use App\Models\OrderedRoom;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -74,6 +75,8 @@ class HotelController extends Controller
                 $hotel->totalReviews = $totalReviews;
             }
 
+            $averageRating = Review::join("hotels", "hotels.IDHotel", "=", "reviews.IDHotel")->avg('Rating');
+
             return view("hotels", [
                 'hotels' => $hotels,
                 'dest'=> $dest,
@@ -83,6 +86,7 @@ class HotelController extends Controller
                 'guest'=>$guest,
                 'range'=>$range,
                 'star' =>$star,
+                'averageRating' => $averageRating,
                 'review' =>$review,
                 "countries" => Country::all(),
                 "airports" => Airport::all(),
@@ -187,6 +191,8 @@ class HotelController extends Controller
             $hotel->totalReviews = $totalReviews;
         }
 
+        $averageRating = Review::join("hotels", "hotels.IDHotel", "=", "reviews.IDHotel")->avg('Rating');
+
         return view("hotels", [
             'hotels' => $hotels,
             'dest'=> $dest,
@@ -197,6 +203,7 @@ class HotelController extends Controller
             'range'=>$range,
             'star' =>$star,
             'review' =>$review,
+            'averageRating' => $averageRating,
             "countries" => Country::all(),
             "airports" => Airport::all(),
             "cities" => City::all(),

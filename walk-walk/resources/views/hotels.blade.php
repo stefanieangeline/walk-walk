@@ -169,7 +169,7 @@
                         </div>
                         <div class="hotel-rating-review">
                             <div class="hotel-rating">
-                                <h4>{{$hotel -> RatingHotel}}</h4>
+                                <h4>{{($hotel -> RatingHotel + $averageRating)/2}}</h4>
                                 <h5>/5</h5>
                             </div>
                             <div class="hotel-review">
