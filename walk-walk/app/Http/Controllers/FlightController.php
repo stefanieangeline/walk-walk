@@ -191,6 +191,7 @@ class FlightController extends Controller
         $sel_airline = request()->get('sel_airline');
         $range = request()->get('range');
         $sort = request()->get('sort');
+        // dd($source);
 
         // if some variable null then will get set default value
         if ($class == null) {
@@ -222,10 +223,74 @@ class FlightController extends Controller
         $queryarrivaltime = "CAST(schedules.ArrivalTime as time) as ArrivalTime";
         $querydeparturetime = "CAST(schedules.DepartureTime as time) as DepartureTime";
 
-        // if source and destination empty then will return this query
+        // if source and destination filled then will return this query
         if ($source != "" && $dest != "") {
-            $IDsource = City::query()->where("nameCity", "like", "%".$source."%")->select("IDCity")->get()->toArray();
-            $IDdest = City::query()->where("nameCity", "like","%".$dest."%")->select("IDCity")->get()->toArray();
+            $finalIDsource = [];
+            $finalIDdest = [];
+
+            $countrySrc = Country::query()->where("NameCountry", $source)->select("NameCountry")->first();
+            $citySrc = City::query()->where("NameCity", $source)->select("NameCity")->first();
+            $airportSrc = Airport::query()->where("NameAirport", $source)->select("IDAirport")->first();
+
+            $countryDst = Country::query()->where("NameCountry", $dest)->select("NameCountry")->first();
+            $cityDst = City::query()->where("NameCity", $dest)->select("NameCity")->first();
+            $airportDst = Airport::query()->where("NameAirport", $dest)->select("IDAirport")->first();
+
+            if ($countrySrc != null) {
+                $IDsource = Airport::query()
+                    ->join("cities", "cities.IDCity", "=", "airports.IDCity")
+                    ->join("countries", "countries.IDCountry", "=", "cities.IDCountry")
+                    ->where("NameCountry", $countrySrc["NameCountry"])
+                    ->select("IDAirport")
+                    ->get()
+                    ->toArray();
+
+                foreach ($IDsource as $i) {
+                    array_push($finalIDsource, $i["IDAirport"]);
+                }
+            } else if ($citySrc != null) {
+                $IDsource = Airport::query()
+                    ->join("cities", "cities.IDCity", "=", "airports.IDCity")
+                    ->where("NameCity", $citySrc["NameCity"])
+                    ->select("IDAirport")
+                    ->get()
+                    ->toArray();
+
+                foreach ($IDsource as $i) {
+                    array_push($finalIDsource, $i["IDAirport"]);
+                }
+            } else {
+                array_push($finalIDsource, $airportSrc["IDAirport"]);
+            }
+
+            if ($countryDst != null) {
+                $IDdest = Airport::query()
+                    ->join("cities", "cities.IDCity", "=", "airports.IDCity")
+                    ->join("countries", "countries.IDCountry", "=", "cities.IDCountry")
+                    ->where("NameCountry", $countryDst["NameCountry"])
+                    ->select("IDAirport")
+                    ->get()
+                    ->toArray();
+
+                foreach ($IDdest as $i) {
+                    array_push($finalIDdest, $i["IDAirport"]);
+                }
+            } else if ($cityDst != null) {
+                $IDdest = Airport::query()
+                    ->join("cities", "cities.IDCity", "=", "airports.IDCity")
+                    ->where("NameCity", $cityDst["NameCity"])
+                    ->select("IDAirport")
+                    ->get()
+                    ->toArray();
+
+                foreach ($IDdest as $i) {
+                    array_push($finalIDdest, $i["IDAirport"]);
+                }
+            } else {
+                array_push($finalIDdest, $airportDst["IDAirport"]);
+            }
+
+            // dd($finalIDdest, $finalIDsource);
 
             return view('flight',[
                 'schedules' => Schedule::query()
@@ -234,8 +299,8 @@ class FlightController extends Controller
                 ->join('airports as a','schedules.IDAirportSource','=','a.IDAirport')
                 ->select(DB::raw($querydeparturetime),DB::raw($queryarrivaltime),'schedule_details.Price','a.CodeAirport as CodeAirportSource','b.CodeAirport as CodeAirportDestination', 'IDAirline', 'schedules.IDSchedule')->distinct()
                 ->where('schedule_details.Class','like', $class)
-                ->where('a.IDAirport', $IDsource)
-                ->where('b.IDAirport', $IDdest)
+                ->whereIn('a.IDAirport', $finalIDsource)
+                ->whereIn('b.IDAirport', $finalIDdest)
                 ->where('schedules.DepartureTime', ">=", $depDate)
                 ->whereRaw('schedules.DepartureTime <'.$addOneDay)
                 ->when($sel_airline != "", function ($query) use ($sel_airline) {
@@ -262,9 +327,8 @@ class FlightController extends Controller
                 'averagePrice' => Schedule::query()
                 ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
                 ->where('schedule_details.Class', 'like',$class)
-                ->where('schedules.IDAirportSource', $IDsource)
-                ->where('schedules.IDAirportDestination', $IDdest)
-                ->where('schedules.IDAirportDestination', $IDdest)
+                ->whereIn('schedules.IDAirportSource', $finalIDsource)
+                ->whereIn('schedules.IDAirportDestination', $finalIDdest)
                 ->where('schedules.DepartureTime', ">=", $depDate)
                 ->whereRaw('schedules.DepartureTime <'.$addOneDay)
                 ->when($sel_airline != "", function ($query) use ($sel_airline) {
@@ -285,8 +349,8 @@ class FlightController extends Controller
                 'minimumPrice' => Schedule::query()
                 ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
                 ->where('schedule_details.Class','like', $class)
-                ->where('schedules.IDAirportSource', $IDsource)
-                ->where('schedules.IDAirportDestination', $IDdest)
+                ->whereIn('schedules.IDAirportSource', $finalIDsource)
+                ->whereIn('schedules.IDAirportDestination', $finalIDdest)
                 ->where('schedules.DepartureTime', ">=", $depDate)
                 ->whereRaw('schedules.DepartureTime <'.$addOneDay)
                 ->when($sel_airline != "", function ($query) use ($sel_airline) {
@@ -318,8 +382,8 @@ class FlightController extends Controller
                 "airlines" => Schedule::query()
                 ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')
                 ->where('schedule_details.Class','like', $class)
-                ->where('schedules.IDAirportSource', $IDsource)
-                ->where('schedules.IDAirportDestination', $IDdest)
+                ->whereIn('schedules.IDAirportSource', $finalIDsource)
+                ->whereIn('schedules.IDAirportDestination', $finalIDdest)
                 ->where('schedules.DepartureTime', ">=", $depDate)
                 ->whereRaw('schedules.DepartureTime <'.$addOneDay)
                 ->when($sel_airline != "", function ($query) use ($sel_airline) {
@@ -342,7 +406,7 @@ class FlightController extends Controller
                 "range" => $range,
                 "sort" => $sort
             ]);
-        // if source and destination get filled
+        // if source and destination empty
         } else {
             return view('flight',[
                 'schedules' => Schedule::query()
