@@ -26,7 +26,7 @@ class HotelController extends Controller
 
         //return all hotel with optional filters for price range, star rating, and user reviews.
         if ($dest == null || $inDate == null || $outDate == null || $room == null || $guest == null) {
-            $hotels = Hotel::query()
+            $query = Hotel::query()
                 ->join('Cities','Cities.IDCity','=','Hotels.IDCity')
                 ->join('Countries','Cities.IDCountry','=','Countries.IDCountry')
                 ->join('Hotel_rooms', 'Hotels.IDHotel','=','Hotel_rooms.IDHotel')
@@ -65,8 +65,8 @@ class HotelController extends Controller
                     } elseif ($review == 5) {
                         return $query->where('hotels.RatingHotel', '>', 4.5);
                     }
-                })
-                ->get();
+                });
+                $hotels = $query->orderBy('hotel_rooms.PriceRoom', 'asc')->get();
 
             //count review for every hotel
             foreach ($hotels as $hotel) {
