@@ -641,3 +641,11 @@ body {
     opacity: 0.8;
     cursor: pointer;
 }
+
+.no-booking{
+    font-size: 25px;
+    color: grey;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+}

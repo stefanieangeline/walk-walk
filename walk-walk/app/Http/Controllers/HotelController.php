@@ -46,7 +46,7 @@ class HotelController extends Controller
                                 ->whereBetween('Hotel_rooms.PriceRoom', [1000000, 2500000]);
                 })
                 ->when($range == 'high', function ($query) {
-                    return $query->orderBy('Hotel_rooms.PriceRoom', 'desc')->where('Hotel_rooms.PriceRoom', '>', 2500000);
+                    return $query->orderBy('Hotel_rooms.PriceRoom', 'asc')->where('Hotel_rooms.PriceRoom', '>', 2500000);
                 })
                 //sort star hotel filtering based on the value of $star.
                 ->when($star, function ($query) use ($star) {
@@ -122,7 +122,7 @@ class HotelController extends Controller
                 $subquery->whereIn('Hotel_rooms.PriceRoom', function ($subquery) use ($room) {
                     $subquery->select(DB::raw('MIN(hr2.PriceRoom)'))
                         ->from('hotel_rooms as hr2')
-                        ->where('hr2.PriceRoom', '<', 100)
+                        ->where('hr2.PriceRoom', '<', 1000000)
                         ->where('hr2.QuantityRoom', '>=', $room) // Check if QuantityRoom is greater than or equal to user input
                         ->whereRaw('hotels.IDHotel = hr2.IDHotel');
                 });
@@ -133,7 +133,7 @@ class HotelController extends Controller
                 $subquery->whereIn('Hotel_rooms.PriceRoom', function ($subquery) use ($room) {
                     $subquery->select(DB::raw('MIN(hr2.PriceRoom)'))
                         ->from('hotel_rooms as hr2')
-                        ->whereBetween('hr2.PriceRoom', [120, 150])
+                        ->whereBetween('hr2.PriceRoom', [1000000, 2500000])
                         ->where('hr2.QuantityRoom', '>=', $room) // Check if QuantityRoom is greater than or equal to user input
                         ->whereRaw('hotels.IDHotel = hr2.IDHotel');
                 });
@@ -144,7 +144,7 @@ class HotelController extends Controller
                 $subquery->whereIn('Hotel_rooms.PriceRoom', function ($subquery) use ($room) {
                     $subquery->select(DB::raw('MIN(hr2.PriceRoom)'))
                         ->from('hotel_rooms as hr2')
-                        ->where('hr2.PriceRoom', '>', 150)
+                        ->where('hr2.PriceRoom', '>',  2500000)
                         ->where('hr2.QuantityRoom', '>=', $room) // Check if QuantityRoom is greater than or equal to user input
                         ->whereRaw('hotels.IDHotel = hr2.IDHotel');
                 });
