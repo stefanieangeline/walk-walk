@@ -128,15 +128,15 @@
         <div class="right-box">
             <div class="price_sort_container">
                 <div class="rec_price">
-                    <p>Recommended Price</p>
-                    <p class="price_number">Rp. {{ $averagePrice }}</p>
+                    <p>Average Price</p>
+                    <p class="price_number">Rp. {{ number_format($averagePrice, 0, ',', '.') }}</p>
                 </div>
 
                 <div class="divider_price"></div>
 
                 <div class="low_price">
                     <p>Lowest Price</p>
-                    <p class="price_number">Rp. {{ $minimumPrice }}</p>
+                    <p class="price_number">Rp. {{ number_format($minimumPrice,0, ',','.') }}</p>
                 </div>
 
                 <div class="divider_price"></div>
@@ -171,7 +171,7 @@
 
                 </div>
                 <div class="flight_price">
-                    <p>Rp. {{$schedule->Price}}</p>
+                    <p>Rp. {{number_format($schedule->Price,0,',','.')}}</p>
                 </div>
                 <div class="submit_flight">
                     <a href="{{route("passenger", ["id"=>$schedule->IDSchedule, "senior"=>$senior, "adult"=>$adult, "children"=>$children, "class"=>$class, "depDate"=>$depDate])}}" class="flight_button">Select</a>

@@ -224,28 +224,28 @@
                 @if ($adult > 0)
                 <div class="person">
                     <p>Adult</p>
-                    <p>Rp.{{$schedule->Price}} x {{$adult}}</p>
+                    <p>Rp.{{number_format($schedule->Price,0,',','.')}} x {{$adult}}</p>
                 </div>
                 @endif
                 @if ($senior > 0)
                 <div class="person">
                     <p>Senior</p>
-                    <p>Rp.{{$schedule->Price}} x {{$senior}}</p>
+                    <p>Rp.{{number_format($schedule->Price,0,',','.')}} x {{$senior}}</p>
                 </div>
                 @endif
                 @if ($children > 0)
                 <div class="person">
                     <p>Child</p>
-                    <p>Rp.{{$schedule->Price}} x {{$children}}</p>
+                    <p>Rp.{{number_format($schedule->Price,0,',','.')}} x {{$children}}</p>
                 </div>
                 @endif
                 <div class="fix-price">
                     <p>Fare</p>
-                    <p>Rp.{{$schedule->Price*($adult+$senior+$children)}}</p>
+                    <p>Rp.{{number_format($schedule->Price*($adult+$senior+$children),0,',','.')}}</p>
                 </div>
                 <div class="tax">
                     <p>Taxes & Fees</p>
-                    <p>Rp.{{$schedule->Price*($adult+$senior+$children)*0.2}}</p>
+                    <p>Rp.{{number_format($schedule->Price*($adult+$senior+$children)*0.2,0,',','.')}}</p>
                 </div>
                 <hr class="garis-hor">
                 <h2>Baggage Info</h2>
@@ -267,7 +267,7 @@
                 <hr class="garis-hor">
                 <div class="total-price">
                     <h2>Total Price</h2>
-                    <h2>Rp.{{$schedule->Price*($adult+$senior+$children)*1.2}}</h2>
+                    <h2>Rp.{{number_format($schedule->Price*($adult+$senior+$children)*1.2,0,',','.')}}</h2>
                 </div>
             </div>
 

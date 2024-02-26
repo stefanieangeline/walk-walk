@@ -308,14 +308,14 @@ class FlightController extends Controller
                     $query->where('IDAirline', $sel_airline);
                 })
                 ->when($range == "low", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'<=', 100);
+                    $query->where('schedule_details.Price' ,'<=', 1000000);
                 })
                 ->when($range == "mid", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'>=', 100)
-                    ->where('schedule_details.Price' ,'<=', 150);
+                    $query->where('schedule_details.Price' ,'>=', 1000000)
+                    ->where('schedule_details.Price' ,'<=', 2500000);
                 })
                 ->when($range == "high", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'>=', 150);
+                    $query->where('schedule_details.Price' ,'>=', 2500000);
                 })
                 ->when($sort == "dsc", function ($query) {
                     $query->orderBy("schedule_details.Price", "asc");
@@ -336,14 +336,14 @@ class FlightController extends Controller
                     $query->where('IDAirline', $sel_airline);
                 })
                 ->when($range == "low", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'<=', 100);
+                    $query->where('schedule_details.Price' ,'<=', 1000000);
                 })
                 ->when($range == "mid", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'>=', 100)
-                    ->where('schedule_details.Price' ,'<=', 150);
+                    $query->where('schedule_details.Price' ,'>=', 1000000)
+                    ->where('schedule_details.Price' ,'<=', 2500000);
                 })
                 ->when($range == "high", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'>=', 150);
+                    $query->where('schedule_details.Price' ,'>=', 2500000);
                 })
                 ->avg('schedule_details.Price'),
 
@@ -358,14 +358,14 @@ class FlightController extends Controller
                     $query->where('IDAirline', $sel_airline);
                 })
                 ->when($range == "low", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'<=', 100);
+                    $query->where('schedule_details.Price' ,'<=', 1000000);
                 })
                 ->when($range == "mid", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'>=', 100)
-                    ->where('schedule_details.Price' ,'<=', 150);
+                    $query->where('schedule_details.Price' ,'>=', 1000000)
+                    ->where('schedule_details.Price' ,'<=', 2500000);
                 })
                 ->when($range == "high", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'>=', 150);
+                    $query->where('schedule_details.Price' ,'>=', 2500000);
                 })
                 ->min('schedule_details.Price'),
 
@@ -391,14 +391,14 @@ class FlightController extends Controller
                     $query->where('IDAirline', $sel_airline);
                 })
                 ->when($range == "low", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'<=', 100);
+                    $query->where('schedule_details.Price' ,'<=', 1000000);
                 })
                 ->when($range == "mid", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'>=', 100)
-                    ->where('schedule_details.Price' ,'<=', 150);
+                    $query->where('schedule_details.Price' ,'>=', 1000000)
+                    ->where('schedule_details.Price' ,'<=', 2500000);
                 })
                 ->when($range == "high", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'>=', 150);
+                    $query->where('schedule_details.Price' ,'>=', 2500000);
                 })
                 ->select("IDAirline")
                 ->distinct()
@@ -422,14 +422,14 @@ class FlightController extends Controller
                     $query->where('IDAirline', $sel_airline);
                 })
                 ->when($range == "low", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'<=', 100);
+                    $query->where('schedule_details.Price' ,'<=', 1000000);
                 })
                 ->when($range == "mid", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'>=', 100)
-                    ->where('schedule_details.Price' ,'<=', 150);
+                    $query->where('schedule_details.Price' ,'>=', 1000000)
+                    ->where('schedule_details.Price' ,'<=', 2500000);
                 })
                 ->when($range == "high", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'>=', 150);
+                    $query->where('schedule_details.Price' ,'>=', 2500000);
                 })
                 ->when($sort == "asc", function ($query) {
                     $query->orderBy("schedule_details.Price", "asc");
@@ -448,14 +448,14 @@ class FlightController extends Controller
                     $query->where('IDAirline', $sel_airline);
                 })
                 ->when($range == "low", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'<=', 100);
+                    $query->where('schedule_details.Price' ,'<=', 1000000);
                 })
                 ->when($range == "mid", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'>=', 100)
-                    ->where('schedule_details.Price' ,'<=', 150);
+                    $query->where('schedule_details.Price' ,'>=', 1000000)
+                    ->where('schedule_details.Price' ,'<=', 2500000);
                 })
                 ->when($range == "high", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'>=', 150);
+                    $query->where('schedule_details.Price' ,'>=', 2500000);
                 })
                 ->avg('schedule_details.Price'),
 
@@ -468,14 +468,14 @@ class FlightController extends Controller
                     $query->where('IDAirline', $sel_airline);
                 })
                 ->when($range == "low", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'<=', 100);
+                    $query->where('schedule_details.Price' ,'<=', 1000000);
                 })
                 ->when($range == "mid", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'>=', 100)
-                    ->where('schedule_details.Price' ,'<=', 150);
+                    $query->where('schedule_details.Price' ,'>=', 1000000)
+                    ->where('schedule_details.Price' ,'<=', 2500000);
                 })
                 ->when($range == "high", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'>=', 150);
+                    $query->where('schedule_details.Price' ,'>=', 2500000);
                 })
                 ->min('schedule_details.Price'),
 
@@ -499,14 +499,14 @@ class FlightController extends Controller
                     $query->where('IDAirline', $sel_airline);
                 })
                 ->when($range == "low", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'<=', 100);
+                    $query->where('schedule_details.Price' ,'<=', 1000000);
                 })
                 ->when($range == "mid", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'>=', 100)
-                    ->where('schedule_details.Price' ,'<=', 150);
+                    $query->where('schedule_details.Price' ,'>=', 1000000)
+                    ->where('schedule_details.Price' ,'<=', 2500000);
                 })
                 ->when($range == "high", function ($query) use ($sel_airline) {
-                    $query->where('schedule_details.Price' ,'>=', 150);
+                    $query->where('schedule_details.Price' ,'>=', 2500000);
                 })
                 ->select("IDAirline")
                 ->distinct()
