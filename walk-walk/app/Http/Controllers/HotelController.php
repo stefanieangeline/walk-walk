@@ -30,10 +30,11 @@ class HotelController extends Controller
                 ->join('Cities','Cities.IDCity','=','Hotels.IDCity')
                 ->join('Countries','Cities.IDCountry','=','Countries.IDCountry')
                 ->join('Hotel_rooms', 'Hotels.IDHotel','=','Hotel_rooms.IDHotel')
-                ->where(function ($subquery) {
-                    $subquery->whereIn('Hotel_rooms.PriceRoom', function ($subquery) {
+                ->where(function ($subquery) use ($room) {
+                    $subquery->whereIn('Hotel_rooms.PriceRoom', function ($subquery) use ($room) {
                         $subquery->select(DB::raw('MIN(hr2.PriceRoom)'))
                             ->from('hotel_rooms as hr2')
+                            ->where('hr2.QuantityRoom', '>=', $room)
                             ->whereRaw('hotels.IDHotel = hr2.IDHotel');
                     });
                 })
