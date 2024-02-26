@@ -24,17 +24,21 @@ class HotelController extends Controller
         $star = request()->get("star");
         $review = request()->get("review");
 
+        if($room == null && $guest == null){
+            $room = 1;
+            $guest = 1;
+        }
         //return all hotel with optional filters for price range, star rating, and user reviews.
         if ($dest == null || $inDate == null || $outDate == null || $room == null || $guest == null) {
             $query = Hotel::query()
                 ->join('Cities','Cities.IDCity','=','Hotels.IDCity')
                 ->join('Countries','Cities.IDCountry','=','Countries.IDCountry')
                 ->join('Hotel_rooms', 'Hotels.IDHotel','=','Hotel_rooms.IDHotel')
-                ->where(function ($subquery) use ($room) {
+                ->where(function ($subquery) use ($room){
                     $subquery->whereIn('Hotel_rooms.PriceRoom', function ($subquery) use ($room) {
                         $subquery->select(DB::raw('MIN(hr2.PriceRoom)'))
                             ->from('hotel_rooms as hr2')
-                            ->where('hr2.QuantityRoom', '>=', $room)
+                             ->where('hr2.QuantityRoom', '>=', $room)
                             ->whereRaw('hotels.IDHotel = hr2.IDHotel');
                     });
                 })
@@ -76,8 +80,6 @@ class HotelController extends Controller
                 $hotel->totalReviews = $totalReviews;
             }
 
-            $averageRating = Review::join("hotels", "hotels.IDHotel", "=", "reviews.IDHotel")->avg('Rating');
-
             return view("hotels", [
                 'hotels' => $hotels,
                 'dest'=> $dest,
@@ -87,7 +89,6 @@ class HotelController extends Controller
                 'guest'=>$guest,
                 'range'=>$range,
                 'star' =>$star,
-                'averageRating' => $averageRating,
                 'review' =>$review,
                 "countries" => Country::all(),
                 "airports" => Airport::all(),
@@ -192,8 +193,6 @@ class HotelController extends Controller
             $hotel->totalReviews = $totalReviews;
         }
 
-        $averageRating = Review::join("hotels", "hotels.IDHotel", "=", "reviews.IDHotel")->avg('Rating');
-
         return view("hotels", [
             'hotels' => $hotels,
             'dest'=> $dest,
@@ -204,7 +203,6 @@ class HotelController extends Controller
             'range'=>$range,
             'star' =>$star,
             'review' =>$review,
-            'averageRating' => $averageRating,
             "countries" => Country::all(),
             "airports" => Airport::all(),
             "cities" => City::all(),

@@ -155,6 +155,7 @@
                 <p class="no-booking">Sorry, No Hotels Available !</p>
             @else
             @foreach($hotels as $hotel)
+            
             <div class="hotel-detail">
                 <div class="right-left">
                     @php
