@@ -144,8 +144,8 @@ searchBtn.addEventListener("click", (e) => {
         var adultValue = document.getElementById("adult-input").value;
         var childrenValue = document.getElementById("children-input").value;
 
-        if (srcInput.value === "" ||departureDateInput.value === "" ||dstInput.value === "") {
-            alert("Please fill in all required fields for flight.");
+        if (departureDateInput.value === "") {
+            alert("Please fill departure date.");
             e.preventDefault(); // Mencegah pengiriman formulir jika ada input yang belum diisi
         } else {
             if (
@@ -167,12 +167,6 @@ searchBtn.addEventListener("click", (e) => {
                 if (departureDate < today) {
                     alert("Departure date should be today or later.");
                     e.preventDefault(); // Mencegah pengiriman formulir jika tanggal tidak valid
-                } else if (
-                    srcInput.value.trim().toLowerCase() ===
-                    dstInput.value.trim().toLowerCase()
-                ) {
-                    alert("Source and destination cannot be the same.");
-                    e.preventDefault(); // Mencegah pengiriman formulir jika srcInput dan dstInput sama
                 } else {
                     document.forms["flight-form"].submit();
                 }

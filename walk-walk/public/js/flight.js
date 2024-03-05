@@ -64,8 +64,7 @@ searchBtn.addEventListener("click", (e) => {
         seniorValue.trim() === "" ||
         adultValue.trim() === "" ||
         childrenValue.trim() === "" ||
-        !source || !dest || !date ||
-        source.trim() === "" || dest.trim() === "" || date.trim() === ""
+        !date ||date.trim() === ""
     ) {
         // Display an alert or any other notification for the user
         alert("Please fill in all required fields before submitting the form.");
@@ -94,7 +93,8 @@ searchBtn.addEventListener("click", (e) => {
                 e.preventDefault();
             } else if (
                 source.trim().toLowerCase() ===
-                dest.trim().toLowerCase()
+                dest.trim().toLowerCase() &&
+                (!source.trim()=== "" && !dest.trim() === "")
             ) {
                 alert("Source and destination cannot be the same.");
                 e.preventDefault(); // Mencegah pengiriman formulir jika srcInput dan dstInput sama

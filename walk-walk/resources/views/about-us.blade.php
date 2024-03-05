@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="shortcut icon" href="/assets/logo/logo-icon.svg" type="image/svg">
     <link rel="stylesheet" href="/css/font-and-color.css">
     <link rel="stylesheet" href="/css/about-us.css">
     <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
@@ -33,7 +34,7 @@
             <img src="assets/logo/jalan-jalan.svg" alt="">
             <p>.Group</p>
         </div>
-        
+
         <div class="right-side">
             <div class="left-right">
                 <a href="/jalan-jalan/help.php" class="nav-link">Help</a>
@@ -56,7 +57,7 @@
                 <p>Welcome to Jalan-Jalan, your ultimate travel companion for seamless hotel and flight bookings. At Jalan-Jalan, we are passionate about providing you with unforgettable travel experiences.</p>
                 <h2>Our Mission</h2>
                 <p>Our mission is to make travel planning easy, enjoyable, and accessible to everyone. Whether you're a seasoned traveler or embarking on your first journey, we are here to simplify the process and enhance your adventure.</p>
-            </div> 
+            </div>
         </div>
 
         <div class="row-2">

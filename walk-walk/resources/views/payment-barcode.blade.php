@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="shortcut icon" href="/assets/logo/logo-icon.svg" type="image/svg">
     <link rel="stylesheet" href="/css/font-and-color.css">
     <link rel="stylesheet" href="/css/payment-barcode.css">
     <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
@@ -117,7 +118,7 @@
         <div class="bg-content">
             <h2>Scan QR Code below to finish your payment</h2>
             <img src="https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=123" id="qrCode" alt="">
-            <h2>Rp. {{$price}}</h2>
+            <h2>Rp. {{number_format($price,0,',','.')}}</h2>
             <div class="input">
                 <input type="text" name="Gender" placeholder="Input Your OTP Code" id="otp" required>
                 <p class="submit-btn" id="submitBtn"><i class="fa-solid fa-arrow-right"></i></p>

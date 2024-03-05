@@ -36,4 +36,4 @@ return new class extends Migration
     {
         DB::unprepared('DROP TRIGGER trigger_hotels_rating');
     }
-};''
+};
