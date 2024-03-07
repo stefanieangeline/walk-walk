@@ -102,7 +102,7 @@
             <p>6. COMPLAINTS</p>
         </div>
         <div class="content-desc">
-            <p>If you have any complaints or concerns regarding our services or the handling of your personal information, please contact our customer support at [Customer Support Email Address]. We are committed to addressing and resolving any issues promptly.</p>
+            <p>If you have any complaints or concerns regarding our services or the handling of your personal information, please contact our customer support at jalan-jalan@gmail.com. We are committed to addressing and resolving any issues promptly.</p>
         </div>
 
     </div>

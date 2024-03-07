@@ -53,7 +53,7 @@
         </div>
 
         <div class="content-desc">
-            <p>Embark on a journey with the minds behind Jalan-Jalan, a vibrant group of five aspiring individuals brought together by a shared passion for exploration and innovation. Comprising students of the PPTI BCA scholarship program, our diverse backgrounds converge in the fascinating world of travel. As software engineering enthusiasts, we undertook the creation of the Jalan-Jalan web application as a dynamic project for our coursework. Our collaboration is fueled by a collective desire to simplify the travel experience for users and to bridge the gap between wanderlust and seamless technology. Through our combined skills, creativity, and dedication. Join us on this exciting venture as we blend our academic prowess with our love for travel, striving to make Jalan-Jalan a trusted companion for every adventurer's journey.</p>
+            <p>Embark on a journey with the minds behind Jalan-Jalan, a vibrant group of five aspiring individuals brought together by a shared passion for exploration and innovation. Comprising students of the <b>PPTI BCA scholarship program</b>, our diverse backgrounds converge in the fascinating world of travel. As software engineering enthusiasts, we undertook the creation of the Jalan-Jalan web application as a dynamic project for our coursework. Our collaboration is fueled by a collective desire to simplify the travel experience for users and to bridge the gap between wanderlust and seamless technology. Through our combined skills, creativity, and dedication. Join us on this exciting venture as we blend our academic prowess with our love for travel, striving to make Jalan-Jalan a trusted companion for every adventurer's journey.</p>
         </div>
 
         <div class="motto">
@@ -67,35 +67,35 @@
 
             <div class="row1-member">
                 <div class="member">
-                    <img src="assets/images/about-us.jpg" alt="">
+                    <img src="assets\images\hans.JPG" alt="">
                     <h2>Hans Christian</h2>
                     <h3>Senior Manager</h3>
                 </div>
 
                 <div class="member">
-                    <img src="assets/images/about-us.jpg" alt="">
+                    <img src="assets\images\stef.JPG" alt="">
                     <h2>Stefanie Angeline</h2>
                     <h3>Project Manager</h3>
                 </div>
 
                 <div class="member">
-                    <img src="assets/images/about-us.jpg" alt="">
+                    <img src="assets\images\matthew.JPG" alt="">
                     <h2>Nicholas Matthew Salim</h2>
-                    <h3>Project Manager</h3>
+                    <h3>Full-Stack Developer</h3>
                 </div>
             </div>
 
             <div class="row2-member">
                 <div class="member2">
-                    <img src="assets/images/about-us.jpg" alt="">
+                    <img src="assets\images\marlene.JPG" alt="">
                     <h2>Marlene Jusup</h2>
-                    <h3>Project Manager</h3>
+                    <h3>Full-Stack Developer</h3>
                 </div>
 
                 <div class="member2">
-                    <img src="assets/images/about-us.jpg" alt="">
+                    <img src="assets\images\jess.JPG" alt="">
                     <h2>Jesslyn Tanuwijaya</h2>
-                    <h3>Project Manager</h3>
+                    <h3>Front-End Developer</h3>
                 </div>
             </div>
         </div>

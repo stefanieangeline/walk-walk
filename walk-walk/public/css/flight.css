@@ -139,12 +139,15 @@ body {
     width: 70%;
     color: white;
 }
+
 .leaving::placeholder{
-    color: white;
+    color: white; 
+    background-color: transparent;
 }
 
 .leaving_from input:focus{
     outline: none;
+
 }
 
 .going_to{
@@ -165,6 +168,7 @@ body {
 
 .going_to input:focus{
     outline: none;
+    
 }
 
 .date{
@@ -683,4 +687,13 @@ body {
 .clear-btn:hover {
     opacity: 0.8;
     cursor: pointer;
+}
+
+.no-booking{
+    font-size: 25px;
+    color: grey;
+    opacity: 0.8;
+    display: flex;
+    margin-top: 15%;
+    justify-content: center;
 }

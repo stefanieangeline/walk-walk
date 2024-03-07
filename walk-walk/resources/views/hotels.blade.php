@@ -11,7 +11,7 @@
 <body>
     @include("shared.nav-bar-standard")
     <div class="background">
-        <form method="get" name="search-hotel-form">
+        <form method="get" name="search-hotel-form" autocomplete="off">
         <div class="box-choice">
             <div class="dest-box box-width">
                 <h2>Destination</h2>

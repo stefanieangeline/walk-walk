@@ -98,13 +98,13 @@ input:focus {
   }
 
   .title p{
-    color: var(--shade-blue);
+    color: var(--another-blue);
     font-family: roboto-cons-bold;
     font-size: 30pt;
   }
 
   .sub-title{
-    color: var(--shade-blue);
+    color: var(--another-blue);
     font-family: roboto-cons-bold;
     font-size: 16pt;
     margin-top: 3%;

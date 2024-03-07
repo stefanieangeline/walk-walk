@@ -98,13 +98,13 @@ input:focus {
 }
 
 .title p {
-    color: var(--shade-blue);
+    color: var(--another-blue);
     font-family: roboto-cons-bold;
     font-size: 30pt;
 }
 
 .sub-title {
-    color: var(--shade-blue);
+    color: var(--another-blue);
     font-family: roboto-cons-bold;
     font-size: 18pt;
     margin-top: 3%;
@@ -123,7 +123,7 @@ ul.list {
 }
 
 .content-desc1{
-    color: var(--shade-blue);
+    color: var(--another-blue);
     font-family: roboto-cons-bold;
     text-align: center;
     font-size: 13pt;

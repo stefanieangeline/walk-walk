@@ -54,7 +54,7 @@
             </div>
 
             <div class="left2">
-                <p>Welcome to Jalan-Jalan, your ultimate travel companion for seamless hotel and flight bookings. At Jalan-Jalan, we are passionate about providing you with unforgettable travel experiences.</p>
+                <p><b>Welcome to Jalan-Jalan</b>, your ultimate travel companion for seamless hotel and flight bookings. At Jalan-Jalan, we are passionate about providing you with unforgettable travel experiences.</p>
                 <h2>Our Mission</h2>
                 <p>Our mission is to make travel planning easy, enjoyable, and accessible to everyone. Whether you're a seasoned traveler or embarking on your first journey, we are here to simplify the process and enhance your adventure.</p>
             </div>

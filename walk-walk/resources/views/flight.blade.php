@@ -10,7 +10,7 @@
 </head>
 <body>
     @include("shared.nav-bar-standard")
-    <form action="" method="GET" name="box-choice">
+    <form action="" method="GET" name="box-choice" autocomplete="off">
     <div class="bg-flight">
         <div class="box-choice">
             <div class="top">
@@ -151,6 +151,9 @@
                 </form>
                 </div>
             </div>
+            @if($schedules->isEmpty())
+                <p class="no-booking">Sorry, No Flights Available!</p>
+            @else
             @foreach ($schedules as $schedule)
             <div class="flight_detail">
                 <div class="airline_logo">
@@ -180,6 +183,7 @@
             </div>
 
             @endforeach
+            @endif
             <!-- {{-- @foreach ($schedules as $schedule)
             <div class="flight_detail">
                 <div class="airline_logo">

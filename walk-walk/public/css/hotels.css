@@ -648,4 +648,6 @@ body {
     opacity: 0.8;
     display: flex;
     justify-content: center;
+    font-family: roboto-cons-regular;
+    margin-top: 35%;
 }

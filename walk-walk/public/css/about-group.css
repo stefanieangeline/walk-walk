@@ -98,7 +98,7 @@ input:focus {
   }
 
   .title p{
-    color: var(--shade-blue);
+    color: var(--another-blue);
     font-family: roboto-cons-bold;
     font-size: 30pt;
   }
@@ -120,7 +120,7 @@ input:focus {
   }
 
   .motto p{
-    color: var(--shade-blue);
+    color: var(--another-blue);
     font-family: roboto-cons-bold;
     font-size: 25pt;
   }
@@ -150,6 +150,16 @@ input:focus {
     width: 30%;
   }
 
+  .member h2{
+    font-family: roboto-cons-regular;
+    color: var(--another-blue);
+  }
+
+  .member h3{
+    font-family: roboto-cons-light;
+    color: var(--shade-blue);
+  }
+
   .member img{
     width: 150px;
     height: 150px;
@@ -161,7 +171,7 @@ input:focus {
     height: fit-content;
     display: flex;
     justify-content: space-between;
-    margin-top: 3%;
+    margin-top: 5%;
   }
 
   .member2{
@@ -175,6 +185,16 @@ input:focus {
     height: 150px;
     border-radius: 50%;
 
+  }
+
+  .member2 h2{
+    font-family: roboto-cons-regular;
+    color: var(--another-blue);
+  }
+
+  .member2 h3{
+    font-family: roboto-cons-light;
+    color: var(--shade-blue);
   }
 
 
