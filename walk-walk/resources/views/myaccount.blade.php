@@ -84,7 +84,7 @@
                                 </div>
                             </div>
                             <div class="dob-section">
-                                <p>Date of Birth</p>
+                                <p>Joined Date</p>
                                 <div class="input">
                                     <input type="date" name="dob" value="{{ Auth::user()->DOBUser }}" disabled>
                                     <i class="fa-solid fa-calendar-days"></i>
