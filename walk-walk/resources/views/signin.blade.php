@@ -18,7 +18,7 @@
             <img src="assets\logo\jalan-jalan.svg" alt="">
 
         </div>
-        <p class="slogan">Explore the world your way: <br> your journey start with us</p>
+        <p class="slogan">Explore the world: <br> your journey start with us</p>
 
        </div>
        <form method="POST" class="form_sign" name="register_form">

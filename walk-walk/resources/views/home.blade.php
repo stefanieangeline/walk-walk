@@ -20,7 +20,7 @@
         <img class="background-image" src="/assets/logo/bgHome.jpg">
         <div class="main-container">
             <div class="slogan-container">
-                <h2 class="slogan">Explore the world your way: your journey start with us</h2>
+                <h2 class="slogan">Explore the world: your journey start with us</h2>
             </div>
 
             <div class="select-box">
