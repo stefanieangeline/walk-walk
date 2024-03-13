@@ -173,7 +173,7 @@
                                             </div>
                                             <div class="rating-info">
                                                 <p class="rating-num">{{$hotel->RatingHotel}}/5</p>
-                                                <p class="rating-quantity">(10)</p>
+                                                <p class="rating-quantity">({{ $reviewCount }})</p>
                                             </div>
                                         </div>
                                     </div>
