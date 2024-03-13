@@ -65,15 +65,11 @@
                 <p>Why Choose jalan-jalan?</p>
             </div>
             <div class="title-1">
-                <p>
-                    - User-Friendly Platform: Our web-based application is designed with simplicity in mind. Navigate effortlessly, explore various options, and complete your bookings with just a few clicks.
-                </p>
-                <p>
-                     - Extensive Selection: Discover a wide range of hotels and flight options tailored to suit every budget and preference. From cozy accommodations to luxury getaways, we've got you covered.
-                </p>
-                <p>
-                     - Secure Transactions: Your security is our priority. Benefit from secure and reliable payment processes to ensure a worry-free booking experience.
-                </p>
+                <ul>
+                    <li> <p> <b>User-Friendly Platform</b> Our web-based application is designed with simplicity in mind. Navigate effortlessly, explore various options, and complete your bookings with just a few clicks. </p></li>
+                    <li> <p> <b>Extensive Selection</b> Discover a wide range of hotels and flight options tailored to suit every budget and preference. From cozy accommodations to luxury getaways, we've got you covered. </p></li>
+                    <li> <p> <b>Secure Transactions</b> Your security is our priority. Benefit from secure and reliable payment processes to ensure a worry-free booking experience. </p></li>
+                </ul>
             </div>
         </div>
 
