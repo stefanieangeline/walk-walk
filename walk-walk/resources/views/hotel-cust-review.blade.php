@@ -16,11 +16,10 @@
         <form method="post" name="form" action="{{ route('finishReview') }}" class="form-container">
         @csrf
         @php
-            // Membuat nama file gambar berdasarkan nama hotel
+            // Create an image file name based on the hotel name
             $imageName = str_replace(' ', '_', $hotel->NameHotel) . '.svg';
         @endphp
         <img src="{{ asset("/assets/hotels/{$imageName}") }}" class="hotel-image" alt="Hotel Image">
-        <!-- <img src="\assets\images\hotel1.jpg" class="hotel-image"> -->
         <div class="box-content">
             <div class="hotel-desc">
                 <div class="title-hotel">{{ $hotel->NameHotel }}</div>

@@ -3,7 +3,7 @@ rating = document.getElementById("rating");
 submit = document.getElementById("submit");
 description = document.getElementsByName("Description")[0];
 
-
+//handling star rating interactions in a user interface
 function clickStar(a){
     // console.log(stars.length);
     rating.value = a+1;
@@ -18,13 +18,12 @@ function clickStar(a){
     // alert(a+1)
 }
 submit.addEventListener("click", () => {
-    // Validasi apakah rating sudah diisi
-    // Validasi apakah rating sudah diisi
+    // Validate rating value
     if (rating.value === "") {
         alert("Please rate your stay before submitting the review.");
         return;
     }
-    // Validasi apakah deskripsi sudah diisi
+    // Validate description value
     if (description.value.trim() === "") {
         alert("Please write a review before submitting.");
         return;

@@ -84,56 +84,26 @@
             </div>
 
             <div class="pics-box">
-                <!-- <img src="/assets/icon/Arunika/1.webp" class="big-pic"> -->
                 <img src="{{ asset("assets/hotelRoom/{$hotelFolder}/" . basename($hotelPhotos[0])) }}" class="big-pic">
-                <!-- <div class="big-pic"></div> -->
-                <!-- @foreach ($hotelPhotos as $photo)
-                    <img src="{{ asset("assets/hotelRoom/{$hotelFolder}/" . basename($photo)) }}" alt="Hotel Photo">
-                @endforeach -->
                 <div class="pics">
                     <div class="up-pics">
                         @for ($i = 1; $i <= 3; $i++)
                 <img src="{{ asset("assets/hotelRoom/{$hotelFolder}/" . basename($hotelPhotos[$i])) }}" alt="Hotel Photo" class="up-pic-one">
             @endfor
-                        <!-- @foreach ($hotelPhotos as $photo)
-                    <img src="{{ asset("assets/hotelRoom/{$hotelFolder}/" . basename($photo)) }}" alt="Hotel Photo" class="up-pic-one">
-                @endforeach -->
-                        <!-- <img src="/assets/icon/Arunika/2.webp" class="up-pic-one">
-                        <img src="/assets/icon/Arunika/3.webp" class="up-pic-one">
-                        <img src="/assets/icon/Arunika/4.webp" class="up-pic-one"> -->
                     </div>
                     <div class="down-pics">
                         @for ($i = 4; $i <= 6; $i++)
                 <img src="{{ asset("assets/hotelRoom/{$hotelFolder}/" . basename($hotelPhotos[$i])) }}" alt="Hotel Photo" class="down-pic-one">
             @endfor
-                        <!-- <img src="/assets/icon/Arunika/5.webp" class="down-pic-one">
-                        <img src="/assets/icon/Arunika/6.webp" class="down-pic-one">
-                        <img src="/assets/icon/Arunika/7.webp" class="down-pic-one"> -->
                     </div>
                 </div>
             </div>
-
-            <!-- <div class="bottom-box">
-                <div class="desc-box">
-                    <p class="desc-title">Description</p>
-                    {{-- <p>{{ $hotel->IDHotel }}</p> --}}
-                    <p class="desc-txt">When you stay at Grand Sovereign Kuta Bali in Tuban, you'll be in the business district, within a 5-minute drive of Kuta Beach and Legian Beach. This 4-star hotel is 4.3 mi (6.9 km) from Seminyak Beach and 1.9 mi (3 km) from Waterbom Bali.
-            Relax at the full-service spa, where you can enjoy massages, body treatments, and facials. You're sure to appreciate the recreational amenities, including an outdoor pool, a sauna, and a fitness center. Additional features at this hotel include complimentary wireless Internet access, concierge services, and a hair salon. Guests can catch a ride to the beach or shopping on the complimentary shuttle.</p>
-                </div>
-                <div class="star-rate-box">
-                    <p class="the-rating">{{$hotel->RatingHotel}}</p>
-                    <p class="the-standard">/5</p>
-                </div>
-            </div> -->
         </div>
 
         <div class="header-detail">
             <p class="header-room header-active" onclick="showContent('room')" data-content="room">Room</p>
             <p class="header-room" onclick="showContent('reviews')" data-content="reviews">Guest Reviews</p>
             <p class="header-room" onclick="showContent('service')" data-content="service">Service & Aminities</p>
-            <!-- <p class="header-room header-active">Room</p>
-            <p class="header-room">Guest Reviews</p>
-            <p class="header-room">Service & Aminities</p> -->
         </div>
 
         @php
@@ -188,15 +158,11 @@
                                 @for ($i = 1; $i <= 2; $i++)
                                     <img src="{{ asset("assets/roomType/{$roomFolder}/" . basename($roomPhotos[$i])) }}" class="rd-2">
                                 @endfor
-                                <!-- <img src="/assets\icon\Arunika\Deluxe\2.jpg" class="rd-2"> -->
-                                <!-- <img src="/assets\icon\Arunika\Deluxe\3.jpg" class="rd-2"> -->
                             </div>
                             <div class="bottom-pics">
                                 @for ($i = 3; $i <= 4; $i++)
                                     <img src="{{ asset("assets/roomType/{$roomFolder}/" . basename($roomPhotos[$i])) }}" class="rd-2">
                                 @endfor
-                                <!-- <img src="/assets\icon\Arunika\Deluxe\2.jpg" class="rd-2"> -->
-                                <!-- <img src="/assets\icon\Arunika\Deluxe\3.jpg" class="rd-2"> -->
                             </div>
                         </div>
                     </div>
@@ -255,7 +221,6 @@
                                 @if($roomType -> TypeRoom == "Superior Room")
                                     <p class="bt-text">1 king bed, 1 single bed</p>
                                 @endif
-                                <!-- <p class="bt-text">1 king bed</p> -->
                             </div>
 
                             <div class="facil-box">
@@ -274,33 +239,10 @@
                                     @if ($facility-> NameFacilityRoom == "Mini Bar")
                                     <img src="/assets/icon/icon-hotel-facilities/BarShadeBlue.svg" class="facil-icon">
                                     @endif
-                                    <!-- <img src="/assets/icon/heroicons_tv.png" class="facil-icon"> -->
                                     <p class="facil-text">{{ $facility-> NameFacilityRoom }}</p>
                                 </div>
                             @endforeach
-                            <!-- <div class="facil-box">
-                                <img src="/assets\icon\heroicons_tv.png" class="facil-icon">
-                                <p class="facil-text">Flat Screen TV</p>
-                            </div>
-                            <div class="facil-box">
-                                <img src="/assets\icon\solar_bath-outline.png" class="facil-icon">
-                                <p class="facil-text">Bathtub</p>
-                            </div>
-                            <div class="facil-box">
-                                <img src="/assets\icon\tabler_air-conditioning.png" class="facil-icon">
-                                <p class="facil-text">Air conditioning</p>
-                            </div> -->
                         </div>
-
-                        <!-- <p class="add-on-txt">Add on(s)</p> -->
-                        <!-- <div class="adds-box">
-                            <img src="/assets/icon/SpoonFork.svg" class="adds-icon">
-                            <p class="adds-txt">Include Breakfast</p>
-                        </div>
-                        <div class="adds-box">
-                            <img src="/assets/icon/wifi.svg" class="adds-icon">
-                            <p class="adds-txt">Free Wi-Fi</p>
-                        </div> -->
                     </div>
 
                     <div class="line-blue"></div>
@@ -383,24 +325,6 @@
                     <div class="rating-blue-line"></div>
                 @endforeach
             </div>
-
-            <!-- <div class="user-rates">
-                    <div class="user-profile">
-                        <img src="/assets/icon/Arunika/1.webp" class="dp-user">
-                        <div class="user-info">
-                            <p class="username">Madeline R</p>
-                            <div class="rating-star">
-                                <p class="user-rating">4</p>
-                                <p class="user-standard">/5</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="user-rates-desc">
-                        <p class="desc-rate">The hotel is located close to the airport and would only recommend for a transit location. To be noted there is a mosque in very close proximity to the hotel and the this can be heard by some rooms. The room was clean and comfortable. The tv was clear with a good selection of channels. The staff were kind. The breakfast was ok without being great. Not too many choices although they do have an egg station like most hotels in bali. The sauna was undergoing maintenance and the pool was open however when we used it the water temperature was warm and there was loud explicit music playing on the rooftop level not very refreshing or relaxing. Overall an ok stay for a transit.</p>
-
-                    </div>
-            </div> -->
 
         </div>
 
@@ -571,26 +495,6 @@
                     <h4>{{$facilityHeader->NameFacility}}</h4>
                 </div>
                 @endforeach
-                <!-- <div class="service-detail">
-                    <img src="/assets/icon/airplane-icon-blue.svg">
-                    <h4>Indoor Swimming Pool</h4>
-                </div>
-                <div class="service-detail">
-                    <img src="/assets/icon/airplane-icon-blue.svg">
-                    <h4>Indoor Swimming Pool</h4>
-                </div>
-                <div class="service-detail">
-                    <img src="/assets/icon/airplane-icon-blue.svg">
-                    <h4>Indoor Swimming Pool</h4>
-                </div>
-                <div class="service-detail">
-                    <img src="/assets/icon/airplane-icon-blue.svg">
-                    <h4>Indoor Swimming Pool</h4>
-                </div>
-                <div class="service-detail">
-                    <img src="/assets/icon/airplane-icon-blue.svg">
-                    <h4>Indoor Swimming Pool</h4>
-                </div> -->
             </div>
         </div>
 

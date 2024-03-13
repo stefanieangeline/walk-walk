@@ -291,8 +291,6 @@ class FlightController extends Controller
                 array_push($finalIDdest, $airportDst["IDAirport"]);
             }
 
-            // dd($finalIDdest, $finalIDsource);
-
             return view('flight',[
                 'schedules' => Schedule::query()
                 ->join('schedule_details','schedule_details.IDSchedule','=','schedules.IDSchedule')

@@ -1,4 +1,3 @@
-
 // function pindah_page() {
 // 	window.location.href = "home.php"
 // }
