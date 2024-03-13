@@ -23,7 +23,7 @@ body {
 
 .content{
     width: 100vw;
-    height: 130vh;
+    height: 750px;
     background-color: #F6F7F7;
     border-radius: 45px 45px 0px 0px;
     padding-top: 25px;
@@ -37,7 +37,7 @@ body {
     border-radius: 45px;
     width: 70%;
     /* height: 80vh; */
-    
+
     /* z-index: 1; */
     /* position: absolute; */
 }
@@ -50,7 +50,7 @@ body {
 }
 .box-content{
     width: 60vw;
-    height: 70vh;
+    height: 400px;
     background-color: white;
     border-radius: 35px;
     z-index: 2;
@@ -188,10 +188,13 @@ textarea {
     overflow: auto;
     outline: none;
 
-    
+
     resize: none; /*remove the resize handle on the bottom right*/
 }
 .submit-box{
+
+    bottom:45px;
+    position: absolute;
     z-index: 3;
     background-color: var(--strong-blue);
     border-radius: 15px;
@@ -199,7 +202,7 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 6vh;
+    height: 50px;
     width: 12vw;
     cursor: pointer;
 }
