@@ -84,9 +84,7 @@
                             <img src="assets/icon/chair-blue.svg">
                             <select name="class">
                                 <option class="option-edit">Economy</option>
-                                <option class="option-edit">Economy Premium</option>
                                 <option class="option-edit">Business</option>
-                                <option class="option-edit">First Class</option>
                             </select>
                         </div>
                     </div>

@@ -311,7 +311,7 @@ body {
     align-items: center;
 }
 .right-box{
-    width: 76.5vw;
+    width: 76vw;
     height: 13vh;
     /* background-color: lightsalmon; */
     /* margin-top: 5px; */
@@ -515,11 +515,11 @@ body {
 }
 
 .star-rate-box{
-    height: 9vh;
-    /* width: 4.8vw; */
+    height: 8vh;
+    width: 7vw;
     /* margin-left: 33px;
     margin-top: 45px; */
-    border-radius: 30px;
+    border-radius: 25px;
     background-color: var(--another-blue);
     display: flex;
     flex-direction: row;
